@@ -8,8 +8,6 @@
   <property name="AllowedTownships" value="city,town,rural,wilderness" />
   <property name="TraderArea" value="True" />
   <property name="TraderAreaProtect" value="0,0,0" />
-  <property name="TraderAreaTeleportSize" value="35, 25, 35" />
-  <property name="TraderAreaTeleportCenter" value="10, 0, 4" />
   <property name="ExcludeDistantPOIMesh" value="False" />
   <property name="DistantPOIYOffset" value="0" />
   <property name="EditorGroups" value="settlements" />
@@ -17,7 +15,7 @@
   <property name="DifficultyTier" value="0" />
   <property name="ExcludePOICulling" value="True" />
   <property name="ShowQuestClearCount" value="1" />
-  <property name="Tags" value="wilderness,commercial,downtown,industrial,countrytown,gateway,nocheckpoint" />
+  <property name="Tags" value="wilderness, countrytown, commercial, industrial, downtown, gateway, nocheckpoint" />
   <property name="ThemeTags" value="traderJen" />
   <property name="ThemeRepeatDistance" value="800" />
   <property name="PrefabSize" value="60, 25, 60" />
@@ -32,11 +30,11 @@
   <property name="POIMarkerPartRotations" value="2,2,2,2" />
   <property name="POIMarkerPartSpawnChance" value="1,1,1,1" />
   <property class="Stats">
-    <property name="TotalVertices" value="1049201" />
-    <property name="TotalTriangles" value="846475" />
+    <property name="TotalVertices" value="883772" />
+    <property name="TotalTriangles" value="645491" />
     <property class="BlockEntities">
-      <property name="Vertices" value="969583" />
-      <property name="Triangles" value="793727" />
+      <property name="Vertices" value="804154" />
+      <property name="Triangles" value="592743" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="69024" />
@@ -47,35 +45,36 @@
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes2">
-      <property name="Vertices" value="0" />
-      <property name="Triangles" value="0" />
-    </property>
-    <property class="ChunkMeshes3">
       <property name="Vertices" value="576" />
       <property name="Triangles" value="288" />
+    </property>
+    <property class="ChunkMeshes3">
+      <property name="Vertices" value="0" />
+      <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes4">
       <property name="Vertices" value="0" />
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes5">
-      <property name="Vertices" value="0" />
-      <property name="Triangles" value="0" />
-    </property>
-    <property class="ChunkMeshes6">
       <property name="Vertices" value="10018" />
       <property name="Triangles" value="16932" />
     </property>
   </property>
   <property class="IndexedBlockOffsets">
     <property class="quest_wood_trees">
-      <property name="0" value="51, 5, 50" />
-      <property name="1" value="57, 5, 51" />
-      <property name="2" value="51, 5, 54" />
-      <property name="3" value="47, 5, 58" />
+      <property name="0" value="57, 5, 51" />
+      <property name="1" value="51, 5, 54" />
     </property>
     <property class="POILight">
       <property name="0" value="43, 8, 30" />
+    </property>
+    <property class="challenge_mech_parts">
+      <property name="0" value="35, 5, 15" />
+      <property name="1" value="37, 5, 15" />
+    </property>
+    <property class="challenge_sinks">
+      <property name="0" value="36, 5, 14" />
     </property>
     <property class="TraderOnOff">
       <property name="0" value="30, 5, 30" />
