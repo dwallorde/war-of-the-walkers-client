@@ -4479,6 +4479,7 @@ oreRandomBoulder,blocks,Block,,,Random Ore Boulder,
 oreRandomBoulderDesc,blocks,Block,,,Random Ore Node,
 oreBoulderTungsten,blocks,Block,,,Tungsten Ore Boulder,
 oreBoulderBrimstone,blocks,Block,,,Brimstone Ore Boulder,
+oreBoulderLava,blocks,Block,,,Lava (Silicon) Boulder,
 
 oreIronBoulderDesc,blocks,Block,,,Iron Node,
 oreLeadBoulderDesc,blocks,Block,,,Lead Node,
