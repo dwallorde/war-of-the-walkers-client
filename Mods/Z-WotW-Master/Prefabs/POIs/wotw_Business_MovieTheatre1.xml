@@ -32,15 +32,15 @@
   <property name="Tags" value="industrial" />
   <property name="SleeperVolumeTriggeredBy" value=" # # # # # # # " />
   <property class="Stats">
-    <property name="TotalVertices" value="668972" />
-    <property name="TotalTriangles" value="409913" />
+    <property name="TotalVertices" value="751543" />
+    <property name="TotalTriangles" value="363291" />
     <property class="BlockEntities">
-      <property name="Vertices" value="565328" />
-      <property name="Triangles" value="344017" />
+      <property name="Vertices" value="647239" />
+      <property name="Triangles" value="296819" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="93404" />
-      <property name="Triangles" value="48700" />
+      <property name="Vertices" value="94064" />
+      <property name="Triangles" value="49276" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />
@@ -95,6 +95,7 @@
       <property name="19" value="55, 13, 53" />
       <property name="20" value="57, 8, 53" />
       <property name="21" value="57, 7, 55" />
+      <property name="22" value="51, 12, 46" />
     </property>
     <property class="FetchContainer">
       <property name="0" value="48, 9, 40" />
@@ -105,6 +106,9 @@
       <property name="2" value="14, 9, 53" />
       <property name="3" value="14, 9, 54" />
       <property name="4" value="14, 9, 55" />
+    </property>
+    <property class="challenge_steel">
+      <property name="0" value="51, 8, 42" />
     </property>
     <property class="QuestRestorePower">
       <property name="0" value="51, 6, 29" />
@@ -117,9 +121,6 @@
       <property name="0" value="57, 11, 48" />
       <property name="1" value="57, 10, 50" />
       <property name="2" value="57, 9, 52" />
-    </property>
-    <property class="challenge_steel">
-      <property name="0" value="51, 8, 42" />
     </property>
   </property>
 </prefab>

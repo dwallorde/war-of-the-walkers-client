@@ -26,6 +26,14 @@
   <property name="TriggerVolumeSize" value="2, 2, 10" />
   <property name="TriggerVolumeStart" value="35, 6, 15" />
   <property name="TriggerVolumeTriggers" value="30" />
+  <property name="POIMarkerSize" value="6, 13, 1#6, 13, 1" />
+  <property name="POIMarkerStart" value="46, 26, 60#15, 26, 60" />
+  <property name="POIMarkerGroup" value="driveway,driveway" />
+  <property name="POIMarkerTags" value="industrial#industrial" />
+  <property name="POIMarkerType" value="PartSpawn,PartSpawn" />
+  <property name="POIMarkerPartToSpawn" value="part_driveway_industrial_03,part_driveway_industrial_03" />
+  <property name="POIMarkerPartRotations" value="0,0" />
+  <property name="POIMarkerPartSpawnChance" value="1,1" />
   <property class="Stats">
     <property name="TotalVertices" value="1946468" />
     <property name="TotalTriangles" value="990409" />
