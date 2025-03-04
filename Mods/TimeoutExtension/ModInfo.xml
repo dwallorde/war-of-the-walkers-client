@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="TimeoutExtension" />
+	<DisplayName value="Increase network timeout from 5 to 30 seconds" />
+	<Version value="1.0.0.1" />
+	<Description value="" />
+	<Author value="McTaco" />
+	<Website value="" />
+</xml>
