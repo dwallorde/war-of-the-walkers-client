@@ -1,0 +1,40 @@
+<config>
+<set xpath="/items/item[@name='meleeToolShovelT2SteelShovel']/effect_group[@name='meleeToolShovelT2SteelShovel']/passive_effect[@name='AttacksPerMinute']/@value">65</set>
+<set xpath="/items/item[@name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Delay']/@value">.25</set>
+
+<append xpath="/items/item[@name='foodBurntSmoothie']">
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="add" value="303"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="set" value="909">
+			<requirement name="CVarCompare" cvar="$buffBurntStormProofDuration" operation="GT" value="909"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBurntStormProof"/>
+	</effect_group>
+</append>
+
+<append xpath="/items/item[@name='foodOasisSmoothie']">
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDesertStormProofDuration" operation="add" value="303"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDesertStormProofDuration" operation="set" value="909">
+			<requirement name="CVarCompare" cvar="$buffDesertStormProofDuration" operation="GT" value="909"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDesertStormProof"/>
+	</effect_group>
+</append>
+
+<append xpath="/items/item[@name='foodFrostbiteSmoothie']">
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffSnowStormProofDuration" operation="add" value="303"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffSnowStormProofDuration" operation="set" value="909">
+			<requirement name="CVarCompare" cvar="$buffSnowStormProofDuration" operation="GT" value="909"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSnowStormProof"/>
+	</effect_group>
+</append>
+
+<append xpath="/items/item[@name='foodAtomicSmoothie']">
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffWastelandStormProofDuration" operation="add" value="303"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffWastelandStormProofDuration" operation="set" value="909">
+			<requirement name="CVarCompare" cvar="$buffWastelandStormProofDuration" operation="GT" value="909"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWastelandStormProof"/>
+	</effect_group>
+</append>
+</config>

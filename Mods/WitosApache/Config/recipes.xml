@@ -1,0 +1,41 @@
+<Witos>
+
+<append xpath="/recipes">
+
+<recipe name="WitosApacheHelicopterEngine" count="1" craft_time="270" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceElectricParts" count="33"/>
+	<ingredient name="vehicleGyroCopterAccessories" count="1"/>
+	<ingredient name="resourceMetalPipe" count="50"/>
+	<ingredient name="resourceMechanicalParts" count="10"/>
+	<ingredient name="resourceSpring" count="4"/>
+
+</recipe>
+
+<recipe name="WitosApacheHelicopterChassis" count="1" craft_time="270" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="resourceForgedSteel" count="1000"/>
+			<ingredient name="resourceMechanicalParts" count="300"/>
+			<ingredient name="vehicleGyroCopterChassis" count="1"/>
+			<ingredient name="resourceMetalPipe" count="100"/>
+			<ingredient name="resourceSpring" count="30"/>
+
+</recipe>
+
+<recipe name="WitosApacheHelicopterPlaceable" count="1" craft_time="400" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="vehicleWheels" count="3"/>
+	<ingredient name="WitosApacheHelicopterChassis" count="1"/>
+	<ingredient name="WitosApacheHelicopterEngine" count="1"/>
+	<ingredient name="resourceForgedSteel" count="250"/>
+	<ingredient name="resourceLegendaryParts" count="25"/>
+</recipe>
+
+<recipe name="AmmoMissileApache" count="5" craft_time="30" craft_area="workbench" tags="workbenchCrafting">
+	<ingredient name="resourceRocketTip" count="1"/>
+	<ingredient name="resourceGunPowder" count="60"/>
+	<ingredient name="resourceDuctTape" count="3"/>
+	<ingredient name="ammoGasCan" count="500"/>
+	<ingredient name="resourceForgedSteel" count="10"/>
+</recipe>
+
+
+</append>
+</Witos>

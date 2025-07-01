@@ -1,0 +1,149 @@
+<configs>
+    <!-- Wild Mature Crops -->
+    <append xpath="/blocks/block[@name='plantedAloe3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedBlueberry3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedChrysanthemum3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedCoffee3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedCorn3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedCotton3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedGoldenrod3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedGraceCorn3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedHop3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedMushroom3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedPotato3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedPumpkin3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedSnowberry3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedYucca3Harvest']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+
+    <!-- Player-Planted Mature Crops -->
+    <append xpath="/blocks/block[@name='plantedAloe3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedBlueberry3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedChrysanthemum3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedCoffee3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedCorn3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedCotton3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedGoldenrod3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedGraceCorn3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedHop3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedMushroom3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedPotato3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedPumpkin3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedSnowberry3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='plantedYucca3HarvestPlayer']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+
+<!-- Dead Variants -->
+<append xpath="/blocks/block[@name='plantedAloeDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedAloeDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedBlueberryDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedBlueberryDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedCoffeeDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedCoffeeDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedCornDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedCornDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedCornDeadMedium']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedCornDeadMediumDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedCornDeadSmall']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedCornDeadSmallDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedCottonDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedCottonDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedHopDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedHopDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedPotatoDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedPotatoDeadDesc" />
+</append>
+<append xpath="/blocks/block[@name='plantedYuccaDead']">
+    <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    <property name="CanPickup" value="true" />
+    <property name="DescriptionKey" value="plantedYuccaDeadDesc" />
+</append>
+
+    <!-- POI Variants -->
+    <append xpath="/blocks/block[@name='mushroom01']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+    <append xpath="/blocks/block[@name='mushroom02']">
+        <property name="Class" value="TechFreqsCropsHarvest, TechFreqsPickupPlants" />
+    </append>
+</configs>

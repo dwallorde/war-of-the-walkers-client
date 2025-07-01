@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CameraConfigs>
+
+
+
+
+<!--  COMMANDS reload configs:  -->
+ "reloadcameraxml",
+ "rcxml" 
+
+  <CameraOrder>
+	<Mode>DefaultThirdPerson</Mode>
+    <Mode>Seat</Mode>
+    <Mode>CameraXML_180</Mode>
+    <Mode>UnityCamera180</Mode>
+    <Mode>CameraXML_360</Mode>
+    <Mode>UnityCamera360</Mode>
+    <Mode>CameraXML_Fixed</Mode>
+    <Mode>UnityCamera</Mode>
+	<Mode>CinematicCamera</Mode>
+    
+  </CameraOrder>
+
+
+  <InputKeys>
+    <ShaderKey>F5,JoystickButton5</ShaderKey>
+    <CameraKey>L,JoystickButton0</CameraKey>
+  </InputKeys>
+
+
+ <!-- CinematicCamera ON OFF -->
+	<CinematicCamera cinematic="true" filter="true" />
+ 
+ <!-- shaders -->
+  <Shaders>
+    <Shader id="NightVision" BundlePath="camerafilters.unity3d" MaterialName="NightVisionEffectMaterial" active="true" />
+    <Shader id="Sepia" BundlePath="camerafilters.unity3d" MaterialName="SepiaEffectMaterial" active="true" />
+    <Shader id="BlackWhite" BundlePath="camerafilters.unity3d" MaterialName="BlackWhiteEffectMaterial" active="true" />
+    <Shader id="Vintage" BundlePath="camerafilters.unity3d" MaterialName="VintageEffectMaterial" active="true" />
+    <Shader id="Underwater" BundlePath="camerafilters.unity3d" MaterialName="Underwater" active="true" />
+	<Shader id="Chrome" BundlePath="camerafilters.unity3d" MaterialName="Chrome" active="true" />
+	<Shader id="NegativeEffect" BundlePath="camerafilters.unity3d" MaterialName="NegativeEffectMaterial" active="true" />
+	<Shader id="RadialBlur" BundlePath="camerafilters.unity3d" MaterialName="RadialBlurMaterial" active="true" />
+	<Shader id="GlitchEffect" BundlePath="camerafilters.unity3d" MaterialName="GlitchEffectMaterial" active="true" />
+	<Shader id="PixelationEffect" BundlePath="camerafilters.unity3d" MaterialName="PixelationEffectM" active="true" />
+  </Shaders>
+  
+  <!-- seatpose corrections -->
+  <SeatPoses>
+    <SeatPose id="1"  x="0.0" y="1.15" z="0.15" />
+    <SeatPose id="20" x="-0.003" y="1.06" z="-0.04" />
+    <SeatPose id="21" x="0.0" y="1.13" z="-0.5" />
+    <SeatPose id="30" x="0.0" y="0.98" z="-0.33" />
+    <SeatPose id="31" x="0.0" y="1.26" z="-1.11" />
+    <SeatPose id="40" x="0.0" y="1.25" z="-0.24" />
+    <SeatPose id="41" x="0.0" y="1.2" z="-0.24" />
+    <SeatPose id="42" x="0.047" y="1.265" z="0.1" />
+    <SeatPose id="43" x="-0.007" y="1.266" z="0.09" />
+    <SeatPose id="44" x="0.01" y="1.29" z="-0.03" />
+    <SeatPose id="45" x="-0.015" y="1.27" z="0.12" />
+    <SeatPose id="50" x="-0.015" y="1.31" z="-0.15" />
+    <SeatPose id="51" x="0.0" y="1.31" z="-0.199" />
+  </SeatPoses>
+  
+</CameraConfigs>

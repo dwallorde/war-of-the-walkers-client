@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModInfo>
+    <Name value="TechFreqsSharedSpikeTrapXPMod"/>
+    <DisplayName value="TechFreq's Shared Spike Trap XP Mod"/>
+    <Description value="Adds XP gain for Wooden and Iron spike traps, as well as customizeable config json for XP and Proximity Radius of spike traps, as well as v2 and v1 features."/>
+    <Author value="TechFreq"/>
+    <Version value="4.3"/>
+	<Website value="https://beacons.ai/techfreq" />
+</ModInfo>

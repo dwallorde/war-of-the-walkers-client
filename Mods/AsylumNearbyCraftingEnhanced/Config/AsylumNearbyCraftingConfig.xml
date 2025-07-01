@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AsylumNearbyCraftingConfig>
+<!--
+    AsylumNearbyCrafting Configuration File
+    
+    Core Scanning Settings:
+    - ScanRadius: How far to scan for containers (5-25 blocks, capped for multiplayer security)
+    - CacheDuration: How long to cache container locations (0.5-60 seconds)
+    - MaxContainersPerScan: Maximum containers to process per scan (performance limit)
+    
+    Quality Management:
+    - PreserveLowQuality: Use lower quality items first to preserve higher quality ones
+    - QualityThreshold: Quality level that separates 'low' from 'high' quality (1-6)
+    
+    Debug Settings:
+    - EnableDebugLogging: Show detailed logging for troubleshooting
+    - ShowContainerCount: Display how many containers were found during scanning
+-->
+  <ScanRadius value="20" />
+  <CacheDuration value="5.0" />
+  <MaxContainersPerScan value="100" />
+  <EnableCaching value="true" />
+  <ScanIntervalMs value="100" />
+  <PreserveLowQuality value="true" />
+  <QualityThreshold value="4" />
+  <AllowQualityMixing value="true" />
+  <EnableSecureContainers value="true" />
+  <EnableInsecureContainers value="true" />
+  <EnableVanillaContainers value="true" />
+  <EnableModdedContainers value="true" />
+  <EnableRepairFromContainers value="true" />
+  <EnableUpgradeFromContainers value="true" />
+  <ShowRepairMaterialsFound value="true" />
+  <EnableHotReload value="true" />
+  <AutoClearCacheOnConfigChange value="true" />
+</AsylumNearbyCraftingConfig>

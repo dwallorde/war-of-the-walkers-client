@@ -1,0 +1,20 @@
+<xSteel>
+
+
+<append xpath="/progression/perks/perk[@name='perkBoomstick']">
+	<effect_group name="shotgun ragdoll on kill" >
+		<requirement name="ItemHasTags" tags="perkBoomstick" />
+		<triggered_effect trigger="onSelfKilledOther" action="Ragdoll" target="other" target_tags="zombie" duration="1" force="300">
+			<requirement name="!EntityTagCompare" target="other" tags="animal" />
+			<requirement name="TargetRange" target="other" operation="LTE" value="2"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfKilledOther" action="Ragdoll" target="other" target_tags="zombie" duration="1" force="200">
+			<requirement name="!EntityTagCompare" target="other" tags="animal" />
+			<requirement name="TargetRange" target="other" operation="GT" value="2"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfKilledOther" action="Ragdoll" target="other" target_tags="animal" duration="1" force="70">			</triggered_effect>
+	</effect_group>
+</append>
+
+
+</xSteel>

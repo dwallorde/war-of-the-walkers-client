@@ -1,0 +1,5 @@
+<Witos>
+  <setattribute xpath="/nav_object_classes/nav_object_class[@name='bicycle']/onscreen_settings/property[@name='max_distance']" name= "value">0</setattribute>
+  <setattribute xpath="/nav_object_classes/nav_object_class[@name='rally']/onscreen_settings/property[@name='max_distance']" name="value">0</setattribute>
+
+</Witos>

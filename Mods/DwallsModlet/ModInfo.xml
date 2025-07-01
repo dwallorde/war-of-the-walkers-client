@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="WotWMod" />
+    <DisplayName value="Dwalls Modlet" />
+    <Description value="Dwalls Modlet for 7 Days to Die Version 2.0(b283)" />
+    <Author value="Dwallorde" />
+	<Version value="2.0.1.0" />
+    <Website value="https://discord.gg/eBkgqFPFrw" />
+	<Icon value="Gears/wotwmodlogo.png" />
+	<Banner value="Gears/wotw_hudlogo.png" />
+</xml>

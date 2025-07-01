@@ -1,0 +1,35 @@
+<Witos>
+<append xpath="/buffs">
+		<buff name="buffApache" hidden="true"> 
+            <stack_type value="ignore"/>
+            <damage_type value="heat"/>
+            <effect_group> 
+                <triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="trenanioff"/>
+                <triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="trenanion"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="true" transform_path="trenanioff"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" transform_path="trenanion"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="trenanioff"/>
+                <triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="trenanion"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="true" transform_path="trenanioff"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" transform_path="trenanion"/> 
+            </effect_group>
+        </buff>	
+		<buff name="buffApacheV" hidden="true"> 
+            <stack_type value="ignore"/>
+            <damage_type value="heat"/>
+            <update_rate value=".1"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range=".1" buff="buffApachePlayer" duration="1"/>
+            </effect_group>
+        </buff>
+        <buff name="buffApachePlayer" hidden="true">
+            <stack_type value="replace"/>
+            <duration value="1"/>
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range=".5" buff="buffApache" />
+                <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="selfAOE" range="10" buff="buffApache"/>
+            </effect_group>
+
+        </buff>	
+</append>
+</Witos>

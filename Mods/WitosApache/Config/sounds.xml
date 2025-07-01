@@ -1,0 +1,38 @@
+<Witos>
+<!-- <set xpath="/Sounds/SoundDataNode[@name='vehicle_turbo']/AudioClip/@ClipName">Sounds/Misc/silencefiller</set>
+<set xpath="/Sounds/SoundDataNode[@name='vwheel_bounce']/AudioClip/@ClipName">Sounds/Misc/silencefiller</set>
+<set xpath="/Sounds/SoundDataNode[@name='vwheel_slide']/AudioClip/@ClipName">Sounds/Misc/silencefiller</set> -->
+<append xpath="/Sounds">
+
+
+<SoundDataNode name="missilelaunsA"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+	<Noise ID="4" noise="100" time="2" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="#@modfolder:Resources/Apache.unity3d?missilelaunsA"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> 
+</SoundDataNode>
+
+<SoundDataNode name="Reload_missileA"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+	<Noise ID="4" noise="100" time="2" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="#@modfolder:Resources/Apache.unity3d?ReloadA"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> 
+</SoundDataNode>
+
+<SoundDataNode name="explosion_missileA"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+	<Noise ID="4" noise="100" time="2" heat_map_strength="0.2" heat_map_time="90"/>
+	<AudioClip ClipName="#@modfolder:Resources/Apache.unity3d?explosionApache"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> 
+</SoundDataNode>
+
+<SoundDataNode name="FireWeaponApacheA"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
+	<Noise ID="0" noise="54" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/Apache.unity3d?FireWeaponA"/>
+	<LocalCrouchVolumeScale value="1"/> 
+	<CrouchNoiseScale value="1"/> 
+	<NoiseScale value="1"/>
+	<MaxVoices value="30"/>
+	<MaxVoicesPerEntity value="10"/>  
+	<MaxRepeatRate value="0.001"/>
+	</SoundDataNode>
+
+</append>
+</Witos>

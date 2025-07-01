@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModInfo>
+	<Name value="AsylumSmartStorage" />
+	<DisplayName value="Asylum Smart Storage" />
+	<Description value="Auto-sort inventory system with smart dump chest that redistributes items to nearby containers within a 25-block radius. Supports all vanilla and AGF mod container types (33 total). Simply dump items and they will be moved to containers that already contain similar items." />
+	<Author value="grimreaper87" />
+	<Version value="2.1" />
+	<Website value="" />
+</ModInfo>

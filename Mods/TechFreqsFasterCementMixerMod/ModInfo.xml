@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <Name value="TechFreqsFasterCementMixerMod" />
+    <DisplayName value="TechFreq's Faster Cement Mixer Mod" />
+    <Description value="Increases the cement mixer speed by 4x for faster concrete crafting, including related recipes." />
+    <Author value="TechFreq"/>
+    <Version value="1.1" />
+    <Website value="https://beacons.ai/techfreq" />
+</xml>

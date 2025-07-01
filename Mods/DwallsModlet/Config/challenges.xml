@@ -1,0 +1,33 @@
+<config>
+<set xpath="/challenges/challenge[@name='burntSurvivalMinutes']/objective/@max_time">900</set>
+<set xpath="/challenges/challenge[@name='desertSurvivalMinutes']/objective/@max_time">900</set>
+<set xpath="/challenges/challenge[@name='snowSurvivalMinutes']/objective/@max_time">900</set>
+<set xpath="/challenges/challenge[@name='wastelandSurvivalMinutes']/objective/@max_time">900</set>
+
+<set xpath="/challenges/challenge[@name='gathererPrecious']/objective/@count">5</set>
+
+<set xpath="/challenges/challenge[@name='healerBleeding']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='healerInfection']/objective/@count">5</set>
+<set xpath="/challenges/challenge[@name='healerDysentery']/objective/@count">5</set>
+<set xpath="/challenges/challenge[@name='healerBrokenLeg']/objective/@count">2</set>
+<set xpath="/challenges/challenge[@name='healerBrokenArm']/objective/@count">2</set>
+<set xpath="/challenges/challenge[@name='healerConcussion']/objective/@count">5</set>
+<set xpath="/challenges/challenge[@name='healerFatigued']/objective/@count">5</set>
+<set xpath="/challenges/challenge[@name='healerLaceration']/objective/@count">5</set>
+
+<set xpath="/challenges/challenge[@name='bloodmoonSurvive5']/objective/@count">3</set>
+<set xpath="/challenges/challenge[@name='bloodmoonSurvive10']/objective/@count">5</set>
+
+<set xpath="/challenges/challenge[@name='killRabbits']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killChickens']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killCoyotes']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killDeer']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killSnakes']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killBoars']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killWolves']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killMountainLion']/objective/@count">10</set>
+<set xpath="/challenges/challenge[@name='killBears']/objective/@count">10</set>
+
+<set xpath="/challenges/challenge[@name='killDemolitions']/objective/@count">10</set>
+
+</config>

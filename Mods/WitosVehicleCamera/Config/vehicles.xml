@@ -1,0 +1,44 @@
+<configs>
+<!-- vanila vehicles xpath -->
+	
+
+
+    <append xpath="/vehicles/vehicle">
+        <property name="VehicleCameraSeat" value="true"/>
+    </append>
+	
+	
+	
+<!-- //////////////////////demo cameras, uncomment this if you want it to be added to all vehicles,///////////////////////
+	//////////////////////if you want positions in specific vehicles,////////////////////////////////////////////////////
+	//////////////////////take these lines to your vehicle in vehicles.xml///////////////////////////////////////////////
+		
+		
+		<append xpath="/vehicles/vehicle">
+			<property name="VehicleCameraModel" value="true"/>
+		</append>
+
+		<append xpath="/vehicles/vehicle">
+			<property class="Camera0">
+				<property name="VehicleCameraCustom" value="0.0,2.0,-5"/>
+				<property name="CameraXMLMode" value="180" />
+				<property name="CameraXMLRotation" value="0,180,0" />
+			</property>
+		</append>
+
+		<append xpath="/vehicles/vehicle">
+			<property class="Camera1">
+				<property name="VehicleCameraCustom" value="0,20,0"/>
+				<property name="CameraXMLMode" value="fixed" />
+				<property name="CameraXMLRotation" value="90,90,0" />
+				<property name="CameraPositionType" value="local" />
+			</property>
+		</append>
+
+		<append xpath="/vehicles/vehicle">
+			<property class="Camera2">
+				<property name="VehicleCameraCustom" value="0,3,-1"/> 
+
+			</property>
+		</append>     -->
+	</configs>

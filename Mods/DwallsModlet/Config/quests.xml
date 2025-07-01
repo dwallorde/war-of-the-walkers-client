@@ -1,0 +1,4 @@
+<config>
+<remove xpath="/quests/quest[@id='tier2_restore_power']/objective[@type='RallyPoint']/property[@name='allowed_start_hour']"/>
+<remove xpath="/quests/quest[@id='tier2_restore_power']/objective[@type='RallyPoint']/property[@name='allowed_end_hour']"/>
+</config>

@@ -1,0 +1,42 @@
+<config>
+<set xpath="/blocks/block[@name='cntLootChestHero']/property[@name='Class']/@value">Loot</set>
+<set xpath="/blocks/block[@name='cntLootChestHero']/property[@name='Tags']/@value">timecharge,perkBookworm</set>
+<remove xpath="/blocks/block[@name='cntLootChestHero']/property[@name='LockPickItem']"/>
+<remove xpath="/blocks/block[@name='cntLootChestHero']/property[@name='LockPickTime']"/>
+<remove xpath="/blocks/block[@name='cntLootChestHero']/property[@name='LockPickBreakChance']"/>
+<remove xpath="/blocks/block[@name='cntLootChestHero']/property[@name='ItemTypeIcon']"/>
+<remove xpath="/blocks/block[@name='cntLootChestHero']/property[@name='DowngradeBlock']"/>
+<remove xpath="/blocks/block[@name='cntLootChestHero']/drop[@event='Destroy']"/>
+<append xpath="/blocks/block[@name='cntLootChestHero']">
+	<!-- <property name="LootStageMod" value="0.05"/>
+	<property name="LootStageBonus" value="6"/> -->
+	<drop event="Destroy" name="resourceScrapIron" count="5"/>
+</append>
+
+<set xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='Class']/@value">Loot</set>
+<set xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='Tags']/@value">timecharge,perkBookworm</set>
+<remove xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='LockPickItem']"/>
+<remove xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='LockPickTime']"/>
+<remove xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='LockPickBreakChance']"/>
+<remove xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='ItemTypeIcon']"/>
+<remove xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='DowngradeBlock']"/>
+<remove xpath="/blocks/block[@name='cntHardenedChestSecure']/drop[@event='Destroy']"/>
+<append xpath="/blocks/block[@name='cntHardenedChestSecure']">
+	<!-- <property name="LootStageMod" value="0.05"/>
+	<property name="LootStageBonus" value="6"/> -->
+	<drop event="Destroy" name="resourceScrapIron" count="5"/>
+</append>
+
+
+<remove xpath="/blocks/block[@name='cntHardenedChestSecureT5']/property[@name='DowngradeBlock']"/>
+<set xpath="/blocks/block[@name='cntHardenedChestSecureT5']/property[@name='Tags']/@value">safes,timecharge,perkBookworm</set>
+<append xpath="/blocks/block[@name='cntHardenedChestSecureT5']">
+	<!-- <property name="LootStageMod" value="0.05"/>
+	<property name="LootStageBonus" value="6"/> -->
+	<drop event="Destroy" name="resourceScrapIron" count="5"/>
+</append>
+
+<set xpath="/blocks/block[@name='generatorbank']/property[@name='MaxPower']/@value">24500</set>
+<set xpath="/blocks/block[@name='generatorbank']/property[@name='MaxFuel']/@value">2000</set>
+<set xpath="/blocks/block[@name='generatorbank']/property[@name='OutputPerStack']/@value">200</set>
+</config>

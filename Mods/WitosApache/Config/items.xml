@@ -1,0 +1,121 @@
+<Witos>
+	<append xpath="/items">
+		
+		<item name="WitosApacheHelicopterPlaceable">
+			<property name="Extends" value="vehicleMinibikePlaceable"/>
+			<property name="CustomIcon" value="Apache"/>
+			<property name="Tags" value="vehicle,varmor,vengine,vfuel,vlight,canHaveCosmetic"/>
+			<property name="Meshfile" value="#@modfolder:Resources/Apache.unity3d?Apache"/>
+			<property name="EconomicValue" value="70000"/>
+			<property name="TraderStageTemplate" value="vehicleTier5"/>	
+			<property class="Action1">
+				<property name="Vehicle" value="WitosApacheHelicopter"/>
+				<property name="VehicleSize" value="2.5, 2.5, 5.5"/>
+			</property>
+			<effect_group name="vehicleApacheHelicopterPlaceable" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="4"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="10000"/>
+			</effect_group>
+		</item>
+
+		<item name="WitosApacheHelicopterChassis">
+			<property name="Extends" value="vehicleWheels"/>
+			<property name="CustomIcon" value="ApacheChassis"/>
+			<property name="Tags" value="vehiclesSkill"/>
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="vehicleTier4"/>	
+			<property name="UnlockedBy" value="craftingVehicles"/>
+		</item>
+
+		<item name="WitosApacheHelicopterEngine">
+			<property name="Extends" value="vehicleBicycleHandlebars"/>
+			<property name="CustomIcon" value="ApacheEngine"/>
+			<property name="Tags" value="vehiclesSkill"/>	
+			<property name="EconomicValue" value="15000"/>
+			<property name="TraderStageTemplate" value="vehicleTier4"/>	
+			<property name="UnlockedBy" value="craftingVehicles"/>
+		</item>
+
+		<!-- AMMO -->
+
+		<item name="AmmoMissileApache">
+			<property name="Tags" value="ammo,perkDemolitionsExpert"/>
+			<property name="DisplayType" value="ammoLauncher"/>
+			<property name="CustomIcon" value="AmmoApache"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="HoldType" value="45"/>
+			<property name="HandMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Stacknumber" value="500"/>
+			<property name="EconomicValue" value="250"/>
+			<property name="Group" value="Ammo/Weapons,Ammo,Ranged Weapons"/>
+			<property name="TraderStageTemplate" value="ammoTier3"/>	
+			<property name="UnlockedBy" value="craftingVehicles"/>	
+			
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+					<property name="Explosion.ParticleIndex" value="#@modfolder(WitosApache):Resources/Apache.unity3d?ExplosionA$ammoMissile"/>
+				<property name="Explosion.Duration" value="10"/>
+				<property name="Explosion.AudioName" value="explosion_missileA"/>
+				<property name="Explosion.AudioDuration" value="5.5"/>
+				<property name="Explosion.SyncOnConnect" value="false"/>		
+				<property name="Explosion.RadiusBlocks" value="5"/>
+				<property name="Explosion.RadiusEntities" value="10"/>
+				<property name="Explosion.BlockDamage" value="50"/>
+				<property name="Explosion.EntityDamage" value="250"/>
+				<property name="Explosion.BlastPower" value="200"/>			
+				<property name="Gravity" value="-6"/>
+				<property name="FlyTime" value="1"/>
+				<property name="LifeTime" value="20"/>
+				<property name="DeadTime" value="4"/>		
+			</property>	
+			
+			<effect_group name="ammoMissile" tiered="false">
+				<passive_effect name="BlockDamage" operation="base_set" value="100"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkDemolitionsExpert"/>	
+				<display_value name="dExRadius" value="5"/>
+				<display_value name="dExBlockDamage" value="50"/>
+				<display_value name="dExEntityDamage" value="250"/>
+			</effect_group>
+		</item>
+		
+		<item name="WeaponApacheMG">
+					<property name="Tags" value="weapon,ranged,gun,magazine,attFortitude,vweapon,vraycastweapon,perkMachineGunner,perkBookAutoWeapons"/>
+					<property name="Material" value="MMachineGunParts"/>
+					<property name="CreativeMode" value="None"/>
+					<property name="Canhold" value="false"/>
+					<effect_group name="WeaponApacheMG">
+						<passive_effect name="MaxRange" operation="base_set" value="100" tags="perkMachineGunner"/>
+						<passive_effect name="DamageFalloffRange" operation="base_set" value="50" tags="perkMachineGunner"/>
+						<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkMachineGunner"/> <!-- random effective rng -->
+						<passive_effect name="EntityDamage" operation="base_set" value="45" tags="perkMachineGunner,perkBookAutoWeapons"/>
+						<passive_effect name="BlockDamage" operation="base_set" value="8" tags="perkMachineGunner,perkBookAutoWeapons"/>
+						<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+						<passive_effect name="DamageModifier" operation="perc_add" value="2" tags="wood"/>
+
+						<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15" tags="perkMachineGunner"/> <!-- random EntityDmg -->
+						<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
+						<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkMachineGunner"/> <!-- random BlockDmg -->
+						<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMachineGunner"/> <!-- tier bonus -->
+
+						<passive_effect name="RoundsPerMinute" operation="base_set" value="600" tags="perkMachineGunner"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkMachineGunner"/> <!-- random APM -->
+						<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkMachineGunner"/> <!-- random WeaponHandling -->
+
+						<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.8" tags="perkMachineGunner"/>
+						<passive_effect name="SpreadMultiplierIdle" operation="base_set" value=".75" tags="perkMachineGunner"/>
+						<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.2" tags="perkMachineGunner"/>
+						<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.6" tags="perkMachineGunner"/>
+
+						<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1.5" tags="perkMachineGunner"/>
+						<passive_effect name="WeaponHandling" operation="base_set" value=".83" tags="perkMachineGunner"/> <!-- M60 -->
+						<passive_effect name="BuffProcChance" operation="base_set" value=".5" tags="buffBurningFlamingArrow,buffShocked"/>
+					</effect_group>
+				</item>
+		
+	</append>
+</Witos>

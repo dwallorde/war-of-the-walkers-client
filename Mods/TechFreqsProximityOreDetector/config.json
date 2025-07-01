@@ -1,0 +1,6 @@
+{
+  "ToggleKey": "Keypad6",
+  "DetectionRadius": 15.0,
+  "ClusterDistance": 3,
+  "MinClusterSize": 5
+}

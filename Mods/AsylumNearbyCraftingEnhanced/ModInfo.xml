@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModInfo>
+	<Name value="AsylumNearbyCrafting" />
+	<DisplayName value="Asylum Nearby Crafting" />
+	<Description value="Allows crafting stations and repair tools to access resources from containers within a configurable radius. Supports 80+ container types. Includes block repair and upgrade material access from nearby containers! Fixed upgrade costs." />
+	<Author value="AsylumMods" />
+	<Version value="2.4" />
+	<Website value="" />
+</ModInfo>

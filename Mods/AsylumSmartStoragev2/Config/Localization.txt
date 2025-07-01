@@ -1,0 +1,3 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,English
+smartDumpChest,blocks,Block,,,Smart Dump Chest
+smartDumpChestDesc,,,,,"A smart storage chest that automatically sorts and redistributes items to nearby containers within a 25-block radius. Simply dump items into this chest and they will be moved to containers that already contain similar items."

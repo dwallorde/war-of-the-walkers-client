@@ -1,0 +1,41 @@
+Key,File,Type,Context / Alternate Text,UsedInMainMenu,NoTranslate,english,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+mushroom01,,,Mushroom in POI,false,,Small Mushroom,Kleiner Pilz,Hongo pequeño,Petit champignon,Fungo piccolo,小さなキノコ,작은 버섯,Mały grzyb,Cogumelo pequeno,Маленький гриб,Küçük Mantar,小蘑菇,小蘑菇
+mushroom02,,,Mushroom in POI,false,,Large Mushroom,Großer Pilz,Hongo grande,Grand champignon,Fungo grande,大きなキノコ,큰 버섯,Duży grzyb,Cogumelo grande,Большой гриб,Büyük Mantar,大蘑菇,大蘑菇
+plantedAloe3Harvest,,,Wild Aloe,false,,Aloe,Aloe,Aloe vera,Aloe vera,Aloe vera,アロエ,알로에베라,Aloes,Babosa,Алоэ,Aloe Vera,芦荟,蘆薈
+plantedBlueberry3Harvest,,,Wild Blueberries,false,,Blueberries,Heidelbeeren,Arándanos,Myrtilles,Mirtilli,ブルーベリー,블루베리,Jagody,Amoras silvestres,Черника,Yaban Mersini,蓝莓,藍莓
+plantedChrysanthemum3Harvest,,,Wild Chrysanthemums,false,,Chrysanthemums,Chrysanthemen,Crisantemos,Chrysanthèmes,Crisantemi,菊,국화,Chryzantemy,Crisântemos,Хризантемы,Krizantem,菊花,菊花
+plantedCoffee3Harvest,,,Wild Coffee,false,,Coffee,Kaffee,Café,Café,Caffè,コーヒー,커피,Kawa,Café,Кофе,Kahve,咖啡,咖啡
+plantedCorn3Harvest,,,Wild Corn,false,,Corn,Mais,Maíz,Maïs,Mais,トウモロコシ,옥수수,Kukurydza,Milho,Кукуруза,Mısır,玉米,玉米
+plantedCotton3Harvest,,,Wild Cotton,false,,Cotton,Baumwolle,Algodón,Coton,Cotone,綿,목화,Bawełna,Algodão,Хлопок,Pamuk,棉花,棉花
+plantedGoldenrod3Harvest,,,Wild Goldenrod,false,,Goldenrod,Goldrute,Vara de oro,Verge d'or,Verga d'oro,ゴールデンロッド,골든로드,Złocień,Rododendro selvagem,Золотарник,Altınbaşak,秋麒麟花,秋麒麟花
+plantedGraceCorn3Harvest,,,Wild Super Corn,false,,Super Corn,Supermais,Maíz superior,Maïs supérieur,Mais superiore,スーパートウモロコシ,슈퍼 옥수수,Super kukurydza,Milho superior,Суперкукуруза,Süper Mısır,超级玉米,超級玉米
+plantedHop3Harvest,,,Wild Hops,false,,Hops,Hopfen,Lúpulo,Houblon,Luppolo,ホップ,홉,Chmiel,Lúpulo,Хмель,Şerbetçiotu,啤酒花,啤酒花
+plantedMushroom3Harvest,,,Wild Mushrooms,false,,Mushrooms,Pilze,Setas,Champignons,Funghi,キノコ,버섯,Grzyby,Cogumelos,Грибы,Mantarlar,蘑菇,蘑菇
+plantedPotato3Harvest,,,Wild Potatoes,false,,Potatoes,Kartoffeln,Patatas,Pommes de terre,Patate,ジャガイモ,감자,Ziemniaki,Batatas,Картофель,Patates,土豆,土豆
+plantedPumpkin3Harvest,,,Wild Pumpkins,false,,Pumpkins,Kürbisse,Calabazas,Citrouilles,Zucche,カボチャ,호박,Dynie,Abóboras,Тыквы,Kabak,南瓜,南瓜
+plantedSnowberry3Harvest,,,Wild Snowberries,false,,Snowberries,Schneebeeren,Bayas de nieve,Baies des neiges,Bacche di neve,スノーベリー,스노우베리,Jagody śnieżne,Bagas de neve,Снежные ягоды,Kar Meyveleri,雪莓,雪莓
+plantedYucca3Harvest,,,Wild Yucca,false,,Yucca,Yucca,Yuca,Yucca,Yucca,ユッカ,유카,Jukka,Yucca,Юкка,Yuka,丝兰,絲蘭
+plantedAloe3HarvestPlayer,,,Player Aloe,false,,Aloe,Aloe,Aloe vera,Aloe vera,Aloe vera,アロエ,알로에베라,Aloes,Babosa,Алоэ,Aloe Vera,芦荟,蘆薈
+plantedBlueberry3HarvestPlayer,,,Player Blueberries,false,,Blueberries,Heidelbeeren,Arándanos,Myrtilles,Mirtilli,ブルーベリー,블루베리,Jagody,Amoras silvestres,Черника,Yaban Mersini,蓝莓,藍莓
+plantedChrysanthemum3HarvestPlayer,,,Player Chrysanthemums,false,,Chrysanthemums,Chrysanthemen,Crisantemos,Chrysanthèmes,Crisantemi,菊,국화,Chryzantemy,Crisântemos,Хризантемы,Krizantem,菊花,菊花
+plantedCoffee3HarvestPlayer,,,Player Coffee,false,,Coffee,Kaffee,Café,Café,Caffè,コーヒー,커피,Kawa,Café,Кофе,Kahve,咖啡,咖啡
+plantedCorn3HarvestPlayer,,,Player Corn,false,,Corn,Mais,Maíz,Maïs,Mais,トウモロコシ,옥수수,Kukurydza,Milho,Кукуруза,Mısır,玉米,玉米
+plantedCotton3HarvestPlayer,,,Player Cotton,false,,Cotton,Baumwolle,Algodón,Coton,Cotone,綿,목화,Bawełna,Algodão,Хлопок,Pamuk,棉花,棉花
+plantedGoldenrod3HarvestPlayer,,,Player Goldenrod,false,,Goldenrod,Goldrute,Vara de oro,Verge d'or,Verga d'oro,ゴールデンロッド,골든로드,Złocień,Rododendro selvagem,Золотарник,Altınbaşak,秋麒麟花,秋麒麟花
+plantedGraceCorn3HarvestPlayer,,,Player Super Corn,false,,Super Corn,Supermais,Maíz superior,Maïs supérieur,Mais superiore,スーパートウモロコシ,슈퍼 옥수수,Super kukurydza,Milho superior,Суперкукуруза,Süper Mısır,超级玉米,超級玉米
+plantedHop3HarvestPlayer,,,Player Hops,false,,Hops,Hopfen,Lúpulo,Houblon,Luppolo,ホップ,홉,Chmiel,Lúpulo,Хмель,Şerbetçiotu,啤酒花,啤酒花
+plantedMushroom3HarvestPlayer,,,Player Mushrooms,false,,Mushrooms,Pilze,Setas,Champignons,Funghi,キノコ,버섯,Grzyby,Cogumelos,Грибы,Mantarlar,蘑菇,蘑菇
+plantedPotato3HarvestPlayer,,,Player Potatoes,false,,Potatoes,Kartoffeln,Patatas,Pommes de terre,Patate,ジャガイモ,감자,Ziemniaki,Batatas,Картофель,Patates,土豆,土豆
+plantedPumpkin3HarvestPlayer,,,Player Pumpkins,false,,Pumpkins,Kürbisse,Calabazas,Citrouilles,Zucche,カボチャ,호박,Dynie,Abóboras,Тыквы,Kabak,南瓜,南瓜
+plantedSnowberry3HarvestPlayer,,,Player Snowberries,false,,Snowberries,Schneebeeren,Bayas de nieve,Baies des neiges,Bacche di neve,スノーベリー,스노우베리,Jagody śnieżne,Bagas de neve,Снежные ягоды,Kar Meyveleri,雪莓,雪莓
+plantedYucca3HarvestPlayer,,,Player Yucca,false,,Yucca,Yucca,Yuca,Yucca,Yucca,ユッカ,유카,Jukka,Yucca,Юкка,Yuka,丝兰,絲蘭
+plantedAloeDead,,,Dead Aloe Plant,false,,Dead Aloe,Toter Aloe,Aloe muerto,Aloe mort,Aloe morto,枯れたアロエ,죽은 알로에베라,Martwy aloes,Babosa morta,Мёртвое алоэ,Ölü Aloe,枯萎的芦荟,枯萎的蘆薈
+plantedBlueberryDead,,,Dead Blueberry Plant,false,,Dead Blueberries,Tote Heidelbeeren,Arándanos muertos,Myrtilles mortes,Mirtilli morti,枯れたブルーベリー,죽은 블루베리,Martwe jagody,Amoras silvestres mortas,Мёртвая черника,Ölü Yaban Mersini,枯萎的蓝莓,枯萎的藍莓
+plantedCoffeeDead,,,Dead Coffee Plant,false,,Dead Coffee,Toter Kaffee,Café muerto,Café mort,Caffè morto,枯れたコーヒー,죽은 커피,Martwa kawa,Café morto,Мёртвый кофе,Ölü Kahve,枯萎的咖啡,枯萎的咖啡
+plantedCornDead,,,Dead Corn Plant,false,,Dead Corn,Toter Mais,Maíz muerto,Maïs mort,Mais morto,枯れたトウモロコシ,죽은 옥수수,Martwa kukurydza,Milho morto,Мёртвая кукуруза,Ölü Mısır,枯萎的玉米,枯萎的玉米
+plantedCornDeadMedium,,,Dead Corn Plant (Medium),false,,Dead Corn (Medium),Toter Mais (Mittel),Maíz muerto (Mediano),Maïs mort (Moyen),Mais morto (Medio),枯れたトウモロコシ（中）,죽은 옥수수 (중간),Martwa kukurydza (Średnia),Milho morto (Médio),Мёртвая кукуруза (Средняя),Ölü Mısır (Orta),枯萎的玉米（中型）,枯萎的玉米（中型）
+plantedCornDeadSmall,,,Dead Corn Plant (Small),false,,Dead Corn (Small),Toter Mais (Klein),Maíz muerto (Pequeño),Maïs mort (Petit),Mais morto (Piccolo),枯れたトウモロコシ（小）,죽은 옥수수 (작은),Martwa kukurydza (Mała),Milho morto (Pequeno),Мёртвая кукуруза (Маленькая),Ölü Mısır (Küçük),枯萎的玉米（小型）,枯萎的玉米（小型）
+plantedCottonDead,,,Dead Cotton Plant,false,,Dead Cotton,Tote Baumwolle,Algodón muerto,Coton mort,Cotone morto,枯れた綿,죽은 목화,Martwa bawełna,Algodão morto,Мёртвый хлопок,Ölü Pamuk,枯萎的棉花,枯萎的棉花
+plantedHopDead,,,Dead Hop Plant,false,,Dead Hops,Toter Hopfen,Lúpulo muerto,Houblon mort,Luppolo morto,枯れたホップ,죽은 홉,Martwy chmiel,Lúpulo morto,Мёртвый хмель,Ölü Şerbetçiotu,枯萎的啤酒花,枯萎的啤酒花
+plantedPotatoDead,,,Dead Potato Plant,false,,Dead Potatoes,Tote Kartoffeln,Patatas muertas,Pommes de terre mortes,Patate morte,枯れたジャガイモ,죽은 감자,Martwe ziemniaki,Batatas mortas,Мёртвый картофель,Ölü Patates,枯萎的土豆,枯萎的土豆
+plantedYuccaDead,,,Dead Yucca Plant,false,,Dead Yucca,Toter Yucca,Yuca muerta,Yucca mort,Yucca morto,枯れたユッカ,죽은 유카,Martwa jukka,Yucca morta,Мёртвая юкка,Ölü Yuka,枯萎的丝兰,枯萎的絲蘭

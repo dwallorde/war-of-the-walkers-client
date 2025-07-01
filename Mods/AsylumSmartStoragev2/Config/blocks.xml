@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<append xpath="/blocks">
+		<block name="smartDumpChest">
+			<property name="Extends" value="cntSteelWritableCrate" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="cntSteelWritableCrate" />
+			<property name="CustomIconTint" value="0,255,0" />
+			<property name="DescriptionKey" value="smartDumpChestDesc" />
+			<property name="Class" value="CompositeTileEntity" />
+			<property name="Material" value="Mmetal" />
+			<property name="StabilitySupport" value="false" />
+			<property name="FilterTags" value="MC_playerBlocks,SC_loot" />
+			<property name="SortOrder1" value="70" />
+			<property name="SortOrder2" value="0050" />
+			<property name="Group" value="Building,advBuilding" />
+			<drop event="Harvest" name="smartDumpChest" count="1" />
+			<drop event="Destroy" name="smartDumpChest" count="1" />
+			<drop event="Fall" name="smartDumpChest" count="1" />
+			<property name="EconomicValue" value="0" />
+			<property name="EconomicBundleSize" value="1" />
+			<property name="SellableToTrader" value="false" />
+			<property name="UnlockedBy" value="perkAdvancedEngineering" />
+			<property name="Tags" value="workbench" />
+		</block>
+	</append>
+</configs>

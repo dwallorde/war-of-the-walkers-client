@@ -1,0 +1,6 @@
+<config>
+    <!-- Dyes stack (100 per stack) -->
+    <append xpath="//item_modifier[starts-with(@name, 'modDye')]">
+        <property name="Stacknumber" value="100" />
+    </append>
+</config>

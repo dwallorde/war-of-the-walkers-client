@@ -1,0 +1,13 @@
+{
+  "killingBlowDismember": true,
+  "shotgunDismember": true,
+  "shotgunGibs": true,
+  "bloodSprayOnHit": true,
+  "separateLimbsEnabled": true,
+  "corpseDespawnGoreEffect": true,
+  "BloodSpillEffectEnabled": true,
+  "BloodSplatsStay": true,
+  "BloodSplatSizeMultipler": 4.0,
+  "BloodSplatLimitPerChunk": 15,
+  "BloodSplatLimitTotal": 40
+}

@@ -1,0 +1,311 @@
+<config>
+<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@buff='buffStatusHungry01']/requirement[@name='StatComparePercCurrentToMax'][@stat='Food']/@value">0.25</set>
+<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@buff='buffStatusHungry02']/requirement[@name='StatComparePercCurrentToMax'][@stat='Food']/@value">0.15</set>
+<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@buff='buffStatusThirsty01']/requirement[@name='StatComparePercCurrentToMax'][@stat='Water']/@value">0.25</set>
+<set xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate'][@buff='buffStatusThirsty02']/requirement[@name='StatComparePercCurrentToMax'][@stat='Water']/@value">0.15</set>
+
+<remove xpath="/buffs/buff[@name='buffBurnt_Storm']"/>
+<remove xpath="/buffs/buff[@name='buffDesert_Storm']"/>
+<remove xpath="/buffs/buff[@name='buffSnow_Storm']"/>
+<remove xpath="/buffs/buff[@name='buffWasteland_Storm']"/>
+<append xpath="/buffs">
+	<buff name="buffBurntStormProof" name_key="Burnt Forest Storm Protection" description_key="You are now immune to burnt forest biome storm damage" icon="ui_game_symbol_storm" icon_color="0,255,0">
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".buffBurntStormProofDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBurntStormProofDisplay" operation="set" value="@$buffBurntStormProofDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffBurntStormProofDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBurntStormProof">
+				<requirement name="CVarCompare" cvar="$buffBurntStormProofDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".buffBurntStormProofDisplay,$buffBurntStormProofDuration"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffDesertStormProof" name_key="Desert Storm Protection" description_key="You are now immune to desert biome storm damage" icon="ui_game_symbol_storm" icon_color="0,255,0">
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".buffDesertStormProofDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDesertStormProofDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDesertStormProofDisplay" operation="set" value="@$buffDesertStormProofDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDesertStormProofDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDesertStormProof">
+				<requirement name="CVarCompare" cvar="$buffDesertStormProofDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".buffDesertStormProofDisplay,$buffDesertStormProofDuration"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffSnowStormProof" name_key="Snow Storm Protection" description_key="You are now immune to snow biome storm damage" icon="ui_game_symbol_storm" icon_color="0,255,0">
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".buffSnowStormProofDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffSnowStormProofDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffSnowStormProofDisplay" operation="set" value="@$buffSnowStormProofDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffSnowStormProofDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSnowStormProof">
+				<requirement name="CVarCompare" cvar="$buffSnowStormProofDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".buffSnowStormProofDisplay,$buffSnowStormProofDuration"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffWastelandStormProof" name_key="Wasteland Storm Protection" description_key="You are now immune to wasteland biome storm damage" icon="ui_game_symbol_storm" icon_color="0,255,0">
+		<stack_type value="replace"/>
+		<duration value="0"/>
+		<display_value value=".buffWastelandStormProofDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffWastelandStormProofDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffWastelandStormProofDisplay" operation="set" value="@$buffWastelandStormProofDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffWastelandStormProofDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffWastelandStormProof">
+				<requirement name="CVarCompare" cvar="$buffWastelandStormProofDuration" operation="LTE" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".buffWastelandStormProofDisplay,$buffWastelandStormProofDuration"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffBurnt_Storm" name_key="buffBurnt_StormName" description_key="buffBurnt_StormDesc" icon="ui_game_symbol_storm" icon_color="150,100,50" icon_blink="true">
+		<damage_type value="weather"/>
+		<update_rate value="1"/>
+		<display_value value=".StormTimerDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group><!-- Start/stop -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerGrace" operation="set" value="17"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$StormDamage" operation="set" value="-11"/><!-- Set to -2 for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="10" effect_name="StormBurnt">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="!HasBuff" buff="buffBurntStormProof"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="10" effect_name="StormBurnt"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffBurnt_Storm"/>
+		</effect_group>
+
+		<effect_group><!-- Grace Time -->
+			<requirement name="!HasBuff" buff="buffBurntStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="GT" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerGrace" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerGrace"/>
+		</effect_group>
+
+		<effect_group><!-- Damage Time -->
+			<requirement name="!HasBuff" buff="buffBurntStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerDMG"/>
+		</effect_group>
+
+		<effect_group><!-- Reduce health and play pain sounds -->
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffBurntStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="EQ" value="5"/>
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamageTotal" operation="add" value="@$StormDamage"/> --><!-- Uncomment for DMG+DMG setup -->
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamageTotal"/> --><!-- Uncomment for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage"/><!-- Remove for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#painsm"/>
+		</effect_group>
+
+		<effect_group><!-- Rest Damage Timer -->
+			<requirement name="!HasBuff" buff="buffBurntStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+		</effect_group>
+
+		<effect_group><!-- Remove CVars -->
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".StormTimerGrace,.StormTimerDMG,$StormDamage,$StormDamageTotal,.StormTimerDisplay"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffDesert_Storm" name_key="buffDesert_StormName" description_key="buffDesert_StormDesc" icon="ui_game_symbol_storm" icon_color="200,200,100" icon_blink="true">
+		<damage_type value="weather"/>
+		<update_rate value="1"/>
+		<display_value value=".StormTimerDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group><!-- Start/stop -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerGrace" operation="set" value="15"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$StormDamage" operation="set" value="-12"/><!-- Set to -3 for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="10" effect_name="StormDesert">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="!HasBuff" buff="buffDesertStormProof"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="10" effect_name="StormDesert"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffDesert_Storm"/>
+		</effect_group>
+
+		<effect_group><!-- Grace Time -->
+			<requirement name="!HasBuff" buff="buffDesertStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="GT" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerGrace" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerGrace"/>
+		</effect_group>
+
+		<effect_group><!-- Damage Time -->
+			<requirement name="!HasBuff" buff="buffDesertStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerDMG"/>
+		</effect_group>
+
+		<effect_group><!-- Reduce health and play pain sounds -->
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffDesertStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="EQ" value="5"/>
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamageTotal" operation="add" value="@$StormDamage"/> --><!-- Uncomment for DMG+DMG setup -->
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamageTotal"/> --><!-- Uncomment for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage"/><!-- Remove for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#painsm"/>
+		</effect_group>
+
+		<effect_group><!-- Rest Damage Timer -->
+			<requirement name="!HasBuff" buff="buffDesertStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+		</effect_group>
+
+		<effect_group><!-- Remove CVars -->
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".StormTimerGrace,.StormTimerDMG,$StormDamage,$StormDamageTotal,.StormTimerDisplay"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffSnow_Storm" name_key="buffSnow_StormName" description_key="buffSnow_StormDesc" icon="ui_game_symbol_storm" icon_color="100,100,255" icon_blink="true">
+		<damage_type value="weather"/>
+		<update_rate value="1"/>
+		<display_value value=".StormTimerDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group><!-- Start/stop -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerGrace" operation="set" value="13"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$StormDamage" operation="set" value="-13"/><!-- Set to -4 for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="10" effect_name="StormSnow">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="!HasBuff" buff="buffSnowStormProof"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="10" effect_name="StormSnow"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffSnow_Storm"/>
+		</effect_group>
+
+		<effect_group><!-- Grace Time -->
+			<requirement name="!HasBuff" buff="buffSnowStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="GT" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerGrace" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerGrace"/>
+		</effect_group>
+
+		<effect_group><!-- Damage Time -->
+			<requirement name="!HasBuff" buff="buffSnowStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerDMG"/>
+		</effect_group>
+
+		<effect_group><!-- Reduce health and play pain sounds -->
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffSnowStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="EQ" value="5"/>
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamageTotal" operation="add" value="@$StormDamage"/> --><!-- Uncomment for DMG+DMG setup -->
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamageTotal"/> --><!-- Uncomment for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage"/><!-- Remove for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#painsm"/>
+		</effect_group>
+
+		<effect_group><!-- Rest Damage Timer -->
+			<requirement name="!HasBuff" buff="buffSnowStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+		</effect_group>
+
+		<effect_group><!-- Remove CVars -->
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".StormTimerGrace,.StormTimerDMG,$StormDamage,$StormDamageTotal,.StormTimerDisplay"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="buffWasteland_Storm" name_key="buffWasteland_StormName" description_key="buffWasteland_StormDesc" icon="ui_game_symbol_storm" icon_color="100,255,100" icon_blink="true">
+		<damage_type value="weather"/>
+		<update_rate value="1"/>
+		<display_value value=".StormTimerDisplay"/>
+		<display_value_format value="time"/>
+
+		<effect_group><!-- Start/stop -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerGrace" operation="set" value="11"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$StormDamage" operation="set" value="-14"/><!-- Set to -5 for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="10" effect_name="StormWasteland">
+				<requirement name="!HasBuff" buff="god"/>
+				<requirement name="!HasBuff" buff="buffWastelandStormProof"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="10" effect_name="StormWasteland"/>
+			<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffWasteland_Storm"/>
+		</effect_group>
+
+		<effect_group><!-- Grace Time -->
+			<requirement name="!HasBuff" buff="buffWastelandStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="GT" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerGrace" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerGrace"/>
+		</effect_group>
+
+		<effect_group><!-- Damage Time -->
+			<requirement name="!HasBuff" buff="buffWastelandStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDisplay" operation="set" value="@.StormTimerDMG"/>
+		</effect_group>
+
+		<effect_group><!-- Reduce health and play pain sounds -->
+			<requirement name="!HasBuff" buff="god"/>
+			<requirement name="!HasBuff" buff="buffWastelandStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerGrace" operation="LTE" value="0"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="EQ" value="5"/>
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$StormDamageTotal" operation="add" value="@$StormDamage"/> --><!-- Uncomment for DMG+DMG setup -->
+			<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamageTotal"/> --><!-- Uncomment for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddHealth" health="@$StormDamage"/><!-- Remove for DMG+DMG setup -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="player#painsm"/>
+		</effect_group>
+
+		<effect_group><!-- Rest Damage Timer -->
+			<requirement name="!HasBuff" buff="buffWastelandStormProof"/>
+			<requirement name="CVarCompare" cvar=".StormTimerDMG" operation="LTE" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".StormTimerDMG" operation="set" value="6"/>
+		</effect_group>
+
+		<effect_group><!-- Remove CVars -->
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveCVar" cvar=".StormTimerGrace,.StormTimerDMG,$StormDamage,$StormDamageTotal,.StormTimerDisplay"/>
+		</effect_group>
+	</buff>
+</append>
+
+
+
+</config>

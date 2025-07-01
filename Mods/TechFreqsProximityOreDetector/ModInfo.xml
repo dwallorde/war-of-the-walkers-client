@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="TechFreqsProximityOreDetector" />
+	<DisplayName value="TechFreqsProximityOreDetector" />
+	<Description value="Adds the TechFreqs Proximity Ore Detector to find iron, coal, lead, oil deposits and Potassium Nitrate nearby 15m, pressing numpad 6 to activate ordeactive but configurable with config json." />
+	<Author value="TechFreq" />
+	<Version value="1.4" />
+	<Website value="https://beacons.ai/techfreq"/>
+</xml>
