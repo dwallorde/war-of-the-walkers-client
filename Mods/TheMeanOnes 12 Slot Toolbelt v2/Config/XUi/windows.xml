@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<set xpath="/windows/window[@name='windowToolbelt']/@pos">-440,92</set>
+	<set xpath="/windows/window[@name='windowToolbelt']">
+		<rect>
+			<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[darkGrey]" type="sliced" fillcenter="false" on_press="true" gamepad_selectable="false"/>
+			<rect pos="3,-3" controller="Toolbelt">
+				<grid depth="10" name="inventory" rows="1" cols="12" pos="0,0" cell_width="75" cell_height="75" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+				<button depth="3" name="btnClearInventory1" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="950,-32" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{creativewindowopen}"/>
+				<grid depth="10" name="inventory2" rows="1" cols="30" pos="0,82" cell_width="75" cell_height="75" repeat_content="true" visible="{secondrow}">
+					<item_stack name="0"/>
+				</grid>
+				<button depth="3" name="btnClearInventory2" sprite="ui_game_symbol_trash" tooltip_key="lblClearInventory" pos="800,50" style="icon32px, press, hover" pivot="center" sound="[paging_click]" visible="{# creativewindowopen and secondrow}"/>
+			</rect>
+			<grid depth="20" name="numberLabels" rows="1" cols="12" pos="9,-5" cell_width="75" cell_height="20" repeat_content="false">
+				<label name="label1" text="1" alignment="left" font_size="19" color="[white]"/>
+				<label name="label2" text="2" alignment="left" font_size="19" color="[white]"/>
+				<label name="label3" text="3" alignment="left" font_size="19" color="[white]"/>
+				<label name="label4" text="4" alignment="left" font_size="19" color="[white]"/>
+				<label name="label5" text="5" alignment="left" font_size="19" color="[white]"/>
+				<label name="label6" text="6" alignment="left" font_size="19" color="[white]"/>
+				<label name="label7" text="7" alignment="left" font_size="19" color="[white]"/>
+				<label name="label8" text="8" alignment="left" font_size="19" color="[white]"/>
+				<label name="label9" text="9" alignment="left" font_size="19" color="[white]"/>
+				<label name="label10" text="10" alignment="left" font_size="19" color="[white]"/>
+				<label name="label11" text="11" alignment="left" font_size="19" color="[white]"/>
+				<label name="label12" text="12" alignment="left" font_size="19" color="[white]"/>
+			</grid>
+			<sprite depth="1" pos="0,6" height="8" width="903" color="[mediumGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced"/>
+			<sprite depth="9" pos="0,6" height="8" width="903" color="[darkGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced" fillcenter="false"/>
+			<sprite depth="4" pos="0,6" height="8" width="903" color="0,255,127,200" globalopacity="false" type="filled" fill="{xp}"/>
+			<rect pos="0,-77" width="452" height="8" controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
+				<sprite depth="1" color="[mediumGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced"/>
+				<sprite depth="9" color="[darkGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced" fillcenter="false"/>
+				<filledsprite depth="5" pos="1,0" width="452" name="BarContent" color="0,255,0,200" globalopacity="false" type="filled" fill="0"/>
+			</rect>
+			<rect pos="451,-77" width="451" height="8" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
+				<sprite depth="1" color="[mediumGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced"/>
+				<sprite depth="9" color="[darkGrey]" sprite="menu_empty2px" globalopacity="false" type="sliced" fillcenter="false"/>
+				<filledsprite depth="5" pos="1,0" width="451" name="BarContent" color="0,191,255,200" globalopacity="false" type="filled" fill="0"/>
+			</rect>
+		</rect>
+	</set>
+</configs>
