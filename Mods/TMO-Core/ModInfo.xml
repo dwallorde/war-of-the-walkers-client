@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="TMO-Core"/>
+	<DisplayName value="TMO-Core"/>
+	<Version value="1.0"/>
+	<Description value="Hard dependency and library for TheMeanOne Mods, TheMeanOneDevelopments SP and additional added core features for gameplay."/>
+	<Author value="TheMeanOneMods"/>
+	<Website value="https://discord.gg/WRy7mBH7hZ"/>
+</xml>

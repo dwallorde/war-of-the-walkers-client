@@ -3,9 +3,9 @@
 	
 
 
-    <append xpath="/vehicles/vehicle">
+     <append xpath="/vehicles/vehicle">
         <property name="VehicleCameraSeat" value="true"/>
-    </append>
+    </append> 
 	
 	
 	

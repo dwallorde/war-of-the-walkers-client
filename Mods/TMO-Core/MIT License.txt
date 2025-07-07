@@ -1,0 +1,20 @@
+MIT License
+
+Copyright (c) 2025 TheMeanOneDevelopments SP 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation the rights to use, copy, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+The Software, including all scripts, assets, and configurations in the TMO-Core mod, may be used as a dependency for other mods, 
+provided that the original TMO-Core mod remains unmodified and is distributed as provided by TheMeanOneDevelopments/TheMeanOne Mods. Any modifications to the TMO-Core mod’s scripts, assets, or configurations, or redistribution of modified versions, 
+will NOT be permitted under any circumstances unless there is an editable file provided in the XML documentation to change gameplay to fir you, and your players needs.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For support or inquiries, join our Discord: https://discord.gg/jvDuq9SUQR

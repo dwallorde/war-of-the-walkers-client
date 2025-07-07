@@ -1,4 +1,13 @@
 <config>
+<set xpath="/blocks/block[@name='terrDirt']/drop[@event='Harvest'][@name='resourceClayLump']/@count">44</set>
+<set xpath="/blocks/block[@name='terrForestGround']/drop[@event='Harvest'][@name='resourceClayLump']/@count">44</set>
+<set xpath="/blocks/block[@name='terrBurntForestGround']/drop[@event='Harvest'][@name='resourceClayLump']/@count">44</set>
+<set xpath="/blocks/block[@name='terrDesertGround']/drop[@event='Harvest'][@name='resourceCrushedSand']/@count">18</set>
+<set xpath="/blocks/block[@name='terrDesertGround']/drop[@event='Harvest'][@name='resourceClayLump']/@count">18</set>
+<set xpath="/blocks/block[@name='terrDirt']/drop[@event='Harvest'][@name='resourceClayLump']/@count">44</set>
+<set xpath="/blocks/block[@name='terrGravel']/drop[@event='Harvest'][@name='resourceCrushedSand']/@count">16</set>
+<set xpath="/blocks/block[@name='terrGravel']/drop[@event='Harvest'][@name='resourceRockSmall']/@count">18</set>
+
 <set xpath="/blocks/block[@name='cntLootChestHero']/property[@name='Class']/@value">Loot</set>
 <set xpath="/blocks/block[@name='cntLootChestHero']/property[@name='Tags']/@value">timecharge,perkBookworm</set>
 <remove xpath="/blocks/block[@name='cntLootChestHero']/property[@name='LockPickItem']"/>

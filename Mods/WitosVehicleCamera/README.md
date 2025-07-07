@@ -1,180 +1,98 @@
-# 🚗 Vehicle Camera Mod - Complete XML Configuration Tutorial
+# 🛞 VehicleCameraCycle - Advanced Vehicle Camera Mod for 7 Days to Die
 
-This document provides a complete guide to configuring XML files used by the Vehicle Camera Mod for *7 Days to Die*. It explains file structure, individual sections, and integration with the mod's code to adjust camera behavior in vehicles, including cinematic mode activation, shader effects, seat position corrections, and third-person camera overrides.
-
----
-
-## 📌 1. Introduction
-
-The Vehicle Camera Mod uses two primary XML files:
-
-- **CameraConfigs.xml**: Global camera configuration.
-- **vehicles.xml**: Specific vehicle properties.
-
-These files allow extensive customization without recompiling the mod code.
+🎥 First-person seat views, custom XML cameras, cinematic orbit mode, and real-time visual filters!
 
 ---
 
-## 📂 2. XML File Structure
+## 🚀 Features
 
-XML files control:
-
-- Cinematic mode and visual filters
-- Shader effects
-- Position corrections (SeatPoses)
-- Vehicle-specific properties (seat, rotation, etc.)
+- Switch between multiple vehicle camera modes with `L`
+- Enable cinematic filters with `F5`
+- First-person seat camera with optional HUD (reticle)
+- Third-person camera (native)
+- XML-defined cameras (360°, 180°, fixed)
+- Unity prefab-based cameras (`Camera`, `Camera180`, `Camera360`)
+- Cinematic orbiting camera with zoom and rotation
+- Shader-based filters using AssetBundles
 
 ---
 
-## 🔧 3. CameraConfigs.xml
+## 🎮 Controls
 
-Located at: `Mods/WitosVehicleCamera/Config/CameraConfigs.xml`
+| Key     | Action                                  |
+|---------|------------------------------------------|
+| `L`     | Cycle camera mode                        |
+| `F5`    | Change cinematic filter (if enabled)     |
+| Mouse   | Rotate in supported camera modes         |
+| Scroll  | Zoom in/out (cinematic mode only)        |
 
-### 🎬 CinematicCamera
+---
 
+## 🛠 Installation
+
+Place the mod inside your `Mods/` directory:
+
+7DaysToDie/Mods/VehicleCameraCycle/
+
+kotlin
+Copiar
+Editar
+
+Structure should look like this:
+
+VehicleCameraCycle/
+├── Config/
+│ └── CameraConfigs.xml
+├── Resources/
+│ └── yourShader.bundle
+└── VehicleCameraCycle.dll
+
+yaml
+Copiar
+Editar
+
+---
+
+## 🔧 Vehicle Camera Setup (Example)
+
+### Seat View (1st person):
 ```xml
-<CinematicCamera cinematic="true" filter="true" />
-```
+<property name="position" value="0.3,1.1,0.2" />
+<property name="rotation" value="0,180,0" />
+<property name="reticle" value="true" />
+Rear Camera:
+xml
 
-- `cinematic`: Enables cinematic orbit camera.
-- `filter`: Applies visual effects from asset bundles.
+<property name="CameraRear.CameraXMLMode" value="180" />
+<property name="CameraRear.VehicleCameraCustom" value="0,2,-5" />
+<property name="CameraRear.CameraXMLRotation" value="0,180,0" />
+Hood Camera:
+xml
 
-### 🎨 Shaders
+<property name="CameraHood.VehicleCameraCustom" value="0,1.5,2.5" />
+🎬 Enable Cinematic Mode & Filters
+In CameraConfigs.xml:
 
-```xml
-<Shaders>
-  <Shader id="NightVision" BundlePath="camerafilters.unity3d" MaterialName="NightVisionEffectMaterial" active="true" />
-</Shaders>
-```
+xml
 
-Press `F5` to toggle visual filters if active.
+<CameraConfigs>
+  <CinematicCamera cinematic="true" filter="true" />
+</CameraConfigs>
+Add filters:
+xml
 
-### 🎯 SeatPoses
+<Shader id="RetroVHS" active="true"
+        BundlePath="Shaders/vhs"
+        MaterialName="RetroMat" />
+✅ Compatible With:
+Vanilla and modded vehicles
 
-```xml
-<SeatPoses>
-  <SeatPose id="40" x="0.0" y="1.2" z="-0.24" />
-</SeatPoses>
-```
+Multiplayer
 
-| Attribute            | Description                       |
-|----------------------|-----------------------------------|
-| `id`                 | Seat pose ID used by vehicle seat.|
-| `x, y, z`            | Camera position correction.       |
+Unity prefab-based cameras
 
-### ⚙️ Other Sections
+Canvas-based HUDs (reticle)
 
-```xml
-<Commands>
-  <Command name="reloadcameraxml" />
-</Commands>
-```
-
-## 🚘 4. vehicles.xml
-
-### 🛋️ Seat Example
-
-```xml
-<property class="seat0">
-  <property name="class" value="Seat"/>
-  <property name="pose" value="40"/>
-  <property name="position" value="-0.38, 0.46, 0"/>
-  <property name="rotation" value="350, 0, 0"/>
-  <property name="VehicleThirdPerson" value="false"/>
-</property>
-```
-
----
-
-## 🛠️ 5. Code Integration
-
-### 📥 XML Loading
-
-`BuildCameraModes()` creates:
-- Seat  						<property name="VehicleCameraSeat" value="true"/>		
-- DefaultThirdPerson on off 	<property name="VehicleThirdPerson" value="false"/>
-- CinematicCamera          		<CinematicCamera cinematic="true" filter="true" />
-- Unity/CameraXML modes 		<property name="VehicleCameraModel" value="true"/>
-
-### 🔄 Seat Mode: Correction and Rotation
-
-- Reads seat position and rotation.
-- Applies corrected and rotated pose.
-
-### 🚫 Overriding DefaultThirdPerson Mode
-
-Disable the game's native third-person camera:
-
-```xml
-<property name="VehicleThirdPerson" value="false"/>
-```
-
----
-
-## 📷 6. Custom Cameras (XML)
-
-Define multiple cameras using `Camera0`, `Camera1`, etc.:
-
-```xml
-<property class="Camera0">
-    <property name="VehicleCameraCustom" value="0.0,1.0,-4"/>
-    <property name="CameraXMLMode" value="180" />
-    <property name="CameraXMLRotation" value="90,90,0" />
-</property>
-
-<property class="Camera1">
-    <property name="VehicleCameraCustom" value="0,20,0"/>
-    <property name="CameraXMLMode" value="fixed" />
-    <property name="CameraXMLRotation" value="90,90,0" />
-</property>
-
-<property class="Camera2">
-    <property name="VehicleCameraCustom" value="3,3,3"/>
-</property>
-
-add more cameras no limits
-```
-
-| Property                | Description                                  |
-|-------------------------|----------------------------------------------|
-| `VehicleCameraCustom`   | Local camera position (x,y,z).               |
-| `CameraXMLMode`         | Camera type: `180`, `fixed`, `360` (default).|
-| `CameraXMLRotation`     | Camera rotation (x,y,z) if mode is 180/fixed.|
-
-**CameraXMLMode Types:**
-- **180:** Free camera limited to 180 degrees rotation (mouse control).
-- **fixed:** Static camera.
-- **360:** Fully free camera (default).
-
----
-
-## ✅ 7. Tips and Best Practices
-
-- Define multiple cameras for spectacular views.
-- Use `VehicleThirdPerson` to toggle native third-person camera.
-- If the first-person camera looks incorrect, review the corresponding `SeatPose` corrections in `CameraConfigs.xml`.
-
----
-
-## 📃 8. Complete CameraConfigs.xml Example
-
-See detailed examples in provided sections above.
-
----
-
-## 🎮 Camera Cycling In-game
-
-Press `L` to cycle between:
-
-1. Seat (First person)
-2. Native third-person
-3. Custom cameras (`Camera0`, `Camera1`, ...)
-4. Cinematic camera (if enabled)
-
-
-
----
-
-Enjoy customizing your vehicle cameras! 
-
-Witos
+👤 Credits
+Mod created by: [Witos]
+Designed for immersive gameplay, video creation, and full vehicle camera control.

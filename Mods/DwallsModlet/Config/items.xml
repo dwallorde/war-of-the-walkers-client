@@ -2,7 +2,273 @@
 <set xpath="/items/item[@name='meleeToolShovelT2SteelShovel']/effect_group[@name='meleeToolShovelT2SteelShovel']/passive_effect[@name='AttacksPerMinute']/@value">65</set>
 <set xpath="/items/item[@name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Delay']/@value">.25</set>
 
-<append xpath="/items/item[@name='foodBurntSmoothie']">
+<remove xpath="/items/item[@name='foodBurntSmoothie']"/>
+<remove xpath="/items/item[@name='foodOasisSmoothie']"/>
+<remove xpath="/items/item[@name='foodFrostbiteSmoothie']"/>
+<remove xpath="/items/item[@name='foodAtomicSmoothie']"/>
+
+<append xpath="/items">
+<item name="foodBurntSmoothie">
+	<property name="Tags" value="food,foodSkill,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodSmoothie"/>
+	<property name="Meshfile" value="@:Other/Items/Food/masonJarBurntSmoothiePrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="EconomicValue" value="1000"/>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="jars2_grab"/>
+	<property name="SoundPlace" value="jars2_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_drinking"/>
+	</property>
+
+	<effect_group tiered="false">
+		<display_value name="dRunSpeed" value=".1"/>
+	</effect_group>
+
+	<effect_group tiered="false" name="Hazard Reducer">
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+
+			<display_value name="dDuration" value="1800"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BurntHazardTimer" operation="add" value="1800">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BurntHazardTimer" operation="set" value="5400">
+				<requirement name="CVarCompare" cvar="$BurntHazardTimer" operation="GT" value="5400"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBurnt_Hazard_Over">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/>
+				<requirement name="CVarCompare" cvar="$BiomeBadgeLevel" operation="LT" value="1"/></triggered_effect>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<!-- Setup run speed boost if not using buffBurnt_Hazard_Over -->
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+		<requirement name="!HasBuff" buff="buffBurnt_Hazard_Over"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntSmoothieRunDuration" operation="add" value="1803"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntSmoothieRunDuration" operation="set" value="5409">
+				<requirement name="CVarCompare" cvar="$buffBurntSmoothieRunDuration" operation="GT" value="5409"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBurntSmoothieRun"/>
+	</effect_group>
+	
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="add" value="1803"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="set" value="5409">
+			<requirement name="CVarCompare" cvar="$buffBurntStormProofDuration" operation="GT" value="5409"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBurntStormProof"/>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+	</effect_group>
+</item>
+
+<item name="foodOasisSmoothie">
+	<property name="Tags" value="food,foodSkill,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodSmoothie"/>
+	<property name="Meshfile" value="@:Other/Items/Food/masonJarOasisSmoothiePrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="EconomicValue" value="1000"/>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="jars2_grab"/>
+	<property name="SoundPlace" value="jars2_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_drinking"/>
+	</property>
+
+	<effect_group tiered="false">
+		<display_value name="dRunSpeed" value=".1"/>
+	</effect_group>
+
+	<effect_group tiered="false" name="Hazard Reducer">
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+
+			<display_value name="dDuration" value="1800"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$DesertHazardTimer" operation="add" value="1800">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$DesertHazardTimer" operation="set" value="5400">
+				<requirement name="CVarCompare" cvar="$DesertHazardTimer" operation="GT" value="5400"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDesert_Hazard_Over">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/>
+				<requirement name="CVarCompare" cvar="$BiomeBadgeLevel" operation="LT" value="2"/></triggered_effect>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<!-- Setup run speed boost if not using buffDesert_Hazard_Over -->
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+		<requirement name="!HasBuff" buff="buffDesert_Hazard_Over"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffOasisSmoothieRunDuration" operation="add" value="1803"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffOasisSmoothieRunDuration" operation="set" value="5409">
+				<requirement name="CVarCompare" cvar="$buffOasisSmoothieRunDuration" operation="GT" value="5409"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffOasisSmoothieRun"/>
+	</effect_group>
+	
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDesertStormProofDuration" operation="add" value="1803"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDesertStormProofDuration" operation="set" value="5409">
+			<requirement name="CVarCompare" cvar="$buffDesertStormProofDuration" operation="GT" value="5409"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDesertStormProof"/>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+	</effect_group>
+</item>
+
+<item name="foodFrostbiteSmoothie">
+	<property name="Tags" value="food,foodSkill,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodSmoothie"/>
+	<property name="Meshfile" value="@:Other/Items/Food/masonJarFrostbiteSmoothiePrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="EconomicValue" value="1000"/>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="jars2_grab"/>
+	<property name="SoundPlace" value="jars2_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_drinking"/>
+	</property>
+
+	<effect_group tiered="false">
+		<display_value name="dRunSpeed" value=".1"/>
+	</effect_group>
+
+	<effect_group tiered="false" name="Hazard Reducer">
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+
+			<display_value name="dDuration" value="1800"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$SnowHazardTimer" operation="add" value="1800">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$SnowHazardTimer" operation="set" value="5400">
+				<requirement name="CVarCompare" cvar="$SnowHazardTimer" operation="GT" value="5400"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSnow_Hazard_Over">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/>
+				<requirement name="CVarCompare" cvar="$BiomeBadgeLevel" operation="LT" value="3"/></triggered_effect>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<!-- Setup run speed boost if not using buffSnow_Hazard_Over -->
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+		<requirement name="!HasBuff" buff="buffSnow_Hazard_Over"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffFrostbiteSmoothieRunDuration" operation="add" value="1803"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffFrostbiteSmoothieRunDuration" operation="set" value="5409">
+				<requirement name="CVarCompare" cvar="$buffFrostbiteSmoothieRunDuration" operation="GT" value="5409"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffFrostbiteSmoothieRun"/>
+	</effect_group>
+	
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffSnowStormProofDuration" operation="add" value="1803"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffSnowStormProofDuration" operation="set" value="5409">
+			<requirement name="CVarCompare" cvar="$buffSnowStormProofDuration" operation="GT" value="5409"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSnowStormProof"/>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+	</effect_group>
+</item>
+
+<item name="foodAtomicSmoothie">
+	<property name="Tags" value="food,foodSkill,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodSmoothie"/>
+	<property name="Meshfile" value="@:Other/Items/Food/masonJarAtomicSmoothiePrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="EconomicValue" value="1000"/>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="SoundPickup" value="jars2_grab"/>
+	<property name="SoundPlace" value="jars2_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_drinking"/>
+	</property>
+
+	<effect_group tiered="false">
+		<display_value name="dRunSpeed" value=".1"/>
+	</effect_group>
+
+	<effect_group tiered="false" name="Hazard Reducer">
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="10">
+				<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+
+			<display_value name="dDuration" value="1800"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$WastelandHazardTimer" operation="add" value="1800">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$WastelandHazardTimer" operation="set" value="5400">
+				<requirement name="CVarCompare" cvar="$WastelandHazardTimer" operation="GT" value="5400"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWasteland_Hazard_Over">
+				<requirement name="CVarCompare" cvar="$BiomeProgressionOn" operation="EQ" value="1"/>
+				<requirement name="CVarCompare" cvar="$BiomeBadgeLevel" operation="LT" value="4"/></triggered_effect>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<!-- Setup run speed boost if not using buffWasteland_Hazard_Over -->
+		<requirement name="!HasBuff" buff="buffIsOnFire"/>
+		<requirement name="!HasBuff" buff="buffWasteland_Hazard_Over"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffAtomicSmoothieRunDuration" operation="add" value="1803"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffAtomicSmoothieRunDuration" operation="set" value="5409">
+				<requirement name="CVarCompare" cvar="$buffAtomicSmoothieRunDuration" operation="GT" value="5409"/></triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffAtomicSmoothieRun"/>
+	</effect_group>
+	
+	<effect_group tiered="false" name="Storm Reducer">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffWastelandStormProofDuration" operation="add" value="1803"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffWastelandStormProofDuration" operation="set" value="5409">
+			<requirement name="CVarCompare" cvar="$buffWastelandStormProofDuration" operation="GT" value="5409"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWastelandStormProof"/>
+	</effect_group>
+
+	<effect_group tiered="false">
+		<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+	</effect_group>
+</item>
+</append>
+<!-- <append xpath="/items/item[@name='foodBurntSmoothie']">
 	<effect_group tiered="false" name="Storm Reducer">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="add" value="303"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBurntStormProofDuration" operation="set" value="909">
@@ -36,5 +302,8 @@
 			<requirement name="CVarCompare" cvar="$buffWastelandStormProofDuration" operation="GT" value="909"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffWastelandStormProof"/>
 	</effect_group>
-</append>
+</append> -->
+
+<set xpath="/items/item[@name='meleeToolAxeT3Chainsaw']/effect_group[@name='meleeToolAxeT3Chainsaw']/passive_effect[@name='BlockDamage'][@operation='base_set']/@value">45</set>
+<set xpath="/items/item[@name='meleeToolPickT3Auger']/effect_group[@name='meleeToolPickT3Auger']/passive_effect[@name='BlockDamage'][@operation='base_set']/@value">40</set>
 </config>
