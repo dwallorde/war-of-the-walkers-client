@@ -1,0 +1,6 @@
+<configs>
+  <append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+    <window name="VehicleModeStatusWindow" anchor="CenterTop" />
+    <window name="VehicleModeActiveWindow" anchor="CenterTop" />
+	</append>
+</configs>

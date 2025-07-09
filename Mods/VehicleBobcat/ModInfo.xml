@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="Bobcat" /> <!-- Your Unique Mod Name Id -->
+    <DisplayName value="Bobcat" /> <!-- For Mods name -->
+    <Version value="1.0" compat="V1"/> <!-- Game Version in this Format only -->
+    <Description value="Adds an Bobcat to the game" /> <!-- (Optional) More text to show on UIs -->
+    <Author value="Jonathan Stanley" />
+    <Website value="https://community.7daystodie.com"/> 
+</xml>

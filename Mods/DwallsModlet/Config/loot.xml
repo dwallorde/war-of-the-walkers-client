@@ -1,0 +1,6 @@
+<config>
+<set xpath="/lootcontainers/lootcontainer[@name='vehicleBicycle']/@size">5,3</set>
+<set xpath="/lootcontainers/lootcontainer[@name='vehicleMinibike']/@size">7,5</set>
+<set xpath="/lootcontainers/lootcontainer[@name='vehicleMotorcycle']/@size">9,9</set>
+<set xpath="/lootcontainers/lootcontainer[@name='vehicle4x4Truck']/@size">10,9</set>
+</config>

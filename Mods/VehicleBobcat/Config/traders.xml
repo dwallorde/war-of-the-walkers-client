@@ -1,0 +1,9 @@
+<configs>
+	<append xpath="/traders/trader_item_groups/trader_item_group[@name='schematicsVehiclesMods']">
+		<item name="vehicleBobcatPlaceableSchematic"/>
+        <item name="modVehicleBucket3Schematic"/>
+        <item name="modVehicleBucket5Schematic"/>
+        <item name="modVehicleDrillSchematic"/>
+        <item name="modTractionControlSchematic"/>
+	</append>
+</configs>

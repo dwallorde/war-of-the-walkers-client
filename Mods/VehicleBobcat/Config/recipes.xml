@@ -1,0 +1,39 @@
+<configs>
+  <append xpath="/recipes">
+    <recipe name="vehicleBobcatPlaceable" count="1" craft_time="210" craft_area="workbench" tags="learnable,workbenchCrafting">
+		  <ingredient name="vehicleWheels" count="4"/>
+		  <ingredient name="vehicleTruck4x4Chassis" count="1"/>
+		  <ingredient name="vehicleTruck4x4Accessories" count="1"/>
+		  <ingredient name="smallEngine" count="1"/>
+		  <ingredient name="carBattery" count="1"/>
+	  </recipe>
+
+    <recipe name="modVehicleBucket3" count="1" craft_time="60" craft_area="workbench" tags="learnable,workbenchCrafting">
+		  <ingredient name="resourceForgedSteel" count="10"/>
+	    <ingredient name="resourceMetalPipe" count="10"/>
+	    <ingredient name="resourceScrapPolymers" count="10"/>
+	    <ingredient name="resourceMechanicalParts" count="4"/>
+	  </recipe>
+
+    <recipe name="modVehicleBucket5" count="1" craft_time="60" craft_area="workbench" tags="learnable,workbenchCrafting">
+		  <ingredient name="resourceForgedSteel" count="10"/>
+	    <ingredient name="resourceMetalPipe" count="10"/>
+	    <ingredient name="resourceScrapPolymers" count="10"/>
+	    <ingredient name="resourceMechanicalParts" count="4"/>
+	  </recipe>
+
+    <recipe name="modVehicleDrill" count="1" craft_time="60" craft_area="workbench" tags="learnable,workbenchCrafting">
+		  <ingredient name="resourceForgedSteel" count="10"/>
+	    <ingredient name="resourceMetalPipe" count="10"/>
+	    <ingredient name="resourceScrapPolymers" count="10"/>
+	    <ingredient name="resourceMechanicalParts" count="4"/>
+	  </recipe>
+
+    <recipe name="modTractionControl" count="1" craft_time="60" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="resourceSpring" count="20"/>
+      <ingredient name="resourceForgedSteel" count="10"/>
+      <ingredient name="resourceOil" count="5"/>
+      <ingredient name="resourceMetalPipe" count="30"/>
+	  </recipe>
+  </append>
+</configs>

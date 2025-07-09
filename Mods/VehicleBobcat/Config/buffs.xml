@@ -1,0 +1,9 @@
+<configs>
+  <append xpath="/buffs">
+    <buff name="buffNoFallingBlockDamage" name_key="" description_key="buffNoFallingBlockDamage" remove_on_death="true" hidden="true">
+			<effect_group>
+				<passive_effect name="FallingBlockDamage" operation="base_set" value="0"/>
+			</effect_group>
+		</buff>
+  </append>
+</configs>
