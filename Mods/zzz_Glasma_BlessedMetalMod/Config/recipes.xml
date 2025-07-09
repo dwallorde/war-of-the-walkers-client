@@ -1,0 +1,9 @@
+<configs>
+  <append xpath="/recipes">
+    <recipe name="modGunMeleeBlessedMetal" count="1" craft_area="workbench" tags="learnable, workbenchCrafting">
+      <ingredient name="resourceSilverNugget" count="1"/>
+      <ingredient name="resourceForgedSteel" count="10"/>
+      <ingredient name="resourceLegendaryParts" count="1"/>
+    </recipe>
+  </append>
+</configs>

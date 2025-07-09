@@ -1,0 +1,15 @@
+<configs>
+
+  <!-- Add Blessed Metal Schematic to schematic tier 3 group -->
+  
+	<append xpath="//lootgroup[@name='schematicsModsAndGeneralT0']">
+		<item name="modGunMeleeBlessedMetalSchematic"/>
+    </append>
+
+  <!-- Add Blessed Metal mod to weapon mod tier 3 group --> 
+  
+	<append xpath="//lootgroup[@name='modGunT1']">
+		<item name="modGunMeleeBlessedMetal"/>
+	</append>
+	  
+</configs>

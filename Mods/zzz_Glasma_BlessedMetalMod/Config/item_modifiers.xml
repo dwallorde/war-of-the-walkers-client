@@ -1,0 +1,15 @@
+<configs>
+  <append xpath="/item_modifiers">
+    <item_modifier name="modGunMeleeBlessedMetal" installable_tags="weapon,tool" modifier_tags="specialDamage" blocked_tags="noMods" type="attachment">
+      <property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+	  <property name="CustomIcon" value="BlessedMetal"/>
+	  <property name="CustomIconTint" value="E5E4E2"/>
+      <property name="UnlockedBy" value="modGunMeleeBlessedMetalSchematic"/>
+      <property name="TraderStageTemplate" value="modsTier3"/>
+      <effect_group tiered="false">
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+        <passive_effect name="EntityDamage" operation="perc_add" value="0.50"/>
+      </effect_group>
+    </item_modifier>
+  </append>
+</configs>
