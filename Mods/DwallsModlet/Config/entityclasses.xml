@@ -1,3 +1,16 @@
 <config>
 <set xpath="/entity_classes/entity_class[@name='vehicleGyrocopter']/property[@name='LootListAlive']/@value">vehicle4x4Truck</set>
+
+<set xpath="/entity_classes/entity_class[@name='Backpack']/property[@name='TimeStayAfterDeath']/@value">86400</set>
+<set xpath="/entity_classes/entity_class[@name='DroppedVehicleContainer']/property[@name='TimeStayAfterDeath']/@value">86400</set>
+<set xpath="/entity_classes/entity_class[@name='DroppedLootContainer']/property[@name='TimeStayAfterDeath']/@value">1200</set>
+
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerRegular']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerStrong']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerBoss']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerNurse']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerLab']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerUtility']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerSoldier']/property[@name='TimeStayAfterDeath']/@value">7200</set>
+<set xpath="/entity_classes/entity_class[@name='EntityLootContainerThug']/property[@name='TimeStayAfterDeath']/@value">7200</set>
 </config>

@@ -3,6 +3,7 @@
 	  <item name="vehicleBobcatPlaceable">
 			<property name="CustomIcon" value="Bobcat"/>
 			<property name="Extends" value="vehicleMinibikePlaceable"/>
+			<property name="UnlockedBy" value="vehicleBobcatPlaceableSchematic"/>
 			<property name="Tags" value="bobcat,vehicle,varmor,vengine,vfuel,vlight,vplow,vBucket3,vBucket5,vDrill,vTractionControl,canHaveCosmetic"/> <!-- Choose available mod types -->
 			<property name="DescriptionKey" value="vehicleBobcatPlaceableDesc"/>
 			<property name="Meshfile" value="#@modfolder:Resources/BobcatPrefab.unity3d?BobcatModel"/>

@@ -48,4 +48,10 @@
 <set xpath="/blocks/block[@name='generatorbank']/property[@name='MaxPower']/@value">24500</set>
 <set xpath="/blocks/block[@name='generatorbank']/property[@name='MaxFuel']/@value">2000</set>
 <set xpath="/blocks/block[@name='generatorbank']/property[@name='OutputPerStack']/@value">200</set>
+
+<set xpath="/blocks/block[@name='autoTurret']/property[@name='Material']/@value">MmetalBladeTrap</set>
+<set xpath="/blocks/block[@name='dartTrap']/property[@name='Material']/@value">MmetalBladeTrap</set>
+<set xpath="/blocks/block[@name='electricwirerelay']/property[@name='Material']/@value">MmetalElectricalDevices</set>
+<set xpath="/blocks/block[@name='electrictimerrelay']/property[@name='Material']/@value">MmetalElectricalDevices</set>
+<set xpath="/blocks/block[@name='switch']/property[@name='Material']/@value">MmetalElectricalDevices</set>
 </config>
