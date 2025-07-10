@@ -2,15 +2,15 @@
   <append xpath="/windows">
     <window name="VehicleModeStatusWindow" anchor="RightCenter" visible="true" normal_color="[iconColor]" cursor_area="true">
       <rect pos="0,0">
-        <sprite depth="1010" name="bobcatStatusBG" sprite="BobcatStatusBGNone" type="sliced" pos="740,-870" width="175" height="60"/>
-        <label depth="1011" name="bobcatStatusLabel" text="None" justify="center" width="170" height="30" pos="740, -888"/>
+        <sprite depth="1010" name="bobcatStatusBG" sprite="" type="sliced" pos="740,-870" width="175" height="60"/>
+        <label depth="1011" name="bobcatStatusLabel" text="" justify="center" width="170" height="30" pos="740, -888"/>
       </rect>
     </window>
 
     <window name="VehicleModeActiveWindow" anchor="RightCenter" visible="true" normal_color="[iconColor]" cursor_area="true">
       <rect pos="0,0">
-        <sprite depth="1010" name="bobcatActiveBG" sprite="BobcatStatusBGNone" type="sliced" pos="740,-810" width="175" height="60"/>
-        <label depth="1011" name="bobcatActiveLabel" text="None" justify="center" width="170" height="30" pos="740, -828"/>
+        <sprite depth="1010" name="bobcatActiveBG" sprite="" type="sliced" pos="740,-810" width="175" height="60"/>
+        <label depth="1011" name="bobcatActiveLabel" text="" justify="center" width="170" height="30" pos="740, -828"/>
       </rect>
     </window>
   </append>

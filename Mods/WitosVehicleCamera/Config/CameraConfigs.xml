@@ -29,7 +29,7 @@
 
 
  <!-- CinematicCamera ON OFF -->
-	<CinematicCamera cinematic="false" filter="false" />
+	<CinematicCamera cinematic="true" filter="true" />
  
  <!-- shaders -->
   <Shaders>

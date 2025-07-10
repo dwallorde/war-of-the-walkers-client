@@ -16,6 +16,8 @@
 	<setting key="EnableZombieRagdoll">true</setting> <!-- Enable drill/bucket to ragdoll zombies -->
 	<setting key="EnableTractionControl">true</setting> <!-- Enables better traction when digging -->
 	<setting key="AllowTraderBlockDestruction">false</setting> <!-- Allows trader areas to be destroyed by the bobcat actions -->
+	<setting key="EnableUI">true</setting> <!-- Enables visible UI buttons on entering/exiting bobcat -->
+	<setting key="EnableStatusLights">false</setting> <!-- Enables status lights on the back of the bobcat -->
 	
 	
 	<!-- Feature Values -->
