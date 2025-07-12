@@ -4,6 +4,7 @@
     <item name="modVehicleBucket5Schematic"/>
     <item name="modVehicleDrillSchematic"/>
     <item name="modTractionControlSchematic"/>
+    <item name="vehicleBobcatPlaceableSchematic"/>
   </append>
 
   <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT1']">
@@ -11,6 +12,7 @@
     <item name="modVehicleBucket5Schematic"/>
     <item name="modVehicleDrillSchematic"/>
     <item name="modTractionControlSchematic"/>
+    <item name="vehicleBobcatPlaceableSchematic"/>
   </append>
 
   <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT2']">
@@ -18,7 +20,7 @@
     <item name="modVehicleBucket5Schematic"/>
     <item name="modVehicleDrillSchematic"/>
     <item name="modTractionControlSchematic"/>
-	<item name="vehicleBobcatPlaceableSchematic"/>
+    <item name="vehicleBobcatPlaceableSchematic"/>
   </append>
 
   <append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralCommon']">
@@ -26,7 +28,7 @@
     <item name="modVehicleBucket5Schematic"/>
     <item name="modVehicleDrillSchematic"/>
     <item name="modTractionControlSchematic"/>
-	<item name="vehicleBobcatPlaceableSchematic"/>
+    <item name="vehicleBobcatPlaceableSchematic"/>
   </append>
 
   <append xpath="/lootcontainers/lootgroup[@name='schematicsVehiclesCommon']">
@@ -34,6 +36,6 @@
     <item name="modVehicleBucket5Schematic"/>
     <item name="modVehicleDrillSchematic"/>
     <item name="modTractionControlSchematic"/>
-	<item name="vehicleBobcatPlaceableSchematic"/>
+    <item name="vehicleBobcatPlaceableSchematic"/>
   </append>
 </configs>

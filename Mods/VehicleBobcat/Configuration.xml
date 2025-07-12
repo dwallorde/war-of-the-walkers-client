@@ -68,6 +68,16 @@
 	<setting key="RadiatedZombieDamageMultiplier">1.0</setting>
 	<setting key="ChargedZombieDamageMultiplier">1.0</setting>
 	<setting key="InfernalZombieDamageMultiplier">1.0</setting>
+	
+	<!-- Translation Settings -->
+	<setting key="Inactive">Inactive</setting>
+	<setting key="Active">Active</setting>
+	<setting key="None">None</setting>
+	<setting key="Landscaping">Landscaping</setting>
+	<setting key="Leveling">Leveling</setting>
+	<setting key="Tunneling">Tunneling</setting>
+	<setting key="Filling">Filling</setting>
+	<setting key="Smoothing">Smoothing</setting>
 
 	<setting key="SecondsPerAttack">0.1</setting>
 

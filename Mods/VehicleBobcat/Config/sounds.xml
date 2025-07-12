@@ -19,7 +19,7 @@
     <SoundDataNode name="Bobcat_Silence">
       <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/>
       <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
-			<!-- <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+	<!-- <AudioSource name="Sounds/AudioSource_WeaponFire"/>
       <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/> -->
 			<Noise ID="5" noise="200" time="2" heat_map_strength="0" heat_map_time="0"/>
 			<AudioClip ClipName="#@modfolder:Resources/SilencePrefab.unity3d?Silence"/>
