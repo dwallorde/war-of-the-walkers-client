@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+
+<append xpath="/Sounds">
+
+	
+<SoundDataNode name="M9pistol_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="80" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_fire"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_fire01"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_fire02"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_fire03"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="400"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="M9pistol_silen_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="17" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_silen_fire"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_silen_fire01"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?M9pistol_silen_fire02"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="400"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRsmg5_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="80" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_fire3"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_fire4"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="400"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRsmg5_silen_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="17" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_silen_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_silen_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsmg5_silen_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="400"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRmagnum44_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="120" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRmagnum44_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRmagnum44_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRmagnum44_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRDEagle44_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="120" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRDEagle44_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRDEagle44_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRDEagle44_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRpumpSG_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="120" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRpumpSG_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRpumpSG_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRpumpSG_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRpumpSG_silen_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="30" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRpumpSG_silen_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRpumpSG_silen_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRpumpSG_silen_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRtacAR_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="105" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRtacAR_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRtacAR_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRtacAR_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRtacAR_silen_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="20" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRtacAR_silen_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRtacAR_silen_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRtacAR_silen_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRm60_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="105" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRm60_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRm60_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRm60_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRm60_silen_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="20" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRm60_silen_fire"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+
+<SoundDataNode name="VRak47_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="100" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRak47_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRak47_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRak47_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRhuntingrifle_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="110" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRhuntingrifle_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRhuntingrifle_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRhuntingrifle_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRleveraction_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="120" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRleveraction_fire1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRleveraction_fire2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRleveraction_fire3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+
+<SoundDataNode name="VRleveraction_silen_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="28" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRleveraction_silen_fire"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="VRsniper_fire"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="120" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?VRsniper_fire"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+</append>
+
+</configs>

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+
+		<!--	FLASHLIGHT		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?IZY_PISTOL_MAGNUM44val_flashlight.Prefab"/>
+		</item_property_overrides>
+
+	</append>
+
+		<!--	Longbarrel		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBarrelExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-DRUM 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-EXT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+
+		
+	</append>
+
+			<!--	FORGRIP 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+		
+
+		
+	</append>
+
+		<!--	RET-STOCK 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunRetractingStock']">
+	
+			
+	</append>
+
+		<!--	FLASHLIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+			
+	</append>
+
+		<!--	LASER   	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+	
+			
+	</append>
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="ScopeCameraOffset" value="-.0016,-.0205,.012"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="ScopeCameraOffset" value="-.0004,-.033,-.03"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVulture">
+			<property name="ScopeCameraOffset" value="-.0016,-.0415,.04"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="ScopeCameraOffset" value=".0102,-.0522,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="ScopeCameraOffset" value="0,-.031,.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT3AutoShotgun">
+			<property name="ScopeCameraOffset" value=".0115,-.0348,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT1HuntingRifle">
+			<property name="ScopeCameraOffset" value="-.0001,.018,.2"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeCameraOffset" value=".0003,-.0045,0"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifle">
+			<property name="ScopeCameraOffset" value="-.0039,-.033,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47">
+			<property name="ScopeCameraOffset" value="-.0077,-.0503,.08"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="ScopeCameraOffset" value="-.0016,-.0118,.04"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60">
+			<property name="ScopeCameraOffset" value=".001,-.039,.08"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightA']">
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="ScopeCameraOffset" value="-.0016,-.0205,-.05"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="ScopeCameraOffset" value="-.0004,-.0345,-.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVulture">
+			<property name="ScopeCameraOffset" value="-.0011,-.0378,-.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="ScopeCameraOffset" value=".0102,-.046,-.03"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="ScopeCameraOffset" value="0,-.0302,.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT3AutoShotgun">
+			<property name="ScopeCameraOffset" value=".0115,-.0376,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT1HuntingRifle">
+			<property name="ScopeCameraOffset" value="-.0001,.016,.14"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeCameraOffset" value=".0003,-.0014,0"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifle">
+			<property name="ScopeCameraOffset" value="-.0037,-.0325,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47">
+			<property name="ScopeCameraOffset" value="-.0076,-.0465,.05"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="ScopeCameraOffset" value="-.0016,-.0067,.04"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60">
+			<property name="ScopeCameraOffset" value=".001,-.0425,.08"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightB']">
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="ScopeCameraOffset" value="-.0017,-.0335,-.15"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="ScopeCameraOffset" value="-.0004,-.033,-.1"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVulture">
+			<property name="ScopeCameraOffset" value="-.0012,-.0485,-.07"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="ScopeCameraOffset" value=".0104,-.047,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="ScopeCameraOffset" value="0,-.029,.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT3AutoShotgun">
+			<property name="ScopeCameraOffset" value=".0115,-.0352,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT1HuntingRifle">
+			<property name="ScopeCameraOffset" value="0,.0166,.14"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeCameraOffset" value=".0002,-.0054,0"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifle">
+			<property name="ScopeCameraOffset" value="-.0039,-.0307,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47">
+			<property name="ScopeCameraOffset" value="-.0076,-.0525,.08"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="ScopeCameraOffset" value="-.0016,-.0098,.04"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60">
+			<property name="ScopeCameraOffset" value=".001,-.0448,.08"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+		<!--	2XSCOPE	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="ScopeCameraOffset" value="-.0017,-.0335,-.05"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3DesertVulture">
+			<property name="ScopeCameraOffset" value="-.0012,-.04,.04"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="ScopeCameraOffset" value=".0102,-.04,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="ScopeCameraOffset" value="0,-.01,.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT1HuntingRifle">
+			<property name="ScopeCameraOffset" value="0,.01,.14"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="ScopeCameraOffset" value=".0003,-.025,0"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifle">
+			<property name="ScopeCameraOffset" value="-.0038,-.03,.09"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+		<!--	Silencer 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+	
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="Sound_start" value="M9pistol_silen_fire"/>
+			<property name="Sound_loop" value="M9pistol_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="Sound_start" value="VRsmg5_silen_fire"/>
+			<property name="Sound_loop" value="VRsmg5_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT1AK47">
+			<property name="Sound_start" value="VRtacAR_silen_fire"/>
+			<property name="Sound_loop" value="VRtacAR_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="Sound_start" value="VRtacAR_silen_fire"/>
+			<property name="Sound_loop" value="VRtacAR_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunMGT3M60">
+			<property name="Sound_start" value="VRm60_silen_fire"/>
+			<property name="Sound_loop" value="VRm60_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="Sound_start" value="VRpumpSG_silen_fire"/>
+			<property name="Sound_loop" value="VRpumpSG_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunShotgunT3AutoShotgun">
+			<property name="Sound_start" value="VRpumpSG_silen_fire"/>
+			<property name="Sound_loop" value="VRpumpSG_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT1HuntingRifle">
+			<property name="Sound_start" value="VRleveraction_silen_fire"/>
+			<property name="Sound_loop" value="VRleveraction_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="Sound_start" value="VRleveraction_silen_fire"/>
+			<property name="Sound_loop" value="VRleveraction_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="gunRifleT3SniperRifle">
+			<property name="Sound_start" value="VRleveraction_silen_fire"/>
+			<property name="Sound_loop" value="VRleveraction_silen_fire"/>
+		</item_property_overrides>
+		
+	</append>
+	
+			<!--	HOLD_STYLE 1	-->
+	<append xpath="/item_modifiers/item_modifier[@name='IZYmodPistolHoldstyle01']">
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?IZY_PISTOL_M9_Holdstyle_01.Prefab"/>
+		</item_property_overrides>
+
+	</append>
+	
+			<!--	HOLD_STYLE 2	-->
+	<append xpath="/item_modifiers/item_modifier[@name='IZYmodPistolHoldstyle02']">
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_VanilaReplacer_Pack_MainResource.unity3d?IZY_PISTOL_M9_Holdstyle_02.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+	
+</addnew>
