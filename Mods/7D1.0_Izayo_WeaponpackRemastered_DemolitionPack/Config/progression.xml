@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+		<!-- Chonky's Code -->
+<config>
+
+		
+			<!--NOTE: These 3 lines do change some vanilla settings. Since the China has a quality, but vanilla-rockets doesn't-->
+<setattribute xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT4']" name="has_quality">true</setattribute>		
+<setattribute xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT4']" name="unlock_level">45,50,55,60,65,70</setattribute>	
+<setattribute xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT4']" name="icon">IZYgunT2LGLChinalakeGrenadeLauncher</setattribute>	
+			<!--/NOTE-->
+		
+		<!--Launcher's-->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT4']">
+	<unlock_entry item="IZYgunT2LGLChinalakeGrenadeLauncher" unlock_tier="1" tags="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="50,55,60,65,70,100" value="1,2,3,4,5,5" tags="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="IZYgunT3LGLXM25" unlock_tier="1" tags="IZYgunT3LGLXM25"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="IZYgunT3LGLXM25"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="IZYgunT3LGLXM25"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="IZYgunT3RocketLauncherRPG7" unlock_tier="1" tags="IZYgunT3RocketLauncherRPG7"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="IZYgunT3RocketLauncherRPG7"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="IZYgunT3RocketLauncherRPG7"/>
+</append>
+
+	<!--Grenades/Rockets-->
+		<!--25mm-->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT4']">
+	<unlock_entry item="ammo25mmGrenadeTraining" unlock_tier="1" tags="ammo25mmGrenadeTraining"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="ammo25mmGrenadeTraining"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="ammo25mmGrenadeHE" unlock_tier="1" tags="ammo25mmGrenadeHE"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="ammo25mmGrenadeHE"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="ammo25mmGrenadeFRAGS" unlock_tier="1" tags="ammo25mmGrenadeFRAGS"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="ammo25mmGrenadeFRAGS"/>
+</append>
+
+		<!--Rockets-->
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="ammoRocketRPGTraning" unlock_tier="1" tags="ammoRocketRPGTraning"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="ammoRocketRPGTraning"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="ammoRocketRPGHE" unlock_tier="2" tags="ammoRocketRPGHE"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="ammoRocketRPGHE"/>
+</append>
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/display_entry[@name_key='explosivesT5']">
+	<unlock_entry item="ammoRocketRPGIncendiary" unlock_tier="2" tags="ammoRocketRPGIncendiary"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="ammoRocketRPGIncendiary"/>
+</append>
+		
+
+</config>
+
+	
+	
+		
+
+			<!--Izayo's Code-->
+<!--
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingExplosives']">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="ammo25mmGrenadeTraining"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="ammo25mmGrenadeHE"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="ammo25mmGrenadeFRAGS"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="ammoRocketRPGTraning"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="ammoRocketRPGHE"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="60,100" value="1" tags="ammoRocketRPGIncendiary"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="IZYgunT3LGLXM25"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="IZYgunT3RocketLauncherRPG7"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="50,55,60,65,70,100" value="1,2,3,4,5,5" tags="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="IZYgunT3LGLXM25"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="IZYgunT3RocketLauncherRPG7"/>
+		</effect_group>
+	</append>
+-->
+

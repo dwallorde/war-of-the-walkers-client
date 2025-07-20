@@ -1,0 +1,65 @@
+<configs>
+		<!-- oooooooooooo  -->
+		<!-- CREATE GROUP  -->
+		<!-- oooooooooooo  -->
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT2_Demolitionist']">
+					<!-- tier 02  -->
+		<lootgroup name="groupWeaponsT2_DEMO_ChinalakeGL" count="all" loot_quality_template="QLTemplateT2">
+			<item name="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Demolitionist01']">
+					<!-- tier 03  -->
+		<lootgroup name="groupWeaponsT3_DEMO_XM25" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3LGLXM25"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT3_DEMO_RPG7" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3RocketLauncherRPG7"/>
+		</lootgroup>
+	</insertAfter>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+		<!-- Adding new weapon groups to loot groups  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT2_Ranged']">	
+		<item group="groupWeaponsT2_DEMO_ChinalakeGL"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_DEMO_XM25"/>
+		<item group="groupWeaponsT3_DEMO_RPG7"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+				<!-- QUEST REWARD DEMO GUNs  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT2']">	
+			<item name="IZYgunT2LGLChinalakeGrenadeLauncher"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+			<item name="IZYgunT3LGLXM25"/>
+			<item name="IZYgunT3RocketLauncherRPG7"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+					<!-- ADD AMMO LOOT  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT2_Demolitionist']">
+		<item name="ammo25mmGrenadeTraining" count="2,4"/>
+		<item name="ammo25mmGrenadeHE" prob="0.8" count="1,3"/>
+		<item name="ammo25mmGrenadeFRAGS" prob="0.8" count="1,3"/>
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Demolitionist']">
+		<item name="ammoRocketRPGTraning" prob="0.7" count="1,2"/>
+		<item name="ammoRocketRPGHE" prob="0.6" count="1,2"/>
+		<item name="ammoRocketRPGIncendiary" prob="0.5" count="1,2"/>
+	</insertAfter>
+
+</configs>
