@@ -17,11 +17,11 @@
 	<setting key="EnableTractionControl">true</setting> <!-- Enables better traction when digging -->
 	<setting key="AllowTraderBlockDestruction">false</setting> <!-- Allows trader areas to be destroyed by the bobcat actions -->
 	<setting key="EnableUI">true</setting> <!-- Enables visible UI buttons on entering/exiting bobcat -->
-	<setting key="EnableStatusLights">false</setting> <!-- Enables status lights on the back of the bobcat -->
+	<setting key="EnableStatusLights">true</setting> <!-- Enables status lights on the back of the bobcat -->
 	
 	
 	<!-- Feature Values -->
-	<setting key="NoneModeSpeedMultiplier">1.0</setting> <!-- Vehicle speed multiplier when driving -->
+	<setting key="NoneModeSpeedMultiplier">1.25</setting> <!-- Vehicle speed multiplier when driving -->
 	<setting key="LandscapingLowModeSpeedMultiplier">1.0</setting> <!-- Vehicle speed multiplier when digging -->
 	<setting key="LandscapingHighModeSpeedMultiplier">1.0</setting> <!-- Vehicle speed multiplier when digging -->
 	<setting key="TunnelingModeSpeedMultiplier">1.0</setting> <!-- Vehicle speed multiplier when tunneling -->
@@ -32,23 +32,38 @@
 	<setting key="ModeChangeAudioVolume">1.0</setting> <!-- Volume level of mode change clicks -->
 	<setting key="LevelingModeAudioVolume">1.0</setting> <!-- Volume level of leveling mode ground rumble -->
 	
+	<!-- Bucket Size Override ( in blocks ) -->
+	<setting key="SmallBucketHeight">2</setting>
+	<setting key="SmallBucketWidth">3</setting>
+	<setting key="SmallBucketDepth">2</setting>
+
+	<setting key="LargeBucketHeight">2</setting>
+	<setting key="LargeBucketWidth">5</setting>
+	<setting key="LargeBucketDepth">2</setting>
+	
+	<setting key="DrillHeight">4</setting>
+	<setting key="DrillWidth">4</setting>
+	<setting key="DrillDepth">3</setting>
+
+
 	<!-- Feature Values -->
-	<setting key="TerrainDamage">40</setting>
+	<setting key="TerrainDamage">60</setting>
 	<setting key="EntityDamage">40</setting> <!-- Base damage for zombies and animals -->
 	<setting key="LevelingModeFillHeight">-50</setting> <!-- -127 to 1, negative is high / positive is low  -->
 	<setting key="TerrainBlocksToSmooth">3</setting> <!-- How many blocks ahead to apply terrain smoothing in smoothing mode -->
-	<setting key="TimeToWait">1</setting> <!-- Amount of time in seconds when changing modes before the mode begins action after you stop -->
+	<setting key="TimeToWait">2</setting> <!-- Amount of time in seconds when changing modes before the mode begins action after you stop -->
 
 	<!-- Block Damage -->
 	<setting key="WoodDamageMultiplier">1.0</setting>
 	<setting key="GlassDamageMultiplier">1.0</setting>
 	<setting key="ClothDamageMultiplier">1.0</setting>
 	<setting key="FleshDamageMultiplier">1.0</setting>
-	<setting key="StoneDamageMultiplier">1.0</setting>
-	<setting key="DirtDamageMultiplier">1.0</setting>
+	<setting key="StoneDamageMultiplier">2.0</setting>
+	<setting key="DirtDamageMultiplier">2.0</setting>
 	<setting key="ConcreteDamageMultiplier">1.0</setting>
-	<setting key="MetalDamageMultiplier">1.0</setting>
+	<setting key="MetalDamageMultiplier">2.0</setting>
 	<setting key="PlantDamageMultiplier">1.0</setting>
+	<setting key="OtherDamageMultiplier">1.0</setting>
 	
 	<!-- Block Harvest Amount -->
 	<setting key="WoodHarvestMultiplier">1.0</setting>
@@ -60,6 +75,7 @@
 	<setting key="ConcreteHarvestMultiplier">1.0</setting>
 	<setting key="MetalHarvestMultiplier">1.0</setting>
 	<setting key="PlantHarvestMultiplier">1.0</setting>
+	<setting key="OtherHarvestMultiplier">1.0</setting>
 
 	<!-- Entity Damage -->
 	<setting key="ZombieDamageMultiplier">1.0</setting>
@@ -1869,6 +1885,199 @@
 		cntMailBox02VariantHelper,
 		cntMailBox03VariantHelper
 	</setting>
-	
+
+	<setting key="WoodHarvestMaterialIds">
+		Mbridge_wood,
+		Mhay,
+		MresourceWood,
+		MtrapSpikesWood,
+		MtreeWoodFull,
+		MtreeWoodLarge,
+		MtreeWoodMedium,
+		MtreeWoodSmall,
+		Mwood,
+		MwoodCatwalk,
+		MwoodMetal,
+		MwoodMetal_shapes,
+		MwoodReinforced,
+		MwoodReinforced_shapes,
+		Mwood_ladders,
+		Mwood_regular,
+		Mwood_shapes,
+		Mwood_weak,
+		Mwood_weak_shapes,
+		MBowCrossbowParts
+	</setting>
+
+	<setting key="GlassHarvestMaterialIds">
+		Mglass,
+		MglassBulletproof,
+		MresourceBrokenGlass
+	</setting>
+
+	<setting key="ClothHarvestMaterialIds">
+		Mcloth,
+		MclothStable,
+		MclothStable_shapes,
+		Mleather,
+		MleatherKnuckles,
+		Mpaper,
+		MresourceCloth,
+		MresourceLeather,
+		MresourcePaper,
+		Mweb,
+		MCardboardLoot
+	</setting>
+
+	<setting key="FleshHarvestMaterialIds">
+		MfoodRawMeat,
+		MresourceAnimalFat,
+		MresourceBone,
+		MresourceTestosteroneExtract
+	</setting>
+
+	<setting key="StoneHarvestMaterialIds">
+		Mbedrock,
+		Mboulder,
+		Mbrick,
+		Mbrick_shapes,
+		Mgravel,
+		MoreStone,
+		Mrubble,
+		Msandstone,
+		Mstone,
+		MstoneFurniture,
+		MstoneNoGlue,
+		Mstone_scrap,
+		Mstone_shapes,
+		MtwitchHordeStone
+	</setting>
+
+	<setting key="ConcreteHarvestMaterialIds">
+		Mbridge_concrete,
+		Mcobblestone,
+		Mcobblestone_shapes,
+		Mconcrete,
+		Mconcrete_shapes,
+		MrConcrete,
+		MrConcrete_shapes,
+		MresourceCement,
+		MresourceCobblestones,
+		MresourceConcreteMix
+	</setting>
+
+	<setting key="MetalHarvestMaterialIds">
+		MFuelBarrelMetal,
+		MJunkTurretParts,
+		MMotorToolParts,
+		Mbrass,
+		Mbrass_scrap,
+		Mbridge_metal,
+		Miron,
+		Miron_scrap,
+		Mlead_scrap,
+		MmeleeToolAllSteel,
+		MmeleeWpnBladeParts,
+		Mmetal,
+		MmetalBladeTrap,
+		MmetalCatwalk,
+		MmetalDrawbridge,
+		MmetalGarageDoor3x2x2,
+		MmetalGarageDoor5x3x1,
+		MmetalNoGlue,
+		Mmetal_chains,
+		Mmetal_cloth,
+		Mmetal_frame,
+		Mmetal_hard,
+		Mmetal_medium,
+		Mmetal_rebar,
+		Mmetal_shapes,
+		Mmetal_thin,
+		Mmetal_weak,
+		MoreMetal,
+		MresourceForgedIron,
+		MresourceForgedSteel,
+		MresourceMetalPipe,
+		MresourceScrapBrassLarge,
+		MresourceScrapBrassMedium,
+		MresourceScrapBrassSmall,
+		MresourceScrapIron,
+		MresourceScrapLeadLarge,
+		MresourceScrapLeadMedium,
+		MresourceScrapLeadSmall,
+		MstainlessSteel,
+		Msteel,
+		Msteel_shapes,
+		MtrapSpikesIron
+	</setting>
+
+	<setting key="PlantHarvestMaterialIds">
+		Mcactus,
+		Mcorn,
+		Mleaves,
+		MleavesStable,
+		Mmushrooms,
+		Morganic,
+		Mplants,
+		MresourceCrop,
+		MresourceYuccaFibers,
+		Mtallgrass
+	</setting>
+
+	<setting key="DirtHarvestMaterialIds">
+		MDesertGround,
+		Mdirt,
+		Mfarmland,
+		MfertilizedFarmland,
+		MfertilizedClayPlanter,
+		MfertilizedClayStable,
+		MforestGround,
+		MresourceClayLump,
+		MresourceCoal,
+		MresourceOil,
+		MresourceOilShale,
+		MresourceRockSmall,
+		MresourceCrushedSand,
+		MresourceSnowBall,
+		Msand,
+		Msnow
+	</setting>
+
+	<setting key="OtherHarvestMaterialIds">
+		MDynamite,
+		MFuelBarrelPolymer,
+		MLandMine,
+		MMachineGunParts,
+		MRifleParts,
+		MRocketLauncherParts,
+		MShotgunParts,
+		Mair,
+		MarmorHeavy,
+		MarmorMedium,
+		MbarbedFence,
+		MbarbedWire,
+		Mbridge_asphalt,
+		MdroppedBackpack,
+		MelectricParts,
+		Mfurniture,
+		MmechanicalParts,
+		MmeleeWpnBatonParts,
+		MmeleeWpnClubParts,
+		MmeleeWpnKnucklesParts,
+		MmeleeWpnSledgeParts,
+		MmeleeWpnSpearParts,
+		MoldCash,
+		Mpaint,
+		Mplastics,
+		MresourceAcid,
+		MresourceFeather,
+		MresourceScrapPolymers,
+		MresourceSilverNugget,
+		MsmallEngine,
+		MtoolBeaker,
+		MtoolBellows,
+		Mtrash,
+		Mwater
+	</setting>
 	
 </configuration>
