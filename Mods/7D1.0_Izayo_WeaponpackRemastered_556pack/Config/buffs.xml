@@ -1,0 +1,19 @@
+<configs>
+
+	<append xpath="/buffs">
+
+				<!-- OOOOOOOOOOOOOO	 MMR EFFECT    -->
+
+		<buff name="IZYGRIPSP01" hidden="true" icon="ui_game_symbol_lightbulb" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group tiered="false">
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value=".1"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".85"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="60"/>
+			</effect_group>
+		</buff>
+		
+	</append>
+
+</configs>

@@ -1,0 +1,109 @@
+<configs>
+		<!-- oooooooooooo  -->
+		<!-- CREATE GROUP  -->
+		<!-- oooooooooooo  -->
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT2_Machinegunner']">
+					<!-- tier 02  -->
+		<lootgroup name="groupWeaponsT2_MG_CAR15" count="all" loot_quality_template="QLTemplateT2">
+			<item name="IZYgunT2ARCabineCAR15"/>
+		</lootgroup>
+
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Machinegunner']">
+					<!-- tier 03  -->
+		<lootgroup name="groupWeaponsT3_MG_M4carbine" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3ARCabineM4Carbine"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT3_MG_M249" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3LMGM249FNminimi"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT3_MG_VHS2" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3BULLPUPHellionVHS2"/>
+		</lootgroup>
+
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_DeadEye']">
+					<!-- tier 03  -->
+		<lootgroup name="groupWeaponsT3_MMR_M16A2" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3MarksManRifle556M16A2DMR"/>
+		</lootgroup>
+
+	</insertAfter>
+	
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+		<!-- Adding new weapon groups to loot groups  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT2_Ranged']">	
+		<item group="groupWeaponsT2_MG_CAR15"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_MG_M4carbine"/>
+		<item group="groupWeaponsT3_MMR_M16A2"/>
+		<item group="groupWeaponsT3_MG_VHS2"/>
+		<item group="groupWeaponsT3_MG_M249"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+				<!-- QUEST REWARD 556 GUN  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT2']">	
+		<item name="IZYgunT2ARCabineCAR15"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+		<item name="IZYgunT3ARCabineM4Carbine"/>
+		<item name="IZYgunT3MarksManRifle556M16A2DMR"/>
+		<item name="IZYgunT3BULLPUPHellionVHS2"/>
+		<item name="IZYgunT3LMGM249FNminimi"/>
+	</append>
+	
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+					<!-- create AMMO GROUP  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+
+	<insertAfter xpath="//lootgroup[@name='group762mmLarge']">
+		<lootgroup name="group556ammoSmall">
+			<item name="ammo556mmBulletBall" count="6,7" loot_stage_count_mod="0.01"/>
+		</lootgroup>
+		
+		<lootgroup name="group556ammoMedium">
+			<item name="ammo556mmBulletBall" count="10,15" loot_stage_count_mod="0.01"/>
+		</lootgroup>
+		
+		<lootgroup name="group556ammoLarge">
+			<item name="ammo556mmBulletBall" count="22,30" loot_stage_count_mod="0.01"/>
+		</lootgroup>
+	</insertAfter>
+	
+				<!-- Add Ammogroup TO loot  -->
+
+	<append xpath="//lootgroup[@name='groupAmmoSmall']">	
+		<item group="group556ammoSmall"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupAmmoSmallNoArrow']">	
+		<item group="group556ammoSmall"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupAmmoMedium']">	
+		<item group="group556ammoMedium"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupAmmoMediumNoArrow']">	
+		<item group="group556ammoMedium"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupAmmoLarge']">	
+		<item group="group556ammoLarge"/>
+	</append>
+
+</configs>

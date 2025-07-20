@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+
+		<!--	Flashlight	-->
+
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+		<item_property_overrides name="IZYgunT2ARCabineCAR15">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_556_Pack_MainResource_AR_CB.unity3d?IZY_AR_CAR15_flashlight.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+	
+		<item_property_overrides name="IZYgunT3ARCabineM4Carbine">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_556_Pack_MainResource_AR_CB.unity3d?IZY_AR_M4CARBINE_grip.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3LMGM249FNminimi">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?IZY_LMG_M249_grip.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle556M16A2DMR">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_556_Pack_MainResource_AR_CB.unity3d?IZY_MMR_M16A2DMR_grip.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+	
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+	
+		<item_property_overrides name="IZYgunT2LMGLMG36">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?IZY_LMG_G36_drummag.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+	
+		<item_property_overrides name="IZYgunT1ARCabineM608SurvivalRifle">
+			<property name="ScopeCameraOffset" value="-.001,-.0171,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT2ARCabineCAR15">
+			<property name="ScopeCameraOffset" value="-.001,-.0171,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARCabineM4Carbine">
+			<property name="ScopeCameraOffset" value="-.0012,.0012,0"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4ARCabineHK416">
+			<property name="ScopeCameraOffset" value="-.0003,-.0515,.15"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT3BULLPUPHellionVHS2">
+			<property name="ScopeCameraOffset" value="-.00223,-.0463,.1"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BULLPUPFNF2000">
+			<property name="ScopeCameraOffset" value="-.002,-.0537,.05"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle556M16A2DMR">
+			<property name="ScopeCameraOffset" value="-.001,-.0165,-.011"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT2LMGLMG36">
+			<property name="ScopeCameraOffset" value="-.0074,-.062,.14"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3LMGM249FNminimi">
+			<property name="ScopeCameraOffset" value="-.00019,-.03945,.13"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightA']">
+	
+		<item_property_overrides name="IZYgunT1ARCabineM608SurvivalRifle">
+			<property name="ScopeCameraOffset" value="-.001,-.0171,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT2ARCabineCAR15">
+			<property name="ScopeCameraOffset" value="-.001,-.0172,-.03"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARCabineM4Carbine">
+			<property name="ScopeCameraOffset" value="-.0013,-.00134,-.008"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4ARCabineHK416">
+			<property name="ScopeCameraOffset" value="-.0004,-.0465,.15"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT3BULLPUPHellionVHS2">
+			<property name="ScopeCameraOffset" value="-.0023,-.0577,.1"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BULLPUPFNF2000">
+			<property name="ScopeCameraOffset" value="-.00198,-.0301,.05"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT2LMGLMG36">
+			<property name="ScopeCameraOffset" value="-.0075,-.0455,.14"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3LMGM249FNminimi">
+			<property name="ScopeCameraOffset" value="-.0002,-.03,.13"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightB']">
+	
+		<item_property_overrides name="IZYgunT1ARCabineM608SurvivalRifle">
+			<property name="ScopeCameraOffset" value="-.001,-.0171,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT2ARCabineCAR15">
+			<property name="ScopeCameraOffset" value="-.001,-.017,-.1"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARCabineM4Carbine">
+			<property name="ScopeCameraOffset" value="-.0008,.002,-.008"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4ARCabineHK416">
+			<property name="ScopeCameraOffset" value="-.0003,-.0455,.15"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT3BULLPUPHellionVHS2">
+			<property name="ScopeCameraOffset" value="-.00221,-.0385,.1"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BULLPUPFNF2000">
+			<property name="ScopeCameraOffset" value="-.00197,-.0408,.05"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT2LMGLMG36">
+			<property name="ScopeCameraOffset" value="-.0076,-.066,.14"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3LMGM249FNminimi">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD.tga"/>
+			<property name="ScopeCameraOffset" value="-.0002,-.0337,.11"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+	</append>
+	
+		<!--	X2SCOPE		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+	
+
+	
+		<item_property_overrides name="IZYgunT2ARCabineCAR15">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_AR_CB.unity3d?Reticle_x4x8_British_SUSATscope.png"/>
+			<property name="Zoom_max_out" value="40"/>
+			<property name="Zoom_max_in" value="40"/>
+			<property name="ScopeCameraOffset" value="-.001,-.018,-.01"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARCabineM4Carbine">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="Zoom_max_out" value="40"/>
+			<property name="Zoom_max_in" value="40"/>
+			<property name="ScopeCameraOffset" value="-.00082,-.0002,-.008"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4ARCabineHK416">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="Zoom_max_out" value="40"/>
+			<property name="Zoom_max_in" value="40"/>
+			<property name="ScopeCameraOffset" value="-.0003,-.06,.15"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT3BULLPUPHellionVHS2">
+			<property name="ScopeCameraOffset" value="-.00217,-.0348,.1"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BULLPUPFNF2000">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x2x4x8_F2000.png"/>
+			<property name="Zoom_max_out" value="40"/>
+			<property name="Zoom_max_in" value="40"/>
+			<property name="ScopeCameraOffset" value="-.0019,-.035,.05"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle556M16A2DMR">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD.tga"/>
+			<property name="ScopeCameraOffset" value="-.001,-.0165,-.1"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+		
+						<!--	LLLLLLLLLLLL	-->
+		
+		<item_property_overrides name="IZYgunT2LMGLMG36">
+			<property name="ScopeCameraOffset" value="-.0076,-.06,.14"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3LMGM249FNminimi">
+			<property name="ScopeCameraOffset" value="-.0076,-.045,.14"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+	
+	</append>
+	
+		<!--	X4SCOPE		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeMedium']">
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle556M16A2DMR">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="ScopeCameraOffset" value="-.001,-.0165,-.022"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+	
+	</append>
+	
+		<!--	X8SCOPE		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeLarge']">
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle556M16A2DMR">
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="ScopeCameraOffset" value="-.001,-.0165,-.022"/>
+			<property name="CrosshairOnAim" value="false"/> 
+			<property name="CrosshairUpAfterShot" value="false"/>
+		</item_property_overrides>
+	
+	</append>
+	
+						<!-- SILENCER -->
+			
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+	
+		<item_property_overrides name="IZYgunT1ARCabineM608SurvivalRifle">
+			<property name="Sound_start" value="M4CARINE_silen_fire"/>
+			<property name="Sound_loop" value="M4CARINE_silen_fire"/>
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT2ARCabineCAR15">
+			<property name="Sound_start" value="M4CARINE_silen_fire"/>
+			<property name="Sound_loop" value="M4CARINE_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARCabineM4Carbine">
+			<property name="Sound_start" value="M4CARINE_silen_fire"/>
+			<property name="Sound_loop" value="M4CARINE_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4ARCabineHK416">
+			<property name="Sound_start" value="M4CARINE_silen_fire"/>
+			<property name="Sound_loop" value="M4CARINE_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3BULLPUPHellionVHS2">
+			<property name="Sound_start" value="M16A2S_silen_fire"/>
+			<property name="Sound_loop" value="M16A2S_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BULLPUPFNF2000">
+			<property name="Sound_start" value="M16A2S_silen_fire"/>
+			<property name="Sound_loop" value="M16A2S_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle556M16A2DMR">
+			<property name="Sound_start" value="M16A2S_silen_fire"/>
+			<property name="Sound_loop" value="M16A2S_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2LMGLMG36">
+			<property name="Sound_start" value="M16A2S_silen_fire"/>
+			<property name="Sound_loop" value="M16A2S_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3LMGM249FNminimi">
+			<property name="Sound_start" value="M16A2S_silen_fire"/>
+			<property name="Sound_loop" value="M16A2S_silen_fire"/>
+		</item_property_overrides>
+	
+	</append>
+	
+</addnew>
