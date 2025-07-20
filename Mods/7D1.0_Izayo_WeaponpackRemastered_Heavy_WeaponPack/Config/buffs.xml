@@ -1,0 +1,77 @@
+<configs>
+
+				<!--	BUFF THAT MAKE GLOVES VISIBLE	    -->
+
+
+				<!--	Steroid _ buff to lower weapon handling    -->
+	<append xpath="//buffs/buff[@name='buffDrugSteroids']">
+			<effect_group>
+				<requirement name="ItemHasTags" tags="IZYHVW"/>
+				<requirement name="HoldingItemHasTags" tags="IZY"/>
+					<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="1"/>
+					<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="1.2"/>
+					<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.3"/>
+					<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".3"/>
+			</effect_group>
+	</append>
+	
+	
+
+
+	<append xpath="/buffs">
+
+				<!-- OOOOOOOOOOOOOO	 Aiming For Heavy WEAPON	OOOOOOOOOOOOOOOO    -->
+
+		<buff name="IsAimingHVW" hidden="false" icon="UI_IZY_Gatling_ready">
+			<stack_type value="replace"/>
+			<duration value="0"/>
+			<effect_group>
+				<requirement name="IsFPV"/>
+				<requirement name="ItemHasTags" tags="IZYHVW"/>
+				<triggered_effect trigger="onSelfAimingGunStop" action="RemoveBuff" buff="IsAimingHVW">
+				</triggered_effect>
+				<triggered_effect trigger="onSelfAimingGunStop" action="RemoveBuff" buff="IsAimingHVW_2">
+				</triggered_effect>
+				<passive_effect name="RunSpeed" operation="base_set" value="0.2"/>
+				<passive_effect name="WalkSpeed" operation="base_set" value="0.2"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="IZYFTTANKSHOW" hidden="false" icon="ui_game_symbol_twitch_shield_enemies" icon_color="0,255,0" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddPart" part="LeftKnuckles" prefab="#@modfolder:Resources/IZY_FlameThrower_asset.unity3d?IZY_FlamethrowerBackpack.Prefab" parentTransform="Spine3" localPos="0,0,-.18" localRot="0,0,0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePart" part="LeftKnuckles"/>
+			</effect_group>
+		</buff>
+		
+<!--xxxxxxxxxxxxxxxxxxxxxxx ______________ FlameThrower BUFF______________________xxxxxxxxxxxxxxxxxxx -->
+<!--xxxxxxxxxxxxxxxxxxxxxxx ______________ FlameThrower BUFF______________________xxxxxxxxxxxxxxxxxxx -->
+<!--xxxxxxxxxxxxxxxxxxxxxxx ______________ FlameThrower BUFF______________________xxxxxxxxxxxxxxxxxxx -->
+
+	<buff name="BuffNapalmDefaultMixture" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="16"/>
+
+		<effect_group>
+			<requirement name="!EntityTagCompare" tags="player"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,4,8,12" value="150,120,100,90">
+				</passive_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="BuffNapalmLethalMixture" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="4"/>
+
+		<effect_group>
+			<requirement name="!EntityTagCompare" tags="player"/>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,1,2,3" value="460,400,380,360">
+				</passive_effect>
+		</effect_group>
+	</buff>
+
+	</append>
+
+</configs>

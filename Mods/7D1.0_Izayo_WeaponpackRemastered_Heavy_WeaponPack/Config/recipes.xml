@@ -1,0 +1,26 @@
+<addnew>
+
+	<append xpath="/recipes">
+
+		<!--	***************************	-->
+			<!--	9mm T0 smg    -->
+		<!--	***************************	-->
+
+		<recipe name="IZYAmmoHeavyWeaponFlamethrowerNapalmStandardMixture" count="500" craft_time="300" craft_area="workbench">
+			<ingredient name="resourceGlue" count="5"/>
+			<ingredient name="resourceOil" count="20"/>
+			<ingredient name="ammoGasCan" count="5000"/>
+		</recipe>
+		
+		<recipe name="IZYAmmoHeavyWeaponFlamethrowerNapalmLethalMixture" count="500" craft_time="300" craft_area="workbench">
+			<ingredient name="resourceGlue" count="8"/>
+			<ingredient name="resourceAcid" count="5"/>
+			<ingredient name="resourceOil" count="35"/>
+			<ingredient name="ammoGasCan" count="5000"/>
+		</recipe>
+
+
+	</append>
+
+
+</addnew>
