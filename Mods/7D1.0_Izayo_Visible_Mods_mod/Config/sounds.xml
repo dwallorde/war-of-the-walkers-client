@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configs>
+
+<append xpath="/Sounds">
+
+<SoundDataNode name="IZYmelee_bash_01"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="0" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Melee_Bash_sound_resource.unity3d?Melee_Bash_01"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="IZYmelee_bash_02"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="0" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Melee_Bash_sound_resource.unity3d?Melee_Bash_02"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="IZYCasing_hit_ground"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="0" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Casing_hitGround_sounds.unity3d?Casing_hit_ground_1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Casing_hitGround_sounds.unity3d?Casing_hit_ground_2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Casing_hitGround_sounds.unity3d?Casing_hit_ground_3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="IZYShell_hit_ground"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="0" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Casing_hitGround_sounds.unity3d?Shell_hit_ground_1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_Casing_hitGround_sounds.unity3d?Shell_hit_ground_2"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+	
+<SoundDataNode name="IZYHeadshot_hit_round"> <AudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire.prefab"/> <NetworkAudioSource name="@:Sounds/Prefabs/AudioSource_WeaponFire_Network.prefab"/>
+	<Noise ID="0" noise="0" time="2" muffled_when_crouched="0.8" heat_map_strength="0.9" heat_map_time="180"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_HeadshotSound_resource.unity3d?IZY_Headshot_sound1"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_HeadshotSound_resource.unity3d?IZY_Headshot_sound2"/>
+	<AudioClip ClipName="#@modfolder:Resources/IZY_HeadshotSound_resource.unity3d?IZY_Headshot_sound3"/>
+	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="300"/> <MaxVoicesPerEntity value="300"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
+</append>
+
+</configs>

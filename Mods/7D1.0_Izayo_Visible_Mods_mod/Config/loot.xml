@@ -1,0 +1,7 @@
+<configs>
+
+	<append xpath="//lootgroup[@name='dyes']">	
+		<item name="modDyeWhite"/>
+	</append>
+	
+</configs>

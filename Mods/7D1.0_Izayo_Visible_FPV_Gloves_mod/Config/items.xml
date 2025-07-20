@@ -1,0 +1,223 @@
+<configs>
+
+					<!--	NERD BODY FIX FOR RIGWEAPON -->
+					<!--	REMOVE VISIBLE HARD WARP FPV -->
+
+	<append xpath="//item[@name='armorPrimitiveGloves']">	
+		
+		<property class="SDCS">
+				<property name="Prefab" value="Entities/Player/*/Gear/Prefabs/gear*FiberPrefab"/>
+				<property name="TransformName" value=""/>  <!--	hands -->
+				<property name="Excludes" value=""/>
+		</property>
+		
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBrownLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBrownLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorLumberjackGloves']">	
+	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBrownLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBrownLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorPreacherGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+	</append>
+
+	<append xpath="//item[@name='armorRogueGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorAthleticGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorEnforcerGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorFarmerGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBrownLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBrownLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorBikerGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+
+	<append xpath="//item[@name='armorScavengerGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorRangerGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorCommandoGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorAssassinGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorMinerGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorNomadGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorDarkLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorNerdGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="//item[@name='armorRaiderGloves']">	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="RefreshHand"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+				<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="WearingArmorBlackLeather"/>
+		</effect_group>
+	</append>
+	
+	
+</configs>

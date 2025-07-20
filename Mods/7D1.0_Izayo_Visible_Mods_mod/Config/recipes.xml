@@ -1,0 +1,31 @@
+<addnew>
+
+	<append xpath="/recipes">
+	
+		<!--	***************************	-->
+				<!--	HOLDSTYLE_PISTOL   -->
+		<!--	***************************	-->
+	
+		<recipe name="IZYmodPistolHoldstyle01" count="1">
+			<ingredient name="resourcePaper" count="5"/>
+		</recipe>
+		
+		<recipe name="IZYmodPistolHoldstyle02" count="1">
+			<ingredient name="resourcePaper" count="5"/>
+		</recipe>
+		
+		<!--	***************************	-->
+				<!--	OTHER -->
+		<!--	***************************	-->
+		
+		<recipe name="IZYadvancegunrepairkit" count="1">
+			<ingredient name="resourceRepairKit" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="1"/>
+			<ingredient name="resourceForgedSteel" count="4"/>
+		</recipe>
+	
+
+	</append>
+
+
+</addnew>

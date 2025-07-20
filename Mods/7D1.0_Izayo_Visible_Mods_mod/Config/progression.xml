@@ -1,0 +1,13 @@
+<configs>
+
+
+			<!-- Recieve DEF bonus when reloading -->
+
+<append xpath="/progression/perks/perk[@name='perkRunAndGun']">
+</append>
+
+
+
+<!-- -->
+
+</configs>	

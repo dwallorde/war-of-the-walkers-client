@@ -1,0 +1,23 @@
+<configs>
+<append xpath="/items">
+
+		<!--	IZY_Advance repairkit for T4 guns 	 -->
+	<item name="IZYadvancegunrepairkit">
+		<property name="HoldType" value="45"/>
+		<property name="CustomIcon" value="IZYadvancegunrepairkit"/>
+		<property name="Tags" value="junk"/>
+		<property name="DescriptionKey" value="IZYadvancegunrepairkitDesc"/>
+		<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+		<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+		<property name="Material" value="Msteel"/>
+		<property name="Stacknumber" value="25"/> <!-- STK resourceRepairKit -->
+		<property name="EconomicValue" value="5000"/>
+		<property name="RepairTime" value="3"/>
+		<property name="RepairAmount" value="32000"/>
+		<property name="Group" value="Resources"/>
+		<property name="SoundPickup" value="repairkits_grab"/>
+		<property name="SoundPlace" value="repairkits_place"/>
+	</item>
+
+</append>
+</configs>

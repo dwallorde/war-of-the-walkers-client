@@ -1,0 +1,2367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--	v.4.2 SQ -->	
+<addnew>
+
+	
+											<!-- FIX ORIGINAL STAT -->	
+											<!--	0000000000000000    -->	
+											
+				
+
+				
+	<append xpath="/item_modifiers">
+
+	<item_modifier name="modGunFlashlight" installable_tags="sideAttachments" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modGunFlashlightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+		<property name="LightValue" value=".5"/>
+		<property name="Material" value="Mplastics"/>
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="SideOffset" value="0,.0198,.0475"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT1DoubleBarrel">
+			<property name="SideOffset" value="0,-.03,.066"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT1AK47">
+			<property name="SideOffset" value="0,0,.28"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="SideOffset" value="0,0.0,0.23"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT3M60">
+			<property name="SideOffset" value="-.0386,.0382,.3519"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="SideOffset" value="0,.0621,.095"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="SideOffset" value="0,.0065,0"/>
+			<property name="SideScale" value="1.5,1.5,1.5"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunRifleT1HuntingRifle">
+			<property name="SideOffset" value="0,.0061,.2455"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="SideOffset" value="0,-.0025,.175"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunExplosivesT3RocketLauncher">
+			<property name="SideOffset" value=".037,-.1,.16"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,20"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunBowT1IronCrossbow">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunBowT3CompoundCrossbow">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<!-- visible attachment: flashlight -->
+		<effect_group tiered="false" name="external attachment prefab (old way)">
+			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Sides/side_attachment_flashlightPrefab.prefab" parent_transform="Attachments/Side"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="Side" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="Side" transform_path="lightSource"/>
+		</effect_group>
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight"/>
+
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modGunLaserSight" installable_tags="sideAttachments" modifier_tags="sideAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modGunLaserSightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+
+		<item_property_overrides name="*">
+			<property name="CrosshairOnAim" value="true"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunHandgunT1Pistol">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunRifleT0PipeRifle">
+			<property name="SideOffset" value="0,.0148,.0479"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="SideOffset" value="0,0,.41"/>
+			<property name="SideScale" value="1.12,1.12,1.12"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunShotgunT1DoubleBarrel">
+			<property name="SideOffset" value="0,-.055,.07"/>
+			<property name="SideScale" value=".4,.4,.4"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT1AK47">
+			<property name="SideOffset" value="0,0,.31"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT2TacticalAR">
+			<property name="SideOffset" value="0,0.021,0.258"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunMGT3M60">
+			<property name="SideOffset" value="-.0386,.0382,.3735"/>
+			<property name="SideRotation" value="0,0,-90"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunHandgunT2Magnum44">
+			<property name="SideOffset" value="0,.065,.14"/>
+			<property name="SideScale" value=".75,.75,.75"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunHandgunT3SMG5">
+			<property name="SideOffset" value="0,.0108,.0148"/>
+			<property name="SideScale" value="1.25,1.25,1.25"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunRifleT2LeverActionRifle">
+			<property name="SideOffset" value="0,.003,.1674"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunExplosivesT3RocketLauncher">
+			<property name="SideOffset" value=".037,-.1,.19"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,20"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="gunBowT1IronCrossbow">
+			<property name="SideOffset" value="0,-.038,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+			<property name="SideRotation" value="0,0,0"/>
+		</item_property_overrides>
+		<item_property_overrides name="gunHandgunT3DesertVulture ">
+			<property name="SideOffset" value="0,0,.32"/>
+			<property name="SideScale" value="1,1,1"/>
+		</item_property_overrides>
+
+		<!-- visible attachment: gunlaser -->
+		<effect_group tiered="false" name="external attachment prefab (old way)">
+			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Sides/side_attachment_laserPrefab.prefab" parent_transform="Attachments/Side" local_rotation="0,0,0"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformChildrenActive" active="true" parent_transform="Side" transform_path="gun_laser"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformChildrenActive" active="false" parent_transform="Side" transform_path="gun_laser"/>
+		</effect_group>
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser"/>
+
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser"/>
+		</effect_group>
+
+		<effect_group tiered="false" name="mod effects">
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.2"/>
+			<passive_effect name="WeaponHandling" operation="perc_add" value=".2"/>
+		</effect_group>
+		
+		
+		
+	</item_modifier>
+
+	<!-- Alternative Holosight A -->
+	<item_modifier name="modGunReflexSightA" installable_tags="smallTopAttachments" modifier_tags="scope" blocked_tags="noMods,bow" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modGunReflexSightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="CustomIcon" value="modGunReflexSightA"/>
+		
+		<property class="Action0">
+			<property name="Class" value="Eat"/>
+			<property name="Sound_start" value=""/>
+			<property name="Create_item" value="modGunReflexSight"/>
+			<property name="Create_item_count" value="1"/>
+			<property name="Delay" value="1.1"/>
+		</property>
+		
+		<property class="Action1">
+			<property name="Class" value="Eat"/>
+			<property name="Sound_start" value=""/>
+			<property name="Create_item" value="modGunReflexSightB"/>
+			<property name="Create_item_count" value="1"/>
+			<property name="Delay" value="1.1"/>
+		</property>
+
+		<item_property_overrides name="*">
+			<!--<property name="CrosshairOnAim" value="true"/>-->
+			<property name="Zoom_max_out" value="55"/>
+			<property name="Zoom_max_in" value="55"/>
+		</item_property_overrides>
+
+		<!-- visible attachment: holosight -->
+		<effect_group tiered="false" name="external attachment prefab (old way)">
+			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Scopes/scope_laser_reflexPrefab.prefab" parent_transform="Attachments/Scope"/>
+		</effect_group>
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="holosightA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="holosightA2"/>
+		</effect_group>
+
+		<effect_group tiered="false" name="mod effects">
+			<passive_effect name="WeaponHandling" operation="perc_add" value=".3"/>
+		</effect_group>
+		
+		<!-- izy add -->
+		<effect_group name="Fakescope">
+									<!-- Dot angle  -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroupA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroupA">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroupA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroupA">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+									<!--	len blackout -->	
+									
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Blackout_len_refA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_refA">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_refA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Reflexsight_FIX -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupA">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+							<!--	Fakescope_SHOW ZOOM -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ZoomgroupA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ZoomgroupA">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ZoomgroupA">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Hide Original Ironsight -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4"/>
+		</effect_group>
+	</item_modifier>
+	
+	<!-- Alternative Holosight B -->
+	<item_modifier name="modGunReflexSightB" installable_tags="smallTopAttachments" modifier_tags="scope" blocked_tags="noMods,bow" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modGunReflexSightSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<property name="CustomIcon" value="modGunReflexSightB"/>
+		<property class="Action0">
+			<property name="Class" value="Eat"/>
+			<property name="Sound_start" value=""/>
+			<property name="Create_item" value="modGunReflexSight"/>
+			<property name="Create_item_count" value="1"/>
+			<property name="Delay" value="1.1"/>
+		</property>
+		
+		<property class="Action1">
+			<property name="Class" value="Eat"/>
+			<property name="Sound_start" value=""/>
+			<property name="Create_item" value="modGunReflexSightA"/>
+			<property name="Create_item_count" value="1"/>
+			<property name="Delay" value="1.1"/>
+		</property>
+		
+		
+		<item_property_overrides name="*">
+			<!--<property name="CrosshairOnAim" value="true"/>-->
+			<property name="Zoom_max_out" value="55"/>
+			<property name="Zoom_max_in" value="55"/>
+		</item_property_overrides>
+
+		<!-- visible attachment: holosight -->
+		<effect_group tiered="false" name="external attachment prefab (old way)">
+			<requirement name="!HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="@:Other/Items/Mods/Scopes/scope_laser_reflexPrefab.prefab" parent_transform="Attachments/Scope"/>
+		</effect_group>
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="holosightB"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="holosightB2"/>
+		</effect_group>
+
+		<effect_group tiered="false" name="mod effects">
+			<passive_effect name="WeaponHandling" operation="perc_add" value=".3"/>
+		</effect_group>
+		
+		<!-- izy add -->
+		<effect_group name="Fakescope">
+									<!-- Dot angle  -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroupB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroupB">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroupB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroupB">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+									<!--	len blackout -->	
+									
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Blackout_len_refB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_refB">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_refB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Reflexsight_FIX -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupB">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+							<!--	Fakescope_SHOW ZOOM -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ZoomgroupB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ZoomgroupB">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ZoomgroupB">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Hide Original Ironsight -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modGunBarrelExtender" installable_tags="barrelAttachments,turretRanged" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modGunBarrelExtenderSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier2"/>
+		<!--DamageFalloffRange increased by x meters-->
+		<effect_group tiered="false">
+			<passive_effect name="DamageFalloffRange" operation="perc_add" value=".2"/>
+			<passive_effect name="MaxRange" operation="perc_add" value=".2"/>
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value=".1"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.05"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.05">
+				<requirement name="ItemHasTags" tags="perkDeadEye,crossbow"/></passive_effect>
+			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value=".1"/>
+			<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value=".1"/>
+			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value=".05"/>
+			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value=".05"/>
+			<passive_effect name="WeaponHandling" operation="perc_add" value="-.08">
+				<requirement name="NotHasBuff" buff="buffHoldBreathAiming01"/>
+			</passive_effect>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="modShotgunSawedOffBarrel" installable_tags="shotgun,ShortBarrelmod" modifier_tags="barrelAttachment" blocked_tags="noMods,dBarrel" type="attachment" icon="resourceScrapIron">
+		<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+		<property name="UnlockedBy" value="modShotgunSawedOffBarrelSchematic"/>
+		<property name="TraderStageTemplate" value="modsTier1"/>
+
+		<!--<item_property_overrides name="gunShotgunT2PumpShotgun">
+			<property name="HandMeshfile" value="@:Other/Items/Weapons/Ranged/SawedOffPumpShotgun/SawedOffPumpShotgunPrefab.prefab"/>
+		</item_property_overrides>-->
+
+		<effect_group tiered="false" name="Base Effects">
+			<passive_effect name="MaxRange" operation="perc_add" value="-.15"/>
+			<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.15"/>
+
+			<passive_effect name="SpreadDegreesVertical" operation="perc_set" value="1.2"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="perc_set" value="1.2"/>
+		</effect_group>
+	</item_modifier>
+		
+	</append>
+
+											<!--AUTO TRIGGER ADDON -->	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupAutomatic']">
+	
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYMMR"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYMMRBattleRifleEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYMMRBattleRifleEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYAUTOPISTOL"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYAUTOPISTOLEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYAUTOPISTOLEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYAUTOSG"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYSGautoShotgunEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYSGautoShotgunEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYMMR"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYMMRBattleRifleEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYMMRBattleRifleEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="automodeA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="automodeA2"/>
+		</effect_group>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupBurst3']">
+	
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYMMR"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYMMRBattleRifleBurstEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYMMRBattleRifleBurstEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYAUTOPISTOL"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYBURSTPISTOLEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYBURSTPISTOLEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYAUTOSG"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYSGautoShotgunBurstEffect"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYSGautoShotgunBurstEffect"/>
+		</effect_group>
+		
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="burstmodeA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="burstmodeA2"/>
+		</effect_group>
+	</append>
+
+												<!-- ADD NEW MOD S -->	
+											<!--	0000000000000000    -->	
+											<!--	0000000000000000    -->	
+											<!--PISTOL HOLDTYPE COSMETI -->	
+											<!--	0000000000000000    -->	
+	<append xpath="/item_modifiers">
+
+		<item_modifier name="IZYmodPistolHoldstyle01" installable_tags="Holdstyle" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="IZYmodPistolHoldstyle01"/>
+			<property name="DescriptionKey" value="LOL"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="20"/>
+			<property name="EconomicValue" value="1"/>
+		</item_modifier>
+		
+		<item_modifier name="IZYmodPistolHoldstyle02" installable_tags="Holdstyle" modifier_tags="dye" type="attachment" cosmetic_install_chance="0">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="IZYmodPistolHoldstyle02"/>
+			<property name="DescriptionKey" value="LOL"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="20"/>
+			<property name="EconomicValue" value="1"/>
+		</item_modifier>
+		
+		<!-- FlashHider -->	
+		
+		<item_modifier name="modGunFlashHider" installable_tags="IZYFH" modifier_tags="barrelAttachment" blocked_tags="noMods" type="attachment">
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="CustomIcon" value="modGunFlashHider"/>
+			<property name="TraderStageTemplate" value="modsTier1"/>
+			<effect_group tiered="false">
+			<!-- RemoveIZYmuzzleflash-->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B">
+						<requirement name="IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B">
+						<requirement name="!IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B2">
+						<requirement name="IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B2">
+						<requirement name="!IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B2"/>
+			
+			<!-- RemoveIZY muzzlelight -->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV">
+						<requirement name="IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV">
+						<requirement name="!IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV2">
+						<requirement name="IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV2">
+						<requirement name="!IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV2"/>
+
+			<!-- USE silen muzzlelight -->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen2">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen2">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen2"/>
+				
+			<!-- USE silen muzzleflash -->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen2">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen2">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen2"/>
+				
+			<!-- Flashhider MUZZLE on -->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle2">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle2">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle_DW">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle_DW">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle_DW"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle2_DW">
+					<requirement name="IsFPV"/>
+				</triggered_effect>
+		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle2_DW">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="FlashhiderMuzzle2_DW"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashhiderA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashhiderA2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashhiderA_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashhiderA2_DW"/>
+			
+				<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="-.25"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value="-.25"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value="-.15"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value="-.15"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" value=".08"/>
+				
+
+			</effect_group>
+		</item_modifier>
+		
+	</append>
+	
+
+											<!--  	  SCOPE SIGHT	    -->	
+											<!--	0000000000000000    -->	
+
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+		<property class="Action0">
+			<property name="Class" value="Eat"/>
+			<property name="Sound_start" value=""/>
+			<property name="Create_item" value="modGunReflexSightA"/>
+			<property name="Create_item_count" value="1"/>
+			<property name="Delay" value="1.1"/>
+		</property>
+		
+		<property class="Action1">
+			<property name="Class" value="Eat"/>
+			<property name="Sound_start" value=""/>
+			<property name="Create_item" value="modGunReflexSightB"/>
+			<property name="Create_item_count" value="1"/>
+			<property name="Delay" value="1.1"/>
+		</property>
+		<effect_group name="Fakescope">
+									<!-- Dot angle  -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroup">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroup">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroup">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroup">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+									<!--	len blackout -->	
+									
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Blackout_len_ref">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_ref">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_ref">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Reflexsight_FIX -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Unzoomgroup">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Unzoomgroup">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Unzoomgroup">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+							<!--	Fakescope_SHOW ZOOM -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Zoomgroup">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Zoomgroup">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Zoomgroup">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Hide Original Ironsight -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4"/>
+			
+							<!--	LOW_SETTING_PATCH -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="RedDotAIM_ref_low">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="RedDotAIM_ref">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="RedDotAIM_ref_low"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="holosight"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="holosight2"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="scope2"/>
+							<!--	Hide Original Ironsight -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4"/>
+
+									<!-- Dot angle  -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroupSC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ReddotGroupSC">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroupSC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ReddotGroupSC">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+									<!--	len blackout -->	
+									
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Blackout_len_SC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_SC">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_SC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+									<!--	len blackout -->	
+									
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Blackout_len_SC1">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_SC1">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Blackout_len_SC1">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+							<!--	Reflexsight_FIX -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupSC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupSC">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="UnzoomgroupSC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+							<!--	Fakescope_SHOW ZOOM -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ZoomgroupSC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ZoomgroupSC">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ZoomgroupSC">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+		</effect_group>
+
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeMedium']">
+
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="scopeX4X8"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="scopeX4X82"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="scope2"/>
+		</effect_group>
+		
+		<effect_group>
+							<!--	Hide Original Ironsight -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4"/>
+		</effect_group>
+
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeLarge']">
+	
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="scopeX4X8"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="scope"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="scopeX4X82"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="scope2"/>
+		</effect_group>
+		
+		<effect_group>
+							<!--	Hide Original Ironsight -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide4"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_Rear2"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront3"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ironsight_forhide_SEPPAfront4"/>
+		</effect_group>
+		
+	</append>
+	
+	
+	
+											<!--	0000000000000000    -->	
+											<!--  	  MAGAZINE MOD	    -->	
+											<!--	0000000000000000    -->	
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunShotgunTubeExtenderMagazine']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="extendtubeA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="extendtubeB"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="extendtubeA_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="extendtubeB_DW"/>
+		</effect_group>
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineA2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineB"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineB2"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineA_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineA2_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineB_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineB2_DW"/>
+										<!--	Remove Original MAG -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter"/>
+								
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG_DW"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2_DW"/>
+								
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYMMRM1N"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYMMRM1MAG"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYMMRM1MAG"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumA2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumB"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumB2"/>
+				
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumA_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumA2_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumB_DW"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="drumB2_DW"/>
+										<!--	Remove Original MAG -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter"/>
+										
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter"/>
+			
+										<!--	Remove Original MAG DW -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG_alter_DW"/>
+										
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG_DW"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2_DW"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="magazineORG2_alter_DW"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYBRBAR"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYBRBAR"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYBRBAR"/>
+		</effect_group>
+	</append>
+
+											<!--	0000000000000000    -->	
+											<!--    BIPOD GRIP STOCK    -->	
+											<!--	0000000000000000    -->	
+
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBipod']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="bipodA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="bipodA2"/>
+								<!--	Bipod deploy_when_AIM DISSABLED BE CAUSE IT'S LAME -->	
+											<!--	Bipod ORG position Hide -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_foldedXXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_foldedXXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_foldedXXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_foldedXXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+											<!--	Bipod deploy_when_AIM -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_unfoldedXXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_unfoldedXXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_unfoldedXXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_unfoldedXXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+											<!--	Bipod ORG position Hide2 -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_folded2XXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_folded2XXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_folded2XXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_folded2XXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+											<!--	Bipod deploy_when_AIM2 -->		
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_unfolded2XXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Bipod_unfolded2XXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_unfolded2XXX">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAimingGunStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Bipod_unfolded2XXX">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gripA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gripA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gripA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gripA2_DW"/>
+										<!--	Hide Original STOCK -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="laserrail_gripORGA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="laserrail_gripORGA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="laserrail_gripORGB"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="laserrail_gripORGB2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_gripORGA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_gripORGA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_gripORGB"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_gripORGB2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original2">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original2">
+				<requirement name="!IsFPV"/>
+				
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original2_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="grip_original2_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="ItemHasTags" tags="IZYGRIPSP"/>
+			<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="IZYGRIPSP01"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="IZYGRIPSP01"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunRetractingStock']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="stockA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="stockA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="stockA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="stockA2_DW"/>
+										<!--	Hide Original STOCK -->		
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original2">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original2">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original2_DW">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stock_Original2_DW">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+											<!--	0000000000000000    -->	
+											<!--  		 BARREL  		-->	
+											<!--	0000000000000000    -->	
+											
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+	
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzle">
+				<requirement name="IsFPV"/>
+				<requirement name="HoldingItemHasTags" tags="IZY"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzle">
+				<requirement name="IsFPV"/>
+				<requirement name="HoldingItemHasTags" tags="IZY"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzle"/>
+	
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+		<!-- RemoveIZYmuzzleflash-->
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B">
+					<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B">
+					<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B2">
+					<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B2">
+					<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_B2"/>
+
+		<!-- RemoveIZY muzzlelight -->
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV">
+					<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV">
+					<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV2">
+					<requirement name="IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV2">
+					<requirement name="!IsFPV"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV2"/>
+
+		<!-- USE silen muzzlelight -->
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen2">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen2">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="MuzzleLightFPV_silen2"/>
+			
+		<!-- USE silen muzzleflash -->
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+	
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen2">
+				<requirement name="IsFPV"/>
+			</triggered_effect>
+	
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen2">
+				<requirement name="!IsFPV"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Muzzleframes_silen2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="silencer"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="silencer2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="silencer_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="silencer2_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001_DW">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002_DW">
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group name="SilenceronMOD">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="AddBuff" buff="HavingSilencer"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="HavingSilencer"/>
+				
+		</effect_group>
+	</append>
+
+
+	<append xpath="/item_modifiers/item_modifier[@name='modGunChoke']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="chokeA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="chokeA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="chokeA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="chokeA2_DW"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDuckbill']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="duckbillA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="duckbillA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="duckbillA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="duckbillA2_DW"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modShotgunSawedOffBarrel']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="sawoffA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="sawoffA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="sawoffA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="sawoffA2_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="bipodA_SWSP"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="bipodA_SWSP2"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original001">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original001">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original002">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original002">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original001_DW">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original001_DW">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original002_DW">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original002_DW">
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001_DW">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002_DW">
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBarrelExtender']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="HbarrelA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="HbarrelA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="HbarrelA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="HbarrelA2_DW"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original001">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original002">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original001_DW">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original002_DW">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001_DW">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002_DW">
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMuzzleBrake']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="muzzleBA"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="muzzleBA2"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="muzzleBA_DW"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="muzzleBA2_DW"/>
+			
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_001_DW">
+			</triggered_effect>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Barrel_Original_HS_002_DW">
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+											<!--	0000000000000000    -->	
+											<!--   SIDE ATTACH LASE FL  -->	
+											<!--	0000000000000000    -->	
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+		
+		<effect_group tiered="false" name="LaserFOR3rdPV">
+			<requirement name="!IsFPV"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser2"/>
+
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="gunlaser2" transform_path="gunlaser2"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="gunlaser2" transform_path="gunlaser2"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="gunlaser2" transform_path="gunlaser2"/>
+				<!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
+				<!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+				<!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+		</effect_group>
+	
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+		
+		<effect_group tiered="false" name="FlashlightFOR3rdPV">
+			<requirement name="!IsFPV"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight2"/>
+				<triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="flashlight2" transform_path="flashlight_lightSource2"/>
+				<triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="flashlight2" transform_path="flashlight_lightSource2"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="flashlight2" transform_path="flashlight_lightSource2"/>
+		</effect_group>
+		
+	</append>
+	
+											<!--	0000000000000000    -->	
+											<!--	FIRE MODE MOD 	    -->	
+											<!--	0000000000000000    -->	
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupAutomatic']"> <!-- FULL AUTO -->	
+		<effect_group name="Visiblefiremode">
+										<!-- FULL AUTO FIRE FPV -->		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_AUTO"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL"/>
+										<!-- FULL AUTO FIRE TPV -->		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_AUTO2"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL2"/>
+				
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupBurst3']"> <!-- BURST -->	
+		<effect_group name="Visiblefiremode">
+										<!-- BURST FIRE FPV -->		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_BURST"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL"/>
+										<!-- BURST FIRE TPV -->		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_BURST2"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL2"/>
+				
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupSemi']"> <!-- SEMI -->	
+		<effect_group name="Visiblefiremode">
+										<!-- SEMI FIRE FPV -->		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_SEMI"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL"/>
+										<!-- SEMI FIRE TPV -->		
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL2"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_SEMI2"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="firemode_ORIGINAL2"/>
+				
+		</effect_group>
+	</append>
+	
+										<!-- MELEEMOD -->	
+										<!-- MELEEMOD -->	
+										<!-- MELEEMOD -->	
+				
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeErgonomicGrip']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ErgonomicgripA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="ErgonomicgripA2"/>
+		</effect_group>
+	</append>	
+				
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubBarbedWire']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="barbwiremodA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="barbwiremodA2"/>
+		</effect_group>
+	</append>			
+				
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubMetalSpikes']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="spikemodA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="spikemodA2"/>
+		</effect_group>
+	</append>					
+										
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubMetalChain']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="chainmodA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="chainmodA2"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modMeleeClubBurningShaft']">
+		<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="MeleeFlamemodA"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Fancy_FlamemodHIT"/>
+		</effect_group>
+		<effect_group>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="RemovePart" part="Flames">
+				<requirement name="HoldingItemHasTags" tags="IZYMELEE"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="RemovePart" part="Flames">
+				<requirement name="HoldingItemHasTags" tags="IZYMELEE"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfEquipStart" action="RemovePart" part="Flames">
+				<requirement name="HoldingItemHasTags" tags="IZYMELEE"/>
+			</triggered_effect>
+		</effect_group>
+	</append>
+	
+<!-- IZY Visible Armor Mods -->
+<!-- IZY Visible Armor Mods -->
+<!-- IZY Visible Armor Mods -->
+
+	<append xpath="/item_modifiers/item_modifier[@name='modArmorStoragePocket']">
+	
+		<effect_group tiered="false">
+			<requirement name="HasBuff" buff="WearingArmorBrownLeather"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="01Pocketmod"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="01Pocketmod"/>
+		</effect_group>
+	
+		<effect_group tiered="false">
+			<requirement name="HasBuff" buff="WearingArmorBlackLeather"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="01Pocketmod"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="01Pocketmod"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="HasBuff" buff="WearingArmorDarkLeather"/>
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="01Pocketmod"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="01Pocketmod"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modArmorPlatingReinforced']">
+	
+		<effect_group tiered="false">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="01PlatingmodSteel"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="01PlatingmodSteel"/>
+		</effect_group>
+
+	</append>
+	
+	
+										<!-- DYE_MOD -->	
+										<!-- DYE_MOD -->	
+										<!-- DYE_MOD -->		
+								
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeWhite']">   <!-- WHITE 0-->	
+		<property name="CreativeMode" value="Player"/>
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_white_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_white_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_white_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_white_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+								
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeYellow']">   <!-- YELLOW 1-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_yellow_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_yellow_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_yellow_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_yellow_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeRed']">   <!-- RED 2-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_red_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_red_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_red_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_red_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeOrange']">   <!-- ORANGE 3-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_orange_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_orange_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_orange_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_orange_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeBlue']">   <!-- BLUE 4-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_blue_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_blue_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_blue_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_blue_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyePurple']">   <!-- PURPLE 5-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_purple_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_purple_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_purple_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_purple_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyePink']">   <!-- PINK 6-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_pink_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_pink_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_pink_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_pink_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeBlack']">   <!-- Black 7-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_black_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_black_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_black_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_black_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeGreen']">   <!-- Green 8-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_green_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_green_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_green_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_green_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeBrown']">   <!-- Brown 9-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_brown_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_brown_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_brown_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_brown_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part01_3rdPV"/>
+		</effect_group>
+	</append>
+
+			<!-- 02 2ND one-->	  			<!-- 02 2ND one-->	    			<!-- 02 2ND one-->	   			<!-- 02 2ND one-->	  			<!-- 02 2ND one-->	
+			<!-- 02 2ND one-->	  			<!-- 02 2ND one-->	    			<!-- 02 2ND one-->	   			<!-- 02 2ND one-->	  			<!-- 02 2ND one-->	
+			<!-- 02 2ND one-->	  			<!-- 02 2ND one-->	    			<!-- 02 2ND one-->	   			<!-- 02 2ND one-->	  			<!-- 02 2ND one-->	
+			
+
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeWhite']">   <!-- WHITE 0-->	
+		<property name="CreativeMode" value="Player"/>
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_white02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_white02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_white02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_white02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+								
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeYellow']">   <!-- YELLOW 1-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_yellow02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_yellow02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_yellow02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_yellow02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeRed']">   <!-- RED 2-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_red02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_red02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_red02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_red02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeOrange']">   <!-- ORANGE 3-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_orange02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_orange02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_orange02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_orange02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeBlue']">   <!-- BLUE 4-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_blue02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_blue02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_blue02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_blue02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyePurple']">   <!-- PURPLE 5-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_purple02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_purple02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_purple02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_purple02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyePink']">   <!-- PINK 6-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_pink02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_pink02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_pink02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_pink02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeBlack']">   <!-- Black 7-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_black02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_black02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_black02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_black02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeGreen']">   <!-- Green 8-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_green02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_green02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_green02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_green02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modDyeBrown']">   <!-- Brown 9-->	
+		<effect_group tiered="false">
+			<requirement name="IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_brown02_FPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_brown02_FPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_FPV"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<requirement name="!IsFPV"/>
+			<requirement name="HoldingItemHasTags" tags="IZY"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Dye_brown02_3rdPV"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Dye_brown02_3rdPV"/>
+			<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="None_dye_part02_3rdPV"/>
+		</effect_group>
+	</append>
+
+</addnew>
