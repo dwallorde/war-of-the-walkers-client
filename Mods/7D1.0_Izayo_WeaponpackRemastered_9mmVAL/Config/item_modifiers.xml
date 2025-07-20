@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+
+		<!--	Longbarrel		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBarrelExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-DRUM 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+			
+
+			
+	</append>
+
+		<!--	MAGAZINE-EXT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+		
+	</append>
+
+			<!--	FORGRIP 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+
+		
+	</append>
+
+		<!--	RET-STOCK 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunRetractingStock']">
+	
+			
+	</append>
+
+		<!--	FLASHLIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+			
+	</append>
+
+		<!--	LASER   	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+	
+			
+	</append>
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+
+			<item_property_overrides name="IZYgunT0SMGPIPEsubmachinegun">
+				<property name="ScopeCameraOffset" value=".0007,.0182,.195"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT1SMGTec9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.051,.2"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT2SMGUZIsubmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.046,.2"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0378,.12"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4SMGCZScorpionEVO3">
+				<property name="ScopeCameraOffset" value=".005,-.049,.001"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP5Ksubmachinegun">
+				<property name="ScopeCameraOffset" value=".0001,-.0076,-.01"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT4SMGColt9mmsubmachinegun">
+				<property name="ScopeCameraOffset" value="-.0008,-.0225,.01"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightA']">
+	
+			<item_property_overrides name="IZYgunT0SMGPIPEsubmachinegun">
+				<property name="ScopeCameraOffset" value=".0007,.0182,.195"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT1SMGTec9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.051,.2"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT2SMGUZIsubmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.046,.2"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0214,.12"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4SMGCZScorpionEVO3">
+				<property name="ScopeCameraOffset" value=".005,-.051,.001"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP5Ksubmachinegun">
+				<property name="ScopeCameraOffset" value=".0001,-.0076,-.01"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT4SMGColt9mmsubmachinegun">
+				<property name="ScopeCameraOffset" value="-.0008,-.0225,.01"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightB']">
+	
+			<item_property_overrides name="IZYgunT0SMGPIPEsubmachinegun">
+				<property name="ScopeCameraOffset" value=".0007,.0182,.195"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT1SMGTec9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.051,.2"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT2SMGUZIsubmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.046,.2"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0402,.12"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4SMGCZScorpionEVO3">
+				<property name="ScopeCameraOffset" value=".0052,-.042,.001"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP5Ksubmachinegun">
+				<property name="ScopeCameraOffset" value=".0001,-.0076,-.01"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT4SMGColt9mmsubmachinegun">
+				<property name="ScopeCameraOffset" value="-.0008,-.0225,.01"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+		
+	</append>
+	
+	
+		<!--	2XSCOPE	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+	
+			<item_property_overrides name="IZYgunT0SMGPIPEsubmachinegun">
+				<property name="ScopeCameraOffset" value=".0007,.0075,.17"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT1SMGTec9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.051,.2"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT2SMGUZIsubmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0325,.2"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP9submachinegun">
+				<property name="ScopeCameraOffset" value="0,-.02,.12"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4SMGCZScorpionEVO3">
+				<property name="ScopeCameraOffset" value=".0050,-.045,.001"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP5Ksubmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0093,-.01"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT4SMGColt9mmsubmachinegun">
+				<property name="ScopeCameraOffset" value="-.0008,-.022,.01"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+		
+	</append>
+	
+		<!--	Silencer 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+			
+			
+			<item_property_overrides name="IZYgunT2DualPistolM9bs">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3DualPistolGlock18C">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4DualPistolMP9s">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT0SMGPIPEsubmachinegun">
+				<property name="Sound_start" value="UZIsmg_silen_fire"/>
+				<property name="Sound_loop" value="UZIsmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT2SMGUZIsubmachinegun">
+				<property name="Sound_start" value="UZIsmg_silen_fire"/>
+				<property name="Sound_loop" value="UZIsmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP9submachinegun">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4SMGCZScorpionEVO3">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3SMGMP5Ksubmachinegun">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT4SMGColt9mmsubmachinegun">
+				<property name="Sound_start" value="MP5Ksmg_silen_fire"/>
+				<property name="Sound_loop" value="MP5Ksmg_silen_fire"/>
+			</item_property_overrides>
+	
+	</append>
+	
+</addnew>

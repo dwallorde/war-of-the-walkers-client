@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+
+		<!--	Longbarrel		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBarrelExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-DRUM 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-EXT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+
+		<item_property_overrides name="IZYgunT3TacticalSMGCOLTSMG">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_SMG_KOLTSMG.unity3d?IZY_SMG_KOLTSMG_magazine.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+
+			<!--	FORGRIP 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+		
+		<item_property_overrides name="IZYgunT2TacticalSMGUZI">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_SMG_Uzi.unity3d?IZY_SMG_Uzi_grip.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TacticalSMGSMP5K">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_SMG_MP5K.unity3d?IZY_SMG_MP5K_grip.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+
+		<!--	RET-STOCK 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunRetractingStock']">
+	
+			
+	</append>
+
+		<!--	FLASHLIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+			
+	</append>
+
+		<!--	LASER   	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+	
+			
+	</append>
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+
+		<!--	TRA-PISTOL 	-->
+			
+		<!--	TRA-SMG 	-->
+			
+		<!--	TAC-SMG 	-->
+			
+			<item_property_overrides name="IZYgunT2TacticalSMGUZI">
+				<property name="ScopeCameraOffset" value="-.002,-.0185,-.15"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3TacticalSMGSMP5K">
+				<property name="ScopeCameraOffset" value="0,-.008,-.01"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT3TacticalSMGCOLTSMG">
+				<property name="ScopeCameraOffset" value="-.00082,-.0315,-.005"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+		
+	</append>
+	
+		<!--	2XSCOPE	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+			<!--	TRA-PISTOL	-->
+			
+			<!--	TRA-smg	-->
+			
+			<!--	TAC-PISTOL	-->
+			
+			<item_property_overrides name="IZYgunT2TacticalSMGUZI">
+				<property name="ScopeCameraOffset" value="-.0017,-.006,-.22"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3TacticalSMGSMP5K">
+				<property name="ScopeCameraOffset" value="-.00005,.0048,-.013"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+
+			<item_property_overrides name="IZYgunT3TacticalSMGCOLTSMG">
+				<property name="ScopeCameraOffset" value="-.0008,-.03135,-.025"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			</item_property_overrides>
+		
+	</append>
+	
+		<!--	Silencer 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+			
+			<item_property_overrides name="IZYgunT2TacticalSMGUZI">
+				<property name="Sound_start" value="smgMP5K_silen_fire"/>
+				<property name="Sound_loop" value="smgMP5K_silen_fire"/>
+				<property name="Sound_end" value="smgMP5K_silen_end"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3TacticalSMGSMP5K">
+				<property name="Sound_start" value="smgMP5K_silen_fire"/>
+				<property name="Sound_loop" value="smgMP5K_silen_fire"/>
+				<property name="Sound_end" value="smgMP5K_silen_end"/>
+			</item_property_overrides>
+			
+			<item_property_overrides name="IZYgunT3TacticalSMGCOLTSMG">
+				<property name="Sound_start" value="smgMP5K_silen_fire"/>
+				<property name="Sound_loop" value="smgMP5K_silen_fire"/>
+				<property name="Sound_end" value="smgMP5K_silen_end"/>
+			</item_property_overrides>
+	
+	</append>
+	
+</addnew>

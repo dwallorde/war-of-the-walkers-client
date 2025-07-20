@@ -1,0 +1,100 @@
+<configs>
+		<!-- oooooooooooo  -->
+		<!-- CREATE GROUP  -->
+		<!-- oooooooooooo  -->
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT0_Gunslinger']">
+					<!-- tier 0  -->
+		<lootgroup name="groupWeaponsT0_SMG_PIPESMG" count="all" loot_quality_template="QLTemplateT0">
+			<item name="IZYgunT0SMGPIPEsubmachinegun"/>
+		</lootgroup>
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT1_Gunslinger']">
+					<!-- tier 1  -->
+		<lootgroup name="groupWeaponsT1_DW_COLTNV" count="all" loot_quality_template="QLTemplateT1">
+			<item name="IZYgunT1DualPistolCOLTnavyRevolver"/>
+		</lootgroup>
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT2_Gunslinger']">
+					<!-- tier 02  -->
+		<lootgroup name="groupWeaponsT2_DW_M9B" count="all" loot_quality_template="QLTemplateT2">
+			<item name="IZYgunT2DualPistolM9bs"/>
+		</lootgroup>
+					
+		<lootgroup name="groupWeaponsT2_SMG_UZI" count="all" loot_quality_template="QLTemplateT2">
+			<item name="IZYgunT2SMGUZIsubmachinegun"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Gunslinger']">
+					<!-- tier 03  -->
+		<lootgroup name="groupWeaponsT3_DW_G18C" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3DualPistolGlock18C"/>
+		</lootgroup>
+					
+		<lootgroup name="groupWeaponsT3_SMG_MP5K" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3SMGMP5Ksubmachinegun"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Gunslinger']">
+					<!-- tier 04  -->
+		<lootgroup name="groupWeaponsT3_DW_C96M" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4DualPistolC96M"/>
+		</lootgroup>
+					
+		<lootgroup name="groupWeaponsT3_SMG_KOLTM9" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4SMGColt9mmsubmachinegun"/>
+		</lootgroup>
+	</insertAfter>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+		<!-- Adding new weapon groups to loot groups  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT0_Ranged']">	
+		<item group="groupWeaponsT0_SMG_PIPESMG"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT1_Ranged']">	
+		<item group="groupWeaponsT1_DW_COLTNV"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT2_Ranged']">	
+		<item group="groupWeaponsT2_DW_M9B"/>
+		<item group="groupWeaponsT2_SMG_UZI"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_DW_G18C"/>
+		<item group="groupWeaponsT3_SMG_MP5K"/>
+						<!-- T4  -->
+		<item group="groupWeaponsT3_DW_C96M"/>
+		<item group="groupWeaponsT3_SMG_KOLTM9"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+				<!-- QUEST REWARD 9MM gun  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT1']">	
+		<item name="IZYgunT1DualPistolCOLTnavyRevolver"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT2']">	
+		<item name="IZYgunT2SMGUZIsubmachinegun"/>
+		<item name="IZYgunT2DualPistolM9bs"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+		<item name="IZYgunT3SMGMP5Ksubmachinegun"/>
+		<item name="IZYgunT3DualPistolGlock18C"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+		<item name="IZYgunT4SMGColt9mmsubmachinegun"/>
+		<item name="IZYgunT4DualPistolC96M"/>
+	</append>
+
+</configs>

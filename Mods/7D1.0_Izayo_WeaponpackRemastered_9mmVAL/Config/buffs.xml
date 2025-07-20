@@ -1,0 +1,35 @@
+<configs>
+
+				<!--	BUFF THAT MAKE GLOVES VISIBLE	    -->
+
+
+
+	<append xpath="/buffs">
+
+		<buff name="IZYBuffshieldpassive" hidden="false" icon="ui_game_symbol_twitch_shield_enemies" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.3"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInfectionCatch,buffInfection01Main,buffInjuryBleeding,buffArmorShredding,buffInjuryAbrasion,buffInjuryAbrasionTreated,buffLegSprained,buffLegBroken,buffLegSplinted,buffLegCast,buffArmSprained"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryConcussion,buffArmBroken,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryCrippled01,buffInjuryKnockdown01,buffInjuryKnockdown01,buffInjuryUnconscious,buffLaceration,buffFatigued"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="IZYBuffshieldblocking" hidden="false" icon="ui_game_symbol_twitch_shield_enemies" icon_color="0,255,0" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="GeneralDamageResist" operation="base_add" value="0.9"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryCrippled01,buffInjuryAbrasion,buffInjuryBleeding,,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffArmorShredding,buffInfectionCatch,buffInjuryStunned01,buffInjuryStunned02"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="ItemHasTags" tags="IZY"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="IZYBuffshieldpassive"/>
+			</effect_group>
+		</buff>
+		
+	</append>
+
+</configs>
