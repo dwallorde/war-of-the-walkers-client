@@ -1,0 +1,7 @@
+<config>
+
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='rareBooks']">
+	<item name="LMGBeltBagSchematic"/>
+</append>
+
+</config>

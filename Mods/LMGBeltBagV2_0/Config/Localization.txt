@@ -1,0 +1,7 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context
+
+LMGBeltBag,items,Ammo,,,LMG Belt Bag,,
+LMGBeltBagDesc,items,Ammo,,,"Advanced M60 belt-feeder carried on your back allows extended firing with various support mechanics. Heavy weight reduces jumping height and mobility.",,
+
+LMGBeltBagSchematic,items,Ammo,,,LMG Belt Bag Schematic,,
+LMGBeltBagSchematicDesc,items,Ammo,,,Read this to learn how to craft a LMG Belt Bag,,

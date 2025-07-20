@@ -1,0 +1,50 @@
+﻿<windows>
+
+	<insertAfter xpath="/windows/window[@name='windowTargetBar']" >
+		<window name="windowZombieBuffs">
+			<rect width="300" height="60" pos="125,-190">
+				<grid padding="8,8" pos="0, 0" pivot="center" rows="1" cols="10" cell_width="60" cell_height="60" repeat_content="true" controller="XUiC_WMMZombieBuffIconList, WMMZombieRandomBuffs">
+					<zombie_buff_icon />
+				</grid>
+			</rect>
+		</window>
+	</insertAfter>
+
+	<insertAfter xpath="/windows/window[@name='windowTargetBar']" >
+		<window name="windowZombieBuffsLegends" controller="XUiC_WMMZombieBuffsLegends, WMMZombieRandomBuffs">
+			<rect name="buffLevels" pos="10,380">
+				<rect pos="20,20">
+					<button depth="1" name="buttonLevelsArrow" style="icon30px, hover, press" pivot="center" pos="0,0" sprite="ui_game_symbol_arrow_right" rotation="90" defaultcolor="255,255,255,125"/>
+				</rect>
+				<grid name="buffLevelsGrid" depth="0" pos="0,0" width="100" cols="1" cell_height="27" repeat_content="false" arrangement="vertical">
+					<buffLevel backgroundcolor="255,255,255" textcontent="Level 1 Buff" />
+					<buffLevel backgroundcolor="248,231,28" textcontent="Level 2 Buff" />
+					<buffLevel backgroundcolor="245,166,35" textcontent="Level 3 Buff" />
+					<buffLevel backgroundcolor="208,2,27" textcontent="Level 4 Buff" />
+					<buffLevel backgroundcolor="144,19,254" textcontent="Level 5 Buff" />
+				</grid>
+			</rect>
+			<rect name="buffIcons" pos="10,200">
+				<rect pos="20,20">
+					<button depth="1" name="buttonIconsArrow" style="icon30px, hover, press" pivot="center" pos="0,0" sprite="ui_game_symbol_arrow_right" rotation="90" defaultcolor="255,255,255,125"/>
+				</rect>
+				<grid name="buffIconsGrid" depth="0" pos="0,0" width="160" cols="1" cell_height="33" repeat_content="false" arrangement="vertical">
+					<buffIcon textcontent="Armour Penetration" bufficon="zrb-armourpenetration1" />
+					<buffIcon textcontent="Arrow Resist" bufficon="zrb-arrowresist1" />
+					<buffIcon textcontent="Blunt Resist" bufficon="zrb-bluntresist1" />
+					<buffIcon textcontent="Bullet Resist" bufficon="zrb-bulletresist1" />
+					<buffIcon textcontent="Decap Resist" bufficon="zrb-decapresist1" />
+					<buffIcon textcontent="Explosive Resist" bufficon="zrb-explosiveresist1" />
+					<buffIcon textcontent="Fire Resist" bufficon="zrb-fireresist1" />
+					<buffIcon textcontent="Fist Resist" bufficon="zrb-fistresist1" />
+					<buffIcon textcontent="Blade/Spear Resist" bufficon="zrb-kniferesist1" />
+					<buffIcon textcontent="Max Health" bufficon="zrb-maxhealth1" />
+					<buffIcon textcontent="Shotgun Resist" bufficon="zrb-shotgunresist1" />
+					<buffIcon textcontent="Extra Damage" bufficon="zrb-strong1" />
+					<buffIcon textcontent="Electric Stun resist" bufficon="zrb-shockresist1" />
+				</grid>
+			</rect>
+		</window>
+	</insertAfter>
+	
+</windows>

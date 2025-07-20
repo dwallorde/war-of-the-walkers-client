@@ -1,0 +1,43 @@
+<Remedius>	
+	
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/display_entry[@item='meleeWpnBladeT1HuntingKnife']">
+		<unlock_entry item="meleeWpnBladeT3SealCombatKnife" unlock_tier="1" tags="meleeWpnBladeT3SealCombatKnife"/>
+	</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,75" value="1" tags="meleeWpnBladeT3SealCombatKnife"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="20,25,30,35,75" value="1,2,3,4,5" tags="meleeWpnBladeT3SealCombatKnife"/>
+	</append>
+	
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/display_entry[@item='meleeWpnBladeT3Machete']">
+		<unlock_entry item="DementivemeleeWpnBladeHellHound" unlock_tier="1" tags="DementivemeleeWpnBladeHellHound"/>
+	</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingBlades']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="DementivemeleeWpnBladeHellHound"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="DementivemeleeWpnBladeHellHound"/>
+	</append>
+		
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/display_entry[@item='meleeWpnClubT3SteelClub']">
+		<unlock_entry item="meleeWpnClubT3TitaniumBaseballBat" unlock_tier="1" tags="meleeWpnClubT3TitaniumBaseballBat"/>
+
+	</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingClubs']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeWpnClubT3TitaniumBaseballBat"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeWpnClubT3TitaniumBaseballBat"/>
+	</append>
+	
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/display_entry[@item='meleeWpnSpearT3SteelSpear']">
+		<unlock_entry item="DementivemeleeWpnSpearT3SteelSpear" unlock_tier="1" tags="DementivemeleeWpnSpearT3SteelSpear"/>
+	</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSpears']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="DementivemeleeWpnSpearT3SteelSpear"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="DementivemeleeWpnSpearT3SteelSpear"/>	
+	</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/display_entry[@item='meleeWpnSledgeT3SteelSledgehammer']">
+		<unlock_entry item="meleeToolAxeT3Hugh" unlock_tier="1" tags="meleeToolAxeT3Hugh"/>
+	</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingSledgehammers']/effect_group">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="36,75" value="1" tags="meleeToolAxeT3Hugh"/>
+			<passive_effect name="CraftingTier" operation="base_add" level="43,51,59,67,75" value="1,2,3,4,5" tags="meleeToolAxeT3Hugh"/>
+	</append>
+	
+</Remedius>

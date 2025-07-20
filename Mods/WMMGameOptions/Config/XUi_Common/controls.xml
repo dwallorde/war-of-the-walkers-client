@@ -1,0 +1,16 @@
+﻿<controls>
+	<insertAfter xpath="/controls/pager" >
+		<custompager depth="3" pos="0,0" width="100" height="32"
+		show_max_page="false" separator="/" primary_pager="true" contents_parent="">
+			<rect name="${name}" depth="${depth}" pos="${pos}" disableautobackground="true" controller="XUiC_WMMPager, WMMGameOptions" visible="{paging_visible}" show_max_page="${show_max_page}" separator="${separator}" primary_pager="${primary_pager}" contents_parent="${contents_parent}">
+				<!-- default size: 100x32 -->
+				<button depth="4" name="pageDown" style="icon30px, press" width="${height-2}" height="${height-2}" pos="${Round(height/2, 0)},${Round(-height/2, 0)}" enabled="{# int(pagenumber) &gt; 1}" sprite="ui_game_symbol_arrow_left" disabledcolor="[lightGrey]" pivot="center" sound="[paging_click]" use_selection_box="false" hovercolor="219, 86, 92, 255"/>
+				<rect depth="4" pos="${height},${Round(-height/2, 0)}">
+					<sprite name="background" style="icon30px" width="${width-2*height}" height="${height-2}" pivot="left" color="[black]" type="sliced" />
+					<label depth="5" text="{#showmaxpage ? pagenumber + separator + maxpagenumber : pagenumber}" width="${width-2*height}" height="${height-2}" font_size="${height-4}" pivot="left" justify="center" />
+				</rect>
+				<button depth="4" name="pageUp"   style="icon30px, press" width="${height-2}" height="${height-2}" pos="${Round(width - height/2, 0)},${Round(-height/2, 0)}" enabled="{# int(pagenumber) &lt; int(maxpagenumber)}" sprite="ui_game_symbol_arrow_right" disabledcolor="[lightGrey]" pivot="center" sound="[paging_click]" use_selection_box="false" hovercolor="219, 86, 92, 255"/>
+			</rect>
+		</custompager>
+	</insertAfter>
+</controls>

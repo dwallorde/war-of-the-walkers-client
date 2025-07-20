@@ -1,0 +1,82 @@
+<Remedius>
+
+	<append xpath="/recipes">	
+
+		<recipe name="meleeWpnBladeT3SealCombatKnife" count="1" craft_area="workbench" craft_time="600" tags="learnable,perkDeepCuts">
+			<ingredient name="meleeWpnBladeT3MacheteParts" count="20"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<ingredient name="resourceSilverNugget" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="meleeWpnBladeT3MacheteParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceSilverNugget"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+
+		<recipe name="meleeWpnClubT3TitaniumBaseballBat" count="1" craft_area="workbench" craft_time="600" tags="learnable,perkPummelPete">
+			<ingredient name="meleeWpnClubT3SteelClubParts" count="20"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceWood" count="10"/>
+			<ingredient name="resourceSilverNugget" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="meleeWpnClubT3SteelClubParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceWood"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceSilverNugget"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+			
+		<recipe name="DementivemeleeWpnBladeHellHound" count="1" craft_area="workbench" craft_time="600" tags="learnable,perkDeepCuts">
+			<ingredient name="meleeWpnBladeT3MacheteParts" count="20"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<ingredient name="resourceSilverNugget" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="meleeWpnBladeT3MacheteParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceSilverNugget"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+				
+		<recipe name="DementivemeleeWpnSpearT3SteelSpear" count="1" craft_area="workbench" craft_time="600" tags="learnable,perkJavelinMaster,craftingSpears">
+			<ingredient name="meleeWpnSpearT3SteelSpearParts" count="20"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<ingredient name="resourceSilverNugget" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="meleeWpnSpearT3SteelSpearParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceSilverNugget"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="meleeToolAxeT3Hugh" count="1" craft_area="workbench" craft_time="600" tags="learnable,perkSkullCrusher">
+			<ingredient name="meleeToolAllSteelParts" count="20"/>
+			<ingredient name="resourceForgedSteel" count="200"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<ingredient name="resourceSilverNugget" count="5"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="meleeToolAllSteelParts"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="100,500" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceSilverNugget"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+	</append>
+	
+</Remedius>

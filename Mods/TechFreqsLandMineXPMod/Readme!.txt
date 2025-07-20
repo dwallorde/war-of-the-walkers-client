@@ -1,10 +1,15 @@
 
 
 
-The TechFreq's Land Mine XP Mod V2.1(V2.0), for 7 Days to Die allows players to gain XP from enemy zombies and most hostile animals killed by land mines. The XP distribution is proximity-based, meaning that if a player is near the traps when a kill occurs, they will receive XP—now rocking configurable , 150 XP per kill & 30m radius file similar to the spike trap xp mod.
-
+The TechFreq's Land Mine XP Mod V2.2(V2.1), for 7 Days to Die allows players to gain XP from enemy zombies and most hostile animals killed by land mines. The XP distribution is proximity-based, meaning that if a player is near the traps when a kill occurs, they will receive XP—now rocking configurable , 150 XP per kill & 30m radius file similar to the spike trap xp mod.
 
 Latest Changelog:
+V2.2(v2.1)
+- Updated for v2.1 b7 of 7days to die
+- adds other debug checks for the methods to fix the entity name, but thats about it same for shared spike trap xp mod
+
+
+Previous Changelog:
 V2.1(V2.0)
 - Updated for V2.0 of  7days to die
 - removed redundant code for patching on entity instead to patch on block for landmine detection 
@@ -71,6 +76,13 @@ As for TechFreqs music, it's royalty-free music to use in your projects or for c
 Source music files are available feel free to ask away, available in the discord! or for more content! TechFreqs Socials: https://beacons.ai/techfreq
 
 Checkout the behind-the-scenes vibes today! Thank you again for checking out the mod post.
+
+
+
+License: CC BY-NC-SA 4.0  
+This mod is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. You can use it for personal play in *7 Days to Die*. Modifications or sharing require crediting TechFreq, linking to the mod page, and using the same license for derivatives. Contact me at beacons.ai/techfreq for permission for any modifications or changes. 
+See LICENSE.txt or http://creativecommons.org/licenses/by-nc-sa/4.0/ for full terms.  
+Note: Monetized videos/blogs showcasing this mod are allowed along as with credit to TechFreq.
 
 
 

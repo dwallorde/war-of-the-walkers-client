@@ -1,0 +1,36 @@
+<Remedius>
+	
+	<append xpath="//item_modifier[@name='modMeleeClubBarbedWire']">
+		<item_property_overrides name="meleeWpnClubT3TitaniumBaseballBat">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batBarbed_Prefab.prefab"/>
+		</item_property_overrides>
+	</append>	
+	<append xpath="//item_modifier[@name='modMeleeClubMetalSpikes']">	
+		<item_property_overrides name="meleeWpnClubT3TitaniumBaseballBat">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batSpikes_Prefab.prefab"/>
+		</item_property_overrides>
+	</append>
+	<append xpath="//item_modifier[@name='modMeleeClubMetalChain']">
+		<item_property_overrides name="meleeWpnClubT3TitaniumBaseballBat">
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Bat/batChained_Prefab.prefab"/>
+		</item_property_overrides>
+	</append>
+	<append xpath="//item_modifier[@name='modMeleeClubBurningShaft']">		
+		<item_property_overrides name="meleeWpnClubT3TitaniumBaseballBat">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_bat_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeWpnBladeT3SealCombatKnife">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_hammer_firePrefab.prefab"/>
+		</item_property_overrides>
+				<item_property_overrides name="DementivemeleeWpnSpearT3SteelSpear">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_spear_iron_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="DementivemeleeWpnBladeHellHound">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_machete_flamePrefab.prefab"/>
+		</item_property_overrides>
+		<item_property_overrides name="meleeToolAxeT3Hugh">
+			<property name="FlameEffect" value="@:ItemModEffects/mod_steel_axe_flamePrefab.prefab"/>
+		</item_property_overrides>
+	</append>
+	
+</Remedius>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customgameoptions>
+	<config name="CustomCityZombieMultiplier" value="0" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomCityZombieMultiplierNight" value="0" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomBiomeRespawnDelay" value="1" /> <!-- 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -->
+	<config name="CustomHeadShotOnly" value="false" /> <!-- true / false -->
+	<config name="CustomZombieRage" value="true" /> <!-- true / false -->
+	<config name="CustomWanderingHordeFrequency" value="0" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomWanderingHordeMultiplier" value="1" /> <!-- 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -->
+	<config name="CustomHeatMap" value="100" /> <!-- 25, 50, 75, 100, 125, 150, 175, 200, 300, 400, 500 -->
+	<config name="CustomTraderSellPriceMultiplier" value="1" /> <!-- 1, 2, 3, 4, 5 -->
+	<config name="CustomItemsDegradeOnRepair" value="false" /> <!-- true / false -->
+	<config name="CustomSleeperMultiplier" value="0" /> <!-- 0, 1, 2, 3 -->
+	<config name="CustomItemsInLootContainer" value="true" /> <!-- true / false -->
+	<config name="CustomItemsFromTraderInvertory" value="true" /> <!-- true / false -->
+	<config name="CustomItemsFromTraderQuests" value="true" /> <!-- true / false -->
+	<config name="CustomFeralSenseRangeDay" value="0" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomFeralSenseRangeNight" value="0" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsBiomePercentage" value="50" /> <!-- 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100  -->
+	<config name="CustomZombieBuffsSleeperPercentage" value="50" /> <!-- 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100  -->
+	<config name="CustomZombieBuffsWanderingHordePercentage" value="50" /> <!-- 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100  -->
+	<config name="CustomZombieBuffsBloodmoonPercentage" value="50" /> <!-- 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100  -->
+	<config name="CustomZombieBuffsBiomeMaxBuffCount" value="5" /> <!-- 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -->
+	<config name="CustomZombieBuffsSleeperMaxBuffCount" value="5" /> <!-- 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -->
+	<config name="CustomZombieBuffsWanderingHordeMaxBuffCount" value="5" /> <!-- 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -->
+	<config name="CustomZombieBuffsBloodmoonMaxBuffCount" value="5" /> <!-- 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -->
+	<config name="CustomZombieBuffsArmourPenetrationMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsArrowResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsBluntResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsBulletResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsDecapResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsExplosiveResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsFireResistMaxLevel" value="5" />	<!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsFistResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsKnifeResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsMaxHealthMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsShotgunResistMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+	<config name="CustomZombieBuffsStrongMaxLevel" value="5" /> <!-- 0, 1, 2, 3, 4, 5 -->
+</customgameoptions>

@@ -1,0 +1,43 @@
+﻿<windows>
+
+	<insertAfter xpath="/windows/window[@name='CharacterFrameWindow']/rect/panel[@name='previewFrameSDCS']" >
+
+		<panel name="armorQuickSwap" depth="10" pos="-150, -88" width="292" height="70" disableautobackground="true" controller="XUiC_WMMArmourQuickSwap, WMMArmourQuickSwap" >
+
+			<rect depth="1" name="toolbar" width="43" height="43" pos="85,3">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="60" height="100" color="[black]" type="sliced" fillcenter="false" />
+				<sprite color="[mediumGrey]" type="sliced" width="60" height="98" pos="0,0" />
+				<button depth="1" name="load1Button" style="icon32px, press, hover" pivot="center" pos="30,-25" sprite="ui_game_symbol_player" tooltip="Edit Armour Slot 1" sound="[paging_click]" selectedcolor="[gold]"/>
+				<button depth="1" name="swap1Button" style="icon32px, press, hover" pivot="center" pos="30,-70" sprite="server_refresh" tooltip="Swap Armour Slot 1" sound="[paging_click]" selectedcolor="[gold]" />
+			</rect>
+
+			<rect depth="1" name="toolbar" width="43" height="43" pos="85,-104">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="60" height="100" color="[black]" type="sliced" fillcenter="false" />
+				<sprite color="[mediumGrey]" type="sliced" width="60" height="98" pos="0,0" />
+				<button depth="1" name="load2Button" style="icon32px, press, hover" pivot="center" pos="30,-25" sprite="ui_game_symbol_player" tooltip="Edit Armour Slot 2" sound="[paging_click]" selectedcolor="[gold]" />
+				<button depth="1" name="swap2Button" style="icon32px, press, hover" pivot="center" pos="30,-70" sprite="server_refresh" tooltip="Swap Armour Slot 2" sound="[paging_click]" selectedcolor="[gold]" />
+			</rect>
+
+			<rect depth="1" name="toolbar" width="43" height="43" pos="85,-211">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="60" height="100" color="[black]" type="sliced" fillcenter="false" />
+				<sprite color="[mediumGrey]" type="sliced" width="60" height="98" pos="0,0" />
+				<button depth="1" name="load3Button" style="icon32px, press, hover" pivot="center" pos="30,-25" sprite="ui_game_symbol_player" tooltip="Edit Armour Slot 3" sound="[paging_click]" selectedcolor="[gold]" />
+				<button depth="1" name="swap3Button" style="icon32px, press, hover" pivot="center" pos="30,-70" sprite="server_refresh" tooltip="Swap Armour Slot 3" sound="[paging_click]" selectedcolor="[gold]" />
+			</rect>
+
+			<rect depth="1" name="toolbar" width="43" height="43" pos="85,-320">
+				<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,0" width="60" height="100" color="[black]" type="sliced" fillcenter="false" />
+				<sprite color="[mediumGrey]" type="sliced" width="60" height="98" pos="0,0" />
+				<button depth="1" name="load4Button" style="icon32px, press, hover" pivot="center" pos="30,-25" sprite="ui_game_symbol_player" tooltip="Edit Armour Slot 4" sound="[paging_click]" selectedcolor="[gold]" />
+				<button depth="1" name="swap4Button" style="icon32px, press, hover" pivot="center" pos="30,-70" sprite="server_refresh" tooltip="Swap Armour Slot 4" sound="[paging_click]" selectedcolor="[gold]" />
+			</rect>
+
+			<grid name="armorQuickSwapInventory" rows="4" cols="1" cell_width="70" cell_height="81" controller="XUiC_WMMArmourQuickSwapInventory, WMMArmourQuickSwap" repeat_content="true">
+				<equipment_stack_sdcs name="0"/>
+			</grid>
+		</panel>
+	</insertAfter>
+
+</windows>
+
+

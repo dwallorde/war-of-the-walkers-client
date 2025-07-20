@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--/*Copyright 2024 Christopher Beda
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.*/-->
+<Quartz name="XUi/windows.xml">
+	<append xpath="/windows">
+		<window name="MiniMap">
+				<!-- Non Masked Minimap Example -->
+			<!-- <panel name="mapView" disableautobackground="true" pos="200,-200" depth="1" controller="Quartz.MiniMap, Quartz" forceicontextoff="false" iconsize="50" iconscalemin="10" iconscalemax="100" zoomscalesteps="0.5, 1, 2, 5">
+				<texture name="mapViewTexture" depth="2" width="300" height="300" material="Materials/MaskableMainmap"/>
+				<panel name="clippingPanel" depth="4" width="300" height="300" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="300,300" clippingcenter="150,-150"/>
+			</panel> -->
+
+			<!-- Masked Minimap Example pos -240,240 default -->
+			<rect name="minimap" pos="-240,-220" depth="1" controller="Quartz.MiniMap, Quartz" forceicontextoff="true" iconsize="40" iconscalemin="10" iconscalemax="50" zoomscalesteps="0.5, 1, 2, 5">
+				<sprite depth="99" pos="-5,5" name="MinimapBg" sprite="MiniMap" height="240" width="240" type="sliced" globalopacitymod="1.8" color="[white]" />
+				<maskedtexture name="mapViewTexture" depth="2" width="230" height="230" material="Materials/MaskableMainmap" mask="@modfolder://Textures/Mask.png"/>
+				<maskedpanel name="clippingPanel" depth="4" width="220" height="220" mask="@modfolder://Textures/Mask.png" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="220,220" clippingcenter="112,-112"/>
+			</rect>
+		</window>
+	</append>
+
+</Quartz>

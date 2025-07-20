@@ -1,0 +1,15 @@
+<LMGBeltBag>
+
+<append xpath="/recipes">
+
+<recipe name="LMGBeltBag" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+	<ingredient name="carBattery" count="1"/>
+	<ingredient name="resourceForgedIron" count="35"/>
+	<ingredient name="resourceMechanicalParts" count="40"/>
+	<ingredient name="resourceScrapPolymers" count="80"/>
+	<ingredient name="resourceSpring" count="10"/>
+</recipe>
+
+</append>
+
+</LMGBeltBag>

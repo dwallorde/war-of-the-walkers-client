@@ -33,7 +33,8 @@
 	<append xpath="/windows">
 		<window name="windowLocation" pos="-259, -40" width="240" height="60" anchor="RightTop" depth="-20" controller="Location">
 			<label depth="3" text="{locationname}" font_size="20" style="Outlined_Text" justify="right" pos="6,2" height="28" />
-			<grid pos="250, -28" pivot="right" cols="8" cell_width="18" cell_height="16">
+			<sprite depth="2" pos="230,-20" name="windowicon" width="16" height="16" sprite="ui_game_loot_stage_bad" visible="{visible_loot_max}" />
+			<grid pos="230, -28" pivot="right" cols="8" cell_width="18" cell_height="16">
 				<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor1}" visible="{visible1}" />
 				<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor2}" visible="{visible2}"/>
 				<sprite depth="2" name="windowicon" width="16" height="16" sprite="ui_game_symbol_skull" color="{difficultycolor3}" visible="{visible3}"/>
@@ -50,6 +51,17 @@
 		</window>
 	</append>	
 
+<!--Fixed Vanilla Overlapped Text in Trader Menus & Map-->
+	
+	<set xpath="/windows/window[@name='windowTrader']/panel[@name='header']/sprite[@name='windowIcon']/@pos">605,-5</set>
+	<set xpath="/windows/window[@name='windowTrader']/panel[@name='header']/label[@text='{restocklabel}: {timeleft}']/@pos">295,-8</set>
+	<set xpath="/windows/window[@name='windowTrader']/panel[@name='header']/label[@name='availableMoney']/@pos">557,-6</set>
+	<set xpath="/windows/window[@name='windowTrader']/panel[@name='header']/sprite[@name='coinIcon']/@pos">595,-5</set>
+			
+	<set xpath="/windows/window[@name='mapArea']/panel[@name='content']/rect[@name='toolbar']/sprite[@name='cursorIcon']/@pos">380,-5</set>
+	<set xpath="/windows/window[@name='mapArea']/panel[@name='content']/rect[@name='toolbar']/label[@name='cursorPos']/@pos">418,-12</set>
+	<set xpath="/windows/window[@name='mapArea']/panel[@name='content']/rect[@name='toolbar']/button[@name='waypointIcon']/@pos">568,-21</set>
+	
 <!--Increase XP Bar Size-->
 	<remove xpath="/windows/window[@name='windowToolbelt']/rect/sprite[@pos='0,6']" />
 	<append xpath="/windows/window[@name='windowToolbelt']/rect">
@@ -226,7 +238,7 @@
 <!-- Day/Time in Menu Screens -->
 	<append xpath="/windows" >
 		<window name="TimeInMenu" width="400" height="32" pos="-505,-20" controller="MapStats" anchor="CenterTop">		
-			<label name="label_menuTimeDayTime" depth="2" pos="28,0" width="200" height="26" style="Outlined_Text" text="{mapdaytimetitle}: [DECEA3]{mapdaytime}[-]" font_size="24" />
+			<label name="label_menuTimeDayTime" depth="2" pos="28,0" width="200" height="26" style="Outlined_Text" text="{mapdaytimetitle}: [DECEA3]{mapdaytime}[-] " font_size="24" />
 		</window>
 	</append>
 	

@@ -4,6 +4,10 @@
 The TechFreq's Shared Spike Trap XP Mod, for 7 Days to Die allows players to gain XP from enemy zombies and most hostile animals killed by wooden or iron spike traps. The XP distribution is proximity-based, meaning that if a player is near the traps when a kill occurs, they will receive XP—now rocking configurable , 150 XP per kill & 30m radius file.
 
 Latest Changelog:
+V4.4
+- Updated for 2.1 b9 of 7 days to die and fixed null reference exception.
+
+Previous Changelog:
 V4.3
 - Updated for 2.0
 - Fixed message with tooltip null error
@@ -83,6 +87,11 @@ Source music files are available feel free to ask away, available in the discord
 
 Checkout the behind-the-scenes vibes today! Thank you again for checking out the mod post.
 
+
+License: CC BY-NC-SA 4.0  
+This mod is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. You can use it for personal play in *7 Days to Die*. Modifications or sharing require crediting TechFreq, linking to the mod page, and using the same license for derivatives. Contact me at beacons.ai/techfreq for permission for any modifications or changes. 
+See LICENSE.txt or http://creativecommons.org/licenses/by-nc-sa/4.0/ for full terms.  
+Note: Monetized videos/blogs showcasing this mod are allowed along as with credit to TechFreq.
 
 
 

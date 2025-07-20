@@ -1,0 +1,10 @@
+<config>
+	<append xpath="/entity_classes/entity_class[@name='entityJunkDrone']">
+		<property name="KillXP" value="0.5, 0.6, 0.7, 0.8, 0.9, 1.0"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="droneMeshUpdate"/>
+			<triggered_effect trigger="onSelfRespawn" action="AddBuff" target="self" buff="droneMeshUpdate"/>
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="droneMeshUpdate"/>
+		</effect_group>
+	</append>
+</config>

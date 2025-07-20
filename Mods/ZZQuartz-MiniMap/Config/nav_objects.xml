@@ -1,0 +1,14 @@
+<configs>
+	<append xpath="/nav_object_classes">
+		<nav_object_class name="MiniMapZombies">
+			<map_settings>
+				<property name="sprite_name" value="ui_game_symbol_enemy_dot"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="60"/>
+				<property name="color" value="255,0,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="minimap_only" value="true"/>
+			</map_settings>
+		</nav_object_class>
+	</append>
+</configs>

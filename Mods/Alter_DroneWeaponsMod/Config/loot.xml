@@ -1,0 +1,20 @@
+<configs>
+	<append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT2']">
+		<item name="modRoboticDroneWeaponModSchematic" loot_prob_template="med"/>
+		<item name="modRoboticDroneShotgunWeaponModSchematic" loot_prob_template="med"/>
+		<item name="modRoboticDroneStunWeaponModSchematic" loot_prob_template="med"/>
+		<item name="modRoboticDroneRifleWeaponModSchematic" loot_prob_template="med"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupBotSchematics']">
+		<item name="modRoboticDroneWeaponModSchematic" loot_prob_template="low"/>
+		<item name="modRoboticDroneShotgunWeaponModSchematic" loot_prob_template="low"/>
+		<item name="modRoboticDroneStunWeaponModSchematic" loot_prob_template="low"/>
+		<item name="modRoboticDroneRifleWeaponModSchematic" loot_prob_template="low"/>
+	</append>
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrone']">
+		<item name="modRoboticDroneWeaponMod" loot_prob_template="veryLow"/>
+		<item name="modRoboticDroneShotgunWeaponMod" loot_prob_template="veryLow"/>
+		<item name="modRoboticDroneStunWeaponMod" loot_prob_template="veryLow"/>
+		<item name="modRoboticDroneRifleWeaponMod" loot_prob_template="veryLow"/>
+	</append>
+</configs>

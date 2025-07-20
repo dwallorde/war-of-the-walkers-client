@@ -1,0 +1,32 @@
+TechFreq Mods License
+Copyright (c) 2025 TechFreq. All rights reserved.
+
+This license applies to all mods created by TechFreq, including but not limited to any future mods for *7 Days to Die* or other games ("Mods"). Each Mod, including its source code, configuration files, and associated assets, is the intellectual property of TechFreq and is protected by copyright law. Unauthorized use, modification, or distribution of any Mod or part thereof is strictly prohibited.
+
+1. **Usage**:
+   - You are granted permission to use TechFreq’s Mods for personal, non-commercial purposes within the intended game (e.g., *7 Days to Die*), provided the Mod is used as provided, without modification or redistribution.
+   - Any other use, including but not limited to modification, redistribution, or incorporation into other works, requires explicit written permission from TechFreq.
+
+2. **Modification and Derivative Works**:
+   - To modify any Mod or create derivative works, you must contact TechFreq at [Discord:TechFreq or beacons.ai/techfreq] and obtain written permission.
+   - If permission is granted, you must:
+     - **Attribute**: Give credit to TechFreq as the original author in the mod’s description, documentation, and any distributed files, including a link to the original mod page (e.g., Nexus Mods: [e.g., https://www.nexusmods.com/users/techfreq]).
+     - **Notify and Share**: Provide TechFreq with a copy of the modified or derivative mod (source code and compiled files) upon release, along with a description of changes made.
+     - **Non-Commercial**: Ensure the modified mod is not used for commercial purposes without a separate written agreement from TechFreq.
+
+3. **Distribution**:
+   - Redistribution of any Mod, in whole or in part, whether original or modified, is prohibited without explicit written permission from TechFreq.
+   - Uploading any Mod to any other platform (e.g., Steam Workshop, etc) without permission is strictly prohibited.
+
+4. **Community and Collaboration**:
+   - TechFreq supports an open and collaborative modding community. If you are inspired by any Mod or wish to collaborate, please contact TechFreq to discuss ideas or request permission. Proper credit and transparency are essential for a respectful modding environment.
+
+5. **No Warranty**:
+   - All Mods are provided "as is," without warranty of any kind, express or implied. TechFreq is not liable for any damages or issues arising from the use of any Mod.
+
+6. **Enforcement**:
+   - Violation of this license (e.g., unauthorized modification or distribution) may result in reporting to relevant platforms (e.g., Nexus Mods, 7 Days to Die forums) and requests for removal of the offending content.
+
+For permission requests, collaboration inquiries, or support, contact TechFreq at [beacons.ai\techfreq].
+
+Note: All Mods are created for specific games (e.g., *7 Days to Die*), and all rights to those games are reserved by their respective owners (e.g., The Fun Pimps Entertainment LLC for *7 Days to Die*).

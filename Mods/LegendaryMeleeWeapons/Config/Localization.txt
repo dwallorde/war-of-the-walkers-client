@@ -1,0 +1,27 @@
+Key,File,Type,English,french
+
+
+meleeWpnBladeT3SealCombatKnife,items,Melee,"[00BFFF]Seal Combat Knife[-]","[00BFFF]Couteau de combat[-]"
+
+meleeWpnBladeT3SealCombatKnifeDesc,items,Melee,"You can always rely on this 11 inches cobalt steel knife to open a tuna can or to Choppity Chop your way out of an infested room.","Vous pouvez toujours compter sur ce couteau en acier au cobalt de 11 pouces pour ouvrir une boîte de thon ou pour sortir d'une pièce infestée par des zombies."
+
+
+DementivemeleeWpnBladeHellHound,items,Melee,"[B20000]Rick's Machete[-]","[B20000]Machette de Rick[-]"
+
+DementivemeleeWpnBladeHellHoundDesc,items,Melee,"Fetch me their souls!","Cette machette a vécu de nombreuses histoires. Elle en a également achevé!"
+
+
+DementivemeleeWpnSpearT3SteelSpear,items,Melee,"[00BFFF]Gungnir[-]"
+
+DementivemeleeWpnSpearT3SteelSpearDesc,items,Melee,"In the world of Nordic legends, Gungnir, the spear of the god Odin, made of magic and engraved with runes, never misses its target","Dans l’univers des légendes nordiques, Gungnir, la lance du dieu Odin, faite de magie et gravée de runes, ne rate jamais sa cible."
+
+meleeWpnClubT3TitaniumBaseballBat,items,Melee,[B20000]Lucille[-]
+
+meleeWpnClubT3TitaniumBaseballBatDesc,items,Melee,"Lucille isn’t just any baseball bat: she’s the queen of post-apocalyptic home runs!\n\n32 inches of solid hardwood (with a titanium core—Negan likes things sturdy), ready to smash way more than baseballs.\n\nWarning: Lucille is thirsty… and she’s not looking for water. Watch out for any heads in the way!","Lucille n’est pas une simple batte de baseball : c’est la reine du home-run post-apocalyptique !\n\n32 pouces de bois dur massif (et un coeur en titane, parce que Negan aime le solide), prête à fracasser plus que des balles.\n\nAttention : Lucille a soif… et elle ne boit pas que de l’eau. Gare aux têtes qui traînent !"
+
+meleeToolAxeT3Hugh,items,Tool,"[B20000]Hugh's Axe[-]","[B20000]Hache de Hugh[-]"
+
+meleeToolAxeT3HughDesc,items,Tool,"Forget slashed prices—Hugh prefers split skulls! His axe, customized with zombie bits stuck in the blade, is perfect for “negotiating” with pushy customers and hungry undead alike. Great for handling complaints or clearing out a crowd. Guarantee: blood splatters included, smiles not.","Oublie les prix cassés, Hugh préfère les crânes fendus ! Sa hache, customisée avec des restes de zombies incrustés, sert à négocier… à coups de tranchant. Parfait pour gérer les clients trop insistants et les morts-vivants affamés. Garantie : éclaboussures incluses, sourires non compris."
+
+
+
