@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="Alter_Soundoverride" />
+	<DisplayName value="Alter_Soundoverride" />
+	<Description value="Alter_Soundoverride" />
+	<Author value="Alter" />
+	<Version value="1.1.0.4" />
+	<Website value="" />
+	<SkipWithAntiCheat value="true" />
+</xml>
