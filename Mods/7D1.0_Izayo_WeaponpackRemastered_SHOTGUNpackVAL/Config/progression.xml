@@ -1,0 +1,73 @@
+<configs>
+								<!--Chonky's Code -->	
+
+		<!-- AMMO -->
+
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT1DoubleBarrel']">
+	<unlock_entry item="ammoShotgunShellPremium" unlock_tier="1" tags="ammoShotgunShellPremium"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="ammoShotgunShellPremium"/>
+</append>
+
+<!--TRAD T1 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT1DoubleBarrel']">
+	<unlock_entry item="IZYgunT1TradshotgunDoubleBarrelOverUnder" unlock_tier="1" tags="IZYgunT1TradshotgunDoubleBarrelOverUnder"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="IZYgunT1TradshotgunDoubleBarrelOverUnder"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="IZYgunT1TradshotgunDoubleBarrelOverUnder"/>
+</append>
+<!--TRAD T2 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT2PumpShotgun']">
+	<unlock_entry item="IZYgunT2TradshotgunLeveractionShotgunModel1887" unlock_tier="1" tags="IZYgunT2TradshotgunLeveractionShotgunModel1887"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="26,100" value="1" tags="IZYgunT2TradshotgunLeveractionShotgunModel1887"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="32,39,46,53,60,100" value="1,2,3,4,5,5" tags="IZYgunT2TradshotgunLeveractionShotgunModel1887"/>
+</append>
+<!--TRAD T3 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT3AutoShotgun']">
+	<unlock_entry item="IZYgunT3TradshotgunTrenchGunM1897" unlock_tier="1" tags="IZYgunT3TradshotgunTrenchGunM1897"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="IZYgunT3TradshotgunTrenchGunM1897"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="IZYgunT3TradshotgunTrenchGunM1897"/>
+</append>
+<!--TRAD T4 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT3AutoShotgun']">
+	<unlock_entry item="IZYgunT4TradshotgunBrowningAuto5" unlock_tier="1" tags="IZYgunT4TradshotgunBrowningAuto5"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="IZYgunT4TradshotgunBrowningAuto5"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="IZYgunT4TradshotgunBrowningAuto5"/>
+</append>
+<!--TAC T1 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT1DoubleBarrel']">
+	<unlock_entry item="IZYgunT1TACCompactshotgunSuperShortty" unlock_tier="1" tags="IZYgunT1TACCompactshotgunSuperShortty"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="11,100" value="1" tags="IZYgunT1TACCompactshotgunSuperShortty"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="13,16,19,22,25,100" value="1,2,3,4,5,5" tags="IZYgunT1TACCompactshotgunSuperShortty"/>
+</append>
+<!--TAC T3 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT3AutoShotgun']">
+	<unlock_entry item="IZYgunT3TACshotgunSPAS12G" unlock_tier="1" tags="IZYgunT3TACshotgunSPAS12G"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="IZYgunT3TACshotgunSPAS12G"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="IZYgunT3TACshotgunSPAS12G"/>
+</append>
+<!--TAC T4 -->	
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/display_entry[@item='gunShotgunT3AutoShotgun']">
+	<unlock_entry item="IZYgunT4TACshotgunM1014" unlock_tier="1" tags="IZYgunT4TACshotgunM1014"/>
+</append>
+<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingShotguns']/effect_group">
+	<passive_effect name="RecipeTagUnlocked" operation="base_set" level="61,100" value="1" tags="IZYgunT4TACshotgunM1014"/>
+	<passive_effect name="CraftingTier" operation="base_add" level="68,76,84,92,100" value="1,2,3,4,5" tags="IZYgunT4TACshotgunM1014"/>
+</append>
+
+
+<!-- -->	
+	
+</configs>	

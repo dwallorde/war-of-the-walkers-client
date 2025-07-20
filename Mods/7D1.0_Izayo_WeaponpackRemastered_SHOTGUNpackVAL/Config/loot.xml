@@ -1,0 +1,98 @@
+<configs>
+		<!-- oooooooooooo  -->
+		<!-- CREATE GROUP  -->
+		<!-- oooooooooooo  -->
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT1_Boomstick']">
+						<!-- tier 01  -->
+		<lootgroup name="groupWeaponsT1_SHOTGUN_DBOverUnder" count="all" loot_quality_template="QLTemplateT1">
+			<item name="IZYgunT1TradshotgunDoubleBarrelOverUnder"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT1_SHOTGUN_SHORTTY" count="all" loot_quality_template="QLTemplateT1">
+			<item name="IZYgunT1TACCompactshotgunSuperShortty"/>
+		</lootgroup>
+
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT2_Boomstick']">
+						<!-- tier 02  -->
+		<lootgroup name="groupWeaponsT2_SHOTGUN_1887" count="all" loot_quality_template="QLTemplateT2">
+			<item name="IZYgunT2TradshotgunLeveractionShotgunModel1887"/>
+		</lootgroup>
+
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Boomstick']">
+						<!-- tier 03  -->
+		<lootgroup name="groupWeaponsT3_SHOTGUN_SPAS12" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3TACshotgunSPAS12G"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT3_SHOTGUN_1897" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3TradshotgunTrenchGunM1897"/>
+		</lootgroup>
+
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Boomstick']">
+						<!-- tier 04  -->
+		<lootgroup name="groupWeaponsT3_SHOTGUN_M1014" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4TACshotgunM1014"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT3_SHOTGUN_BNA5" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4TradshotgunBrowningAuto5"/>
+		</lootgroup>
+
+	</insertAfter>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+		<!-- Adding new weapon groups to loot groups  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	<append xpath="//lootgroup[@name='groupWeaponsT1_Ranged']">	
+		<item group="groupWeaponsT1_SHOTGUN_DBOverUnder"/>
+		<item group="groupWeaponsT1_SHOTGUN_SHORTTY"/>
+	</append>
+	
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT2_Ranged']">	
+		<item group="groupWeaponsT2_SHOTGUN_1887"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_SHOTGUN_SPAS12"/>
+		<item group="groupWeaponsT3_SHOTGUN_1897"/>
+	</append>
+	
+								<!-- T4  -->
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_SHOTGUN_M1014"/>
+		<item group="groupWeaponsT3_SHOTGUN_BNA5"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+				<!-- QUEST REWARD sg GUN  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT1']">	
+		<item name="IZYgunT1TradshotgunDoubleBarrelOverUnder"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT2']">	
+		<item name="IZYgunT2TradshotgunLeveractionShotgunModel1887"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+		<item name="IZYgunT3TACshotgunSPAS12G"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+		<item name="IZYgunT4TACshotgunM1014"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+					<!-- add new AMMO -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+
+
+</configs>

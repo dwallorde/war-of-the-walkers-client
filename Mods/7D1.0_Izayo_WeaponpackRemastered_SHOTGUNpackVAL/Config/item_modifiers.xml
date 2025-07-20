@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+
+		<!--	Longbarrel		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBarrelExtender']">
+			
+	</append>
+	
+		<!--	SAW OFF BARREL	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='IZYgunT3TradshotgunTrenchGunM1897']">
+	
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+				<property name="Meshfile" value="#@modfolder:Resources/IZY_Shotgun_Pack_MainResource.unity3d?IZY_SG_M1897trenchgun_Short.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+
+		<!--	MAGAZINE-DRUM 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-EXT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+
+		
+	</append>
+
+			<!--	FORGRIP 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+		
+
+		
+	</append>
+
+		<!--	RET-STOCK 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunRetractingStock']">
+	
+			
+	</append>
+
+		<!--	FLASHLIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+			
+	</append>
+
+		<!--	LASER   	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+	
+			
+	</append>
+	
+		<!--	Triggermod  	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupAutomatic']">
+	
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_Shotgun_Pack_MainResource.unity3d?IZY_Shotgun_SPAS12_AUTO.Prefab"/>
+		</item_property_overrides>
+	
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunTriggerGroupBurst3']">
+
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_Shotgun_Pack_MainResource.unity3d?IZY_Shotgun_SPAS12_AUTO.Prefab"/>
+		</item_property_overrides>
+			
+	</append>
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+
+		<item_property_overrides name="IZYgunT1TradshotgunDoubleBarrelOverUnder">
+			<property name="ScopeCameraOffset" value=".0005,.00025,-.007"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="ScopeCameraOffset" value=".0005,-.004,-.05"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TradshotgunTrenchGunM1897">
+			<property name="ScopeCameraOffset" value=".0001,-.023,.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4TradshotgunBrowningAuto5">
+			<property name="ScopeCameraOffset" value=".0001,-.047,.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT1TACCompactshotgunSuperShortty">
+			<property name="ScopeCameraOffset" value=".0008,-.037,.02"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="ScopeCameraOffset" value=".0045,.0317,.25"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+
+		<item_property_overrides name="IZYgunT4TACshotgunM1014">
+			<property name="ScopeCameraOffset" value=".0062,.028,.25"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightA']">
+	
+		<item_property_overrides name="IZYgunT1TradshotgunDoubleBarrelOverUnder">
+			<property name="ScopeCameraOffset" value=".0005,.00025,-.007"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="ScopeCameraOffset" value=".0005,-.004,-.05"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT3TradshotgunTrenchGunM1897">
+			<property name="ScopeCameraOffset" value="0,-.02,.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4TradshotgunBrowningAuto5">
+			<property name="ScopeCameraOffset" value=".0001,-.0365,.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT1TACCompactshotgunSuperShortty">
+			<property name="ScopeCameraOffset" value=".0008,-.038,.02"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="ScopeCameraOffset" value=".0045,.0317,.25"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+
+		<item_property_overrides name="IZYgunT4TACshotgunM1014">
+			<property name="ScopeCameraOffset" value=".0062,.028,.25"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightB']">
+	
+		<item_property_overrides name="IZYgunT1TradshotgunDoubleBarrelOverUnder">
+			<property name="ScopeCameraOffset" value=".0005,.00025,-.007"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="ScopeCameraOffset" value=".0005,-.004,-.05"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT3TradshotgunTrenchGunM1897">
+			<property name="ScopeCameraOffset" value="0,-.028,.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4TradshotgunBrowningAuto5">
+			<property name="ScopeCameraOffset" value=".0001,-.031,.06"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT1TACCompactshotgunSuperShortty">
+			<property name="ScopeCameraOffset" value=".0008,-.039,.02"/>
+			<property name="CrosshairOnAim" value="true"/> 
+			<property name="CrosshairUpAfterShot" value="true"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="ScopeCameraOffset" value=".0045,.0317,.25"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+
+		<item_property_overrides name="IZYgunT4TACshotgunM1014">
+			<property name="ScopeCameraOffset" value=".0062,.028,.25"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+		<!--	2XSCOPE	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+
+		<item_property_overrides name="IZYgunT1TradshotgunDoubleBarrelOverUnder">
+			<property name="ScopeCameraOffset" value=".0005,.001,-.04"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="ScopeCameraOffset" value=".0005,.006,-.06"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TradshotgunTrenchGunM1897">
+			<property name="ScopeCameraOffset" value="0,.025,.06"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4TradshotgunBrowningAuto5">
+			<property name="ScopeCameraOffset" value=".0002,-.025,.06"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT1TACCompactshotgunSuperShortty">
+			<property name="ScopeCameraOffset" value=".0008,-.04,.02"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_556_Pack_MainResource_BP_LMG.unity3d?Reticle_x4x8_ACOGscope2.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="ScopeCameraOffset" value=".0041,.037,.28"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4TACshotgunM1014">
+			<property name="ScopeCameraOffset" value=".0062,.026,.25"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+	
+		<!--	Silencer 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+
+		<item_property_overrides name="IZYgunT1TradshotgunDoubleBarrelOverUnder">
+			<property name="Sound_start" value="M1014A1_silen_fire"/>
+			<property name="Sound_loop" value="M1014A1_silen_fire"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="Sound_start" value="M1014A1_silen_fire"/>
+			<property name="Sound_loop" value="M1014A1_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TradshotgunTrenchGunM1897">
+			<property name="Sound_start" value="Universal_silen_fire_01"/>
+			<property name="Sound_loop" value="Universal_silen_fire_01"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4TradshotgunBrowningAuto5">
+			<property name="Sound_start" value="Universal_silen_fire_01"/>
+			<property name="Sound_loop" value="Universal_silen_fire_01"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT1TACCompactshotgunSuperShortty">
+			<property name="Sound_start" value="Universal_silen_fire_01"/>
+			<property name="Sound_loop" value="Universal_silen_fire_01"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3TACshotgunSPAS12G">
+			<property name="Sound_start" value="Universal_silen_fire_01"/>
+			<property name="Sound_loop" value="Universal_silen_fire_01"/>
+		</item_property_overrides>
+
+		<item_property_overrides name="IZYgunT4TACshotgunM1014">
+			<property name="Sound_start" value="M1014A1_silen_fire"/>
+			<property name="Sound_loop" value="M1014A1_silen_fire"/>
+		</item_property_overrides>
+	
+	</append>
+	
+	
+	
+			<!--	Later	-->
+	
+			<!--	HOLD_STYLE 1	-->
+	<append xpath="/item_modifiers/item_modifier[@name='IZYmodPistolHoldstyle01']">
+	
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_Shotgun_Pack_MainResource.unity3d?IZY_Shotgun_LeveractionSG_holdstyle_01.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+	
+			<!--	HOLD_STYLE 2	-->
+	<append xpath="/item_modifiers/item_modifier[@name='IZYmodPistolHoldstyle02']">
+	
+		<item_property_overrides name="IZYgunT2TradshotgunLeveractionShotgunModel1887">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_Shotgun_Pack_MainResource.unity3d?IZY_Shotgun_LeveractionSG_holdstyle_02.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+
+	
+</addnew>

@@ -1,0 +1,131 @@
+<addnew>
+
+	<append xpath="/recipes">
+	
+		<!--	***************************	-->
+			<!--	AMMO  -->
+		<!--	***************************	-->
+	
+		<recipe name="ammoShotgunShellPremium" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="resourceBuckshot" count="1"/>
+			<ingredient name="resourceGunPowder" count="6"/>
+			<ingredient name="resourceScrapPolymers" count="1"/>
+		</recipe>
+		
+		<recipe name="ammoShotgunShellPremium" count="1" craft_area="workbench" tags="workbenchCrafting">
+			<ingredient name="ammoShotgunShell" count="1"/>
+			<ingredient name="resourceGunPowder" count="2"/>
+			<ingredient name="resourceScrapPolymers" count="1"/>
+		</recipe>
+	
+		<!--	***************************	-->
+			<!--	SHOTGUN TRAD   -->
+		<!--	***************************	-->
+	
+		<recipe name="IZYgunT1TradshotgunDoubleBarrelOverUnder" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="1"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="IZYgunT2TradshotgunLeveractionShotgunModel1887" count="1" craft_area="workbench" tags="learnable,perkBoomstick,workbenchCrafting">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="7"/>
+			<ingredient name="resourceForgedSteel" count="40"/>
+			<ingredient name="resourceDuctTape" count="7"/>
+			<ingredient name="resourceSpring" count="13"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="IZYgunT3TradshotgunTrenchGunM1897" count="1" craft_area="workbench" tags="learnable,perkBoomstick,workbenchCrafting">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="13"/>
+			<ingredient name="resourceSpring" count="25"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<recipe name="IZYgunT4TradshotgunBrowningAuto5" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="16"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="25"/>
+			<ingredient name="resourceSpring" count="35"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+		<!--	***************************	-->
+			<!--	SHOTGUN TAC   -->
+		<!--	***************************	-->
+
+		<recipe name="IZYgunT1TACCompactshotgunSuperShortty" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="1"/>
+			<ingredient name="resourceForgedIron" count="5"/>
+			<ingredient name="resourceDuctTape" count="1"/>
+			<ingredient name="resourceSpring" count="1"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="5,25" tags="resourceForgedIron"/>
+				<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+
+		<recipe name="IZYgunT3TACshotgunSPAS12G" count="1" craft_area="workbench" tags="learnable,perkBoomstick,workbenchCrafting">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="13"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="13"/>
+			<ingredient name="resourceSpring" count="25"/>
+			<ingredient name="resourceLegendaryParts" count="0"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="6" operation="base_add" value="1" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+		
+	
+		<recipe name="IZYgunT4TACshotgunM1014" count="1" craft_area="workbench" tags="learnable,perkBoomstick">
+			<ingredient name="gunShotgunT1DoubleBarrelParts" count="16"/>
+			<ingredient name="resourceForgedSteel" count="100"/>
+			<ingredient name="resourceDuctTape" count="25"/>
+			<ingredient name="resourceSpring" count="35"/>
+			<ingredient name="resourceLegendaryParts" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="gunShotgunT1DoubleBarrelParts,resourceDuctTape"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="2,10" tags="resourceSpring"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="10,50" tags="resourceForgedSteel"/>
+				<passive_effect name="CraftingIngredientCount" level="2,6" operation="base_add" value="1,5" tags="resourceLegendaryParts"/>
+			</effect_group>
+		</recipe>
+			
+	</append>
+
+
+</addnew>

@@ -1,0 +1,19 @@
+<configs>
+
+		<!--	GUN_TRADER	-->
+		
+	<append xpath="//trader_item_group[@name='groupRangedAll']">
+		<item name="IZYgunT1TradshotgunDoubleBarrelOverUnder" quality="1,5"/>
+		<item name="IZYgunT2TradshotgunLeveractionShotgunModel1887" quality="1,5"/>
+		<item name="IZYgunT3TradshotgunTrenchGunM1897" quality="1,5"/>
+		<item name="IZYgunT4TradshotgunBrowningAuto5" quality="1,5" prob="0.5"/>
+		<item name="IZYgunT1TACCompactshotgunSuperShortty" quality="1,5"/>
+		<item name="IZYgunT3TACshotgunSPAS12G" quality="1,5"/>
+		<item name="IZYgunT4TACshotgunM1014" quality="1,5" prob="0.5"/>
+	</append>
+	
+	<append xpath="/traders/trader_item_groups/trader_item_group[@name='ammoBrass']">
+			<item name="ammoShotgunShellPremium" count="15,60"/>
+	</append>
+
+</configs>	
