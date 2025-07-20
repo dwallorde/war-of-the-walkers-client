@@ -1,0 +1,100 @@
+<configs>
+		<!-- oooooooooooo  -->
+		<!-- CREATE GROUP  -->
+		<!-- oooooooooooo  -->
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT1_Machinegunner']">
+						<!-- tier 01  -->
+		<lootgroup name="groupWeaponsT1_MG_STG44N" count="all" loot_quality_template="QLTemplateT1">
+			<item name="IZYgunT1ARSTG44N"/>
+		</lootgroup>
+
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_Machinegunner']">
+						<!-- tier 04  -->
+		<lootgroup name="groupWeaponsT4_MG_SCARH" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4BattleRifleSCARH"/>
+		</lootgroup>
+
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT1_DeadEye']">
+						<!-- tier 01  -->
+		<lootgroup name="groupWeaponsT1_DeadEye_MosinN" count="all" loot_quality_template="QLTemplateT1">
+			<item name="IZYgunT1SNIPERRIFLE762Mosinnagant"/>
+		</lootgroup>
+	</insertAfter>
+		
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT2_DeadEye']">
+						<!-- tier 02  -->
+		<lootgroup name="groupWeaponsT2_DeadEye_M1N" count="all" loot_quality_template="QLTemplateT2">
+			<item name="IZYgunT2MarksManRifle762M1garandNavyconverted"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_DeadEye']">
+						<!-- tier 03  -->
+		<lootgroup name="groupWeaponsT3_DeadEye_PSG1" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3MarksManRifle762HKPSG1"/>
+		</lootgroup>
+		<lootgroup name="groupWeaponsT3_DeadEye_Enfield" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle"/>
+		</lootgroup>
+	</insertAfter>
+	
+	<insertAfter xpath="//lootgroup[@name='groupWeaponsT3_DeadEye']">
+						<!-- tier 04  -->
+		<lootgroup name="groupWeaponsT3_DeadEye_L96" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4SNIPERRIFLE762L96AWMRifle"/>
+		</lootgroup>
+		
+		<lootgroup name="groupWeaponsT3_DeadEye_PROSVU" count="all" loot_quality_template="QLTemplateT3">
+			<item name="IZYgunT4MarksManRifle762SVUprototypeRifle"/>
+		</lootgroup>
+	</insertAfter>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+		<!-- Adding new weapon groups to loot groups  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+		
+	<append xpath="//lootgroup[@name='groupWeaponsT1_Ranged']">	
+		<item group="groupWeaponsT1_DeadEye_MosinN"/>
+		<item group="groupWeaponsT1_MG_STG44N"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT2_Ranged']">	
+		<item group="groupWeaponsT2_DeadEye_M1N"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_DeadEye_PSG1"/>
+		<item group="groupWeaponsT3_DeadEye_Enfield"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupWeaponsT3_Ranged']">	
+		<item group="groupWeaponsT3_DeadEye_L96"/>
+		<item group="groupWeaponsT3_DeadEye_PROSVU"/>
+		<item group="groupWeaponsT4_MG_SCARH"/>
+	</append>
+	
+		<!-- oooooooooooo oooooooooooo oooooooooooo  -->
+				<!-- QUEST REWARD 762 GUN  -->
+		<!-- oooooooooooo oooooooooooo oooooooooooo -->
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT1']">	
+		<item name="IZYgunT1SNIPERRIFLE762Mosinnagant"/>
+		<item name="IZYgunT1ARSTG44N"/>
+	</append>
+	
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT2']">	
+		<item name="IZYgunT2MarksManRifle762M1garandNavyconverted"/>
+	</append>
+
+	<append xpath="//lootgroup[@name='groupQuestWeaponsRangedT3']">	
+		<item name="IZYgunT3MarksManRifle762HKPSG1"/>
+		<item name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle"/>
+		<item name="IZYgunT4SNIPERRIFLE762L96AWMRifle"/>
+		<item name="IZYgunT4MarksManRifle762SVUprototypeRifle"/>
+		<item name="IZYgunT4BattleRifleSCARH"/>
+	</append>
+</configs>

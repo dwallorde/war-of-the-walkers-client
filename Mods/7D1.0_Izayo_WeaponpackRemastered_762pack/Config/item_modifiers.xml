@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+		<!--	762pack	-->
+		
+		<!--	ExtendMAG	-->
+		
+		<!--	Drum	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+	
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_AR_BR.unity3d?IZY_BR_BAR_drummag.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3BattleRifleHKG3">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_AR_BR.unity3d?IZY_AR_G3Rifle_drummag.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4LMGlightmachinegunMG34R">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_LMG_MG34R.unity3d?IZY_LMG_MG34R_drummag.Prefab"/>
+		</item_property_overrides>
+		
+	</append>
+		
+		<!--	GRIP	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+		<item_property_overrides name="IZYgunT1ARSTG44N">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_AR_BR.unity3d?IZY_AR_Sturmrifle_grip.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARAKM">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_AR_BR.unity3d?IZY_AR_AKM_grip.Prefab"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BattleRifleSCARH">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_AR_BR.unity3d?IZY_BR_ScarH_grip.Prefab"/>
+		</item_property_overrides>
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?IZY_MMR_M1garandN_magmod.Prefab"/>
+		</item_property_overrides>
+	</append>
+
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="ScopeCameraOffset" value=".0082,.03165,.16"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="ScopeCameraOffset" value="-.003,.0245,.23"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4SNIPERRIFLE762L96AWMRifle">
+			<property name="ScopeCameraOffset" value="-.0045,.0075,.2"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		
+			<!--	REF MarksmanRifle 	-->
+			
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="ScopeCameraOffset" value="0,.0474,.22"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="ScopeCameraOffset" value="0,-.023,-.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="ScopeCameraOffset" value="-.0024,-.023,.09"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	REF AR 	-->
+		<item_property_overrides name="IZYgunT1ARSTG44N">
+			<property name="ScopeCameraOffset" value="-.0008,0,-.01"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARAKM">
+			<property name="ScopeCameraOffset" value="-.0075,-.0542,.03"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	REF BR 	-->
+			
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="ScopeCameraOffset" value="-.0066,-.0192,.12"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2BattleRifleFNFALRifle">
+			<property name="ScopeCameraOffset" value="-.001,-.0145,.05"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2BattleRifleFNFALRifle">
+			<property name="ScopeCameraOffset" value="-.001,-.0145,.05"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3BattleRifleHKG3">
+			<property name="ScopeCameraOffset" value="-.0075,-.0492,.14"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BattleRifleSCARH">
+			<property name="ScopeCameraOffset" value="-.0013,-.008,.02"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	</append>
+	
+		<!--						REFLEXSIGHT A							-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightA']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="ScopeCameraOffset" value=".0082,.03165,.16"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="ScopeCameraOffset" value="-.003,.0245,.23"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4SNIPERRIFLE762L96AWMRifle">
+			<property name="ScopeCameraOffset" value="-.0045,.0075,.2"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		
+			<!--	REF MarksmanRifle 	-->
+			
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="ScopeCameraOffset" value="0,.0474,.22"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="ScopeCameraOffset" value="0,-.023,-.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="ScopeCameraOffset" value="-.0024,-.023,.09"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT1ARSTG44N">
+			<property name="ScopeCameraOffset" value="-.0008,0,-.01"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARAKM">
+			<property name="ScopeCameraOffset" value="-.0075,-.0595,.03"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	REF BR 	-->
+			
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="ScopeCameraOffset" value="-.0066,-.0245,.12"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2BattleRifleFNFALRifle">
+			<property name="ScopeCameraOffset" value="-.001,-.0175,.005"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3BattleRifleHKG3">
+			<property name="ScopeCameraOffset" value="-.0077,-.029,.14"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BattleRifleSCARH">
+			<property name="ScopeCameraOffset" value="-.0013,-.006,.02"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+		<!--				OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO					-->
+		<!--				OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO					-->
+		<!--				OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO					-->
+		
+		<!--						REFLEXSIGHT B							-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSightB']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="ScopeCameraOffset" value=".0082,.03165,.16"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="ScopeCameraOffset" value="-.003,.0245,.23"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4SNIPERRIFLE762L96AWMRifle">
+			<property name="ScopeCameraOffset" value="-.0045,.0075,.2"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		
+			<!--	REF MarksmanRifle 	-->
+			
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="ScopeCameraOffset" value="0,.0474,.22"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="ScopeCameraOffset" value="0,-.023,-.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="ScopeCameraOffset" value="-.0024,-.023,.09"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+		<item_property_overrides name="IZYgunT1ARSTG44N">
+			<property name="ScopeCameraOffset" value="-.0008,0,-.01"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARAKM">
+			<property name="ScopeCameraOffset" value="-.0075,-.0537,.03"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	REF BR 	-->
+			
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="ScopeCameraOffset" value="-.0065,-.0225,.08"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2BattleRifleFNFALRifle">
+			<property name="ScopeCameraOffset" value="-.001,.003,0"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3BattleRifleHKG3">
+			<property name="ScopeCameraOffset" value="-.0077,-.0277,.14"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BattleRifleSCARH">
+			<property name="ScopeCameraOffset" value="-.0013,-.006,.02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+	</append>
+		<!--				OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO					-->
+		<!--				OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO					-->
+		<!--				OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO					-->
+	
+	
+		<!--	X2SCOPE		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="Zoom_max_out" value="28"/>
+			<property name="Zoom_max_in" value="28"/>
+			<property name="ScopeCameraOffset" value=".0078,.0191,.12"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?IZY_SNIPER_Mosin_scope.Prefab"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="Zoom_max_out" value="28"/>
+			<property name="Zoom_max_in" value="28"/>
+			<property name="ScopeCameraOffset" value="-.0028,.0226,.16"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	SC 2X MarksmanRifle 	-->
+		
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="Zoom_max_out" value="25"/>
+			<property name="Zoom_max_in" value="25"/>
+			<property name="ScopeCameraOffset" value="0,.0284,.012"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="Zoom_max_out" value="25"/>
+			<property name="Zoom_max_in" value="25"/>
+			<property name="ScopeCameraOffset" value="-.0002,-.028,-.05"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="Zoom_max_out" value="25"/>
+			<property name="Zoom_max_in" value="25"/>
+			<property name="ScopeCameraOffset" value="-.0024,-.0345,.06"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--   SC 2X AR 	-->
+		<item_property_overrides name="IZYgunT1ARSTG44N">
+			<property name="Zoom_max_out" value="28"/>
+			<property name="Zoom_max_in" value="28"/>
+			<property name="ScopeCameraOffset" value="-.0008,-.00495,-.005"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARAKM">
+			<property name="ScopeCameraOffset" value="-.0006,-.015,-.01"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	2X BR 	-->
+			
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="ScopeCameraOffset" value="-.0066,-.02,.08"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BattleRifleSCARH">
+			<property name="ScopeCameraOffset" value="-.0013,-.009,.02"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeMedium']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="ScopeCameraOffset" value=".0078,.02,.1"/>
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?IZY_SNIPER_Mosin_scopeX4X8.Prefab"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?Reticle_x4x8_SVDscope.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="ScopeCameraOffset" value="-.003,.025,.23"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4SNIPERRIFLE762L96AWMRifle">
+			<property name="ScopeCameraOffset" value="-.0045,.015,.3"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?Reticle_x4x8_L96ite.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="ScopeCameraOffset" value=".02,.06,.19"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="ScopeCameraOffset" value="0,-.0055,-.05"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="ScopeCameraOffset" value="-.0024,-.025,.09"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?Reticle_x4x8_SVDscope.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	REF BR 	-->
+			
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="ScopeCameraOffset" value="-.0066,-.02,.08"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+	</append>
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeLarge']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="ScopeCameraOffset" value=".0078,.015,.15"/>
+			<property name="Meshfile" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?IZY_SNIPER_Mosin_scopeX4X8.Prefab"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="ScopeCameraOffset" value="-.003,.025,.23"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4SNIPERRIFLE762L96AWMRifle">
+			<property name="ScopeCameraOffset" value="-.0045,.015,.3"/>
+			<property name="Zoom_overlay" value="#@modfolder:Resources/IZY_762_Pack_MainResource_SNP_MMR.unity3d?Reticle_x4x8_L96ite.png"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="ScopeCameraOffset" value=".01,.05,.19"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="ScopeCameraOffset" value="0,-.0055,-.05"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="ScopeCameraOffset" value="-.0024,-.025,.09"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+		
+			<!--	REF BR 	-->
+			
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="ScopeCameraOffset" value="-.0066,-.02,.08"/>
+			<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+		</item_property_overrides>
+	
+	</append>
+	
+						<!-- SILENCER -->
+			
+	
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+	
+		<item_property_overrides name="IZYgunT1SNIPERRIFLE762Mosinnagant">
+			<property name="Sound_start" value="MosinN2_silen_fire"/>
+			<property name="Sound_loop" value="MosinN2_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3SNIPERRIFLE762LeeEnfieldRifle">
+			<property name="Sound_start" value="MosinN2_silen_fire"/>
+			<property name="Sound_loop" value="MosinN2_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4SNIPERRIFLE762L96AWMRifle">
+			<property name="Sound_start" value="L96_silen_fire"/>
+			<property name="Sound_loop" value="L96_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT2MarksManRifle762M1garandNavyconverted">
+			<property name="Sound_start" value="M1garandN_silen_fire"/>
+			<property name="Sound_loop" value="M1garandN_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3MarksManRifle762HKPSG1">
+			<property name="Sound_start" value="SturmRifle_silen_fire"/>
+			<property name="Sound_loop" value="SturmRifle_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4MarksManRifle762SVUprototypeRifle">
+			<property name="Sound_start" value="SVUb_silen_fire"/>
+			<property name="Sound_loop" value="SVUb_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT1ARSTG44N">
+			<property name="Sound_start" value="SturmRifle_silen_fire"/>
+			<property name="Sound_loop" value="SturmRifle_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT3ARAKM">
+			<property name="Sound_start" value="SturmRifle_silen_fire"/>
+			<property name="Sound_loop" value="SturmRifle_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT1BattleRifleBARbrowningautomaticrifle">
+			<property name="Sound_start" value="BARs_silen_fire"/>
+			<property name="Sound_loop" value="BARs_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4BattleRifleSCARH">
+			<property name="Sound_start" value="ScarHB_silen_fire"/>
+			<property name="Sound_loop" value="ScarHB_silen_fire"/>
+		</item_property_overrides>
+		
+		<item_property_overrides name="IZYgunT4LMGlightmachinegunMG34R">
+			<property name="Sound_start" value="ScarHB_silen_fire"/>
+			<property name="Sound_loop" value="ScarHB_silen_fire"/>
+		</item_property_overrides>
+	
+	</append>
+	
+</addnew>

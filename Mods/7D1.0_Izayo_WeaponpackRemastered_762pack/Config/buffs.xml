@@ -1,0 +1,47 @@
+<configs>
+
+	<append xpath="/buffs">
+
+				<!-- OOOOOOOOOOOOOO	 MMR EFFECT    -->
+
+		<buff name="IZYMMRBattleRifleEffect" hidden="true" icon="ui_game_symbol_lightbulb" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group tiered="false">
+				<passive_effect name="BurstRoundCount" operation="base_set" value="999"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value=".6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="5"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="IZYMMRBattleRifleBurstEffect" hidden="true" icon="ui_game_symbol_lightbulb" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group tiered="false">
+				<passive_effect name="BurstRoundCount" operation="base_set" value="3"/>
+				<passive_effect name="RoundsPerMinute" operation="perc_add" value=".6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="5"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="IZYMMRM1MAG" hidden="true" icon="ui_game_symbol_lightbulb" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group tiered="false">
+				<passive_effect name="MagazineSize" operation="base_add" value="12"/>
+			</effect_group>
+		</buff>
+		
+		<buff name="IZYBRBAR" hidden="true" icon="ui_game_symbol_lightbulb" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group tiered="false">
+				<passive_effect name="MagazineSize" operation="base_add" value="10"/>
+				<passive_effect name="RunSpeed" operation="perc_add" value="-.16"/>
+				<passive_effect name="WalkSpeed" operation="perc_add" value="-.06"/>
+			</effect_group>
+		</buff>
+		
+	</append>
+
+</configs>
