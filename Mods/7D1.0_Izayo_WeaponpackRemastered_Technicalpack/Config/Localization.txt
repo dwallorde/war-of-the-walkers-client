@@ -1,0 +1,4 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+
+IZYgunT3TechnicalNailmachinegun,items,gun,,Automatic Nail Gun (T3),Automatic Nail Gun (T3),,,,,,,,,,,,,,
+IZYgunT3TechnicalNailmachinegunDesc,items,gun,,,A modifier nail gun to fire in fully automatic.\n Use resource nail as ammo.\nRepair with a - Repair Kit.\nScrap to - Robotic parts.,,,,,,,,,,,,,,,

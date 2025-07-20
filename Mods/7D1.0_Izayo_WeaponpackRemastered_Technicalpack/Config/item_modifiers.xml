@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addnew>
+
+		<!--	Longbarrel		-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunBarrelExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-DRUM 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunDrumMagazineExtender']">
+			
+	</append>
+
+		<!--	MAGAZINE-EXT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunMagazineExtender']">
+
+
+		
+	</append>
+
+
+
+			<!--	FORGRIP 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunForegrip']">
+
+
+		
+	</append>
+
+		<!--	RET-STOCK 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunRetractingStock']">
+	
+			
+	</append>
+
+		<!--	FLASHLIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunFlashlight']">
+	
+			
+	</append>
+
+		<!--	LASER   	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+	
+			
+	</append>
+
+		<!--	REFLEXSIGHT 	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunReflexSight']">
+
+			<item_property_overrides name="IZYgunT3TechnicalNailmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0292,-.02"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+
+	</append>
+	
+		<!--	2XSCOPE	-->
+		
+	<append xpath="/item_modifiers/item_modifier[@name='modGunScopeSmall']">
+	
+			<item_property_overrides name="IZYgunT3TechnicalNailmachinegun">
+				<property name="ScopeCameraOffset" value="0,-.0183,-.03"/>
+				<property name="Zoom_overlay" value="#@modfolder:Resources/blankXD4.tga"/>
+				<property name="CrosshairOnAim" value="false"/> <!-- aimTest -->
+				<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			</item_property_overrides>
+	
+	</append>
+	
+		<!--	Silencer 	-->
+	<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']">
+			
+
+	
+	</append>
+	
+</addnew>
