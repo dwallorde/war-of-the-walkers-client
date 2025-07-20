@@ -1,0 +1,7 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+
+
+IZYgunT3PistolMagnumAutomag44,items,gun,,.44 AutoMag Heavy Pistol(T3),.44 AutoMag Heavy Pistol(T3),,,,,,,,,,,,,,
+IZYgunT3PistolMagnumAutomag44Desc,items,gun,,,,,,,,,,,,,,,,,,
+IZYgunT4DualMagnumDesertEagles,items,gun,,Dual - Desert Eagles (T4),Dual - Desert Eagles (T4),,,,,,,,,,,,,,
+IZYgunT4DualMagnumDesertEaglesDesc,items,gun,,,,,,,,,,,,,,,,,,
