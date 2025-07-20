@@ -22,7 +22,7 @@ limitations under the License.*/-->
 			</panel> -->
 
 			<!-- Masked Minimap Example pos -240,240 default -->
-			<rect name="minimap" pos="-240,-220" depth="1" controller="Quartz.MiniMap, Quartz" forceicontextoff="true" iconsize="40" iconscalemin="10" iconscalemax="50" zoomscalesteps="0.5, 1, 2, 5">
+			<rect name="minimap" pos="-240,-500" depth="1" controller="Quartz.MiniMap, Quartz" forceicontextoff="true" iconsize="40" iconscalemin="10" iconscalemax="50" zoomscalesteps="0.5, 1, 2, 5">
 				<sprite depth="99" pos="-5,5" name="MinimapBg" sprite="MiniMap" height="240" width="240" type="sliced" globalopacitymod="1.8" color="[white]" />
 				<maskedtexture name="mapViewTexture" depth="2" width="230" height="230" material="Materials/MaskableMainmap" mask="@modfolder://Textures/Mask.png"/>
 				<maskedpanel name="clippingPanel" depth="4" width="220" height="220" mask="@modfolder://Textures/Mask.png" disableautobackground="true" createuipanel="true" clipping="SoftClip" clippingsoftness="4,4" clippingsize="220,220" clippingcenter="112,-112"/>
