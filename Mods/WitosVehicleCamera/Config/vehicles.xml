@@ -1,23 +1,41 @@
 <configs>
-<!-- vanila vehicles xpath -->
+<!--  vanila vehicles   -->
+<append xpath="/vehicles/vehicle[@name='vehicleGyrocopter']">
+    <property name="VehicleCameraSeat" value="true"/>
+    <property name="VehicleCameraModel" value="true"/>
+</append>
+<append xpath="/vehicles/vehicle[@name='vehicleBicycle']">
+    <property name="VehicleCameraSeat" value="true"/>
+    <property name="VehicleCameraModel" value="true"/>
+</append>
+<append xpath="/vehicles/vehicle[@name='vehicleMinibike']">
+    <property name="VehicleCameraSeat" value="true"/>
+    <property name="VehicleCameraModel" value="true"/>
+</append>
+<append xpath="/vehicles/vehicle[@name='vehicleMotorcycle']">
+    <property name="VehicleCameraSeat" value="false"/>
+    <property name="VehicleCameraModel" value="true"/>
+</append>
+<append xpath="/vehicles/vehicle[@name='vehicleTruck4x4']">
+    <property name="VehicleCameraSeat" value="true"/>
+    <property name="VehicleCameraModel" value="false"/>
+</append>
+<append xpath="/vehicles/vehicle[@name='vehicleJLTV']">
+    <property name="VehicleCameraSeat" value="true"/>
+    <property name="VehicleCameraModel" value="false"/>
+</append>
+
 	
 
-
-     <append xpath="/vehicles/vehicle">
-        <property name="VehicleCameraSeat" value="true"/>
-    </append> 
 	
 	
-	
-<!-- //////////////////////demo cameras, uncomment this if you want it to be added to all vehicles,///////////////////////
+<!--  //////////////////////demo cameras, uncomment this if you want it to be added to all vehicles,///////////////////////
 	//////////////////////if you want positions in specific vehicles,////////////////////////////////////////////////////
 	//////////////////////take these lines to your vehicle in vehicles.xml///////////////////////////////////////////////
+	ALL VEHICLES  -->
 		
-		
-		<append xpath="/vehicles/vehicle">
-			<property name="VehicleCameraModel" value="true"/>
-		</append>
-
+		    
+<!-- 		 CameraXML_Fixed 
 		<append xpath="/vehicles/vehicle">
 			<property class="Camera0">
 				<property name="VehicleCameraCustom" value="0.0,2.0,-5"/>
@@ -25,7 +43,7 @@
 				<property name="CameraXMLRotation" value="0,180,0" />
 			</property>
 		</append>
-
+		 CameraXML180 
 		<append xpath="/vehicles/vehicle">
 			<property class="Camera1">
 				<property name="VehicleCameraCustom" value="0,20,0"/>
@@ -34,11 +52,10 @@
 				<property name="CameraPositionType" value="local" />
 			</property>
 		</append>
-
+		CameraXML360 
 		<append xpath="/vehicles/vehicle">
 			<property class="Camera2">
-				<property name="VehicleCameraCustom" value="0,3,-1"/> 
-
-			</property>
-		</append>     -->
+				<property name="VehicleCameraCustom" value="0,3,-1"/>
+			</property> 
+		</append>  -->  
 	</configs>
