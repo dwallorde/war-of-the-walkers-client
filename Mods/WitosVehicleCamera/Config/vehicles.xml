@@ -13,16 +13,16 @@
     <property name="VehicleCameraModel" value="true"/>
 </append>
 <append xpath="/vehicles/vehicle[@name='vehicleMotorcycle']">
-    <property name="VehicleCameraSeat" value="false"/>
+    <property name="VehicleCameraSeat" value="true"/>
     <property name="VehicleCameraModel" value="true"/>
 </append>
 <append xpath="/vehicles/vehicle[@name='vehicleTruck4x4']">
     <property name="VehicleCameraSeat" value="true"/>
-    <property name="VehicleCameraModel" value="false"/>
+    <property name="VehicleCameraModel" value="true"/>
 </append>
 <append xpath="/vehicles/vehicle[@name='vehicleJLTV']">
     <property name="VehicleCameraSeat" value="true"/>
-    <property name="VehicleCameraModel" value="false"/>
+    <property name="VehicleCameraModel" value="true"/>
 </append>
 
 	
