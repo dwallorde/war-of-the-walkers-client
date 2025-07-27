@@ -1,8 +1,8 @@
 <configs>
 <!--  vanila vehicles   -->
 <append xpath="/vehicles/vehicle[@name='vehicleGyrocopter']">
-    <property name="VehicleCameraSeat" value="true"/>
-    <property name="VehicleCameraModel" value="true"/>
+    <property name="VehicleCameraSeat" value="true"/> <!-- camera seat --> 
+    <property name="VehicleCameraModel" value="true"/> <!-- camera default -->
 </append>
 <append xpath="/vehicles/vehicle[@name='vehicleBicycle']">
     <property name="VehicleCameraSeat" value="true"/>
@@ -20,14 +20,8 @@
     <property name="VehicleCameraSeat" value="true"/>
     <property name="VehicleCameraModel" value="true"/>
 </append>
-<append xpath="/vehicles/vehicle[@name='vehicleJLTV']">
-    <property name="VehicleCameraSeat" value="true"/>
-    <property name="VehicleCameraModel" value="true"/>
-</append>
 
-	
 
-	
 	
 <!--  //////////////////////demo cameras, uncomment this if you want it to be added to all vehicles,///////////////////////
 	//////////////////////if you want positions in specific vehicles,////////////////////////////////////////////////////
@@ -35,7 +29,7 @@
 	ALL VEHICLES  -->
 		
 		    
-<!-- 		 CameraXML_Fixed 
+<!--  CameraXML_Fixed 
 		<append xpath="/vehicles/vehicle">
 			<property class="Camera0">
 				<property name="VehicleCameraCustom" value="0.0,2.0,-5"/>

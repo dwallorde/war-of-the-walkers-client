@@ -67,14 +67,13 @@ Put the mode you want to be output first, and so on.
   
   <!-- seatpose corrections -->
   <SeatPoses>
-	<SeatPose id="0"  x="0.0" y="1.15" z="-1.11" />
     <SeatPose id="1"  x="0.0" y="1.15" z="0.15" />
     <SeatPose id="20" x="-0.003" y="1.06" z="-0.04" />
     <SeatPose id="21" x="0.0" y="1.13" z="-0.5" />
     <SeatPose id="30" x="0.0" y="0.98" z="-0.33" />
     <SeatPose id="31" x="0.0" y="1.26" z="-1.11" />
-    <SeatPose id="40" x="0.0" y="1.15" z="-0.21" />
-    <SeatPose id="41" x="0.0" y="1.15" z="-0.21" />
+    <SeatPose id="40" x="0.0" y="1.19" z="-0.23" />
+    <SeatPose id="41" x="0.0" y="1.19" z="-0.23" />
     <SeatPose id="42" x="0.047" y="1.265" z="0.1" />
     <SeatPose id="43" x="-0.007" y="1.266" z="0.09" />
     <SeatPose id="44" x="0.01" y="1.29" z="-0.03" />
