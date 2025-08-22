@@ -2264,40 +2264,40 @@
 
 <!--	// SMX // Server Password Popup-->
 
-		<conditional>
-			<if cond="mod_loaded('zSMXmenu')">
+		<!-- <conditional> -->
+			<!-- <if cond="mod_loaded('zSMXmenu')"> -->
 
-				<remove xpath="/windows/window[@name='serverPassword']" />
+				<!-- <remove xpath="/windows/window[@name='serverPassword']" /> -->
 
-				<append xpath="/windows">
-					<window name="serverPassword" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="ServerPasswordWindow" cursor_area="true">
-						<panel depth="200" createuipanel="true" disableautobackground="true">
-							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
+				<!-- <append xpath="/windows"> -->
+					<!-- <window name="serverPassword" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="ServerPasswordWindow" cursor_area="true"> -->
+						<!-- <panel depth="200" createuipanel="true" disableautobackground="true"> -->
+							<!-- <panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" /> -->
 							
-							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
-							</panel>
+							<!-- <panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false"> -->
+								<!-- <texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" /> -->
+							<!-- </panel> -->
 
-							<panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true">
-								<sprite name="smxPopOutBG" depth="9" height="700" pivot="center" sprite="smx_menu_background" type="sliced" color="7,7,7,295" />
-								<texture name="smxPopOutArt" depth="10" pos="0,140" width="350" height="350" pivot="center" texture="@modfolder(SMXcore)://Textures/misc/password_zombie.png" />
+							<!-- <panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true"> -->
+								<!-- <sprite name="smxPopOutBG" depth="9" height="700" pivot="center" sprite="smx_menu_background" type="sliced" color="7,7,7,295" /> -->
+								<!-- <texture name="smxPopOutArt" depth="10" pos="0,140" width="350" height="350" pivot="center" texture="@modfolder(SMXcore)://Textures/misc/password_zombie.png" /> -->
 
-								<label name="lblPassNormal" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordNormal" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" />
+								<!-- <label name="lblPassNormal" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordNormal" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" /> -->
 
-								<label name="lblPassIncorrect" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordIncorrect" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" />
-								<smx_textfield_serverpw name="txtPassword" depth="12" pos="0,-150" width="230" height="30" pivot="center" font_size="24" password_field="true" open_vk_on_open="false" character_limit="30" />
-							</panel>
+								<!-- <label name="lblPassIncorrect" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordIncorrect" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" /> -->
+								<!-- <smx_textfield_serverpw name="txtPassword" depth="12" pos="0,-150" width="230" height="30" pivot="center" font_size="24" password_field="true" open_vk_on_open="false" character_limit="30" /> -->
+							<!-- </panel> -->
 
-							<panel name="buttons" depth="6" pos="-10,-560" height="32" borderthickness="3" createuipanel="true" disableautobackground="true" >
-								<smx_back_button name="btnCancel" depth="3" pos="170,550" width="55" height="55" pivot="center" sprite="ui_game_symbol_add" size="24,24" rotation="45" tooltip_key="xuiBack" />
-								<smx_menu_button name="btnSubmit" depth="3" pos="0,0" width="230" height="65" pivot="center" caption_key="xuiSubmit" font_size="28" upper_case="true" />
-							</panel>
-						</panel>
-					</window>
-				</append>
+							<!-- <panel name="buttons" depth="6" pos="-10,-560" height="32" borderthickness="3" createuipanel="true" disableautobackground="true" > -->
+								<!-- <smx_back_button name="btnCancel" depth="3" pos="170,550" width="55" height="55" pivot="center" sprite="ui_game_symbol_add" size="24,24" rotation="45" tooltip_key="xuiBack" /> -->
+								<!-- <smx_menu_button name="btnSubmit" depth="3" pos="0,0" width="230" height="65" pivot="center" caption_key="xuiSubmit" font_size="28" upper_case="true" /> -->
+							<!-- </panel> -->
+						<!-- </panel> -->
+					<!-- </window> -->
+				<!-- </append> -->
 
-			</if>
-		</conditional>
+			<!-- </if> -->
+		<!-- </conditional> -->
 
 
 <!--	// SMX // Login Window - Steam -->
