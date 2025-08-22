@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xml>
-	<Name value="zzz_Glasma_BlessedMetalMod" />
-	<DisplayName value="Blessed Metal Weapon Mod" />
-	<Description value="Restores the Blessed Metal weapon mod that was removed in A20 and adds a schematic to craft it" />  
-	<Author value="Glasma" />
-	<Version value="1.0" />	 
-</xml>

@@ -1,5 +1,0 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context
-modGunMeleeBlessedMetal,items_modifiers,mod,,,Blessed Metal Mod
-modGunMeleeBlessedMetalDesc,items_modifiers,mod,,,A powerful relic crafted or found that enables tools and weapons to do more damage to the undead. Mutually exclusive with the Hunter and Rad Remover mods.
-modGunMeleeBlessedMetalSchematic,items,schematic,,,The Blessed Metal Mod Schematic 
-modGunMeleeBlessedMetalSchematicDesc,items,book,,,Teaches you how to craft the Blessed Metal Mod at a workbench.

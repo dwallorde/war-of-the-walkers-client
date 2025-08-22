@@ -1,9 +1,0 @@
-<configs>
-
-		<!--	GUN_TRADER	-->
-		
-	<append xpath="//trader_item_group[@name='groupDyeMods']">
-		<item name="modDyeWhite"/>
-	</append>
-
-</configs>	

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xml>
-	<Name value="TechFreqsWanderingZombieHordeAlert" />
-	<DisplayName value="TechFreqs Wandering Zombie Horde Alert" />
-	<Description value="Alerts players with a tooltip, sound, and compass indicator when a wandering zombie horde spawns nearby. Configurable via keybind and proximity. ." />
-	<Author value="TechFreq" />
-	<Version value="1.0" />
-	<Website value="https://beacons.ai/techfreq" />
-</xml>

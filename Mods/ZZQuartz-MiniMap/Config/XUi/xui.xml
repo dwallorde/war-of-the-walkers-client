@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Quartz name="XUi_Menu/xui.xml">	
-	<append xpath="/xui/ruleset/window_group[@name='toolbelt']">
-		<window name="MiniMap" anchor="RightTop"/>
-	</append>
-	<setattribute xpath="/xui//window_group[@name='ingameMenu']" name="close_compass_on_open">true</setattribute>
-</Quartz>
-

@@ -1,3 +1,0 @@
-<configs>
-<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='NavObject']/@value">,MiniMapZombies</append>
-</configs>

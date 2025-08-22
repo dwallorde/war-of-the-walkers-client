@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xml>
-	<Name value="TechFreqsPickupPlants" />
-	<DisplayName value="TechFreqsPickupPlants" />
-	<Description value="This mod targets crops and or plants, and makes them lootable by pressing the E button or key instead of having to punch them. Harvesting properties are the same as using the stone axe, and including perk bonuses." />
-	<Author value="TechFreq" />
-	<Version value="2.7" />
-	<Website value="https://beacons.ai/techfreq" />
-</xml>

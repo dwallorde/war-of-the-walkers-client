@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-<xml>
-	<Name value="CustomParticleLoaderMultiExplosion" />
-	<DisplayName value="Custom Particle Loader Multi-Explosion Patch" />
-	<Description value="Custom explosion particle patch." />
-	<Author value="closer_ex" />
-	<Version value="1.3.0" />
-</xml>

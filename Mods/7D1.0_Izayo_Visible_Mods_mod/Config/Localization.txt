@@ -1,4 +1,0 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
-
-IZYadvancegunrepairkit,items,gun,,Advanced Repair Kit,Advanced Repair Kit,,,,,,,,,,,,,,
-IZYadvancegunrepairkitDesc,items,gun,,,A repair kit used for repairs Tier 4 Weapons.,,,,,,,,,,,,,,,

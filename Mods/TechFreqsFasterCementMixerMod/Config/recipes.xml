@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<configs>
-    <!-- Set crafting time for cement mixer recipes to a reasonable value -->
-    <setattribute xpath="/recipes/recipe[@name='resourceConcreteMix']" name="craft_time">0.58</setattribute>
-    <setattribute xpath="/recipes/recipe[@name='resourceCrushedSand']" name="craft_time">0.10</setattribute>
-</configs>
