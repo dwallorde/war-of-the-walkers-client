@@ -54,6 +54,7 @@
     <Compile Include="Features\Challenges\ScriptsV2\ChallengeObjectiveCVarV2.cs" />
     <Compile Include="Features\Challenges\ScriptsV2\ChallengeObjectiveKillV2.cs" />
     <Compile Include="Features\Challenges\ScriptsV2\ChallengeObjectiveHarvestV2.cs" />
+    <Compile Include="Features\Challenges\ScriptsV2\ChallengeObjectivePlaceBlockByTagV2.cs" />
     <Compile Include="Features\Challenges\Scripts\ChallengeObjectiveBigFire.cs" />
     <Compile Include="Features\Challenges\Scripts\ChallengeObjectiveBlockDestroyed.cs" />
     <Compile Include="Features\Challenges\Scripts\ChallengeObjectiveBlockDestroyedByFire.cs" />
@@ -142,14 +143,17 @@
     <Compile Include="Features\FoodSpoilageV2\Harmony\XUiC_ItemInfoWindow.cs" />
     <Compile Include="Features\FoodSpoilageV2\Scripts\SpoilageConfig.cs" />
     <Compile Include="Features\FoodSpoilageV2\Scripts\SpoilageConstants.cs" />
-    <Compile Include="Features\ItemDegradation\Harmony\ItemModificationDegradation.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\ItemValueMaxUseTimes.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\TestingPatches.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\TileEntityDewCollectorHandleModChanged.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\TileEntityWorkstationUpdateTick.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\ItemClassGetIconTint.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\XUiCBasePartStackGetBindingValue.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\XUiCWorkstationToolGridHasRequirement.cs" />
     <Compile Include="Features\ItemDegradation\Scripts\MinEventActionDegradeItemValue.cs" />
     <Compile Include="Features\ItemDegradation\Scripts\MinEventActionModifyItem.cs" />
     <Compile Include="Features\ItemDegradation\Scripts\RequirementCompareItemProperty.cs" />
+    <Compile Include="Features\ItemDegradation\Utils\ItemModificationDegradation.cs" />
     <Compile Include="Features\LearnByDoing\Harmony\BlockSecureLootEventData_Event.cs" />
     <Compile Include="Features\LearnByDoing\Harmony\XUiC_SkillAttributeLevel.cs" />
     <Compile Include="Features\LearnByDoing\Harmony\XUiC_SkillEntry.cs" />
@@ -209,7 +213,10 @@
     <Compile Include="Features\PlayerMetrics\KillTracking\Scripts\SCoreKillTracker.cs" />
     <Compile Include="Features\PlayerMetrics\SCoreMetrics.cs" />
     <Compile Include="Features\Recipe\Harmony\XUiCRecipeStackPatches.cs" />
+    <Compile Include="Features\Recipe\SCoreTabTypes.cs" />
     <Compile Include="Features\Recipe\Scripts\MinEventAction\MinEventActionAddAdditionalOutput.cs" />
+    <Compile Include="Features\Recipe\Scripts\XUiC_AdditionalOutput.cs" />
+    <Compile Include="Features\Recipe\Scripts\XUiC_CraftingInfoWindowSCore.cs" />
     <Compile Include="Features\RemoteCrafting\Harmony\DropBoxToContainers.cs" />
     <Compile Include="Features\RemoteCrafting\Harmony\IngredientsFromContainers.cs" />
     <Compile Include="Features\RemoteCrafting\Harmony\ItemActionRepairPatches.cs" />
@@ -235,7 +242,7 @@
     <Compile Include="Features\WeaponCameraSway\Harmony\vp_FPWeapon.cs" />
     <Compile Include="Features\WeaponCameraSway\Scripts\ConsoleCmdWeaponSway.cs" />
     <Compile Include="Features\WeaponCameraSway\Scripts\SwayUtilities.cs" />
-    <Compile Include="Features\XMLParsing\Harmony\ItemClassInit.cs" />
+    <Compile Include="Features\XMLParsing\Harmony\XmlPatcherPatchXML.cs" />
     <Compile Include="Harmony\AIDirectorBloodMoon\AiDirectorBloodMoonParty.cs" />
     <Compile Include="Harmony\Animation\AnimalAvatarController.cs" />
     <Compile Include="Harmony\Animation\AnimatorMapper.cs" />

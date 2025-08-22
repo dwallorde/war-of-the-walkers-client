@@ -23,6 +23,12 @@ namespace Harmony.PlayerFeatures
                 if (!Configuration.CheckFeatureStatus(AdvFeatureClass, Feature))
                     return;
 
+                if (__instance.Buffs.HasCustomVar("NoOneBlockCrouch"))
+                {
+                    __instance.vp_FPController.PhysicsCrouchHeightModifier = 0.5f;
+                    __instance.vp_FPController.SyncCharacterController();
+                    return;
+                }
                 AdvLogging.DisplayLog(AdvFeatureClass, "Activating One Block Crouch");
                 var heightModifier = 0.49f;
                 var strPhysicsCrouchHeightModifier = Configuration.GetPropertyValue(AdvFeatureClass, "PhysicsCrouchHeightModifier");
@@ -76,7 +82,13 @@ namespace Harmony.PlayerFeatures
                 {
                     return;
                 }
-                
+
+                var player = GameManager.Instance.World.GetPrimaryPlayer();
+                if (player.Buffs.HasCustomVar("NoOneBlockCrouch"))
+                {
+                    __instance.PositionOffset.y = 1.30f;
+                    return;
+                }
                 
                 // this lowers the camera to prevent clipping of the terrain.
                 if (__instance.PositionOffset.y == 1.30f)

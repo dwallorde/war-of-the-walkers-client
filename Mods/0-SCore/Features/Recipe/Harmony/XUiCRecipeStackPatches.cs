@@ -3,7 +3,7 @@ using Audio;
 using HarmonyLib;
 using UnityEngine;
 
-namespace Harmony.Recipes
+namespace Harmony.RecipesPatches
 {
     /*
     <recipe name="ammo45ACPCase" count="30" craft_time="5" craft_area="MillingMachine" tags="workbenchCrafting,PerkHOHMachineGuns">
@@ -64,7 +64,7 @@ namespace Harmony.Recipes
                 DisplayTooltip(entityPlayer, text);
             }
 
-            private static List<ItemStack> GetAdditionalOutput(Recipe recipe, MinEventParams minEventParams)
+            public static List<ItemStack> GetAdditionalOutput(Recipe recipe, MinEventParams minEventParams)
             {
                 List<ItemStack> items = new List<ItemStack>();
                 foreach (var minEffectGroup in recipe.Effects.EffectGroups)

@@ -1,4 +1,5 @@
 using HarmonyLib;
+using SCore.Features.ItemDegradation.Utils;
 
 namespace SCore.Features.ItemDegradation.Harmony
 {
@@ -6,7 +7,7 @@ namespace SCore.Features.ItemDegradation.Harmony
     [HarmonyPatch(nameof(XUiC_WorkstationToolGrid.HasRequirement))]
     public class XUiCWorkstationToolGridHasRequirement
     {
-        public static void Postfix(ref bool __result, XUiC_WorkstationToolGrid __instance, Recipe recipe)
+        public static void Postfix(ref bool __result, XUiC_WorkstationToolGrid __instance, global::Recipe recipe)
         {
             if (recipe == null) return;
             if (recipe.craftingToolType == 0) return;

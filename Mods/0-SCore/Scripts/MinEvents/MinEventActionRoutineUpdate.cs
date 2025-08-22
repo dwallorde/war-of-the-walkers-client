@@ -15,29 +15,50 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
     
     public override void Execute(MinEventParams _params)
     {
+        var localPlayer = _params.Self as EntityPlayerLocal;
+        var playerUI = localPlayer?.playerUI;
+        if (playerUI == null) return;
+        
         // Backpack
         if (bBag)
         {
             foreach (var item in _params.Self.bag.GetSlots())
-                CheckSlots(item);
+                CheckSlots(item, null);
         }
 
         // Equipment
         if (bEquipment)
         {
             foreach (var item in _params.Self.equipment.GetItems())
-                CheckItemValue(item);
+                CheckItemValue(item, null);
+            
         }
 
         // Tool Belt.
         if (bToolbelt)
         {
-            foreach (var item in _params.Self.inventory.GetSlots())
-                CheckSlots(item);
+            var childByType = playerUI.xui.FindWindowGroupByName("toolbelt").GetChildByType<XUiC_Toolbelt>();
+            if (childByType != null)
+            {
+                foreach (var slot in childByType.GetItemStackControllers())
+                {
+                    CheckSlots(slot.itemStack, slot);
+                    slot.ForceRefreshItemStack();
+                }
+                
+            }
+            else
+            {
+                foreach (var item in _params.Self.inventory.GetSlots())
+                {
+                    CheckSlots(item, null);
+                }
+            }
+          
         }
     }
 
-    private void CheckItemValue(ItemValue itemValue)
+    private void CheckItemValue(ItemValue itemValue, XUiC_ItemStack stack)
     {
         if (itemValue == null) return;
         OnSelfRoutineUpdate.RoutineUpdate(itemValue);
@@ -46,12 +67,14 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
             if ( mod?.ItemClass == null) continue;
             OnSelfRoutineUpdate.RoutineUpdate(mod);
         }
+
+        stack?.ForceRefreshItemStack();
     }
 
-    private void CheckSlots(ItemStack itemStack)
+    private void CheckSlots(ItemStack itemStack, XUiC_ItemStack stack)
     {
         if (itemStack.IsEmpty()) return;
-        CheckItemValue(itemStack.itemValue);
+        CheckItemValue(itemStack.itemValue, stack);
     }
     
     public override bool ParseXmlAttribute(XAttribute attribute)
@@ -61,7 +84,7 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
         var localName = attribute.Name.LocalName;
         if (localName == "slots")
         {
-            var slots = attribute.Value;
+            var slots = attribute.Value.ToLower();
             bBag = slots.Contains("bag");
             bEquipment = slots.Contains("equipment");
             bToolbelt = slots.Contains("inventory");

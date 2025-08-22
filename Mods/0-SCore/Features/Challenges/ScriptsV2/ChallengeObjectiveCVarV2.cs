@@ -8,7 +8,7 @@ namespace Challenges {
        // <objective type="CVarV2, SCore" cvar="player_m_desert" count="5000" cvar_override="xuiCVar" description_key="xuiTravel"/>
 
         public override ChallengeObjectiveType ObjectiveType =>
-            (ChallengeObjectiveType)ChallengeObjectiveTypeSCore.ChallengeObjectiveCVar;
+            (ChallengeObjectiveType)ChallengeObjectiveTypeSCore.ChallengeObjectiveCVarV2;
 
         private string _cvarName;
         public string LocalizationKey = "challengeObjectiveOnCVar";
@@ -28,15 +28,16 @@ namespace Challenges {
 
         private void CheckCVar(EntityAlive entityAlive, string cvarname, float cvarvalue) {
             
-            // Check all the requirements
-            if (!ChallengeRequirementManager.IsValid(Owner.ChallengeClass.Name)) return;
+        
 
             // Quick check to make sure that we are the local player, rather than querying the the game manager.
             if (entityAlive is not EntityPlayerLocal player) return;
             if (string.IsNullOrEmpty(cvarname)) return;
             if (string.IsNullOrEmpty(_cvarName)) return;
-
             if (!string.Equals(cvarname, _cvarName, StringComparison.CurrentCultureIgnoreCase)) return;
+            // Check all the requirements
+            if (!ChallengeRequirementManager.IsValid(Owner.ChallengeClass.Name)) return;
+            
             Current = (int)cvarvalue;
             CheckObjectiveComplete();
         }
@@ -62,7 +63,8 @@ namespace Challenges {
             return new ChallengeObjectiveCVarV2 {
                 _cvarName = _cvarName,
                 _descriptionOverride = _descriptionOverride,
-                cvar_override = cvar_override
+                cvar_override = cvar_override,
+                LocalizationKey =  LocalizationKey
 
             };
         }

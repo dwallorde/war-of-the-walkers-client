@@ -32,6 +32,86 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.6.1759 - Experimental
+	[ Challenges ]
+		- Fixed another issue with the V2 tags.
+			- The side effect may have been re-ordering of challenges.
+		- Added PlaceBlockByTagV2
+			<challenge name="burntSurvivalPlantTrees" title_key="challengeBurntPlantTrees" icon="ui_game_symbol_tree" group="ScoreTest"
+					short_description_key="challengeBurntPlantTreesShort" description_key="challengeBurntPlantTreesDesc"
+					reward_text_key="challenge_reward_1000xp" reward_event="challenge_reward_1000">
+				<requirement name="InBiome" biome="9"/>
+				<requirement name="BlockHasTags" tags="wood"/>
+				<objective type="PlaceBlockByTagV2, SCore" count="25" />
+			</challenge>
+		- Changed CVar event for CVar Challenges to not look at the super spammy _CvarName's
+
+	[ OneBlock Crouch ]
+		- Added a check for a cvar that will block the One Block Crouch:
+			NoOneBlockCrouch
+		- If this cvar is set to anything greater than 0, the OneBlock Crouch will be blocked.
+
+Version: 2.3.5.2007 - Experimental
+	[ Shared Reading ]
+		- Refactored shared reading to be more reliable.
+			- Tested on Client, Client -> Server, and Server -> Client(s)
+
+	[ Advanced Repairs ]
+		- Fixed an issue with Advanced Repairs not showing the pop up when items are not available.
+
+	[ Challenges ]
+		- Fixed an issue with CVarV2's Localization not being cloned properly.
+		- HarvestV2 was cleaned out as empty Challenge.  Harvest supports the <requirements now.
+		- Fixed a localization issue with ClearSleepers.
+
+	[ Item Degradation ]
+		- Work is ongoing for this project, but proceeding slowly.
+
+	[ XML Patching ]
+		- Added to the XmlPatcher to help avoid some repetitiveness for item degradation.
+		- This will replace the ref_file node with everything inside the passed in label.
+		- You probably don't want to use this.
+		- If label is not specified, the entire file contents is merged (minus the root node )
+    
+			<append xpath="//item[starts-with(@name,'tool')]">
+        		<!-- Read the snippet file, and merge all the Snippet nodes that match the label. -->
+        		<!-- If label is omitted, the file itself will be merged, minus the root node -->
+        		<ref_file snippet="ItemModifiers/StandardSettings.xml" label="StandardActiveSettings, StandardSettings"/>
+			</append>
+
+		With StandardSettings.xml:
+			<configs>
+			
+				<!-- Actively degrades when the item is considered active -->
+				<Snippet label="StandardActiveSettings">
+					<effect_group name="DamageHooks">
+						<requirement name="ItemPercentUsed, SCore" operation="LT" value="1"/>
+						<requirement name="IsItemActive"/>
+						<triggered_effect trigger="onSelfRoutineUpdate" action="DegradeItemValueMod, SCore"/>
+					</effect_group>
+			
+					<effect_group name="BrokenHooks">
+						<requirement name="ItemPercentUsed, SCore" operation="GTE" value="1"/>
+						<requirement name="IsItemActive"/>
+						<triggered_effect trigger="onSelfRoutineUpdate" action="AddBuff" buff="buffStatusModBroken"/>
+					</effect_group>
+				</Snippet>
+			
+				<Snippet label="StandardSettings">
+					<!-- Enable Quality  -->
+					<property name="ShowQuality" value="true"/>
+
+
+Version: 2.3.2.1055 - Experimental
+	[ General ]
+		- Rebuilt against 2.3
+
+	[ UAI / EAI ]
+		- Fixed broken references to RandomPositionGenerator's Calc calls.
+
+	[ XML Parsing ]
+		- Added experimental xml hook. Don't use it.
+
 Version: 2.2.17.929
 	[ Challenges ]
 		- Added ObjectiveCVarV2 for better localization support and buff requirement hooks

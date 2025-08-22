@@ -1,26 +1,40 @@
-
-using HarmonyLib;
-using UnityEngine;
-using SCore.Features.ItemDegradation.Harmony;
-
-[HarmonyPatch(typeof(ItemClass))]
-[HarmonyPatch(nameof(ItemClass.GetIconTint))]
-public class ItemClassGetIconTint
-{
-    public static void Postfix(ref Color __result, ItemValue _instance, ItemClass __instance)
-    {
-        if (_instance == null) return;
-        if (!ItemDegradationHelpers.IsDegraded(_instance)) return;
-
-        if (__instance.Properties.Contains("BrokenTint"))
-        {
-            var colourString = __instance.Properties.GetStringValue("BrokenTint");
-            var tint = StringParsers.ParseVector3i(colourString);
-            __result = new Color( tint.x, tint.y, tint.z);
-            return;
-        }
-        // Default tint.
-        __result = new Color(210,0,0);
-
-    }
-}
+// using HarmonyLib;
+// using SCore.Features.ItemDegradation.Utils;
+//
+// namespace SCore.Features.ItemDegradation.Harmony
+// {
+//     [HarmonyPatch(typeof(XUiC_ItemStack))]
+//     [HarmonyPatch(nameof(XUiC_ItemStack.Update))]
+//     public class XUiCBasePartStackGetBindingValue
+//     {
+//         private static bool ShouldSkipDurability(XUiC_ItemStack instance)
+//         {
+//             if (instance == null) return true;
+//             if (instance.StackLocation == XUiC_ItemStack.StackLocationTypes.Creative) return true; // Skip creative
+//
+//             var itemStack = instance.ItemStack;
+//             if (itemStack == null || itemStack.IsEmpty()) return true; // Skip empty/null stacks
+//
+//             // If locked in drag/drop, it might be temporary, skip for stability
+//             if (instance.IsLocked && instance.IsDragAndDrop) return true;
+//
+//             if (itemStack.itemValue == null) return true;
+//             return !ItemDegradationHelpers.CanDegrade(itemStack.itemValue);
+//         }
+//
+//         public static void Postfix(XUiC_ItemStack __instance)
+//         {
+//             if (ShouldSkipDurability(__instance)) return;
+//             var durabilityController = __instance.GetChildById("durability");
+//             if (durabilityController?.ViewComponent is XUiV_Sprite durabilitySprite)
+//             {
+//                 float percentFresh = 1f - ItemDegradationHelpers.GetPercentUsed(__instance.itemStack.itemValue);
+//                 durabilitySprite.IsVisible = true;
+//                 durabilitySprite.Fill = percentFresh;
+//             }
+//         }
+//     }
+//     
+//    
+//     
+// }
