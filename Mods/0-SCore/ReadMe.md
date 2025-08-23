@@ -32,6 +32,25 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.7.1356 - Experimental
+	[ Random Sizes ]
+		- Fixed a few issues with Random Sizes not doing Random Sizes.
+
+	[ File Management ]
+		- Removed Readme.txt and ModInfo.txt
+
+	[ Soft Hands ]
+		- Added new Configuration block setting
+                <property name="CheckHandArmor" value="true" />
+		- If this is set to true, Soft Hands will be negated if the player is wearing gloves.
+		- If this is set to false, then the player will take damage from hitting globes with just their hands.
+
+	[ SphereII Item Degradation ]
+		- Fixed an issue where pistol would re-holster on update
+
+	[ Challenges ]
+		- Added check for a null reference on Sleeper Volume Group Count for ClearedUpdate event.
+
 Version: 2.3.6.1759 - Experimental
 	[ Challenges ]
 		- Fixed another issue with the V2 tags.

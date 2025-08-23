@@ -17,8 +17,7 @@ namespace Challenges {
 
         public override string DescriptionText {
             get {
-                   return Localization.Get($"{LocalizationKey}", false) + " " + cvar_override + ":";
-
+                   return Localization.Get($"{LocalizationKey}") + " " + Localization.Get(cvar_override);
             }
         }
 

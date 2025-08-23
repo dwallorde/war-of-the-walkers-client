@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Xml.Linq;
+using SCore.Features.ItemDegradation.Utils;
 using UnityEngine;
 
 /*
@@ -18,6 +19,7 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
         var localPlayer = _params.Self as EntityPlayerLocal;
         var playerUI = localPlayer?.playerUI;
         if (playerUI == null) return;
+        
         
         // Backpack
         if (bBag)
@@ -43,9 +45,7 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
                 foreach (var slot in childByType.GetItemStackControllers())
                 {
                     CheckSlots(slot.itemStack, slot);
-                    slot.ForceRefreshItemStack();
                 }
-                
             }
             else
             {
@@ -67,8 +67,6 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
             if ( mod?.ItemClass == null) continue;
             OnSelfRoutineUpdate.RoutineUpdate(mod);
         }
-
-        stack?.ForceRefreshItemStack();
     }
 
     private void CheckSlots(ItemStack itemStack, XUiC_ItemStack stack)
@@ -82,15 +80,16 @@ public class MinEventActionRoutineUpdate : MinEventActionTargetedBase
         var flag = base.ParseXmlAttribute(attribute);
         if (flag) return true;
         var localName = attribute.Name.LocalName;
-        if (localName == "slots")
+        if (localName != "slots")
         {
-            var slots = attribute.Value.ToLower();
-            bBag = slots.Contains("bag");
-            bEquipment = slots.Contains("equipment");
-            bToolbelt = slots.Contains("inventory");
-            return true;
+            return false;
         }
 
-        return false;
+        var slots = attribute.Value.ToLower();
+        bBag = slots.Contains("bag");
+        bEquipment = slots.Contains("equipment");
+        bToolbelt = slots.Contains("inventory");
+        return true;
+
     }
 }

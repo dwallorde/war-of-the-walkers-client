@@ -13,7 +13,14 @@ namespace Challenges
         public override ChallengeObjectiveType ObjectiveType =>
             (ChallengeObjectiveType)ChallengeObjectiveTypeSCore.ChallengeObjectivePlaceBlockByTagV2;
       
+        public string LocalizationKey = "challengePlaceBlockByTag";
+        private string _descriptionOverride;
 
+        public override string DescriptionText {
+            get {
+                return Localization.Get($"{LocalizationKey}") ;
+            }
+        }
         public override void HandleAddHooks()
         {
             QuestEventManager.Current.BlockPlace += this.Current_BlockPlace;
@@ -40,7 +47,17 @@ namespace Challenges
         }
         public override BaseChallengeObjective Clone()
         {
-            return new ChallengeObjectivePlaceBlockByTagV2();
+            return new ChallengeObjectivePlaceBlockByTagV2 {
+                _descriptionOverride = _descriptionOverride,
+                LocalizationKey = LocalizationKey
+            };
         }
+        public override void ParseElement(XElement e) {
+            base.ParseElement(e);
+            if (e.HasAttribute("description_key"))
+                LocalizationKey = e.GetAttribute("description_key");
+        }
+
+       
     }
 }
