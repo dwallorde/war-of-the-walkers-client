@@ -1,3 +1,8 @@
+[4.0.1]
+- Update for 7D2D V2.2
+
+- Fix missing method exception on Entity.get_EntityName
+
 [4.0.0]
 - Update for 7D2D V2.0
 
