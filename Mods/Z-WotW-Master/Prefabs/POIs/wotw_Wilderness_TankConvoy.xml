@@ -29,11 +29,11 @@
   <property name="DuplicateRepeatDistance" value="500" />
   <property class="Stats">
     <property name="LightsVolume" value="35754.46" />
-    <property name="TotalVertices" value="532017" />
-    <property name="TotalTriangles" value="346922" />
+    <property name="TotalVertices" value="532357" />
+    <property name="TotalTriangles" value="347018" />
     <property class="BlockEntities">
-      <property name="Vertices" value="471918" />
-      <property name="Triangles" value="286889" />
+      <property name="Vertices" value="472258" />
+      <property name="Triangles" value="286985" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="49177" />
