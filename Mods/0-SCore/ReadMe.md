@@ -32,6 +32,61 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.10.1017
+	[ Learn By Doing ]
+		- Fixed an issue with CanPurchasePerk to be more accurate.
+		- Added two new patches to the SkillCraftingINfoWindow, and SkillPerkInfoWindow
+			- It reads the localization entry, if it exists, and populates the perk window when a level is not displayed.
+			- Format:
+				attStrengthLearnByDoingDesc,"Progress your strength by performing any strength-related action."
+
+	[ Fire Manager ]
+		- Fixed a possible null ref in AddExtinguishPosition
+
+	[ Recipes ]
+		- Fixed an issue where work stations were not generating additional outputs when the workstation was closed.
+
+	[ Documentation ]
+		- Added csv documentation
+
+	[ Item Degradation ]
+		- Added a BlockEffectsManager
+		- This adds the ability to read and keep track of any effect_groups that are part of its blocks.xml
+		- Currently, only onSelfItemDegrade trigger is hooked to as part of the Item Degradation effort.
+		- In this case, we wanted to degrade active workstations over time. However the most practical hook was on the TileEntity's UpdateTick.
+		- This happens too frequently, so by adding in support for effect_groups, we can add in further requirements through xml.
+		- For Example: 
+
+   			<append xpath="//block[@name='workbench']">
+        		<property name="DowngradeBlock" value="cntCollapsedWorkbench"/>
+        		<property name="DegradationPerUse" value="1"/>
+        		<effect_group name="DamageHooks Degrade">
+					<!-- Random roll rather than every tick -->
+            		<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+
+					<!-- This is called only when the workstation is active -->
+            		<triggered_effect trigger="onSelfItemDegrade" action="LogMessage" message="Damaging Block" />
+            		<triggered_effect trigger="onSelfItemDegrade" action="DamageBlock, SCore"/>
+        		</effect_group>
+    		</append>
+
+	[ SphereII Learn By Doing ]
+		- Added Readme.md detailing changes for history log.
+		- Added a line to the Grandpa's Forgettin' elixir to call the Init buff, to reset progression.
+		- Set every perk to have a To Next Level of 1200.
+		- Set all base action xp to 1. Special or Power action is set to 5.
+		- Set every attribute to have a To Next Level of 5000.
+		- Removed errant cvars in Intellect/Init.xml that re-set the buff.xml's cvars
+		- Added localization entries for each perk / attribute, describing what needs to be leveled up.
+		- Changed Level Up Checks to use the ShowToolBelt message, with Localizationentries added.
+		- Fixed hard coded references of 1.2 and 1.3, and converted them to using curve_multiplier
+		- Fixed missing Javelin level up logic
+		- Added automatic version numbers.
+
+	[ SphereII A Better Life ]
+		- Fixed an issue with the block spawners not spawning fish.
+		- Added automatic version numbers.
+
 Version: 2.3.7.1356 - Experimental
 	[ Random Sizes ]
 		- Fixed a few issues with Random Sizes not doing Random Sizes.

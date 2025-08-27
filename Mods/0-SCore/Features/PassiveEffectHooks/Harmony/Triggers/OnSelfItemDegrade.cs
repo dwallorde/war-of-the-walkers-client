@@ -21,4 +21,5 @@ public static class OnSelfItemDegrade
         minEventParams.Self.FireEvent((MinEventTypes)SCoreMinEventTypes.onSelfItemDegrade);
 
     }
+ 
 }

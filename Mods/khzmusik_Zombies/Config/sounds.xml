@@ -4,7 +4,7 @@
         <!-- *** Burnt Zombie sounds from A21 -->
 
         <SoundDataNode name="zombieburnta21alert">
-            <AudioSource name="Sounds/AudioSource_CreatureSenseAlert" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_CreatureSenseAlert.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntalert1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntalert2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntalert3" />
@@ -21,7 +21,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombieburnta21attack">
-            <AudioSource name="Sounds/AudioSource_Creatures" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Creatures.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntattack1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntattack2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntattack3" />
@@ -38,7 +38,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombieburnta21death">
-            <AudioSource name="Sounds/AudioSource_Pain" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Pain.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntdeath1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntdeath2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntdeath3" />
@@ -55,7 +55,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombieburnta21footstep">
-            <AudioSource name="Sounds/AudioSource_Footsteps" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Footsteps.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntfootstep1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntfootstep2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntfootstep3" />
@@ -71,7 +71,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombieburnta21pain">
-            <AudioSource name="Sounds/AudioSource_Pain" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Pain.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntpain1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntpain2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntpain3" />
@@ -88,7 +88,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombieburnta21roam">
-            <AudioSource name="Sounds/AudioSource_Creatures" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Creatures.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntroam1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntroam2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntroam3" />
@@ -103,7 +103,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombieburnta21sense">
-            <AudioSource name="Sounds/AudioSource_CreatureSenseAlert" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_CreatureSenseAlert.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntsense1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntsense2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombieburntsense3" />
@@ -123,7 +123,7 @@
         <!-- *** Zombie Female Lumberjack - these are the A20 Lumberjack sounds, pitched up -->
 
         <SoundDataNode name="zombiefemalelumberjack_alert">
-            <AudioSource name="Sounds/AudioSource_CreatureSenseAlert" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_CreatureSenseAlert.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowalert1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowalert2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowalert3" />
@@ -141,7 +141,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombiefemalelumberjack_attack">
-            <AudioSource name="Sounds/AudioSource_Creatures" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Creatures.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowattack1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowattack2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowattack3" />
@@ -164,7 +164,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombiefemalelumberjack_death">
-            <AudioSource name="Sounds/AudioSource_Pain" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Pain.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowdeath1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowdeath2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowdeath3" />
@@ -183,7 +183,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombiefemalelumberjack_pain">
-            <AudioSource name="Sounds/AudioSource_Pain" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Pain.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowpain1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowpain2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowpain3" />
@@ -201,7 +201,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombiefemalelumberjack_roam">
-            <AudioSource name="Sounds/AudioSource_Creatures" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Creatures.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowroam1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowroam2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowroam3" />
@@ -219,7 +219,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombiefemalelumberjack_sense">
-            <AudioSource name="Sounds/AudioSource_CreatureSenseAlert" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_CreatureSenseAlert.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowsense1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowsense2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiemalesnowsense3" />
@@ -236,7 +236,7 @@
         </SoundDataNode>
 
         <SoundDataNode name="zombiefemalelumberjack_footstep">
-            <AudioSource name="Sounds/AudioSource_Footsteps" />
+            <AudioSource name="@:Sounds/Prefabs/AudioSource_Footsteps.prefab" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiesnowfootstep1" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiesnowfootstep2" />
             <AudioClip ClipName="#@modfolder:Resources/ZombieSounds_KHz.unity3d?zombiesnowfootstep3" />

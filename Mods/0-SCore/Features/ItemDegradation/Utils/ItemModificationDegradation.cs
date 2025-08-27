@@ -7,7 +7,6 @@ namespace SCore.Features.ItemDegradation.Utils
 {
     public class ItemDegradationHelpers
     {
-
         public const string DegradationPerUse = "DegradationPerUse";
         public const string DegradationMaxUse = "DegradationMaxUse";
 
@@ -21,6 +20,7 @@ namespace SCore.Features.ItemDegradation.Utils
 
             return (int)Math.Round(minDurability + (qualityStep * durabilityRange));
         }
+
         private static int GetValue(ItemValue mod, string property)
         {
             // 1. Check dynamic metadata first for override values.
@@ -51,14 +51,16 @@ namespace SCore.Features.ItemDegradation.Utils
 
             // Return a default value if the property is not found anywhere.
         }
+
         public static int GetDegradationPerUse(ItemValue mod)
         {
-             var   value = GetValue(mod, DegradationPerUse);
+            var value = GetValue(mod, DegradationPerUse);
             return value >= 0 ? value : 0;
         }
+
         public static int GetMaxUseTimes(ItemValue mod)
         {
-            var  value = GetValue(mod, DegradationMaxUse);
+            var value = GetValue(mod, DegradationMaxUse);
             return value >= 0 ? value : 0;
         }
 
@@ -67,6 +69,7 @@ namespace SCore.Features.ItemDegradation.Utils
             var maxUse = GetMaxUseTimes(mod);
             return mod.UseTimes / maxUse;
         }
+
         public static bool CanDegrade(ItemValue mod)
         {
             if (mod == null) return false;
@@ -76,11 +79,39 @@ namespace SCore.Features.ItemDegradation.Utils
             return true;
         }
 
+        public static bool CanDegrade(BlockValue blockValue)
+        {
+           return blockValue.Block.Properties.Contains(DegradationPerUse);
+        }
         public static bool IsDegraded(ItemValue mod)
         {
             if (!CanDegrade(mod)) return false;
             return mod.UseTimes >= GetMaxUseTimes(mod);
         }
+
+        public static void CheckBlockForDegradation(BlockValue blockValue, Vector3i position, float ticks)
+        {
+            //    <property name="DegradationPerUse" value="1"/>
+            if (!blockValue.Block.Properties.Contains(DegradationPerUse)) return;
+            var perUse = blockValue.Block.Properties.GetInt(DegradationPerUse);
+            if (perUse < 0)
+                perUse = 1;
+
+            var minEffect = BlockEffectsManager.GetBlockEffect(blockValue.Block.GetBlockName());
+            if (minEffect == null)
+            {
+             //   blockValue.Block.DamageBlock(GameManager.Instance.World, 0, position, blockValue, perUse * (int)ticks, -1);
+                return;
+            }
+            
+            var minEventParams = new MinEventParams {
+                BlockValue = blockValue,
+                Self = GameManager.Instance.World.GetPrimaryPlayer(),
+                Position =  position,
+                StartPosition = new Vector3(ticks,perUse)
+            };
+            minEffect.FireEvent((MinEventTypes)SCoreMinEventTypes.onSelfItemDegrade, minEventParams);
+         }
 
         public static void CheckModification(ItemValue mod, EntityAlive player)
         {
@@ -96,6 +127,7 @@ namespace SCore.Features.ItemDegradation.Utils
                 mod.FireEvent(MinEventTypes.onSelfItemDeactivate, player.MinEventContext);
                 mod.Activated = 0;
             }
+
             if (mod.ItemClass.MaxUseTimesBreaksAfter.Value)
             {
                 mod = ItemValue.None;
@@ -106,7 +138,7 @@ namespace SCore.Features.ItemDegradation.Utils
         {
             for (var i = 0; i < items.Length; i++)
             {
-                if ( items[i]?.ItemClass == null ) continue;
+                if (items[i]?.ItemClass == null) continue;
                 CheckModification(items[i], player);
             }
         }

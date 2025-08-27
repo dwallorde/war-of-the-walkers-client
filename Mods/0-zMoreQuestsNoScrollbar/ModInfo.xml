@@ -4,7 +4,7 @@
 	<DisplayName value="MoreQuestsNoScrollbar" />
 	<Description value="Increases the amount of available quests at traders and adds other QoL changes related to quests." />
 	<Author value="jns0fficial" />
-	<Version value="2.0.0.0" />
+	<Version value="2.3.0.0" />
 	<Website value="" />
 	<SkipWithAntiCheat value="true" />
 </xml>

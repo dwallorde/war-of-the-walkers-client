@@ -99,7 +99,9 @@ namespace Challenges {
                 itemClass = itemClass,
                 blockTag = blockTag,
                 held_tags = held_tags,
-                _descriptionOverride = _descriptionOverride
+                _descriptionOverride = _descriptionOverride,
+                itemTag = itemTag
+                
             };
         }
     }

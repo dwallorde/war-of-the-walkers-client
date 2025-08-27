@@ -1,0 +1,6 @@
+<config>
+
+	<!-- Change the font size of the traders' and NPCs' text -->
+	<setattribute xpath="//response_entry/rect[@controller='DialogResponseEntry']/label[@name='Text']" name="font_size">22</setattribute>
+
+</config>

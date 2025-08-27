@@ -32,12 +32,12 @@
   <property name="SleeperVolumeTriggeredBy" value=" " />
   <property name="QuestTags" value="clear, fetch, infested" />
   <property class="Stats">
-    <property name="LightsVolume" value="547643.9" />
-    <property name="TotalVertices" value="433257" />
-    <property name="TotalTriangles" value="183785" />
+    <property name="LightsVolume" value="547643.8" />
+    <property name="TotalVertices" value="449316" />
+    <property name="TotalTriangles" value="189951" />
     <property class="BlockEntities">
-      <property name="Vertices" value="361443" />
-      <property name="Triangles" value="131897" />
+      <property name="Vertices" value="377502" />
+      <property name="Triangles" value="138063" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="65760" />
@@ -87,8 +87,8 @@
       <property name="7" value="34, 8, 36" />
     </property>
     <property class="TraderOnOff">
-      <property name="0" value="37, 5, 16" />
-      <property name="1" value="37, 5, 14" />
+      <property name="0" value="37, 5, 14" />
+      <property name="1" value="37, 5, 16" />
       <property name="2" value="37, 5, 18" />
     </property>
     <property class="challenge_mech_parts">

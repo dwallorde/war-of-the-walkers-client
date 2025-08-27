@@ -8,13 +8,13 @@
 	<insertAfter xpath="//window[@name='windowStatement']">
 		
 		<!-- Add back a modified window of responses -->
-		<window name="windowResponses" pos="90,-460" width="710" height="400" anchor="LeftTop" cursor_area="true" controller="DialogResponseList">
+		<window name="windowResponses" pos="90,-450" width="710" height="400" anchor="LeftTop" cursor_area="true" controller="DialogResponseList">
 
-			<sprite depth="1" sprite="ui_game_text_body_back" pos="-40,370" size="1740,870"/>
+			<sprite depth="1" color="[black]" pos="-40,370" size="1760,890" type="sliced"/>
 			
 			<label name="lblName" style="subtitle" text="{respondentname}" color="[selectedColor]" justify="left" depth="2" pos="-20,350" />
 
-			<grid depth="10" name="items" pos="-20,300" rows="21" cols="3" width="600" height="200" cell_width="600" cell_height="40" repeat_content="true" arrangement="vertical">
+			<grid depth="10" name="items" pos="-20,300" rows="22" cols="3" width="600" height="200" cell_width="600" cell_height="36" repeat_content="true" arrangement="vertical">
 				<response_entry id="0" />
 			</grid>
 

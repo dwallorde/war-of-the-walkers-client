@@ -14,7 +14,7 @@
   <property name="YOffset" value="-5" />
   <property name="SleeperVolumeStart" value="6, 5, 5#11, 5, 12#6, 5, 12" />
   <property name="SleeperVolumeSize" value="7, 5, 9#9, 5, 7#7, 5, 7" />
-  <property name="SleeperVolumeGroup" value="GroupGenericZombie,2,3,GroupGenericZombie,2,3,GroupZomBadass,2,3" />
+  <property name="SleeperVolumeGroup" value="1GroupGenericZombie,2,3,1GroupGenericZombie,2,3,1GroupGenericZombie,2,3" />
   <property name="SleeperVolumeGameStageAdjust" value=",,medium" />
   <property name="SleeperIsLootVolume" value="False,False,True" />
   <property name="SleeperIsBossVolume" value="False,False,True" />
@@ -52,11 +52,11 @@
   </property>
   <property class="Stats">
     <property name="LightsVolume" value="5998.348" />
-    <property name="TotalVertices" value="115383" />
-    <property name="TotalTriangles" value="60531" />
+    <property name="TotalVertices" value="113306" />
+    <property name="TotalTriangles" value="60450" />
     <property class="BlockEntities">
-      <property name="Vertices" value="107139" />
-      <property name="Triangles" value="53427" />
+      <property name="Vertices" value="105062" />
+      <property name="Triangles" value="53346" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="6024" />
