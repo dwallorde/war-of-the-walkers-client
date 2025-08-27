@@ -148,13 +148,19 @@
     <Compile Include="Features\ItemDegradation\Harmony\ItemValueMaxUseTimes.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\TestingPatches.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\TileEntityDewCollectorHandleModChanged.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\TileEntityWorkstationHandleRecipeQueue.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\TileEntityWorkstationUpdateTick.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\ItemClassGetIconTint.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\XUiCRecipeStackOutputStackPatches.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\XUiCRequiredItemStackGetBindingValue.cs" />
+    <Compile Include="Features\ItemDegradation\Harmony\XUiCWorkstationFuelGridTurnOn.cs" />
     <Compile Include="Features\ItemDegradation\Harmony\XUiCWorkstationToolGridHasRequirement.cs" />
     <Compile Include="Features\ItemDegradation\Scripts\MinEventActionDegradeItemValue.cs" />
     <Compile Include="Features\ItemDegradation\Scripts\MinEventActionModifyItem.cs" />
     <Compile Include="Features\ItemDegradation\Scripts\RequirementCompareItemProperty.cs" />
     <Compile Include="Features\ItemDegradation\Utils\ItemModificationDegradation.cs" />
+    <Compile Include="Features\ItemDisplayEntry\Harmony\XUiMItemStackGetCustomValue.cs" />
+    <Compile Include="Features\ItemDisplayEntry\Scripts\ItemDisplayEntryUtils.cs" />
     <Compile Include="Features\LearnByDoing\Harmony\BlockSecureLootEventData_Event.cs" />
     <Compile Include="Features\LearnByDoing\Harmony\XUiCDisplayTips.cs" />
     <Compile Include="Features\LearnByDoing\Harmony\XUiC_SkillAttributeLevel.cs" />
@@ -214,7 +220,7 @@
     <Compile Include="Features\PassiveEffectHooks\TestingHooks.cs" />
     <Compile Include="Features\PlayerMetrics\KillTracking\Scripts\SCoreKillTracker.cs" />
     <Compile Include="Features\PlayerMetrics\SCoreMetrics.cs" />
-    <Compile Include="Features\Recipe\Harmony\XUiCCraftingQueue.cs" />
+    <Compile Include="Features\Recipe\Harmony\TileEntityWorkstationHandleRecipeQueue.cs" />
     <Compile Include="Features\Recipe\Harmony\XUiCRecipeStackPatches.cs" />
     <Compile Include="Features\Recipe\SCoreTabTypes.cs" />
     <Compile Include="Features\Recipe\Scripts\MinEventAction\MinEventActionAddAdditionalOutput.cs" />
@@ -372,6 +378,7 @@
     </Compile>
     <Compile Include="Scripts\Animation\AvatarAnimalControllerSDX.cs" />
     <Compile Include="Scripts\Animation\MecanimSDX.cs" />
+    <Compile Include="Scripts\Animation\RandomAnimatinScript.cs" />
     <Compile Include="Scripts\Blocks\BlockClockDMT.cs" />
     <Compile Include="Scripts\Blocks\BlockClockScript.cs" />
     <Compile Include="Scripts\Blocks\BlockMortSpawner.cs" />

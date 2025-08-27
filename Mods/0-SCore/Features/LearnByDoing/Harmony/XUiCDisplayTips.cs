@@ -15,7 +15,10 @@ public abstract class XUiCDisplayTips
             {
                 if (__instance.CurrentSkill == null) return;
                 var perkName = __instance.CurrentSkill.Name;
-                _value = Localization.Get($"{perkName}LearnByDoingDesc", true);
+                var searchKey = $"{perkName}LearnByDoingDesc";
+                _value = Localization.Get(searchKey, true);
+                if (searchKey == _value)
+                    _value = string.Empty;
                 __result = true;
             }
         }
@@ -32,7 +35,11 @@ public abstract class XUiCDisplayTips
             {
                 if (__instance.CurrentSkill == null) return;
                 var perkName = __instance.CurrentSkill.Name;
-                _value = Localization.Get($"{perkName}LearnByDoingDesc", true);
+                var searchKey = $"{perkName}LearnByDoingDesc";
+                _value = Localization.Get(searchKey, true);
+                if (searchKey == _value)
+                    _value = string.Empty;
+
                 __result = true;
             }
         }

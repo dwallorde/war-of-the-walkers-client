@@ -32,6 +32,27 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.11.1608
+	[ One Block Crouch ]
+		- Fixed an issue with the cvar check being done too early to be ineffective.
+		- Refactored implementation.
+
+	[ Item Degradation ]	
+		- Fixed an issue where a bad localization was being displayed when Learn by Doing was not available.
+		- added a localilzation entry to tag broken tool's Broken on the tooltip
+		- Added degradation in the worokstations to prevent crafting when a mod is degraded.
+		- Currently, after each recipe that is crafted, the tool requirement will degrade.
+
+	[ Additional Output ]
+		- Fixed a null reference when some player data wasn't available.
+
+	[ New Script ]
+		- Added guppycur's randomAnimationScript
+		- This script is designed to trigger a random animation on an associated Animator component every five minutes 
+			of in-game time. It is a time-based animation controller, useful for adding subtle, random environmental 
+			or character animations without relying on complex state machines or frequent, performance-heavy checks.
+
+
 Version: 2.3.10.1017
 	[ Learn By Doing ]
 		- Fixed an issue with CanPurchasePerk to be more accurate.

@@ -142,6 +142,27 @@ namespace SCore.Features.ItemDegradation.Utils
                 CheckModification(items[i], player);
             }
         }
+        
+        public static void CheckToolsForDegradation(TileEntityWorkstation instance, global::Recipe recipe)
+        {
+            if (instance.bUserAccessing || instance.queue.Length == 0 || (instance.isModuleUsed[3] && !instance.isBurning)) return;
+            if (instance.Tools == null) return;
+            ItemStack[] slots = instance.Tools;
+            for (var i = 0; i < slots.Length; i++)
+            {
+                if (slots[i].IsEmpty()) continue;
+                var itemValue = slots[i].itemValue;
+                if (itemValue.type != recipe.craftingToolType) continue;
+                if (!CanDegrade(itemValue)) continue;
+                if (IsDegraded(slots[i].itemValue))
+                {
+                    instance.IsBurning = false;
+                    instance.ResetTickTime();
+                    return;
+                }
+                OnSelfItemDegrade.CheckForDegradation(slots[i]);
+            }
+        }
 
         [HarmonyPatch(typeof(ItemAction))]
         [HarmonyPatch(nameof(ItemAction.HandleItemBreak))]
