@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GearsMenu name="XUi_Menu/windows.xml">
 
+	<!-- <set xpath="/windows/@name">XUi_Menu/windows.xml</set> -->
+
 	<!-- MainMenu replacement Window-->
 	<remove xpath="/windows/window[@name='mainMenu']" />
 
@@ -115,14 +117,14 @@
 						<rect name="tabsHeader" height="52" depth="0">
 							<grid name="tabButtons" pos="34,-1" depth="2" rows="1" cols="3" cell_width="175" cell_height="52" repeat_content="true" arrangement="horizontal">
 								<rect>
-									<simplebutton name="tabButton" depth="2" pos="0,0" width="175" height="52" font_size="34" caption_key="Test" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" selectedcolor="[lightGrey]" foregroundlayer="false"/>
+									<simplebutton name="tabButton" depth="2" pos="0,0" width="175" height="52" font_size="34" caption_key="Test" tooltip_key="Test" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" selectedcolor="[lightGrey]" foregroundlayer="false"/>
 									<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="174,0" width="2" height="52" color="[black]" type="sliced"/>
 								</rect>
 							</grid>
 						</rect>
 						<simplebutton name="forwardButton" depth="4" pos="588,-1" width="30" height="52" caption="&#9654;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false" pivot="right"/>
 						<sprite depth="5" name="separatorBottom" pos="3,-52" sprite="menu_empty2px" height="2" width="584" color="[black]" type="sliced" />
-						<sprite depth="2" name="separatorBottomShadow" sprite="gears_shadow_gradiant3" pos="3, -53" height="8" width="584" type="sliced" />
+						<sprite depth="2" name="separatorBottomShadow" sprite="gears_shadow_gradiant3" pos="3, -53" height="8" width="584" type="sliced"/>
 
 						<!-- Settings List -->
 						<scrollbar	name="scrollbar" depth="6" pos="582,-330" width="12" height="555" padding="4" foregroundname="handler" backgroundname="background" pivot="center" globalopacitymod="1.8">

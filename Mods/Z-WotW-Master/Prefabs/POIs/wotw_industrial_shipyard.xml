@@ -32,12 +32,12 @@
   <property name="SleeperVolumeTriggeredBy" value=" " />
   <property name="QuestTags" value="clear, fetch, infested" />
   <property class="Stats">
-    <property name="LightsVolume" value="547643.8" />
-    <property name="TotalVertices" value="449316" />
-    <property name="TotalTriangles" value="189951" />
+    <property name="LightsVolume" value="547643.7" />
+    <property name="TotalVertices" value="449656" />
+    <property name="TotalTriangles" value="190047" />
     <property class="BlockEntities">
-      <property name="Vertices" value="377502" />
-      <property name="Triangles" value="138063" />
+      <property name="Vertices" value="377842" />
+      <property name="Triangles" value="138159" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="65760" />

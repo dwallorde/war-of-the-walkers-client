@@ -125,6 +125,7 @@
 					<window name="windowQuestTracker" />
 					<window name="windowRecipeTracker" />
 					<window name="windowGroupBars" />
+					<window name="smxMiniMapWindow" />
 				</set>
 
 				<setattribute xpath="/xui//window_group[@name='compass']" name="actionset">false</setattribute>
@@ -287,17 +288,6 @@
 
 
 <!--	> > > > > > > > > > > > > > > > > > > > | SMXui | < < < < < < < < < < < < < < < < < < < <	-->
-
-
-<!--	// SMX // Window NON Paging Header -->
-
-		<!--conditional>
-			<if cond="mod_loaded('zSMXui')">
-
-				<setattribute xpath="/xui/ruleset[@name='default']/window_group/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
-
-			</if>
-		</conditional-->
 
 
 <!--	// SMX // Window Paging Header -->
@@ -543,14 +533,14 @@
 
 <!--	// SMX // Skills Window -->
 
-		<!--conditional>
+		<conditional>
 			<if cond="mod_loaded('zSMXui')">
 
 				<set xpath="/xui/ruleset[@name='default']/window_group[@name='skills']">
 					<window name="windowSkillList"/>
-					<window name="windowSkillAttributeInfo" /-->
+					<window name="windowSkillAttributeInfo" />
 					<!--window name="windowSkillSkillInfo" /-->
-					<!--window name="windowSkillPerkInfo" />
+					<window name="windowSkillPerkInfo" />
 					<window name="windowSkillBookInfo" />
 					<window name="windowSkillCraftingInfo" />
 				</set>
@@ -558,7 +548,7 @@
 				<setattribute xpath="/xui//window_group[@name='skills']" name="controller">SMXcore.XUiC_SkillWindowGroup, SMXcore</setattribute>
 
 			</if>
-		</conditional-->
+		</conditional>
 
 
 <!--	// SMX // Trader Window - Quest Turn-In -->
@@ -608,6 +598,7 @@
 				<set xpath="/xui/ruleset[@name='default']/window_group[@name='dialog']">
 					<window name="windowRespondentName" />
 					<window name="windowStatement" />
+					<window name="windowSubtitle" />
 					<window name="windowResponses" />
 				</set>
 

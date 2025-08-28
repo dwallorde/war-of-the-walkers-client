@@ -32,6 +32,16 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.12.844
+	[ Recipes ]
+		- Fixed additional Output recipes to work on servers
+
+	[ Item Degradation ]
+		- Added documentation.
+
+	[ Project Clean up ]
+		- Fixed broken, incorrect, and not-necessary dependencies in vcproj.
+
 Version: 2.3.11.1608
 	[ One Block Crouch ]
 		- Fixed an issue with the cvar check being done too early to be ineffective.

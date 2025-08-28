@@ -724,7 +724,7 @@
 							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 							
 							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 							</panel>
 
 							<panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true" padding="6">
@@ -804,7 +804,7 @@
 					<window name="progress" depth="200" pos="-200,50" width="400" height="100" anchor="CenterCenter" controller="ProgressWindow">
 
 						<panel name="pnlShadow" depth="1" pos="-3000,3000" width="10000" height="10000" on_press="true" createuipanel="true" disableautobackground="true" visible="{use_shadow}" gamepad_selectable="false">
-							<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+							<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 						</panel>
 
 						<panel name="noclick" depth="2" pos="-200,20" width="800" height="200" createuipanel="true" disableautobackground="true">
@@ -869,44 +869,46 @@
 								<sprite name="smxOutlineLeft" pos="-2,-220" width="245" height="3" sprite="smx_sepline_1" rotation="90" />
 								<sprite name="smxOutlineRight" pos="798,-225" width="234" height="3" sprite="smx_sepline_1" rotation="90" />
 								<sprite name="smxOutlineBottom" pos="-30,-198" width="858" height="3" sprite="smx_sepline_1" flip="Horizontally" />
+							<!--/panel-->
+
+								<label name="smxRespawn" pos="400,-40" width="500" height="80" pivot="center" style="smx_label_outline" font_size="28" justify="center" text_key="respawnTitleMessage" upper_case="true" visible="{# enteringGame and !firstTimeSpawn}" />
+								<label name="smxRespawn" pos="400,-40" width="500" height="80" pivot="center" style="smx_label_outline" font_size="28" justify="center" text_key="respawnTitleMessage" upper_case="true" visible="{# enteringGame and firstTimeSpawn}" />
+								<label name="smxRespawn" pos="400,-40" width="500" height="80" pivot="center" style="smx_label_outline" font_size="28" justify="center" text_key="respawnTitleMessage" upper_case="true" visible="{# !enteringGame and !hasBackpack and !hasBedroll }" />
+								<label name="smxRespawn" pos="400,-40" width="500" height="80" pivot="center" style="smx_label_outline" font_size="28" justify="center" text_key="respawnTitleMessage" upper_case="true" visible="{# !enteringGame}" />
+
+								<table name="content" pivot="center" pos="285,-90" columns="1" padding="0,9">
+									<grid cols="7" rows="1" cell_width="250" cell_height="70" pivot="center" repeat_content="false" arrangement="horizontal" flip="horizontally" >
+										<smx_menu_button name="btnSpawnFirstTime" depth="13" width="230" height="65" pivot="center" caption_key="lblSpawnRandom" font_size="18" visible="{# enteringGame and firstTimeSpawn}" />
+										<smx_menu_button name="btnSpawn" depth="13" width="230" height="65" pivot="center" caption_key="lblSpawn" font_size="18" visible="{# enteringGame and !firstTimeSpawn}" />
+
+										<rect width="500" height="42" createuiwidget="true" />
+
+										<smx_menu_button name="btnLeave" depth="13" width="230" height="65" pivot="center" caption_key="xuiSpawnLeaveGame" font_size="18" visible="{# enteringGame and !is_server}" />
+
+										<smx_menu_button name="btnRespawn" depth="13" width="230" height="65" pivot="center" caption_key="lblRespawn" font_size="18" visible="{# !enteringGame and !hasBackpack and !hasBedroll }" />
+
+										<smx_menu_button name="btnNearBackpack" depth="13" width="230" height="65" pivot="center" caption_key="lblSpawnNearBackpack" font_size="18" visible="{# !enteringGame and hasBackpack}" />
+										<smx_menu_button name="btnOnBedroll" depth="13" width="230" height="65" pivot="center" caption_key="lblSpawnOnBedroll" font_size="18" visible="{# !enteringGame and hasBedroll}" />
+										<smx_menu_button name="btnNearBedroll" depth="13" width="230" height="65" pivot="center" caption_key="lblSpawnNearBedroll" font_size="18" visible="{# !enteringGame and hasBedroll}" />
+									</grid>
+
+									<panel name="boxSpawnNearFriend" depth="3" width="500" height="250" pivot="center" padding="4" bordercolor="[black]" borderthickness="0" borderinset="0" borderspritename="menu_empty3px" backgroundcolor="[darkGrey]" controller="SpawnNearFriendsList" cursor_controllable="true" visible="{showNearFriends}">
+										<label name="lblCaption" depth="4" pos="2,-18" width="370" height="35" pivot="left" text_key="lblSpawnNearFriend" font_size="28" color="[beige]" justify="left" parse_actions="true" max_line_count="1" overflow="shrinkcontent" />
+
+										<rect name="friends" pos="0,0" height="200" width="480" visible="{# entrycounttotal &gt; 0 }">
+											<pager name="pager" pos="390,0" />
+											
+											<grid name="list" depth="2" pos="0,-40" height="160" cell_width="196" rows="5" cols="1" cell_height="32" repeat_content="true" arrangement="vertical">
+												<spawnnearfriends_list_entry width="492" height="30" />
+											</grid>
+										
+											<simplebutton name="btnSpawnNearFriend" pos="0,-200" width="230" height="65" caption_key="lblSpawnNearFriendButton" font_size="18" enabled="{selectionValid}" tooltip_key="xuiPromptViewPlayerProfile" />
+										</rect>
+										
+										<label pos="250,-80" width="400" height="60" font_size="28" color="[red]" pivot="center" text_key="lblSpawnNoAvailableFriends" justify="center" overflow="shrinkcontent" ignoreparentpadding="true" visible="{# entrycounttotal == 0 }" />
+									</panel>
+								</table>
 							</panel>
-
-			<table pos="0,-61" columns="1" padding="0,9" always_reposition="true" name="content">
-				<panel name="boxSpawnNearFriend" width="500" height="250" depth="3" pivot="center" padding="4" bordercolor="[black]" borderthickness="0" borderinset="0" borderspritename="menu_empty3px" backgroundcolor="[darkGrey]" controller="SpawnNearFriendsList" cursor_controllable="true" visible="{showNearFriends}">
-					<label name="lblCaption" depth="4" pos="2,-18" width="370" height="35" font_size="28" color="[beige]" pivot="left" justify="left" parse_actions="true" max_line_count="1" text_key="lblSpawnNearFriend" overflow="shrinkcontent" />
-
-					<rect name="friends" pos="0,0" height="200" width="480" visible="{# entrycounttotal &gt; 0 }">
-						<pager name="pager" pos="390,0" />
-						
-						<grid name="list" depth="2" rows="5" cols="1" pos="0,-40" height="160" cell_width="196" cell_height="32" repeat_content="true" arrangement="vertical" >
-							<spawnnearfriends_list_entry width="492" height="30" />
-						</grid>
-					
-						<simplebutton name="btnSpawnNearFriend" pos="0,-200" width="492" height="42" font_size="36" caption_key="lblSpawnNearFriendButton" enabled="{selectionValid}" tooltip_key="xuiPromptViewPlayerProfile" />
-					</rect>
-					
-					<label pos="250,-80" width="400" height="60" font_size="28" color="[red]" pivot="center" justify="center" overflow="shrinkcontent" text_key="lblSpawnNoAvailableFriends" visible="{# entrycounttotal == 0 }" ignoreparentpadding="true" />
-				</panel>
-				
-				<simplebutton name="btnSpawnFirstTime" width="500" height="42" font_size="36" caption_key="lblSpawnRandom" visible="{# enteringGame and firstTimeSpawn}" />
-				<simplebutton name="btnSpawn" width="500" height="42" font_size="36" caption_key="lblSpawn" visible="{# enteringGame and !firstTimeSpawn}" />
-				<rect width="500" height="42" createuiwidget="true" />
-				<simplebutton name="btnLeave" width="500" height="42" font_size="36" caption_key="xuiSpawnLeaveGame" visible="{# enteringGame and !is_server}" />
-				
-				<simplebutton name="btnRespawn" width="500" height="42" font_size="36" caption_key="lblRespawn" visible="{# !enteringGame and !hasBackpack and !hasBedroll }" />
-				<simplebutton name="btnNearBackpack" width="500" height="42" font_size="36" caption_key="lblSpawnNearBackpack" visible="{# !enteringGame and hasBackpack}" />
-				<simplebutton name="btnOnBedroll" width="500" height="42" font_size="36" caption_key="lblSpawnOnBedroll" visible="{# !enteringGame and hasBedroll}" />
-				<simplebutton name="btnNearBedroll" width="500" height="42" font_size="36" caption_key="lblSpawnNearBedroll" visible="{# !enteringGame and hasBedroll}" />
-			</table>
-
-
-							<!--panel depth="10" createuipanel="true" disableautobackground="true" >
-								<label name="smxRespawn" pos="200,-30" width="500" height="80" pivot="center" style="smx_label_outline" font_size="28" justify="center" text_key="respawnTitleMessage" />
-
-								<smx_menu_button name="btnOption1" depth="13" pos="190,-80" width="230" height="65" pivot="center" font_size="18" caption_key="lblSpawnOnBedroll" />
-								<smx_menu_button name="btnOption2" depth="13" pos="-50,-80" width="230" height="65" pivot="center" font_size="18" caption_key="lblSpawnNearBedroll" />
-								<smx_menu_button name="btnOption3" depth="13" pos="430,-80" width="230" height="65" pivot="center" font_size="18" caption_key="lblSpawnNearBackpack" />
-							</panel-->
 
 						</rect>
 					</window>
@@ -926,7 +928,7 @@
 				<append xpath="/windows">
 					<window name="newContinueGame" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="NewContinueGame" cursor_area="true">
 
-						<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+						<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 
 						<sprite name="smx_window_top_background" depth="1" pos="0,118" width="1844" height="57" sprite="smx_title_background" flip="vertically" color="7,7,7,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
 						<sprite name="smx_window_top_separator" depth="2" pos="0,70" width="1844" height="3" sprite="smx_sepline_1" flip="vertically" color="255,255,255,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
@@ -1318,7 +1320,7 @@
 								<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 								
 								<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-									<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+									<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 								</panel>
 
 								<panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true">
@@ -1352,7 +1354,7 @@
 				<append xpath="/windows">
 					<window name="serverBrowser" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="ServerBrowser" cursor_area="true">
 
-						<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+						<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 
 						<sprite name="smx_window_top_background" depth="1" pos="0,118" width="1844" height="57" sprite="smx_title_background" flip="vertically" color="7,7,7,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
 						<sprite name="smx_window_top_separator" depth="2" pos="0,70" width="1844" height="3" sprite="smx_sepline_1" flip="vertically" color="255,255,255,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
@@ -1730,7 +1732,7 @@
 								<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 
 								<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-									<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+									<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 								</panel>
 
 								<panel name="content" pos="0,-350" depth="3" width="400" height="600" pivot="center" createuipanel="true" disableautobackground="true">
@@ -2065,7 +2067,7 @@
 							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 
 							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 							</panel>
 
 							<panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true">
@@ -2085,7 +2087,7 @@
 							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 
 							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 							</panel>
 
 							<panel name="content" depth="3" pos="0,-350" width="400" height="600" pivot="center" createuipanel="true" disableautobackground="true">
@@ -2121,7 +2123,7 @@
 				<append xpath="/windows">
 					<window name="worldGeneration" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="WorldGenerationWindowGroup" cursor_area="true">
 
-						<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+						<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 
 						<sprite name="smx_window_top_background" depth="1" pos="0,118" width="1844" height="57" sprite="smx_title_background" flip="vertically" color="7,7,7,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
 						<sprite name="smx_window_top_separator" depth="2" pos="0,70" width="1844" height="3" sprite="smx_sepline_1" flip="vertically" color="255,255,255,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
@@ -2264,40 +2266,40 @@
 
 <!--	// SMX // Server Password Popup-->
 
-		<!-- <conditional> -->
-			<!-- <if cond="mod_loaded('zSMXmenu')"> -->
+		<conditional>
+			<if cond="mod_loaded('zSMXmenu')">
 
-				<!-- <remove xpath="/windows/window[@name='serverPassword']" /> -->
+				<remove xpath="/windows/window[@name='serverPassword']" />
 
-				<!-- <append xpath="/windows"> -->
-					<!-- <window name="serverPassword" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="ServerPasswordWindow" cursor_area="true"> -->
-						<!-- <panel depth="200" createuipanel="true" disableautobackground="true"> -->
-							<!-- <panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" /> -->
+				<append xpath="/windows">
+					<window name="serverPassword" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="ServerPasswordWindow" cursor_area="true">
+						<panel depth="200" createuipanel="true" disableautobackground="true">
+							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 							
-							<!-- <panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false"> -->
-								<!-- <texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" /> -->
-							<!-- </panel> -->
+							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+							</panel>
 
-							<!-- <panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true"> -->
-								<!-- <sprite name="smxPopOutBG" depth="9" height="700" pivot="center" sprite="smx_menu_background" type="sliced" color="7,7,7,295" /> -->
-								<!-- <texture name="smxPopOutArt" depth="10" pos="0,140" width="350" height="350" pivot="center" texture="@modfolder(SMXcore)://Textures/misc/password_zombie.png" /> -->
+							<panel name="content" pos="0,-350" width="400" height="600" depth="3" pivot="center" createuipanel="true" disableautobackground="true">
+								<sprite name="smxPopOutBG" depth="9" height="700" pivot="center" sprite="smx_menu_background" type="sliced" color="7,7,7,295" />
+								<texture name="smxPopOutArt" depth="10" pos="0,140" width="350" height="350" pivot="center" texture="@modfolder(SMXcore)://Textures/misc/password_zombie.png" />
 
-								<!-- <label name="lblPassNormal" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordNormal" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" /> -->
+								<label name="lblPassNormal" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordNormal" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" />
+								<label name="lblPassIncorrect" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordIncorrect" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" />
 
-								<!-- <label name="lblPassIncorrect" depth="11" pos="0,-100" width="350" pivot="center" style="smx_label_outline" text_key="xuiServerPasswordIncorrect" font_size="24" justify="center" upper_case="true" overflow="ShrinkContent" /> -->
-								<!-- <smx_textfield_serverpw name="txtPassword" depth="12" pos="0,-150" width="230" height="30" pivot="center" font_size="24" password_field="true" open_vk_on_open="false" character_limit="30" /> -->
-							<!-- </panel> -->
+								<smx_textfield_serverpw name="txtPassword" depth="13" pos="0,-150" width="230" height="30" pivot="center" font_size="24" password_field="true" open_vk_on_open="false" character_limit="30" />
+							</panel>
 
-							<!-- <panel name="buttons" depth="6" pos="-10,-560" height="32" borderthickness="3" createuipanel="true" disableautobackground="true" > -->
-								<!-- <smx_back_button name="btnCancel" depth="3" pos="170,550" width="55" height="55" pivot="center" sprite="ui_game_symbol_add" size="24,24" rotation="45" tooltip_key="xuiBack" /> -->
-								<!-- <smx_menu_button name="btnSubmit" depth="3" pos="0,0" width="230" height="65" pivot="center" caption_key="xuiSubmit" font_size="28" upper_case="true" /> -->
-							<!-- </panel> -->
-						<!-- </panel> -->
-					<!-- </window> -->
-				<!-- </append> -->
+							<panel name="buttons" depth="6" pos="-10,-560" height="32" borderthickness="3" createuipanel="true" disableautobackground="true" >
+								<smx_back_button name="btnCancel" depth="3" pos="170,550" width="55" height="55" pivot="center" sprite="ui_game_symbol_add" size="24,24" rotation="45" tooltip_key="xuiBack" />
+								<smx_menu_button name="btnSubmit" depth="3" pos="0,0" width="230" height="65" pivot="center" caption_key="xuiSubmit" font_size="28" upper_case="true" />
+							</panel>
+						</panel>
+					</window>
+				</append>
 
-			<!-- </if> -->
-		<!-- </conditional> -->
+			</if>
+		</conditional>
 
 
 <!--	// SMX // Login Window - Steam -->
@@ -2313,7 +2315,7 @@
 							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 
 							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 							</panel>
 
 							<panel name="content" depth="10" pos="0,-350" width="400" height="600" pivot="center" createuipanel="true" disableautobackground="true">
@@ -2339,7 +2341,7 @@
 							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 
 							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 							</panel>
 
 							<panel name="content" depth="10" pos="0,-350" width="400" height="600" pivot="center" createuipanel="true" disableautobackground="true">
@@ -2364,7 +2366,7 @@
 							<panel name="outclick" depth="1" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false" />
 
 							<panel name="noclick" depth="2" pos="-2000,2000" width="8000" height="8000" on_press="true" createuipanel="true" disableautobackground="true" gamepad_selectable="false">
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 							</panel>
 
 							<panel name="content" depth="10" pos="0,-350" width="400" height="600" pivot="center" createuipanel="true" disableautobackground="true">
@@ -2397,7 +2399,7 @@
 				<append xpath="/windows">
 					<window name="editingTools" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="EditingTools" cursor_area="true">
 
-						<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+						<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 
 						<sprite name="smx_window_top_background" depth="1" pos="0,118" width="1844" height="57" sprite="smx_title_background" flip="vertically" color="7,7,7,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
 						<sprite name="smx_window_top_separator" depth="2" pos="0,70" width="1844" height="3" sprite="smx_sepline_1" flip="vertically" color="255,255,255,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
@@ -2471,6 +2473,27 @@
 		</conditional>
 
 
+<!-- 	// SMX // Subtitles Display -->
+
+		<conditional>
+			<if cond="mod_loaded('zSMXmenu')">
+
+				<remove xpath="/windows/window[@name='subtitlesDisplay']" />
+
+				<append xpath="/windows">
+					<window name="subtitlesDisplay" depth="950" pos="-435,142" width="900" height="50" anchor="CenterBottom" controller="SubtitlesDisplay" cursor_area="false" actionSet="false" globalopacity="false">
+						<panel name="bgPanel" depth="1" pos="0,0" width="870" height="30" backgroundspritename="ui_game_panel_header" bordercolor="[transparent]" backgroundcolor="[black_threequarters_alpha]" borderthickness="0" anchor="CenterBottom" globalopacity="false">
+							<label name="lblSpeaker" depth="975" pos="6,-15" width="136" height="24" pivot="left" text_key="SubtitleSpeaker" font_size="20" justify="left" />
+							<label name="lblSubtitle" depth="975" pos="143,-15" width="610" height="24" pivot="left" text_key="SubtitleContent" font_size="20" justify="left" />
+						</panel>
+					</window>
+				</append>
+
+			</if>
+		</conditional>
+
+
+
 <!-- 	// SMX // Main Menu Clean Background -->
 
 		<conditional>
@@ -2530,7 +2553,7 @@
 						<append xpath="/windows">
 							<window name="modsWindow" pos="0,400" width="1185" height="780" anchor="CenterCenter" controller="Gears.UI.ModsWindow, Gears" cursor_area="true">
 
-								<texture name="bgTexture" depth="0" texture="Textures/UI/news_background" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
+								<texture name="bgTexture" depth="0" texture="@:Textures/UI/news_background.jpg" color="255,255,255,240" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" anchor_bottom="#cam,0,-5" anchor_top="#cam,1,5" />
 
 								<sprite name="smx_window_top_background" depth="1" pos="0,118" width="1844" height="57" sprite="smx_title_background" flip="vertically" color="7,7,7,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
 								<sprite name="smx_window_top_separator" depth="2" pos="0,70" width="1844" height="3" sprite="smx_sepline_1" flip="vertically" color="255,255,255,500" anchor_left="#cam,0,-5" anchor_right="#cam,1,5" />
