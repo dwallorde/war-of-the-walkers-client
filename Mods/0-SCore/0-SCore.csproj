@@ -374,7 +374,7 @@
     </Compile>
     <Compile Include="Scripts\Animation\AvatarAnimalControllerSDX.cs" />
     <Compile Include="Scripts\Animation\MecanimSDX.cs" />
-    <Compile Include="Scripts\Animation\RandomAnimatinScript.cs" />
+    <Compile Include="Scripts\Animation\RandomAnimationScript.cs" />
     <Compile Include="Scripts\Blocks\BlockClockDMT.cs" />
     <Compile Include="Scripts\Blocks\BlockClockScript.cs" />
     <Compile Include="Scripts\Blocks\BlockMortSpawner.cs" />

@@ -487,6 +487,8 @@ public class FireHandler : IFireHandler
     {
         var pooledExpandableMemoryStream =
             (PooledExpandableMemoryStream)threadInfo.parameter;
+        if (!Directory.Exists(GameIO.GetSaveGameDir())) return -1;
+
         var text = $"{GameIO.GetSaveGameDir()}/{SaveFile}";
         if (File.Exists(text))
             File.Copy(text, $"{GameIO.GetSaveGameDir()}/{SaveFile}.bak", true);
