@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using Audio;
 using Harmony.SoundFeatures;
 using UnityEngine;
@@ -330,7 +331,7 @@ public class FireHandler : IFireHandler
 
     private void StartFireEffects(Vector3i position, string fireParticle)
     {
-        if (!string.IsNullOrEmpty(fireParticle))
+        if (!string.IsNullOrEmpty(fireParticle) && ThreadManager.IsMainThread())
         {
             BlockUtilitiesSDX.addParticlesCentered(fireParticle, position);
         }

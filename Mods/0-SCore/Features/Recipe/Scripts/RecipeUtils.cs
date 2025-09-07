@@ -49,6 +49,7 @@ public class RecipeUtils
             {
                 if (minEventActionBase is not MinEventActionAddAdditionalOutput additionalOutput) continue;
                 var results = minEventActionBase.CanExecute(MinEventTypes.onSelfItemCrafted, minEventParams);
+                if ( !results) continue;
                 var itemStack = additionalOutput.GetItemStack();
                 items.Add(itemStack);
             }
@@ -84,11 +85,21 @@ public class RecipeUtils
 
     public static MinEventParams GenerateMinEventParams(EntityPlayer currentPlayer, EntityPlayer starterPlayer, ItemValue outputItemValue)
     {
+        
         var minEventParams = new MinEventParams();
         minEventParams.TileEntity = TraderUtils.GetCurrentTraderTileEntity();
-        minEventParams.Self = currentPlayer;
+        minEventParams.Self = currentPlayer == null ? starterPlayer : currentPlayer;
         minEventParams.Other = starterPlayer;
-        minEventParams.Biome = currentPlayer?.biomeStandingOn;
+        if (minEventParams.TileEntity != null)
+        {
+            var position = minEventParams.TileEntity.ToWorldPos();
+            minEventParams.Biome = GameManager.Instance.World.GetBiome(position.x, position.y);
+        }
+        else
+        {
+            minEventParams.Biome = currentPlayer?.biomeStandingOn ?? starterPlayer?.biomeStandingOn;
+        }
+
         minEventParams.ItemValue = outputItemValue;
         return minEventParams;
     }

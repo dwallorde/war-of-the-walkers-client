@@ -5,7 +5,7 @@
   <property name="ExcludePOICulling" value="False" />
   <property name="DistantPOIYOffset" value="0" />
   <property name="AllowTopSoilDecorations" value="False" />
-  <property name="DifficultyTier" value="4" />
+  <property name="DifficultyTier" value="5" />
   <property name="ShowQuestClearCount" value="1" />
   <property name="TraderArea" value="False" />
   <property name="PrefabSize" value="60, 28, 60" />
@@ -33,11 +33,11 @@
   <property name="QuestTags" value="clear, fetch, infested" />
   <property class="Stats">
     <property name="LightsVolume" value="10152.06" />
-    <property name="TotalVertices" value="724574" />
-    <property name="TotalTriangles" value="385298" />
+    <property name="TotalVertices" value="730123" />
+    <property name="TotalTriangles" value="386381" />
     <property class="BlockEntities">
-      <property name="Vertices" value="638632" />
-      <property name="Triangles" value="324127" />
+      <property name="Vertices" value="644177" />
+      <property name="Triangles" value="325202" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="72526" />
@@ -60,8 +60,8 @@
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes5">
-      <property name="Vertices" value="12376" />
-      <property name="Triangles" value="21044" />
+      <property name="Vertices" value="12380" />
+      <property name="Triangles" value="21052" />
     </property>
   </property>
   <property class="IndexedBlockOffsets">

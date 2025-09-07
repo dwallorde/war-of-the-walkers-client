@@ -32,6 +32,93 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.23.913
+	[ EntityAliveSDX ]
+		- Added a new CheckLeaderProximity check.
+		- A hired entity will allow allied players to 'phase' through them if they are too close, allowing you to run past them in tight spots.
+		
+	[ Crop Manager ]
+		- Fixed an issue where sprinkler range was not being considered for plant growth.
+
+	[ Custom Trader Currency ]
+		- Added a patch to block the sale of a custom currency to the trader with the custom currency
+		- If a trader takes old cash, you will no longer be able to sell it old cash at a profit.
+
+Version: 2.3.20.707
+	[ Advanced Scrapping ]
+		- Fixed an issue where items failed to scrap properly if no recipes were defined.
+		- Moved logic for getting the recipe to the bottom of the logic conditions.
+
+Version: 2.3.19.1401
+	[ Trader Currency ]
+		- Fixed an issue with custom currency where the Sell options were returning default currency, and not the custom one.
+
+	[ Challenges ]
+		- Added a null check on the CraftWithIngredient
+
+	[ EntityAlive SDX ]
+		- Added a try catch to track down a bad error when talking to NPCs.
+
+Version: 2.3.18.1533
+	[ Vehicles ]
+		- Added the ability to change the type of fuel a vehicle can use.
+		- Add a new property to vehicles.xml to add support.
+			<configs>
+				<append xpath="//vehicle[@name='vehicleMinibike']/property[@class='fuelTank']">
+					<property name="fuelType" value="drinkJarRiverWater" />
+				</append>
+			</configs>
+		- Items being used must have FuelValue property on it
+			<append xpath="//item[@name='drinkJarRiverWater']">
+				<property name="FuelValue" value="100" />
+			</append>
+
+	[ Additional Output ]
+		- Added more biome checks to be used for requirements.
+
+	[ Wireless Powered Workstation ]
+		- This feature allows you to require workstations to have a nearby power source.
+		- Added a new XUiC_WorkstationFuelGridSDX.
+		- This is paired with a new windowFuelPoweredSDX, which is included in 0-SCore's Config/XUi/windows.xml.
+			- The window can be changed to whatever you need to, as long as the controller reference remains in tact.
+		- Instead of "Fuel" it shows "Power". This is defined by the Localization entry: xuiNeedPower
+		- This disables the ability to manually add fuel, and instead relies on the Powered Workstation Feature's:
+	        <property name="RequirePower" value="true" />
+		- This also requires the Configuration Block setting "EnablePoweredWorkstations" to be true:
+		    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedWorkstationFeatures']/property[@name='EnablePoweredWorkstations']/@value">true</set>
+
+
+
+Version: 2.3.16.1209
+	[ Item Degradation ]
+		- Changed default DegradationPerUse from the test value 100 back to 1.
+
+	[ Additional Output ]
+		- Re-Added support for requirements. 
+		- This still needs to be tested on a dedi. Not all requirements may work.
+		- My test XML:
+		<append xpath="/recipes/recipe[@name='drinkJarRedTea']">
+			<effect_group name="Additional Output">
+				<triggered_effect trigger="onSelfItemCrafted" action="AddAdditionalOutput, SCore" item="foodCropPumpkin" count="4">
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+				</triggered_effect>
+			</effect_group>
+		</append>
+
+Version: 2.3.15.2120
+	[ Maintenance ]
+		- Fixed GetBindingValue references to GetBindingValueInternal for 2.3b8
+
+Version: 2.3.14.1308	
+	[ Fire Manager ]
+		- Added a check to make sure we are on the main thread before trying to do particles.
+
+	[ Food Spoilage ]
+		- Fixed an issue where food spoilage was being calculated, but not applied, until after pulled from preserved container.
+	
+	[ OnBought / OnSold
+		- Added a null reference check for possible failure.
+
 Version: 2.3.12.1652
 	[ Challenges ]
 		- Added description_key to the Clone() call for ClearSleepers
