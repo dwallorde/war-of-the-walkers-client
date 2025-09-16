@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+  <Name value="WalkerSim" />
+  <DisplayName value="WalkerSim" />
+  <Description value="Roaming zombies simulation mod." />
+  <Author value="ZehMatt" />
+  <Version value="1.0.0.0" />
+  <Website value="https://github.com/ZehMatt/7dtd-WalkerSim2" />
+  <SkipWithAntiCheat value="true" />
+</xml>

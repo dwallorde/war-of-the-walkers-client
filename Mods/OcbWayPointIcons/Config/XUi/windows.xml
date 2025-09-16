@@ -90,6 +90,15 @@
 		<map_popup_sub_line icon="ui_game_symbol_hunger"/>
 		<map_popup_sub_line icon="ui_game_symbol_lightbulb"/>
 		<map_popup_sub_line icon="ui_game_symbol_science"/>
+		<map_popup_sub_line icon="ui_game_symbol_safe"/>
+		<map_popup_sub_line icon="ui_game_symbol_brick"/>
+		<map_popup_sub_line icon="ui_game_symbol_add"/>
+		<map_popup_sub_line icon="ui_game_symbol_invite"/>
+		<map_popup_sub_line icon="ui_game_symbol_radial_number_1"/>
+		<map_popup_sub_line icon="ui_game_symbol_radial_number_2"/>
+		<map_popup_sub_line icon="ui_game_symbol_radial_number_3"/>
+		<map_popup_sub_line icon="ui_game_symbol_radial_number_4"/>
+		<map_popup_sub_line icon="ui_game_symbol_radial_number_5"/>
 
 	</append>
 

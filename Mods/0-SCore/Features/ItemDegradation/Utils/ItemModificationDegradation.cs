@@ -7,6 +7,8 @@ namespace SCore.Features.ItemDegradation.Utils
 {
     public class ItemDegradationHelpers
     {
+        public const string AdvFeatureClass = "ItemDegradation";
+        
         public const string DegradationPerUse = "DegradationPerUse";
         public const string DegradationMaxUse = "DegradationMaxUse";
 
@@ -29,6 +31,8 @@ namespace SCore.Features.ItemDegradation.Utils
                 return value;
             }
 
+            if (mod.ItemClass?.Properties == null) return -1;
+            
             // 2. Fall back to static item class properties.
             if (!mod.ItemClass.Properties.Contains(property)) return -1;
 
@@ -120,11 +124,12 @@ namespace SCore.Features.ItemDegradation.Utils
             mod.UseTimes += GetDegradationPerUse(mod);
             if (mod.UseTimes < GetMaxUseTimes(mod)) return;
 
-            Manager.BroadcastPlay(player, "itembreak");
+            if ( player != null)
+                Manager.BroadcastPlay(player, "itembreak");
             if (mod.ItemClass.HasTrigger(MinEventTypes.onSelfItemActivate) && mod.Activated != 0)
             {
                 player.MinEventContext.ItemValue = mod;
-                mod.FireEvent(MinEventTypes.onSelfItemDeactivate, player.MinEventContext);
+                mod.FireEvent(MinEventTypes.onSelfItemDeactivate, player != null ? player.MinEventContext : null);
                 mod.Activated = 0;
             }
 
@@ -139,10 +144,16 @@ namespace SCore.Features.ItemDegradation.Utils
             for (var i = 0; i < items.Length; i++)
             {
                 if (items[i]?.ItemClass == null) continue;
-                CheckModification(items[i], player);
+                //CheckModification(items[i], player);
+                CheckModsForDegradation(items[i], player);
             }
         }
         
+        public static void CheckModsForDegradation(ItemValue mod, EntityAlive player)
+        {
+                OnSelfItemDegrade.CheckForDegradation(mod, player);
+        }
+
         public static void CheckToolsForDegradation(TileEntityWorkstation instance, global::Recipe recipe)
         {
             if (instance.bUserAccessing || instance.queue.Length == 0 || (instance.isModuleUsed[3] && !instance.isBurning)) return;
@@ -164,39 +175,7 @@ namespace SCore.Features.ItemDegradation.Utils
             }
         }
 
-        [HarmonyPatch(typeof(ItemAction))]
-        [HarmonyPatch(nameof(ItemAction.HandleItemBreak))]
-        public class ItemActionHandleItemBreak
-        {
-            public static void Postfix(global::ItemActionData _actionData)
-            {
-                CheckModificationOnItem(_actionData.invData.holdingEntity.inventory.holdingItemItemValue.Modifications,
-                    _actionData.invData.holdingEntity);
-            }
-        }
 
-        [HarmonyPatch(typeof(EntityAlive))]
-        [HarmonyPatch(nameof(EntityAlive.ApplyLocalBodyDamage))]
-        public class EntityAliveApplyLocalBodyDamage
-        {
-            public static void Postfix(global::EntityAlive __instance, DamageResponse _dmResponse)
-            {
-                if (__instance.equipment == null) return;
-
-                var wornArmor = __instance.equipment.GetArmor();
-                foreach (var armor in wornArmor)
-                {
-                    if (armor.ItemClass is not ItemClassArmor armorItemClass)
-                    {
-                        continue;
-                    }
-
-                    if (_dmResponse.ArmorSlot == armorItemClass.EquipSlot)
-                    {
-                        CheckModification(armor, __instance);
-                    }
-                }
-            }
-        }
+     
     }
 }

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSettings>
+	<Global>
+		<Tab name="General" displayKey="rainstormSettingGeneral">
+			<Category name="General" displayKey="rainstormSettingGeneral" tooltipKey="rainstormSettingGeneralTooltip">
+				<Selector name="CloudQuality" displayKey="rainstormSettingCloudQuality" tooltipKey="rainstormSettingCloudQualityTooltip" value="High" defaultValue="High">
+					<Property type="arrayValues" allowedValues="Low,Medium,High,Ultra" />
+				</Selector>
+			</Category>
+		</Tab>
+	</Global>
+</ModSettings>

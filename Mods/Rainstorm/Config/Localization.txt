@@ -1,0 +1,6 @@
+﻿Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+
+rainstormSettingGeneral,UI,Menu,x,,General
+rainstormSettingGeneralTooltip,UI,Menu,x,,General settings for Rainstorm
+rainstormSettingCloudQuality,UI,Menu,x,,Cloud Quality
+rainstormSettingCloudQualityTooltip,UI,Menu,x,,Sets the Cloud Quality - Affects GPU performance

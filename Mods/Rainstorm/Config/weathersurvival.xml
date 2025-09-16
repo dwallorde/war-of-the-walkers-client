@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Weather survival tuning values-->
+<weathersurvival>
+
+	<append xpath="/weathersurvival">
+		<cloudPresets>
+			<cloud name="Clear">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="-0.6"/>
+				<property name="dilateCoverage" value="0.107"/>
+				<property name="dilateType" value="1"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="0.398"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="1.05"/>
+				<property name="multiScatteringA" value="0.575"/>
+				<property name="multiScatteringB" value="0.227"/>
+				<property name="multiScatteringC" value="0"/>
+
+				<property name="powderIntensity" value="0.848"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="1.01"/>
+				<property name="ambientLighIntensity" value="1"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.55"/>
+				<property name="densitySmoothness" value="1"/>
+				<property name="baseErosionIntensity" value="0.184"/>
+				<property name="detailErosionIntensity" value="0.3"/>
+				<property name="curlIntensity" value="0.1"/>
+			</cloud>
+			<cloud name="Cloudy1">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="-0.117"/>
+				<property name="dilateCoverage" value="0"/>
+				<property name="dilateType" value="0"/>
+				<property name="cloudTypeModifier" value="0.463"/>
+				<property name="anvilBias" value="0.247"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.806"/>
+				<property name="multiScatteringA" value="0.432"/>
+				<property name="multiScatteringB" value="0.227"/>
+				<property name="multiScatteringC" value="0.577"/>
+
+				<property name="powderIntensity" value="0.948"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="1.2"/>
+				<property name="ambientLighIntensity" value="1"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.217"/>
+				<property name="densitySmoothness" value="1.483"/>
+				<property name="baseErosionIntensity" value="0.5"/>
+				<property name="detailErosionIntensity" value="0.5"/>
+				<property name="curlIntensity" value="0.25"/>
+			</cloud>
+			<cloud name="Cloudy2">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="-0.11"/>
+				<property name="dilateCoverage" value="0.458"/>
+				<property name="dilateType" value="0.49"/>
+				<property name="cloudTypeModifier" value="0.947"/>
+				<property name="anvilBias" value="0.419"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="1.155"/>
+				<property name="multiScatteringA" value="0.392"/>
+				<property name="multiScatteringB" value="0.495"/>
+				<property name="multiScatteringC" value="0.511"/>
+
+				<property name="powderIntensity" value="0.376"/>
+				<property name="silverLiningSpread" value="0.903"/>
+				<property name="lightAbsorbtion" value="1.326"/>
+				<property name="ambientLighIntensity" value="1"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.5"/>
+				<property name="densitySmoothness" value="1.114"/>
+				<property name="baseErosionIntensity" value="0.071"/>
+				<property name="detailErosionIntensity" value="0.3"/>
+				<property name="curlIntensity" value="0.3"/>
+			</cloud>
+			<cloud name="Cloudy3">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.141"/>
+				<property name="dilateCoverage" value="0.667"/>
+				<property name="dilateType" value="0.661"/>
+				<property name="cloudTypeModifier" value="0.1"/>
+				<property name="anvilBias" value="0"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="1.986"/>
+				<property name="multiScatteringA" value="0.765"/>
+				<property name="multiScatteringB" value="0.165"/>
+				<property name="multiScatteringC" value="0.226"/>
+
+				<property name="powderIntensity" value="0.926"/>
+				<property name="silverLiningSpread" value="0.82"/>
+				<property name="lightAbsorbtion" value="0.77"/>
+				<property name="ambientLighIntensity" value="1"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="1.555"/>
+				<property name="densitySmoothness" value="2"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.5"/>
+				<property name="curlIntensity" value="0.4"/>
+			</cloud>
+			<cloud name="OvercastLight">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.149"/>
+				<property name="dilateCoverage" value="0.687"/>
+				<property name="dilateType" value="0.648"/>
+				<property name="cloudTypeModifier" value="0.265"/>
+				<property name="anvilBias" value="0.957"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.923"/>
+				<property name="multiScatteringA" value="0.242"/>
+				<property name="multiScatteringB" value="0.116"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="0.624"/>
+				<property name="lightAbsorbtion" value="0.481"/>
+				<property name="ambientLighIntensity" value="0.605"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.559"/>
+				<property name="densitySmoothness" value="1.487"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.567"/>
+				<property name="curlIntensity" value="0.5"/>
+			</cloud>
+			<cloud name="OvercastHeavy">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.176"/>
+				<property name="dilateCoverage" value="0.835"/>
+				<property name="dilateType" value="0.492"/>
+				<property name="cloudTypeModifier" value="0.491"/>
+				<property name="anvilBias" value="0.51"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="1.258"/>
+				<property name="multiScatteringA" value="0.543"/>
+				<property name="multiScatteringB" value="0.143"/>
+				<property name="multiScatteringC" value="0.909"/>
+
+				<property name="powderIntensity" value="0.266"/>
+				<property name="silverLiningSpread" value="0.559"/>
+				<property name="lightAbsorbtion" value="1.46"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.572"/>
+				<property name="densitySmoothness" value="1.248"/>
+				<property name="baseErosionIntensity" value="0.055"/>
+				<property name="detailErosionIntensity" value="0.567"/>
+				<property name="curlIntensity" value="0.2"/>
+			</cloud>
+			<cloud name="RainLight">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.42"/>
+				<property name="dilateCoverage" value="1"/>
+				<property name="dilateType" value="0.674"/>
+				<property name="cloudTypeModifier" value="0.301"/>
+				<property name="anvilBias" value="0.416"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="1.5"/>
+				<property name="multiScatteringA" value="0.393"/>
+				<property name="multiScatteringB" value="0.271"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="1"/>
+				<property name="ambientLighIntensity" value="1"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.16"/>
+				<property name="densitySmoothness" value="1.5"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.337"/>
+				<property name="curlIntensity" value="0.05"/>
+			</cloud>
+			<cloud name="RainMedium">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.42"/>
+				<property name="dilateCoverage" value="1"/>
+				<property name="dilateType" value="0.674"/>
+				<property name="cloudTypeModifier" value="0.301"/>
+				<property name="anvilBias" value="0.416"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.756"/>
+				<property name="multiScatteringA" value="0.393"/>
+				<property name="multiScatteringB" value="0.271"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="1.94"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.16"/>
+				<property name="densitySmoothness" value="1.5"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.337"/>
+				<property name="curlIntensity" value="0.05"/>
+			</cloud>
+			<cloud name="RainHeavy">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.281"/>
+				<property name="dilateCoverage" value="0.355"/>
+				<property name="dilateType" value="0.661"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="1"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.116"/>
+				<property name="multiScatteringA" value="0.246"/>
+				<property name="multiScatteringB" value="0.106"/>
+				<property name="multiScatteringC" value="0.076"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="0.066"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.16"/>
+				<property name="densitySmoothness" value="1.5"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.337"/>
+				<property name="curlIntensity" value="0.05"/>
+			</cloud>
+			<cloud name="StormLight">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.223"/>
+				<property name="dilateCoverage" value="1"/>
+				<property name="dilateType" value="1"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="1"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.039"/>
+				<property name="multiScatteringA" value="0.805"/>
+				<property name="multiScatteringB" value="0.098"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="1.454"/>
+				<property name="ambientLighIntensity" value="0.13"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.4"/>
+				<property name="densitySmoothness" value="1.5"/>
+				<property name="baseErosionIntensity" value="0.45"/>
+				<property name="detailErosionIntensity" value="0.472"/>
+				<property name="curlIntensity" value="0.05"/>
+			</cloud>
+			<cloud name="StormHeavy">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.222"/>
+				<property name="dilateCoverage" value="0.897"/>
+				<property name="dilateType" value="0.412"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="0.331"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.048"/>
+				<property name="multiScatteringA" value="0.567"/>
+				<property name="multiScatteringB" value="0.154"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.548"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="1.16"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.4"/>
+				<property name="densitySmoothness" value="1.25"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.35"/>
+				<property name="curlIntensity" value="0.3"/>
+			</cloud>
+			<cloud name="StormHeavyAlt">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.117"/>
+				<property name="dilateCoverage" value="0.102"/>
+				<property name="dilateType" value="0.095"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="1"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.128"/>
+				<property name="multiScatteringA" value="0.124"/>
+				<property name="multiScatteringB" value="0.411"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.606"/>
+				<property name="silverLiningSpread" value="0.614"/>
+				<property name="lightAbsorbtion" value="0.104"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.4"/>
+				<property name="densitySmoothness" value="1.108"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.35"/>
+				<property name="curlIntensity" value="0.417"/>
+			</cloud>
+			<cloud name="SnowLight">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.29"/>
+				<property name="dilateCoverage" value="1"/>
+				<property name="dilateType" value="1"/>
+				<property name="cloudTypeModifier" value="0.86"/>
+				<property name="anvilBias" value="1"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.213"/>
+				<property name="multiScatteringA" value="0.687"/>
+				<property name="multiScatteringB" value="0.571"/>
+				<property name="multiScatteringC" value="0.173"/>
+
+				<property name="powderIntensity" value="0.7"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="0.869"/>
+				<property name="ambientLighIntensity" value="0.6"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.15"/>
+				<property name="densitySmoothness" value="1"/>
+				<property name="baseErosionIntensity" value="1"/>
+				<property name="detailErosionIntensity" value="0.5"/>
+				<property name="curlIntensity" value="0.15"/>
+			</cloud>
+			<cloud name="SnowHeavy">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.461"/>
+				<property name="dilateCoverage" value="0.61"/>
+				<property name="dilateType" value="1"/>
+				<property name="cloudTypeModifier" value="0"/>
+				<property name="anvilBias" value="0.26"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.339"/>
+				<property name="multiScatteringA" value="0.482"/>
+				<property name="multiScatteringB" value="0.594"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="0.8"/>
+				<property name="lightAbsorbtion" value="0.21"/>
+				<property name="ambientLighIntensity" value="0.1"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.4"/>
+				<property name="densitySmoothness" value="0.995"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.433"/>
+				<property name="curlIntensity" value="0.35"/>
+			</cloud>
+			<cloud name="SnowBlizzard">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.078"/>
+				<property name="dilateCoverage" value="0.5"/>
+				<property name="dilateType" value="1"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="1"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.176"/>
+				<property name="multiScatteringA" value="0.354"/>
+				<property name="multiScatteringB" value="0.752"/>
+				<property name="multiScatteringC" value="0.831"/>
+
+				<property name="powderIntensity" value="0.3"/>
+				<property name="silverLiningSpread" value="1"/>
+				<property name="lightAbsorbtion" value="0.133"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="0.4"/>
+				<property name="densitySmoothness" value="1.5"/>
+				<property name="baseErosionIntensity" value="0"/>
+				<property name="detailErosionIntensity" value="0.378"/>
+				<property name="curlIntensity" value="0.383"/>
+			</cloud>
+			<cloud name="BloodMoon">
+				<!-- Coverage and Cloud Generation -->
+				<property name="coverage" value="0.164"/>
+				<property name="dilateCoverage" value="0.588"/>
+				<property name="dilateType" value="0.447"/>
+				<property name="cloudTypeModifier" value="1"/>
+				<property name="anvilBias" value="0.333"/>
+
+				<!-- Lighting -->
+				<property name="scatteringIntensity" value="0.364"/>
+				<property name="multiScatteringA" value="0.674"/>
+				<property name="multiScatteringB" value="0.161"/>
+				<property name="multiScatteringC" value="0.741"/>
+
+				<property name="powderIntensity" value="0.484"/>
+				<property name="silverLiningSpread" value="1"/>
+				<property name="lightAbsorbtion" value="0.489"/>
+				<property name="ambientLighIntensity" value="0"/>
+
+				<!-- Cloud Rendering Density -->
+				<property name="density" value="1.243"/>
+				<property name="densitySmoothness" value="1.05"/>
+				<property name="baseErosionIntensity" value="0.07"/>
+				<property name="detailErosionIntensity" value="0.445"/>
+				<property name="curlIntensity" value="0.205"/>
+			</cloud>
+		</cloudPresets>
+		<weatherPresets>
+			<weather name="default" blendType ="CloudThickness">
+				<cloud name="Clear" blendPoint ="0"/>
+				<cloud name="Cloudy1" blendPoint ="15"/>
+				<cloud name="Cloudy2" blendPoint ="50"/>
+				<cloud name="Cloudy3" blendPoint ="75"/>
+				<cloud name="OvercastLight" blendPoint ="90"/>
+				<cloud name="OvercastHeavy" blendPoint ="100"/>
+			</weather>
+			<weather name="rainlight" blendType ="Rainfall">
+				<cloud name="RainLight" blendPoint ="0"/>
+				<cloud name="RainMedium" blendPoint ="50"/>
+				<cloud name="RainHeavy" blendPoint ="100"/>
+			</weather>
+			<weather name="rainheavy" blendType ="Rainfall">
+				<cloud name="StormLight" blendPoint ="0"/>
+				<cloud name="StormHeavy" blendPoint ="75"/>
+			</weather>
+			<weather name="snowlight" blendType ="Snowfall">
+				<cloud name="SnowLight" blendPoint ="0"/>
+				<cloud name="SnowHeavy" blendPoint ="60"/>
+			</weather>
+			<weather name="snowheavy" blendType ="Snowfall">
+				<cloud name="SnowHeavy" blendPoint ="50"/>
+				<cloud name="SnowBlizzard" blendPoint ="90"/>
+			</weather>
+			<weather name="stormbuild" blendType ="CloudThickness">
+				<cloud name="StormHeavy" blendPoint ="100"/>
+			</weather>
+			<weather name="storm" blendType ="CloudThickness">
+				<cloud name="StormHeavyAlt" blendPoint ="100"/>
+			</weather>
+			<weather name="bloodMoon" blendType ="CloudThickness">
+				<cloud name="Clear" blendPoint ="0"/>
+				<cloud name="Cloudy1" blendPoint ="25"/>
+				<cloud name="Cloudy2" blendPoint ="50"/>
+				<cloud name="Cloudy3" blendPoint ="75"/>
+				<cloud name="OvercastLight" blendPoint ="90"/>
+				<cloud name="OvercastHeavy" blendPoint ="100"/>
+			</weather>
+		</weatherPresets>
+		<skybox>
+			<sky>
+				<!-- SkySpectrumAsset scriptable objectfound in RainstormUnity.dll -->
+				<property name="spectrumBase" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?DarkSkySpectrumAsset.asset"/>
+				
+				<!-- Cubemaps -->
+				<property name="starsTexture" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?cube_stars.asset"/>
+				<property name="starsTwinklingTexture" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?cube_starsNoise.asset"/>
+				<property name="galaxyTexture" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?cube_galaxy.asset"/>
+				
+				<!-- Texture2D -->
+				<property name="sunTexture" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?Sun_Tex.asset"/>
+				<property name="moonTexture" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?Moon_Standard.asset"/>
+				<!-- <property name="moonGlowTexture" value=""/> -->
+				
+				<!-- data -->
+				<property name="sunScale" value="7"/>
+				<property name="moonScale" value="7"/>
+				<property name="starsTwinklingSpeed" value="1"/>
+			</sky>
+			<aurora>
+				<!-- Texture2D -->
+				<property name="noiseLayer1" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?aurora_layer_1.asset"/>
+				<property name="noiseLayer2" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?aurora_layer_2.asset"/>
+				<property name="colorshift" value="#@modfolder(Rainstorm)://Resources/rainstorm.unity3d?aurora_colorshift.asset"/>
+				
+				<!--Color-->
+				<property name="baseColor" value="25, 127, 178"/>
+				
+				<property name="brightness" value="75"/>
+				<property name="contrast" value="10"/>
+				<property name="renderHeight" value="20000"/>
+				<property name="scale" value="0.01"/>
+			</aurora>
+		</skybox>
+	</append>
+	
+</weathersurvival>

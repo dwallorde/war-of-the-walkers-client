@@ -32,6 +32,60 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.32.1830
+ 	[ Item Degradation ]
+		- Fixed an issue where onSelfItemRepaired, onSelfItemScrap, and onSelfItemDegrade was running twice: Once on the item, once on the player.
+			- This was double-firing the trigger.
+
+Version:  2.3.32.1604
+	[ Item Degradation ]
+		- Removed a block on only degrading an item if it was used as part of crafting.
+			- Now all mods will degrade when an item is being crafted
+	
+	[ Dialog ]
+		- Set the QuestGiverID as part of the DialogActionGiveQuestSDX, so that quest must be returned to that NPC.
+
+	[ Challenges ]
+		- Added a null check in CraftWithTags
+
+Version: 2.3.30.1720
+	[ Challenges ]
+		- Added new Challenges entry to AdvancedTroubleshootingFeatures to toggle advanced troubleshooting output
+
+	[ Item Degradation ]
+		- Fixed an issue where onSelfItemDegrade wasn't being called properly for item mods.
+
+
+Version: 2.3.28.928
+	[ Challenges ]
+		- Added troubleshooting to a few Challenge Group setting to help track down typos. 
+
+	[ Item Degradation ]
+		- Fixed an issue where armor mods were not being degraded properly.
+		- Added a new Class to the Config block for Item Degradation global values.
+            <property class="ItemDegradation">
+				<!-- Default tint to apply to broken item -->
+                <property name="BrokenTint" value="210,0,0" />
+				<!-- if set to false, mods must be removed and repaired independently of the item in which they are attached too -->
+                <property name="RepairModsWithItem" value="true" />
+            </property>
+
+		- Added support for damaging mods on EntityVehicles when they get damaged.
+		- Added support for reducing durability of the vehicle headlight if left on.
+ 		- Added new option for MinEventActionRoutineUpdate to take a 'vehicle' parameter. 
+			- This tells the MinEvent that it should only run on a vehicle.
+
+	[ EntityAliveSDX ]
+		- Added a potential fix for the GetQuestList() null reference being reported when talking with NPCs at night.
+
+	[ SphereII Item Degradation Mod ]
+		- New buffRoutineVehicleUpdateTrigger buff to support degrading mods on vehicles when left on
+		- Added new buff to any entity starting with vehicle.
+		- Added xml to support vehicle head light
+
+	[ SphereII LArger Parties ]
+		- Fixed a potential issue when the Party was being set to full when it was not.
+
 Version: 2.3.23.913
 	[ EntityAliveSDX ]
 		- Added a new CheckLeaderProximity check.

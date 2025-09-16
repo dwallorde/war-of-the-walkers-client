@@ -1,0 +1,25 @@
+<configs>
+	
+<!--#@modfolder:Resources/HDSexyJen.unity3d?HDSexyJenUnderBoob</set>-->
+<!--#@modfolder:Resources/HDSexyJen.unity3d?SexyJen</set>-->
+<!--#@modfolder:Resources/HDSexyJen.unity3d?HDSexyJenNude</set>-->
+
+<remove xpath="/entity_classes/entity_class[@name='npcTraderJen']"/>
+
+<insertAfter xpath="/entity_classes/entity_class[@name='npcTraderHugh']">
+
+<entity_class name="npcTraderJen" extends="npcTraderTemplate">
+	<property name="Tags" value="female,entity,npc,human,vanillatrader,trader"/>
+	<property name="PhysicsBody" value="npcXXXSexyTraderJen"/>
+	<property name="AvatarController" value="AvatarZombieController"/>
+    <property name="ModelType" value="Standard"/>
+    <property name="HasRagdoll" value="false"/>
+    <property name="LookAtAngle" value="0"/>
+	<property name="UserSpawnType" value="Menu"/>
+	<property name="Mesh" value="#@modfolder:Resources/SexyJen.unity3d?HDSexyJenNude"/>
+	<property name="NPCID" value="traderjen"/>
+	<property name="DanceType" value="2"/>
+</entity_class>
+
+</insertAfter>
+</configs>

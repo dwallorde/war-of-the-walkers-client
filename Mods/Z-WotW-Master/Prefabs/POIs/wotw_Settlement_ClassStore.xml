@@ -30,7 +30,7 @@
   <property name="POIMarkerPartRotations" value="0,0,0,0" />
   <property name="POIMarkerPartSpawnChance" value="1,1,1,1" />
   <property class="Stats">
-    <property name="LightsVolume" value="218160.9" />
+    <property name="LightsVolume" value="215345.4" />
     <property name="TotalVertices" value="1197544" />
     <property name="TotalTriangles" value="935180" />
     <property class="BlockEntities">
