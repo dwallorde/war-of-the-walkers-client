@@ -54,7 +54,7 @@
     </property>
   </property>
   <property class="Stats">
-    <property name="LightsVolume" value="13303.6" />
+    <property name="LightsVolume" value="13571.68" />
     <property name="TotalVertices" value="348431" />
     <property name="TotalTriangles" value="222588" />
     <property class="BlockEntities">
