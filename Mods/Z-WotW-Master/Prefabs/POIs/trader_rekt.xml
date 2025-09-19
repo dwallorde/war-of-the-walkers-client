@@ -21,8 +21,6 @@
   <property name="ThemeTags" value="traderRekt" />
   <property name="ThemeRepeatDistance" value="800" />
   <property name="PrefabSize" value="60, 21, 60" />
-  <property name="TeleportVolumeSize" value="58, 15, 58#5, 7, 5" />
-  <property name="TeleportVolumeStart" value="1, 1, 1#37, 16, 30" />
   <property name="POIMarkerSize" value="3, 13, 7" />
   <property name="POIMarkerStart" value="-3, 0, 20" />
   <property name="POIMarkerGroup" value="driveway" />

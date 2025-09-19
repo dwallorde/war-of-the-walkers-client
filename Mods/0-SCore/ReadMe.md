@@ -32,6 +32,66 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.3.35.1444
+	[ Item Degradation ]
+		- Added new MinEventAction that can be triggered from any trigger
+		- This action can search your bag, toolbelt, and equipment slots ( including biome badges ) on any triggers.
+		- You may filter it by specifying an item_name attribute or tags.
+		- Item_name is comma delimited, allowing you to specify multiple items.
+		- It will only degrade an item that meets its first condition.
+			- That is, the same item won't be degraded multiple times on the same trigger.
+		- item_name or tags can be omitted, as long as the other is listed.
+		
+		- Example:
+			<triggered_effect trigger="onOtherDamagedSelf" 
+				action="DegradeSpecificItemValueMod, SCore" item_name="myItem" tags="anytags" slots="equipment" />
+			<triggered_effect trigger="onSelfItemDegrade" 
+				action="DegradeSpecificItemValueMod, SCore" item_name="myItem" tags="anytags" slots="bags,inventory,equipment" />
+
+		- Added optional attribute for DegradeSpecificItemValue and DegradeItemValue
+		- This will degrade the item as per DegradationPerUse, plus an additional degradation that matches the override.
+		- Default is 0.
+			<triggered_effect trigger="onOtherDamagedSelf" 
+				action="DegradeSpecificItemValueMod, SCore" item_name="myItem" tags="anytags" slots="bags,inventory,equipment" DegradeOveride="50" />
+
+            <triggered_effect trigger="onSelfItemDegrade" action="DegradeItemValueMod, SCore" DegradeOveride="50"/>
+
+
+		- Fixed an issue where the helmet light would turn off. This was due to a triggered effect running too much.
+		- Modified code to deactive the item rather than xml. This must be refactored by removing:
+		- This xml code was turning off the head light, and it's not actually necessary.
+    		<append xpath="//item_modifier[@name='modArmorHelmetLight']">
+        	<!--
+        		<effect_group name="DamageHooks Deactivate">
+            		<requirement name="ItemPercentUsed, SCore" operation="LT" value="1"/>
+					<requirement name="IsItemActive"/>
+					<triggered_effect trigger="onSelfRoutineUpdate" action="LogMessage" message="DegradeItemValue:: HeadLight" />
+            		<triggered_effect trigger="onSelfRoutineUpdate" action="SetPartActive" part="HeadLight" active="false" />
+        		</effect_group>
+			-->
+    		</append>
+
+		- Changed a mod.HasQuality() check to a Mod.ShowQualityBar to allow degradation
+
+	[ Challenges ]
+		- Fixed an issue where Requirement Groups weren't being property parsed.
+
+	[ Quality Levels ]
+		- Fixed a null reference due to index out of bounds when accessing Creative menu
+
+Version: 2.3.34.1901
+	[ Quality Levels ]
+		- Initial implementation for Quality Tiers.
+		- New Configuration options under AdvancedItemFeatures
+			<property name="CustomQualityLevels" value="false" />
+			<property name="QualityLevels" value="0,700" />
+		- If CustomQualityLevels is set to true, then Quality will generate based on the range of QualityLevels.
+		- There may still be gaps in this patch, but it seems to mostly work.
+
+	[ SphereII Larger Parties ]
+		- Added a debug line to troubleshoot exp with large parties
+		- Removed the check on member list count.
+
 Version: 2.3.32.1830
  	[ Item Degradation ]
 		- Fixed an issue where onSelfItemRepaired, onSelfItemScrap, and onSelfItemDegrade was running twice: Once on the item, once on the player.

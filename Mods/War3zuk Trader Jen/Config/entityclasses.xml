@@ -1,8 +1,9 @@
 <configs>
 	
-<!--#@modfolder:Resources/HDSexyJen.unity3d?HDSexyJenUnderBoob</set>-->
-<!--#@modfolder:Resources/HDSexyJen.unity3d?SexyJen</set>-->
-<!--#@modfolder:Resources/HDSexyJen.unity3d?HDSexyJenNude</set>-->
+<!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenNudeBreasts</set>-->
+<!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenUnderBoob</set>-->
+<!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenPubes</set>-->
+<!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenPasties</set>-->
 
 <remove xpath="/entity_classes/entity_class[@name='npcTraderJen']"/>
 
@@ -16,7 +17,7 @@
     <property name="HasRagdoll" value="false"/>
     <property name="LookAtAngle" value="0"/>
 	<property name="UserSpawnType" value="Menu"/>
-	<property name="Mesh" value="#@modfolder:Resources/SexyJen.unity3d?HDSexyJenNude"/>
+	<property name="Mesh" value="#@modfolder:Resources/SexyJen.unity3d?HDSexyJenPubes"/>
 	<property name="NPCID" value="traderjen"/>
 	<property name="DanceType" value="2"/>
 </entity_class>
