@@ -47,6 +47,12 @@
       <property name="14" value="21, 8, 20" />
       <property name="15" value="21, 14, 20" />
     </property>
+    <property class="challenge_leather">
+      <property name="0" value="14, 11, 4" />
+      <property name="1" value="14, 11, 5" />
+      <property name="2" value="12, 11, 7" />
+      <property name="3" value="13, 11, 7" />
+    </property>
     <property class="FetchContainer">
       <property name="0" value="16, 9, 5" />
     </property>
@@ -59,11 +65,11 @@
   </property>
   <property class="Stats">
     <property name="LightsVolume" value="28751.32" />
-    <property name="TotalVertices" value="459249" />
-    <property name="TotalTriangles" value="191388" />
+    <property name="TotalVertices" value="463223" />
+    <property name="TotalTriangles" value="192981" />
     <property class="BlockEntities">
-      <property name="Vertices" value="393009" />
-      <property name="Triangles" value="152054" />
+      <property name="Vertices" value="396983" />
+      <property name="Triangles" value="153647" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="59990" />

@@ -10,8 +10,7 @@
 <insertAfter xpath="/entity_classes/entity_class[@name='npcTraderHugh']">
 
 <entity_class name="npcTraderJen" extends="npcTraderTemplate">
-	<property name="Tags" value="female,entity,npc,human,vanillatrader,trader"/>
-	<property name="PhysicsBody" value="npcXXXSexyTraderJen"/>
+	<property name="Tags" value="entity,npc,human,trader"/>
 	<property name="AvatarController" value="AvatarZombieController"/>
     <property name="ModelType" value="Standard"/>
     <property name="HasRagdoll" value="false"/>
