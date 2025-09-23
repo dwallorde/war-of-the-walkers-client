@@ -6,6 +6,9 @@
 				<Selector name="CloudQuality" displayKey="rainstormSettingCloudQuality" tooltipKey="rainstormSettingCloudQualityTooltip" value="High" defaultValue="High">
 					<Property type="arrayValues" allowedValues="Low,Medium,High,Ultra" />
 				</Selector>
+				<Selector name="FogDensityPreset" displayKey="rainstormSettingFogDensityPreset" tooltipKey="rainstormSettingFogDensityPresetTooltip" value="Rainstorm" defaultValue="Rainstorm">
+					<Property type="arrayValues" allowedValues="Normal,Rainstorm,Silent Hill" />
+				</Selector>
 			</Category>
 		</Tab>
 	</Global>
