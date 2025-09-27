@@ -29,15 +29,15 @@
   <property name="SVS2" value="sleep 0.5^sound explosion_buzzer1^" />
   <property class="Stats">
     <property name="LightsVolume" value="28855.06" />
-    <property name="TotalVertices" value="5531520" />
-    <property name="TotalTriangles" value="3113333" />
+    <property name="TotalVertices" value="5540084" />
+    <property name="TotalTriangles" value="3117607" />
     <property class="BlockEntities">
-      <property name="Vertices" value="5103868" />
-      <property name="Triangles" value="2824765" />
+      <property name="Vertices" value="5111746" />
+      <property name="Triangles" value="2828509" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="381614" />
-      <property name="Triangles" value="215296" />
+      <property name="Vertices" value="382300" />
+      <property name="Triangles" value="215826" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />

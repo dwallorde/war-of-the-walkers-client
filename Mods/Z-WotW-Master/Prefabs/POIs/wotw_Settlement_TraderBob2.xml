@@ -27,8 +27,10 @@
   <property name="POIMarkerPartToSpawn" value="part_driveway_industrial_01,part_driveway_gateway_01,part_driveway_countrytown_02," />
   <property name="POIMarkerPartRotations" value="1,1,1,3" />
   <property name="POIMarkerPartSpawnChance" value="1,1,1,1" />
+  <property name="TeleportVolumeSize" value="" />
+  <property name="TeleportVolumeStart" value="" />
   <property class="Stats">
-    <property name="LightsVolume" value="1628054" />
+    <property name="LightsVolume" value="1629127" />
     <property name="TotalVertices" value="2994385" />
     <property name="TotalTriangles" value="1411888" />
     <property class="BlockEntities">
@@ -71,7 +73,8 @@
       <property name="1" value="58, 3, 32" />
     </property>
     <property class="challenge_cars">
-      <property name="0" value="51, 1, 27" />
+      <property name="0" value="52, 1, 17" />
+      <property name="1" value="51, 1, 27" />
     </property>
     <property class="POILight">
       <property name="0" value="55, 8, 46" />

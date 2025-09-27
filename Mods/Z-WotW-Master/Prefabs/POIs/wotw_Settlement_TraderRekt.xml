@@ -27,13 +27,15 @@
   <property name="POIMarkerPartToSpawn" value="part_driveway_industrial_01,part_driveway_gateway_01," />
   <property name="POIMarkerPartRotations" value="2,2,2" />
   <property name="POIMarkerPartSpawnChance" value="1,1,1" />
+  <property name="TeleportVolumeSize" value="" />
+  <property name="TeleportVolumeStart" value="" />
   <property class="Stats">
-    <property name="LightsVolume" value="172236.7" />
-    <property name="TotalVertices" value="1024788" />
-    <property name="TotalTriangles" value="598063" />
+    <property name="LightsVolume" value="172504.8" />
+    <property name="TotalVertices" value="1034503" />
+    <property name="TotalTriangles" value="602576" />
     <property class="BlockEntities">
-      <property name="Vertices" value="960671" />
-      <property name="Triangles" value="551236" />
+      <property name="Vertices" value="970386" />
+      <property name="Triangles" value="555749" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="55015" />

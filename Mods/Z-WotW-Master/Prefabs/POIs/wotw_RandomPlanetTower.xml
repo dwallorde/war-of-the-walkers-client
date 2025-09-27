@@ -28,16 +28,19 @@
   <property name="SleeperVolumeGroupId" value="0,0,0,0,0,0,0,0,0,0,0" />
   <property name="SleeperVolumeGroup" value="GroupGenericZombie,4,6,GroupHospital,5,8,GroupGenericZombie,5,10,GroupGenericZombie,2,3,GroupGenericZombie,4,17,zombieFatCop,4,4,zombieLabFeralGroup,3,4,zombieBurnt,4,5,GroupGenericZombie,7,12,GroupGenericZombie,5,20,animalZombieVulture,5,9" />
   <property name="SleeperIsLootVolume" value="False,False,False,False,False,False,False,False,False,False,False" />
-  <property name="SleeperIsQuestExclude" value="False,False,False,False,True,False,False,True,False,False,False" />
+  <property name="SleeperIsQuestExclude" value="False,False,False,False,True,False,False,True,False,False,True" />
   <property name="SleeperVolumeFlags" value="3,3,3,2,3,2,2,3,2,2,3" />
-  <property name="SleeperVolumeTriggeredBy" value="2#3#4# #5# # #6# # #1" />
+  <property name="SleeperVolumeTriggeredBy" value="2#3#4# #5# # #6# # #2" />
+  <property name="TriggerVolumeSize" value="7, 5, 8" />
+  <property name="TriggerVolumeStart" value="10, 37, 8" />
+  <property name="TriggerVolumeTriggers" value="2" />
   <property class="Stats">
-    <property name="LightsVolume" value="489842.1" />
-    <property name="TotalVertices" value="849978" />
-    <property name="TotalTriangles" value="359949" />
+    <property name="LightsVolume" value="489842.2" />
+    <property name="TotalVertices" value="850608" />
+    <property name="TotalTriangles" value="360087" />
     <property class="BlockEntities">
-      <property name="Vertices" value="714406" />
-      <property name="Triangles" value="278722" />
+      <property name="Vertices" value="715036" />
+      <property name="Triangles" value="278860" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="128850" />
@@ -67,6 +70,7 @@
   <property class="IndexedBlockOffsets">
     <property class="TraderOnOff">
       <property name="0" value="9, 2, 4" />
+      <property name="1" value="7, 41, 9" />
     </property>
     <property class="POILight">
       <property name="0" value="13, 3, 12" />
@@ -132,7 +136,7 @@
       <property name="1" value="19, 1, 18" />
     </property>
     <property class="Rally">
-      <property name="0" value="22, 13, 10" />
+      <property name="0" value="22, 13, 4" />
     </property>
   </property>
 </prefab>

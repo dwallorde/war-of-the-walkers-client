@@ -12,14 +12,14 @@
   <property name="PrefabSize" value="25, 20, 25" />
   <property name="RotationToFaceNorth" value="2" />
   <property name="Zoning" value="wilderness" />
-  <property name="SleeperVolumeSize" value="23, 8, 13#23, 8, 10#3, 3, 3" />
-  <property name="SleeperVolumeStart" value="1, 13, 1#1, 13, 14#11, 9, 9" />
-  <property name="SleeperVolumeGroupId" value="0,0,0" />
-  <property name="SleeperVolumeGroup" value="NPCEnemy,8,15,NPCEnemy,8,15,NPCFriendly,7,8" />
-  <property name="SleeperIsLootVolume" value="False,False,False" />
-  <property name="SleeperIsQuestExclude" value="False,False,True" />
-  <property name="SleeperVolumeFlags" value="0,3,3" />
-  <property name="SleeperVolumeTriggeredBy" value=" #1#1" />
+  <property name="SleeperVolumeSize" value="23, 8, 13#23, 8, 10" />
+  <property name="SleeperVolumeStart" value="1, 13, 1#1, 13, 14" />
+  <property name="SleeperVolumeGroupId" value="0,0" />
+  <property name="SleeperVolumeGroup" value="NPCEnemy,8,15,NPCEnemy,8,15" />
+  <property name="SleeperIsLootVolume" value="False,False" />
+  <property name="SleeperIsQuestExclude" value="False,False" />
+  <property name="SleeperVolumeFlags" value="0,3" />
+  <property name="SleeperVolumeTriggeredBy" value=" #1" />
   <property name="EditorGroups" value="Wilderness" />
   <property name="Tags" value="wilderness" />
   <property name="QuestTags" value="clear, fetch, infested" />
@@ -53,6 +53,12 @@
     <property class="FetchContainer">
       <property name="0" value="18, 13, 18" />
     </property>
+    <property class="challenge_gore">
+      <property name="0" value="12, 9, 11" />
+      <property name="1" value="13, 9, 10" />
+      <property name="2" value="12, 9, 9" />
+      <property name="3" value="12, 9, 10" />
+    </property>
     <property class="POILight">
       <property name="0" value="7, 13, 12" />
       <property name="1" value="3, 16, 20" />
@@ -62,7 +68,7 @@
     </property>
   </property>
   <property class="Stats">
-    <property name="LightsVolume" value="20407.91" />
+    <property name="LightsVolume" value="7137.698" />
     <property name="TotalVertices" value="997949" />
     <property name="TotalTriangles" value="421008" />
     <property class="BlockEntities">
