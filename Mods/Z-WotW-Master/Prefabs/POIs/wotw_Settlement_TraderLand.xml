@@ -27,17 +27,19 @@
   <property name="POIMarkerPartToSpawn" value="part_driveway_industrial_10,part_driveway_gateway_05,part_driveway_countrytown_06," />
   <property name="POIMarkerPartRotations" value="0,0,0,0" />
   <property name="POIMarkerPartSpawnChance" value="1,1,1,1" />
+  <property name="TeleportVolumeSize" value="" />
+  <property name="TeleportVolumeStart" value="" />
   <property class="Stats">
-    <property name="LightsVolume" value="0" />
-    <property name="TotalVertices" value="1882757" />
-    <property name="TotalTriangles" value="1807618" />
+    <property name="LightsVolume" value="40836.99" />
+    <property name="TotalVertices" value="1942641" />
+    <property name="TotalTriangles" value="1503451" />
     <property class="BlockEntities">
-      <property name="Vertices" value="1776409" />
-      <property name="Triangles" value="1731950" />
+      <property name="Vertices" value="1836275" />
+      <property name="Triangles" value="1427785" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="92456" />
-      <property name="Triangles" value="52052" />
+      <property name="Vertices" value="92474" />
+      <property name="Triangles" value="52050" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />
@@ -89,6 +91,12 @@
     </property>
     <property class="TraderOnOff">
       <property name="0" value="31, 11, 56" />
+    </property>
+    <property class="challenge_leather">
+      <property name="0" value="24, 5, 38" />
+      <property name="1" value="27, 5, 39" />
+      <property name="2" value="27, 5, 42" />
+      <property name="3" value="25, 5, 43" />
     </property>
     <property class="challenge_sinks">
       <property name="0" value="46, 6, 38" />

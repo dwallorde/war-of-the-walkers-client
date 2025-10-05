@@ -30,7 +30,7 @@
   <property name="TeleportVolumeSize" value="" />
   <property name="TeleportVolumeStart" value="" />
   <property class="Stats">
-    <property name="LightsVolume" value="1629127" />
+    <property name="LightsVolume" value="1629126" />
     <property name="TotalVertices" value="2994385" />
     <property name="TotalTriangles" value="1411888" />
     <property class="BlockEntities">

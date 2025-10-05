@@ -20,6 +20,8 @@
   <property name="ShowQuestClearCount" value="1" />
   <property name="PrefabSize" value="43, 24, 41" />
   <property name="ThemeTags" value="traderJen" />
+  <property name="TeleportVolumeSize" value="" />
+  <property name="TeleportVolumeStart" value="" />
   <property class="IndexedBlockOffsets">
     <property class="POILight">
       <property name="0" value="41, 6, 33" />
@@ -43,14 +45,14 @@
       <property name="9" value="24, 7, 23" />
       <property name="10" value="24, 8, 23" />
       <property name="11" value="24, 7, 24" />
-      <property name="12" value="26, 1, 28" />
+      <property name="12" value="27, 1, 25" />
       <property name="13" value="26, 1, 26" />
-      <property name="14" value="26, 1, 30" />
-      <property name="15" value="27, 1, 29" />
-      <property name="16" value="27, 1, 27" />
-      <property name="17" value="27, 1, 25" />
-      <property name="18" value="26, 1, 31" />
-      <property name="19" value="24, 13, 27" />
+      <property name="14" value="24, 13, 27" />
+      <property name="15" value="27, 1, 27" />
+      <property name="16" value="26, 1, 28" />
+      <property name="17" value="27, 1, 29" />
+      <property name="18" value="26, 1, 30" />
+      <property name="19" value="26, 1, 31" />
     </property>
     <property class="challenge_mech_parts">
       <property name="0" value="22, 7, 22" />
@@ -77,7 +79,7 @@
     </property>
   </property>
   <property class="Stats">
-    <property name="LightsVolume" value="291836.5" />
+    <property name="LightsVolume" value="291836.4" />
     <property name="TotalVertices" value="1016584" />
     <property name="TotalTriangles" value="662434" />
     <property class="BlockEntities">

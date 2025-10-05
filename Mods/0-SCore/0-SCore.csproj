@@ -110,6 +110,7 @@
     <Compile Include="Features\Farming\Scripts\FarmPlotManager.cs" />
     <Compile Include="Features\Farming\Scripts\NetPackage\NetPackageToggleSprinkler.cs" />
     <Compile Include="Features\Farming\Scripts\WaterPipeManager.cs" />
+    <Compile Include="Features\FireV2\Harmony\BlockInit.cs" />
     <Compile Include="Features\FireV2\Harmony\ChunkSetBlock.cs" />
     <Compile Include="Features\FireV2\Harmony\Explosion.cs" />
     <Compile Include="Features\FireV2\Harmony\FireInit.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Features\Quality\Harmony\QualityInfoGetTierColor.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCraftingInfoAddQualityButton_OnPress.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCraftingInfoSubtractQualityButton_OnPress.cs" />
+    <Compile Include="Features\Quality\Harmony\XUiCRecipeStackSetRecipe.cs" />
     <Compile Include="Features\Quality\Harmony\XUiMTraderGetBuyPrice.cs" />
     <Compile Include="Features\Quality\Harmony\XUiMTraderGetSellPrice.cs" />
     <Compile Include="Features\Quality\Scripts\QualityUtils.cs" />
@@ -340,11 +342,15 @@
     <Compile Include="Harmony\PlayerFeatures\PlayerMoveControllerUpdate.cs" />
     <Compile Include="Harmony\PlayerFeatures\SoftHands.cs" />
     <Compile Include="Harmony\PlayerFeatures\TeleportNPCs.cs" />
+    <Compile Include="Harmony\PrefabFeatures\BlockCanPlaceBlockAt.cs" />
     <Compile Include="Harmony\PrefabFeatures\DynamicPrefabDecorator.cs" />
     <Compile Include="Harmony\PrefabFeatures\RemoveTraderProtection.cs" />
+    <Compile Include="Harmony\PrefabFeatures\WorldCanPlaceBlockAt.cs" />
+    <Compile Include="Harmony\PrefabFeatures\WorldIsWithinTraderArea.cs" />
     <Compile Include="Harmony\Progression\EntityAliveSDXProgressionHooks.cs" />
     <Compile Include="Harmony\Progression\Progression.cs" />
     <Compile Include="Harmony\Quests\QuestEventManager.cs" />
+    <Compile Include="Harmony\Quests\QuestEventManagerGetQuestList.cs" />
     <Compile Include="Harmony\QuickContinue\QuickContinue.cs" />
     <Compile Include="Harmony\SleeperVolume\SleeperVolumeSpawn.cs" />
     <Compile Include="Harmony\SoundFeatures\AudioClientPlay.cs" />
@@ -404,8 +410,8 @@
     <Compile Include="Scripts\Blocks\BlockPathFinding.cs" />
     <Compile Include="Scripts\Blocks\BlockPickUpAndReplace.cs" />
     <Compile Include="Scripts\Blocks\BlockDecoAoE.cs" />
-    <Compile Include="Scripts\Blocks\BlockPoweredPortal.cs" />
     <Compile Include="Scripts\Blocks\BlockPortal.cs" />
+    <Compile Include="Scripts\Blocks\BlockPoweredPortal.cs" />
     <Compile Include="Scripts\Blocks\BlockPoweredWorkstation.cs" />
     <Compile Include="Scripts\Blocks\BlockPrefabPlacer.cs" />
     <Compile Include="Scripts\Blocks\BlockSpawnCube2SDX.cs" />
@@ -536,6 +542,7 @@
     <Compile Include="Scripts\Features\AdvLogging.cs" />
     <Compile Include="Scripts\Features\Configuration.cs" />
     <Compile Include="Scripts\Features\ILUtilities.cs" />
+    <Compile Include="Scripts\GameEvents\RequirementHasFailedQuest.cs" />
     <Compile Include="Scripts\GameEvents\RequirementInVehicleSDX.cs" />
     <Compile Include="Scripts\ItemAction\ItemActionMeleeSDX.cs" />
     <Compile Include="Scripts\ItemAction\ItemActionLauncherSDX.cs" />
@@ -734,6 +741,7 @@
     <Compile Include="Scripts\XUiC\Companions\XUiC_SCoreInGameMenu.cs" />
     <Compile Include="Scripts\XUiC\Controls\XUiC_ToggleButtonCVar.cs" />
     <Compile Include="Scripts\XUiC\XUiC_CharacterFrameWindowSDX.cs" />
+    <Compile Include="Scripts\XUiC\XUiC_CombineGridMod.cs" />
     <Compile Include="Scripts\XUiC\XUiC_DialogHireInformationSDX.cs" />
     <Compile Include="Scripts\XUiC\XUiC_DialogRespondentNameSDX.cs" />
     <Compile Include="Scripts\XUiC\XUiC_DialogStatementWindowSDX.cs" />

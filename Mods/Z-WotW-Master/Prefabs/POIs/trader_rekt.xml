@@ -29,6 +29,8 @@
   <property name="POIMarkerPartToSpawn" value="part_driveway_rural_08" />
   <property name="POIMarkerPartRotations" value="3" />
   <property name="POIMarkerPartSpawnChance" value="1" />
+  <property name="TeleportVolumeSize" value="" />
+  <property name="TeleportVolumeStart" value="" />
   <property class="Stats">
     <property name="LightsVolume" value="18647.71" />
     <property name="TotalVertices" value="1654718" />
