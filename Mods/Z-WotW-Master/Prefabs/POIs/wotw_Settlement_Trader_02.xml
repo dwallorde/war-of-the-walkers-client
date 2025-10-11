@@ -6,7 +6,7 @@
   <property name="RotationToFaceNorth" value="2" />
   <property name="YOffset" value="-1" />
   <property name="AllowedTownships" value="city,town,rural" />
-  <property name="Tags" value="countrytown, commercial, industrial, downtown, gateway, nocheckpoint" />
+  <property name="Tags" value="countrytown, rural, commercial, industrial, downtown, gateway, nocheckpoint" />
   <property name="TraderArea" value="True" />
   <property name="TraderAreaProtect" value="20,0,20" />
   <property name="TraderAreaTeleportSize" value="33, 26, 33" />
@@ -14,12 +14,13 @@
   <property name="ExcludeDistantPOIMesh" value="False" />
   <property name="DistantPOIYOffset" value="0" />
   <property name="EditorGroups" value="settlements" />
-  <property name="DifficultyTier" value="1" />
-  <property name="QuestTags" value="trader" />
+  <property name="DifficultyTier" value="0" />
+  <property name="QuestTags" value="trader, traderJoel" />
   <property name="ExcludePOICulling" value="True" />
   <property name="ShowQuestClearCount" value="1" />
   <property name="PrefabSize" value="35, 32, 35" />
   <property name="ThemeTags" value="traderJoel" />
+  <property name="ThemeRepeatDistance" value="600" />
   <property name="TeleportVolumeSize" value="" />
   <property name="TeleportVolumeStart" value="" />
   <property class="IndexedBlockOffsets">

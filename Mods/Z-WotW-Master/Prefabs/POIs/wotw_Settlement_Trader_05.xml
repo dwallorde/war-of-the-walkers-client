@@ -14,11 +14,11 @@
   <property name="ExcludeDistantPOIMesh" value="False" />
   <property name="DistantPOIYOffset" value="0" />
   <property name="EditorGroups" value="settlements" />
-  <property name="QuestTags" value="trader" />
-  <property name="DifficultyTier" value="1" />
+  <property name="QuestTags" value="trader, traderHugh" />
+  <property name="DifficultyTier" value="0" />
   <property name="ExcludePOICulling" value="True" />
   <property name="ShowQuestClearCount" value="1" />
-  <property name="Tags" value="countrytown, commercial, industrial, downtown, gateway, nocheckpoint" />
+  <property name="Tags" value="countrytown, rural, commercial, industrial, downtown, gateway, nocheckpoint" />
   <property name="PrefabSize" value="45, 28, 49" />
   <property name="SleeperVolumeSize" value="9, 4, 8" />
   <property name="SleeperVolumeStart" value="34, 8, 14" />
@@ -29,6 +29,7 @@
   <property name="SleeperVolumeFlags" value="0" />
   <property name="SleeperVolumeTriggeredBy" value=" " />
   <property name="ThemeTags" value="traderHugh" />
+  <property name="ThemeRepeatDistance" value="600" />
   <property name="TeleportVolumeSize" value="" />
   <property name="TeleportVolumeStart" value="" />
   <property class="IndexedBlockOffsets">

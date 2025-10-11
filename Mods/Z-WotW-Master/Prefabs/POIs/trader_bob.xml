@@ -19,7 +19,7 @@
   <property name="ShowQuestClearCount" value="1" />
   <property name="Tags" value="countrytown, industrial, gateway, nocheckpoint" />
   <property name="ThemeTags" value="traderBob" />
-  <property name="ThemeRepeatDistance" value="800" />
+  <property name="ThemeRepeatDistance" value="600" />
   <property name="PrefabSize" value="60, 28, 60" />
   <property name="POIMarkerSize" value="7, 13, 1#7, 13, 1#7, 13, 2#7, 13, 2#7, 13, 2#7, 13, 2" />
   <property name="POIMarkerStart" value="17, 0, -1#47, 0, -1#17, 0, -2#47, 0, -2#17, 0, -2#47, 0, -2" />

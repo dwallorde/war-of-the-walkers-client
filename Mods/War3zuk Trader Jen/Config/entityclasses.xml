@@ -3,8 +3,8 @@
 <!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenNudeBreasts</set>-->
 <!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenShavedPubes</set>-->
 <!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenUnderBoob</set>-->
-<!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenPubes</set>-->
 <!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenPasties</set>-->
+<!--#@modfolder:Resources/SexyJen.unity3d?HDSexyJenPubes</set>-->
 
 <remove xpath="/entity_classes/entity_class[@name='npcTraderJen']"/>
 
@@ -12,7 +12,7 @@
 
 <entity_class name="npcTraderJen" extends="npcTraderTemplate">
 	<property name="Tags" value="entity,npc,human,trader"/>
-<!--<property name="PhysicsBody" value="npcXXXSexyTraderJen"/>-->
+	<property name="PhysicsBody" value="HDSexyJenTrader"/>
 	<property name="AvatarController" value="AvatarZombieController"/>
     <property name="ModelType" value="Standard"/>
     <property name="HasRagdoll" value="false"/>
@@ -20,7 +20,7 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Mesh" value="#@modfolder:Resources/SexyJen.unity3d?HDSexyJenShavedPubes"/>
 	<property name="NPCID" value="traderjen"/>
-	<property name="DanceType" value="2"/>
+	<property name="DanceType" value="1"/>
 </entity_class>
 
 </insertAfter>

@@ -19,7 +19,7 @@
   <property name="ShowQuestClearCount" value="1" />
   <property name="Tags" value="countrytown, rural, gateway, nocheckpoint" />
   <property name="ThemeTags" value="traderRekt" />
-  <property name="ThemeRepeatDistance" value="800" />
+  <property name="ThemeRepeatDistance" value="600" />
   <property name="PrefabSize" value="60, 21, 60" />
   <property name="POIMarkerSize" value="3, 13, 7" />
   <property name="POIMarkerStart" value="-3, 0, 20" />
