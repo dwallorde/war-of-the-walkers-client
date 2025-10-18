@@ -20,7 +20,7 @@
 	<property name="UserSpawnType" value="Menu"/>
 	<property name="Mesh" value="#@modfolder:Resources/SexyJen.unity3d?HDSexyJenShavedPubes"/>
 	<property name="NPCID" value="traderjen"/>
-	<property name="DanceType" value="1"/>
+	<property name="DanceType" value="2"/>
 </entity_class>
 
 </insertAfter>
