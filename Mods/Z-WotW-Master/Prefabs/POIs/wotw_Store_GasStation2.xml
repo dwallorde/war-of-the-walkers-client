@@ -14,7 +14,7 @@
   <property name="YOffset" value="-5" />
   <property name="SleeperVolumeStart" value="10, 5, 23" />
   <property name="SleeperVolumeSize" value="22, 3, 12" />
-  <property name="SleeperVolumeGroup" value="GroupGenericZombie,4,5" />
+  <property name="SleeperVolumeGroup" value="GroupGenericZombie,12,15" />
   <property name="SleeperVolumeGameStageAdjust" value="" />
   <property name="SleeperIsLootVolume" value="False" />
   <property name="SleeperIsBossVolume" value="False" />
@@ -81,41 +81,45 @@
       <property name="1" value="34, 5, 28" />
       <property name="2" value="29, 11, 31" />
     </property>
+    <property class="challenge_leather">
+      <property name="0" value="20, 5, 31" />
+      <property name="1" value="20, 5, 33" />
+    </property>
     <property class="challenge_cars">
       <property name="0" value="38, 5, 4" />
     </property>
   </property>
   <property class="Stats">
-    <property name="LightsVolume" value="0" />
-    <property name="TotalVertices" value="371484" />
-    <property name="TotalTriangles" value="202626" />
+    <property name="LightsVolume" value="14426.19" />
+    <property name="TotalVertices" value="360822" />
+    <property name="TotalTriangles" value="194845" />
     <property class="BlockEntities">
-      <property name="Vertices" value="346196" />
-      <property name="Triangles" value="189324" />
+      <property name="Vertices" value="330054" />
+      <property name="Triangles" value="172719" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="25088" />
-      <property name="Triangles" value="13202" />
+      <property name="Vertices" value="25026" />
+      <property name="Triangles" value="13174" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes2">
-      <property name="Vertices" value="0" />
-      <property name="Triangles" value="0" />
-    </property>
-    <property class="ChunkMeshes3">
       <property name="Vertices" value="200" />
       <property name="Triangles" value="100" />
+    </property>
+    <property class="ChunkMeshes3">
+      <property name="Vertices" value="0" />
+      <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes4">
       <property name="Vertices" value="0" />
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes5">
-      <property name="Vertices" value="0" />
-      <property name="Triangles" value="0" />
+      <property name="Vertices" value="5542" />
+      <property name="Triangles" value="8852" />
     </property>
   </property>
 </prefab>
