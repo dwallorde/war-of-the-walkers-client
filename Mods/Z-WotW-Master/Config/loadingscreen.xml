@@ -4,13 +4,27 @@
 <remove xpath="/doc/backgrounds/tex[@file='GUI/loading_screen_3']"/>
 <remove xpath="/doc/backgrounds/tex[@file='GUI/loading_screen_4']"/> -->
 
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_1.png']"/>
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_2.png']"/>
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_3.png']"/>
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_4.png']"/>
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_5.png']"/>
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_6.png']"/>
-<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_7.png']"/>
+<conditional>
+	<if cond="mod_loaded('zSMXmenu') == true">
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_1.png']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_2.png']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_3.png']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_4.png']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_5.png']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_6.png']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='@modfolder(SMXcore)://Textures/loadingscreens/smx_loadingscreen_7.png']"/>
+	</if>
+</conditional>
+
+<conditional>
+	<if cond="mod_loaded('zSMXmenu') == false">
+		<remove xpath="/doc/backgrounds/tex[@file='GUI/loading_screen_1']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='GUI/loading_screen_2']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='GUI/loading_screen_3']"/>
+		<remove xpath="/doc/backgrounds/tex[@file='GUI/loading_screen_4']"/>
+	</if>
+</conditional>
+
 
 <append xpath="/doc/backgrounds">
 		<tex file="@modfolder(WotWMod):Textures\Menu\Dwalls1.png"/>

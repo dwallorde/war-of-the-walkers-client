@@ -1982,36 +1982,7 @@ public static class EntityUtilities
         }
     }
 
-    public static void CollectEntityClient(int entityId, int playerId)
-    {
-        var myEntity = GameManager.Instance.World.GetEntity(entityId) as EntityAliveSDX;
-        if (myEntity == null) return;
-        myEntity.Collect(playerId);
-    }
-
-    public static void CollectEntityServer(int entityId, int playerId)
-    {
-        if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
-        {
-            SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(
-                NetPackageManager.GetPackage<NetPackagePickUpNPCSDX>().Setup(entityId, playerId), false);
-            return;
-        }
-
-        var entity = GameManager.Instance.World.GetEntity(entityId);
-        if (entity == null) return;
-        if (GameManager.Instance.World.IsLocalPlayer(playerId))
-        {
-            CollectEntityClient(entityId, playerId);
-        }
-        else
-        {
-            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(
-                NetPackageManager.GetPackage<NetPackagePickUpNPCSDX>().Setup(entityId, playerId), false, playerId);
-        }
-
-        GameManager.Instance.World.RemoveEntity(entity.entityId, EnumRemoveEntityReason.Despawned);
-    }
+  
 
     public static void UpdateBlockRadiusEffects(EntityAlive entityAlive) {
         var blockPosition = entityAlive.GetBlockPosition();
@@ -2040,7 +2011,7 @@ public static class EntityUtilities
                     for (var l = 0; l < block2.RadiusEffects.Length; l++)
                     {
                         var blockRadiusEffect = block2.RadiusEffects[l];
-                        if (distanceSq <= blockRadiusEffect.radius * blockRadiusEffect.radius &&
+                        if (distanceSq <= blockRadiusEffect.radiusSq &&
                             !entityAlive.Buffs.HasBuff(blockRadiusEffect.variable))
                             entityAlive.Buffs.AddBuff(blockRadiusEffect.variable);
                     }

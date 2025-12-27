@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="MoreQuestOptions" />
+	<DisplayName value="More Quest Options" />
+	<Description value="[DECEA3]Utilizes Gears to affect different quest settings and other QoL changes related to quests.[-]" />
+	<Author value="PaLoALo" />
+	<Version value="1.0.0" compat="2.4" />
+    <Website value="https://www.nexusmods.com/games/7daystodie" />
+	<SkipWithAntiCheat value="true" />
+<!--
+	<Icon value="Textures/Q_logo_icon.png" />
+	<Banner value="Textures/Q_logo_subtle_shadow.png" />
+	<Youtube value="" />
+	<Discord value="" />
+	<Twitter value="" />
+-->
+</xml>

@@ -19,7 +19,10 @@ namespace Harmony.PlayerFeatures {
     [HarmonyPatch("Update")]
     public class PlayerMoveControllerUpdate {
         // Returns true for the default PlaceBlock code to execute. If it returns false, it won't execute it at all.
-        private static bool Prefix(PlayerMoveController __instance, EntityPlayerLocal ___entityPlayerLocal) {
+        private static bool Prefix(PlayerMoveController __instance, EntityPlayerLocal ___entityPlayerLocal)
+        {
+            if (__instance?.playerInput?.Jump == null) return true;
+             
             if (__instance.playerInput.Jump.IsPressed || __instance.playerInput.Menu.IsPressed)
                 foreach (var buff in ___entityPlayerLocal.Buffs.ActiveBuffs)
                     if (buff.BuffName.ToLower().Contains("buffcutscene"))

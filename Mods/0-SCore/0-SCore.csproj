@@ -93,6 +93,7 @@
     <Compile Include="Features\DynamicBones\Scripts\DynamicBonePlaneCollider.cs" />
     <Compile Include="Features\EntityPooling\Harmony\EntityFactoryPatch.cs" />
     <Compile Include="Features\EntityPooling\Scripts\EntityFactoryPool.cs" />
+    <Compile Include="Features\ErrorChecks\Harmony\EntityGroupsIsEnemyGroup.cs" />
     <Compile Include="Features\ErrorChecks\Harmony\TileEntityCopyFrom.cs" />
     <Compile Include="Features\ErrorChecks\Harmony\TraderDataReadInventoryData.cs" />
     <Compile Include="Features\Farming\Scripts\Blocks\BlockCropControlPanel.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Features\Quality\Harmony\QualityInfoGetQualityColorHex.cs" />
     <Compile Include="Features\Quality\Harmony\QualityInfoGetQualityLevelName.cs" />
     <Compile Include="Features\Quality\Harmony\QualityInfoGetTierColor.cs" />
+    <Compile Include="Features\Quality\Harmony\TraderStageTemplateIsWithin.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCombineGridMergeSlotChangedEvent.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCraftingInfoAddQualityButton_OnPress.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCraftingInfoSubtractQualityButton_OnPress.cs" />
@@ -336,6 +338,7 @@
     <Compile Include="Harmony\NPCFeatures\EntityNPCSpeedFix.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityStatsInit.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityTraderEModalSetLookAt.cs" />
+    <Compile Include="Harmony\NPCFeatures\NetPackageNPCQuestList.cs" />
     <Compile Include="Harmony\PlayerFeatures\AutoRedeemChallenges.cs" />
     <Compile Include="Harmony\PlayerFeatures\Encumbrance.cs" />
     <Compile Include="Harmony\PlayerFeatures\EntityStats.cs" />
@@ -530,6 +533,7 @@
     <Compile Include="Scripts\Entities\EntityUtilities.cs" />
     <Compile Include="Scripts\Entities\EntityZombieFlockSDX.cs" />
     <Compile Include="Scripts\Entities\EntityZombieFlyingSDX.cs" />
+    <Compile Include="Scripts\Entities\EntitySyncUtils.cs" />
     <Compile Include="Scripts\Entities\IEntityOrderReceiverSDX.cs" />
     <Compile Include="Scripts\Entities\LegacyEntityClasses.cs" />
     <Compile Include="Scripts\Entities\ModGeneralUtilities.cs" />
@@ -623,7 +627,6 @@
     <Compile Include="Scripts\NetPackage\NetPackageDeployNPCSDX.cs" />
     <Compile Include="Scripts\NetPackage\NetPackageEntityAliveSDXCollect.cs" />
     <Compile Include="Scripts\NetPackage\NetPackageEntityAliveSDXDataSync.cs" />
-    <Compile Include="Scripts\NetPackage\NetPackagePickUpNPCSDX.cs" />
     <Compile Include="Scripts\NetPackage\NetPackagePlaceNPCSDX.cs" />
     <Compile Include="Scripts\NetPackage\NetPackageQuestBlockDestroyedSDX.cs" />
     <Compile Include="Scripts\NetPackage\NetPackageRemoveBroadcastPosition.cs" />
@@ -1049,6 +1052,11 @@
       <HintPath>..\..\7DaysToDie_Data\Managed\LogLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.TextTemplating, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextTemplating.17.10.40170\lib\net472\Microsoft.VisualStudio.TextTemplating.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard" />
 
     <Reference Include="System.Xml">
       <HintPath>..\..\7DaysToDie_Data\Managed\System.Xml.dll</HintPath>

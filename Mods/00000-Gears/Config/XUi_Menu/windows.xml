@@ -155,18 +155,18 @@
 
 	<insertBefore xpath="/windows/window[@name='newContinueGame']//rect[@name='tabs']/rect[@name='tabsContents']">
 		<rect name="Settings" height="39" depth="0">
-			<simplebutton name="backButton" depth="4" pos="3,-3" width="30" height="49" caption="&#9664;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false"/>
-			<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="32,-3" width="2" height="49" color="[black]" type="sliced" />
+			<simplebutton name="backButton" depth="4" pos="3,-3" width="30" height="36" caption="&#9664;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false"/>
+			<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="32,-3" width="2" height="36" color="[black]" type="sliced" />
 			<rect name="tabsHeader" height="52" depth="0">
-				<grid name="tabButtons" pos="34,-3" depth="2" rows="1" cols="3" cell_width="175" cell_height="49" repeat_content="true" arrangement="horizontal">
+				<grid name="tabButtons" pos="34,-3" depth="2" rows="1" cols="3" cell_width="175" cell_height="36" repeat_content="true" arrangement="horizontal">
 					<rect controller="TabSelectorButton">
-						<simplebutton name="tabButton" depth="2" pos="0,0" width="175" height="49" font_size="34" caption_key="Test" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" selectedcolor="[lightGrey]" foregroundlayer="false"/>
-						<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="174,0" width="2" height="49" color="[black]" type="sliced"/>
+						<simplebutton name="tabButton" depth="2" pos="0,0" width="175" height="36" font_size="34" caption_key="Test" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" selectedcolor="[lightGrey]" foregroundlayer="false"/>
+						<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="174,0" width="2" height="36" color="[black]" type="sliced"/>
 					</rect>
 				</grid>
 			</rect>
-			<simplebutton name="forwardButton" depth="4" pos="588,-3" width="30" height="49" caption="&#9654;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false" pivot="right"/>
-			<sprite depth="5" name="separatorBottom" pos="3,-51" sprite="menu_empty" height="2" width="585" color="[black]" type="sliced" />
+			<simplebutton name="forwardButton" depth="4" pos="588,-3" width="30" height="36" caption="&#9654;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false" pivot="right"/>
+			<sprite depth="5" name="separatorBottom" pos="3,-38" sprite="menu_empty" height="2" width="585" color="[black]" type="sliced" />
 		</rect>
 	</insertBefore>
 
@@ -175,29 +175,29 @@
 
 	<!-- World ModSettings tab content-->
 	<insertAfter xpath="/windows/window[@name='newContinueGame']//rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsMultiplayer']">
-		<rect name="ModSettings" pos="0,-52" height="583" width="584" controller="Gears.UI.WorldSettings, Gears" tab_key="gearsUIModsButton">
+		<rect name="ModSettings" pos="0,-39" height="583" width="584" controller="Gears.UI.WorldSettings, Gears" tab_key="gearsUIModsButton">
 
 			<!-- Settings Tabs -->
-			<simplebutton name="backButton" depth="4" pos="3,0" width="30" height="52" caption="&#9664;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false"/>
-			<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="32,0" width="2" height="52" color="[black]" type="sliced" />
+			<simplebutton name="backButton" depth="4" pos="3,0" width="30" height="39" caption="&#9664;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false"/>
+			<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="32,0" width="2" height="39" color="[black]" type="sliced" />
 			<rect name="tabsHeader" height="52" depth="0">
-				<grid name="tabButtons" pos="34,0" depth="2" rows="1" cols="3" cell_width="175" cell_height="52" repeat_content="true" arrangement="horizontal">
+				<grid name="tabButtons" pos="34,0" depth="2" rows="1" cols="3" cell_width="175" cell_height="39" repeat_content="true" arrangement="horizontal">
 					<rect>
-						<simplebutton name="tabButton" depth="2" pos="0,0" width="175" height="52" font_size="34" caption_key="Test" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" selectedcolor="[lightGrey]" foregroundlayer="false"/>
-						<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="174,0" width="2" height="52" color="[black]" type="sliced"/>
+						<simplebutton name="tabButton" depth="2" pos="0,0" width="175" height="39" font_size="34" caption_key="Test" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" selectedcolor="[lightGrey]" foregroundlayer="false"/>
+						<sprite name="tabButtonSpacer" depth="8" sprite="menu_empty2px" pos="174,0" width="2" height="39" color="[black]" type="sliced"/>
 					</rect>
 				</grid>
 			</rect>
-			<simplebutton name="forwardButton" depth="4" pos="588,0" width="30" height="52" caption="&#9654;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false" pivot="right"/>
-			<sprite depth="5" name="separatorBottom" pos="3,-51" sprite="menu_empty" height="2" color="[black]" type="sliced" />
+			<simplebutton name="forwardButton" depth="4" pos="588,0" width="30" height="39" caption="&#9654;" font_size="20" bordercolor="[transparent]" defaultcolor="[mediumGrey]" selectedsprite="menu_empty" foregroundlayer="false" pivot="right"/>
+			<sprite depth="5" name="separatorBottom" pos="3,-39" sprite="menu_empty" height="2" color="[black]" type="sliced" />
 
 			<!-- Settings List -->
-			<scrollbar	name="scrollbar" depth="6" pos="582,-323" width="12" height="543" padding="4" foregroundname="handler" backgroundname="background" pivot="center" globalopacitymod="1.8">
+			<scrollbar	name="scrollbar" depth="6" pos="582,-339" width="12" height="599" padding="4" foregroundname="handler" backgroundname="background" pivot="center" globalopacitymod="1.8">
 				<button name="handler" sprite="gears_scrollbar_handler" pivot="center" hovercolor="[gears_scrollbar_handler_hover]" color="[gears_scrollbar_handler]" defaultcolor="[gears_scrollbar_handler]" hoverscale="1" />
 				<button name="background" sprite="gears_scrollbar_background" pivot="center" hovercolor="[gears_scrollbar_background_hover]" color="[gears_scrollbar_background]" defaultcolor="[gears_scrollbar_background]" hoverscale="1" sound_play_on_press_down="[paging_click]" />
 			</scrollbar>
 
-			<scrollview name="scrollview" depth="3" pos="0,-54" height="541" width="590" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
+			<scrollview name="scrollview" depth="3" pos="0,-41" height="597" width="590" scrollbar="scrollbar" reset_position="true" over_scroll="false" scroll_speed="2.5">
 
 				<grid name="settingsList" rows="{settingsCount}" cols="1" pos="16,0" cell_width="558" cell_height="46" repeat_content="true" arrangement="vertical">
 					<Gears_WorldSettings_OptionCombined width="558" height="46" controller="Gears.UI.WorldSettingsOption, Gears"/>
