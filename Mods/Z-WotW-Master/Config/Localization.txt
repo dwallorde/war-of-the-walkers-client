@@ -7719,6 +7719,7 @@ buffBedEffectTooltip,buffs,Buff,,,"You are resting",
 buffTraderStayTicketName,buffs,Buff,,,Trader Safety,
 buffTraderStayTicketDesc,buffs,Buff,,,"You have activated your stay safe pass.  This pass will remain active until the end of next horde night your active on.  This will allow you to safely stay inside a trader compound throughout a horde night.  Once the hordenight finishes this buff will be removed and you will no longer be allowed to stay in a trader compound until you purchase another pass.",
 buffTraderStayTicketTooltip,buffs,Buff,,,Trader Safety Activated,
+buffCandleAOEEffectDesc,buffs,Buff,,,"You are warmed by the candle.\n\nCold Resist +5",
 
 zombieFatHawaiianFeralRadiated,entityclasses,Entity,,,Brute Tourist,
 zombieBowlerFeralRadiated,entityclasses,Entity,,,Brute Bowler,

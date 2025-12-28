@@ -11,9 +11,9 @@
   <property name="TraderArea" value="False" />
   <property name="RotationToFaceNorth" value="2" />
   <property name="YOffset" value="-5" />
-  <property name="SleeperVolumeSize" value="12, 7, 16" />
+  <property name="SleeperVolumeSize" value="12, 9, 16" />
   <property name="SleeperVolumeStart" value="0, 5, 7" />
-  <property name="SleeperVolumeGroup" value="GroupGenericZombie,5,6" />
+  <property name="SleeperVolumeGroup" value="GroupGenericZombie,2,3" />
   <property name="SleeperVolumeGameStageAdjust" value="" />
   <property name="SleeperIsLootVolume" value="False" />
   <property name="SleeperVolumeGroupId" value="0" />
@@ -57,11 +57,11 @@
   </property>
   <property class="Stats">
     <property name="LightsVolume" value="11225.96" />
-    <property name="TotalVertices" value="67649" />
-    <property name="TotalTriangles" value="32252" />
+    <property name="TotalVertices" value="70863" />
+    <property name="TotalTriangles" value="33420" />
     <property class="BlockEntities">
-      <property name="Vertices" value="51443" />
-      <property name="Triangles" value="22558" />
+      <property name="Vertices" value="54657" />
+      <property name="Triangles" value="23726" />
     </property>
     <property class="ChunkMeshes0">
       <property name="Vertices" value="15006" />
