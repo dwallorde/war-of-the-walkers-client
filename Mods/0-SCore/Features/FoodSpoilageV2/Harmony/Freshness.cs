@@ -14,6 +14,7 @@ namespace SphereII.FoodSpoilage.HarmonyPatches
         {
             private static void Postfix(MinEventActionModifyCVar __instance, MinEventParams _params)
             {
+              
                  // Check if the core feature is enabled
                 if (!SpoilageConfig.IsFoodSpoilageEnabled) return;
 

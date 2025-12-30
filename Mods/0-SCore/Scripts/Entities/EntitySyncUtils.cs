@@ -42,6 +42,8 @@ public static class EntitySyncUtils
         // C. Remove Entity
         // Use EnumRemoveEntityReason.Unloaded to prevent the entity from dropping a loot bag
         // or playing death animations/sounds upon removal.
+        player.Buffs.SetCustomVar($"hired_${entity.entityId}", -1f);
+
         GameManager.Instance.World.RemoveEntity(entity.entityId, EnumRemoveEntityReason.Unloaded);
     }
 

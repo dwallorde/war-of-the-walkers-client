@@ -19,7 +19,7 @@ public static class EventOnSleeperVolumeClearedUpdate {
             {
                 var playerId = __instance.GetPlayerTouchedToUpdateId();
                 var player = GameManager.Instance.World.GetEntity(playerId) as EntityPlayer;
-                if (__instance.prefabInstance == null) return;
+                if (__instance?.prefabInstance == null) return;
                 var position = __instance.PrefabInstance.boundingBoxPosition;
                 if (player is EntityPlayerLocal localPlayer)
                 {

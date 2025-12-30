@@ -35,13 +35,13 @@ namespace Challenges {
         }
 
         public override void HandleAddHooks() {
-            QuestEventManager.Current.BlockDestroy += Check_Block;
+       //     QuestEventManager.Current.BlockDestroy += Check_Block;
             QuestEventManager.Current.BlockChange += Check_Block;
         }
         
         
         public override void HandleRemoveHooks() {
-            QuestEventManager.Current.BlockDestroy -= Check_Block;
+       //     QuestEventManager.Current.BlockDestroy -= Check_Block;
             QuestEventManager.Current.BlockChange -= Check_Block;
 
         }
@@ -79,14 +79,17 @@ namespace Challenges {
                 if (biomeDefinition.m_sBiomeName != biome) return false;
             }
             var prefabInstance = GameManager.Instance.World.GetPOIAtPosition(new Vector3(blockpos.x, blockpos.y, blockpos.z));
-            if (prefabInstance == null) return false;
             if (!string.IsNullOrEmpty(poi))
             {
+                if (prefabInstance == null) return false;
+
                 if (!prefabInstance.prefab.PrefabName.Equals(poi, StringComparison.InvariantCultureIgnoreCase))
                     return false;
             }
             if (!string.IsNullOrEmpty(poi_tags))
             {
+                if (prefabInstance == null) return false;
+
                 var fasttags = FastTags<TagGroup.Poi>.Parse(poi_tags);
                 if (prefabInstance.prefab.tags.Test_AnySet(fasttags)) return false;
             }

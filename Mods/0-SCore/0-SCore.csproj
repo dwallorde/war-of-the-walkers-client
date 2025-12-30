@@ -333,6 +333,7 @@
     <Compile Include="Harmony\NPCFeatures\EntityAlivePatcher.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityAlivePatcherAwardKill.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityAliveStartingEquipment.cs" />
+    <Compile Include="Harmony\NPCFeatures\SCoreEntityKilled.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityNPCJumpHeight.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityNPCMakeVulnerable.cs" />
     <Compile Include="Harmony\NPCFeatures\EntityNPCSpeedFix.cs" />

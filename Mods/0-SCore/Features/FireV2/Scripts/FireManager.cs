@@ -261,7 +261,7 @@ public class FireManager : MonoBehaviour
         {
             _fireHandler.RemoveFire(blockPos, entityId);
             _smokeHandler.AddSmoke(blockPos);
-            _events.RaiseFireExtinguished(blockPos, entityId);
+           // _events.RaiseFireExtinguished(blockPos, entityId);
             if (netSync)
                 _networkManager.SyncExtinguishFire(blockPos, entityId);
         }

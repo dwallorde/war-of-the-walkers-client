@@ -11,6 +11,7 @@ public class WorldCanPlaceBlockAt
     {
         if (__result) return;
 
+        if ( lpRelative == null ) return;
         var player = __instance.GetEntity(lpRelative.EntityId) as EntityPlayer;
         if (player == null) return;
 

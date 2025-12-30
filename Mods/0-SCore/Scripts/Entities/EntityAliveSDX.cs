@@ -1346,6 +1346,7 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         }
         catch (Exception ex)
         {
+            Debug.Log($"Entity Exception {entityId}: {ex}");
             // ignored
         }
 
@@ -1826,63 +1827,43 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
 
     public void AddKillXP(EntityAlive killedEntity, float xpModifier = 1f)
     {
-        var num = EntityClass.list[killedEntity.entityClass].ExperienceValue;
-        if (xpModifier is > 1f or < 1f)
+        Debug.Log("AddKillXP()");
+        int num = EntityClass.list[killedEntity.entityClass].ExperienceValue;
+        num = (int)EffectManager.GetValue(PassiveEffects.ExperienceGain, killedEntity.inventory.holdingItemItemValue,
+            (float)num, killedEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true,
+            false);
+        if (xpModifier != 1f)
         {
-            num = (int)(num * xpModifier);
+            num = (int)((float)num * xpModifier + 0.5f);
         }
 
         var leader = EntityUtilities.GetLeaderOrOwner(entityId) as EntityPlayer;
         if (leader)
         {
-            if (leader.Party != null)
-            {
-                // We don't check to see if its in the party, as the NPC isn't' really part of the party.
-                num = leader.Party.GetPartyXP(leader, num);
-            }
+            num = leader.Party.GetPartyXP(leader, num);
         }
 
-
-        if (!isEntityRemote)
+        if (!this.isEntityRemote)
         {
-            if (Progression != null)
-            {
-                Progression.AddLevelExp(num, "_xpFromKill", Progression.XPTypes.Kill, true);
-                bPlayerStatsChanged = true;
-            }
+            this.Progression.AddLevelExp(num, "_xpFromKill", Progression.XPTypes.Kill, true, true, this.entityId);
+            this.bPlayerStatsChanged = true;
         }
         else
         {
-            var package = NetPackageManager.GetPackage<NetPackageEntityAddExpClient>()
-                .Setup(this.entityId, num, Progression.XPTypes.Kill);
-            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(package, false, this.entityId);
+            Debug.Log("AddKillXP():: send package");
+
+            NetPackageEntityAddExpClient netPackageEntityAddExpClient = NetPackageManager
+                .GetPackage<NetPackageEntityAddExpClient>().Setup(this.entityId, num, Progression.XPTypes.Kill);
+            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageEntityAddExpClient, false,
+                this.entityId, -1, -1, null, 192, false);
         }
 
-        if (leader == null) return;
-        if (leader.Party == null)
-        {
-            if (GameManager.Instance.World.IsLocalPlayer(leader.entityId))
-            {
-                GameManager.Instance.SharedKillClient(killedEntity.entityClass, num, null);
-            }
+        Debug.Log($"AddKillXP() :: xpModifer: {xpModifier}");
 
-            return;
-        }
-
-        foreach (var entityPlayer2 in leader.Party.MemberList)
+        if (xpModifier == 1f)
         {
-            if (!(Vector3.Distance(leader.position, entityPlayer2.position) <
-                  (float)GameStats.GetInt(EnumGameStats.PartySharedKillRange))) continue;
-            if (GameManager.Instance.World.IsLocalPlayer(entityPlayer2.entityId))
-            {
-                GameManager.Instance.SharedKillClient(killedEntity.entityClass, num, null);
-            }
-            else
-            {
-                SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(
-                    NetPackageManager.GetPackage<NetPackageSharedPartyKill>()
-                        .Setup(killedEntity.entityId, entityId), false, entityPlayer2.entityId);
-            }
+            Debug.Log("Sharing xP");
+            GameManager.Instance.SharedKillServer(killedEntity.entityId, this.entityId, xpModifier);
         }
     }
 

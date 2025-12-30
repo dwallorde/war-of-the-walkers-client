@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class NetPackageWeaponSwap : NetPackage
 {
@@ -7,6 +8,12 @@ public class NetPackageWeaponSwap : NetPackage
 
     public NetPackageWeaponSwap Setup(EntityAlive _entity, string _item)
     {
+        if (_entity == null)
+        {
+            Log.Out("WeaponSwap Entity null");
+            Log.Out(Environment.StackTrace);
+            return null;
+        }
         entityId = _entity.entityId;
         item = _item;
         return this;
@@ -35,10 +42,10 @@ public class NetPackageWeaponSwap : NetPackage
         // If you are the server, send it out to the clients.
         if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
         {
-            var entity = _world.GetEntity(entityId) as EntityAlive;
-            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(
-                NetPackageManager.GetPackage<NetPackageWeaponSwap>().Setup(entity, item), false, -1,
-                base.Sender.entityId);
+            // var entity = _world.GetEntity(entityId) as EntityAlive;
+            // SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(
+            //     NetPackageManager.GetPackage<NetPackageWeaponSwap>().Setup(entity, item), false, -1,
+            //     base.Sender.entityId);
             return;
         }
 

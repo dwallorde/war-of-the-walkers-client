@@ -32,6 +32,32 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.5.20.1243
+
+	[ Event on Sleeper VOlume Cleared Update ]
+		- Added another null check
+
+	[ Shared XP ]
+		- Fixed an issue where NPC kills were not being shared, and causing crashes.
+
+	[ Fire Manager ]
+		- Fixed a recursion issue when extingushing on a dedi
+
+	[ WorldCanPlaceBlockAt ]
+		- Fixed a possible error when placing a land claim block
+
+	[ NPC Issues ]
+		- When an NPC is being picked up, the hired_ cvar is now removed. 
+			- When the NPC gets placed down, there's a new ID assigned, so it can create duplicates
+
+		- Note: Sometimes when placed down, an NPC will not move or be interactable. Still invesgigating the conditions in which this happens.
+
+	[ Challenges ]
+		- Modified the BlockDestroyed Challenge
+			- Fixed an issue where the challenge was registered for both destroyed AND change, so was triggering twice.
+			- Fixed an issue where the challenge would not register if you were not in a POI, even if you were not checking for POIs.
+
+
 Version: 2.5.10.2106
 
 	[ Event On Sleeper Volume Cleared Update ]

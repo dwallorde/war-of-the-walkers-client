@@ -998,6 +998,11 @@ public static class EntityUtilities
         {
             if (cvar.Key.StartsWith("hired_"))
             {
+                if (cvar.Value == -1f)
+                {
+                    removeList.Add(cvar.Key);
+                    continue;
+                }
                 var entity = GameManager.Instance.World.GetEntity((int) cvar.Value) as EntityAliveSDX;
                 if (entity)
                 {
