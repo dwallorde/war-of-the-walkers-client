@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Platform;
-using SCore.Scripts.NetPackage;
 using UnityEngine;
 using UnityEngine.Scripting;
 
@@ -104,9 +103,13 @@ public class ItemActionDeployNPCSDX : ItemActionSpawnVehicle
                 }
                 
                 // Finalize Spawn
+
                 entityAlive.SetSpawnerSource(EnumSpawnerSource.StaticSpawner);
                 GameManager.Instance.World.SpawnEntityInWorld(entityAlive);
+                EntityUtilities.SetLeaderAndOwner(entityAlive.entityId, entityPlayerLocal.entityId);
+
                 entityAlive.SendSyncData();
+
                // EntitySyncUtils.SetNPCItemValue(entityAlive, holdingItemItemValue);
 
 

@@ -25,7 +25,7 @@ public class DialogActionPickUpNPC : BaseDialogAction
           //  playerUI.windowManager.CloseAllOpenWindows(null, false);
           //            playerUI.xui.Dialog.Respondent = null;
             //myEntity.Collect(player.entityId);
-            EntitySyncUtils.Collect(myEntity, player.entityId); 
+            EntitySyncUtils.Collect(myEntity.entityId, player.entityId); 
             
         }
         else

@@ -9851,3 +9851,7 @@ wotwSettingTraderProtection,UI,Menu,x,,Trader Protection,
 wotwSettingTraderProtectionTooltip,UI,Menu,x,,"Disable this to remove trader protection.  This will make traders vulnerable, and you will be able to build inside a trader compound.  It also removes the protection on blocks in and around the trader, making it no longer safe from zombies. (This setting only works for Single Player Games or Local Coop this computer hosts)",
 wotwSettingHeadshotOnly,UI,Menu,x,,Headshots Only,
 wotwSettingHeadshotOnlyTooltip,UI,Menu,x,,"Enable this to make it only possible to kill by getting headshots.",
+
+wotwCollectorWindowInfoDesc,UI,XUI,,,"The Above input window requires the player to place specific items inside.  The Dew Collector requires Empty Jars, while the Apiary requires 10 of Cotton, Chrysanthemum or Goldenrod flowers.",
+wotwCollectorTitleInfo,UI,XUI,,,Info,
+wotwCollectorInputTitle,UI,XUI,,,Input,

@@ -5,10 +5,36 @@ using UnityEngine;
 
 public static class EntitySyncUtils
 {
-    // -------------------------------------------------------------------------
-    // NPC METADATA MANAGEMENT
-    // -------------------------------------------------------------------------
-    public static void Collect(EntityAliveSDX entity, int _playerId)
+    public static void Collect(int _entityId, int _playerId)
+    {
+        if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+        {
+            SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageEntityAliveSDXCollect>().Setup(_entityId, _playerId));
+            return;
+        }
+        EntityAliveSDX entity = GameManager.Instance.World.GetEntity(_entityId) as EntityAliveSDX;
+        if (entity == null)
+        {
+            return;
+        }
+        if (GameManager.Instance.World.IsLocalPlayer(_playerId))
+        {
+            CollectClient(entity, _playerId);
+        }
+        else
+        {
+            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityAliveSDXCollect>().Setup(_entityId, _playerId), false, _playerId);
+        }
+        GameManager.Instance.World.RemoveEntity(entity.entityId, EnumRemoveEntityReason.Killed);
+    }
+
+    public static void CollectClient(int _entityId, int _playerId)
+    {
+        EntityAliveSDX entity = GameManager.Instance.World.GetEntity(_entityId) as EntityAliveSDX;
+        if (entity == null) return;
+        CollectClient(entity, _playerId);
+    }
+    public static void CollectClient(EntityAliveSDX entity, int _playerId)
     {
 
         // 2. SERVER LOGIC: Execute the pickup.
@@ -35,16 +61,17 @@ public static class EntitySyncUtils
             if (!player.bag.AddItem(itemStack))
             {
                 // If both Inventory and Bag are full, drop it on the ground.
-                GameManager.Instance.ItemDropServer(itemStack, player.GetPosition(), Vector3.zero, _playerId, 60f, false);
+                GameManager.Instance.ItemDropServer(itemStack, player.GetPosition(), Vector3.zero, _playerId);
             }
         }
-
-        // C. Remove Entity
-        // Use EnumRemoveEntityReason.Unloaded to prevent the entity from dropping a loot bag
-        // or playing death animations/sounds upon removal.
-        player.Buffs.SetCustomVar($"hired_${entity.entityId}", -1f);
-
-        GameManager.Instance.World.RemoveEntity(entity.entityId, EnumRemoveEntityReason.Unloaded);
+        
+        // clears the cvars
+        EntityUtilities.ExecuteCMD(entity.entityId, "Dismiss", player);
+        
+       // Cleaning up bad cvar format.
+        player.Buffs.SetCustomVar($"hired_${entity.entityId}", 0f);
+     
+        
     }
 
 
@@ -136,7 +163,11 @@ public static class EntitySyncUtils
         if (itemValue.GetMetadata("Health") is int hp) npc.Health = hp;
         
         if (itemValue.GetMetadata("BelongsToPlayer") is int pId) npc.belongsPlayerId = pId;
-        if (itemValue.GetMetadata("Leader") is int lId) EntityUtilities.SetLeaderAndOwner(npc.entityId, lId);
+        if (itemValue.GetMetadata("Leader") is int lId)
+        {
+            EntityUtilities.SetLeaderAndOwner(npc.entityId, lId);
+            
+        }
 
         // 2. CVars
         if (itemValue.GetMetadata("CVarCount") is int cvarCount)

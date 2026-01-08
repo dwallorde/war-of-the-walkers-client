@@ -1,119 +1,147 @@
-﻿using System.ComponentModel.Design.Serialization;
-using GamePath;
+﻿using GamePath;
 using UnityEngine;
+using UnityEngine.Scripting;
 
-// using this namespace is necessary for Utilities AI Tasks
-//       <task class="FollowSDX, SCore" />
-// The game adds UAI.UAITask to the class name for discover.
 namespace UAI
 {
+    [Preserve]
     public class UAITaskFollowSDX : UAITaskBase
     {
         private EntityAlive _leader;
-        private float _distance = 2f;
-        private int _maxDistance = 25;
-        private Vector3 _position;
+        
+        // Configurable Parameters
+        private float _minDistance = 2f;      // Stop moving when this close
+        private float _maxDistance = 25f;     // Teleport if this far
+        private float _teleportDelay = 5f;    // How long to stay stuck before teleporting
+        
+        // State Variables
+        private Vector3 _lastLeaderPos;
+        private float _stuckTimer;
+        private float _pathRecalculateTimer;
+        private const float PathRecalculateInterval = 0.5f; // Only pathfind every 0.5 seconds max
 
-        private float _timeOut = 100f;
-        private float _currentTimeout;
         public override void initializeParameters()
         {
-            if (Parameters.ContainsKey("stop_distance")) _distance = StringParsers.ParseFloat(Parameters["stop_distance"]);
-            if (Parameters.ContainsKey("max_distance")) _maxDistance = (int)StringParsers.ParseFloat(Parameters["max_distance"]);
-            if (Parameters.ContainsKey("teleportTime")) _timeOut = StringParsers.ParseFloat(Parameters["teleportTime"]);
+            base.initializeParameters();
+            if (Parameters.ContainsKey("stop_distance")) _minDistance = StringParsers.ParseFloat(Parameters["stop_distance"]);
+            if (Parameters.ContainsKey("max_distance")) _maxDistance = StringParsers.ParseFloat(Parameters["max_distance"]);
+            if (Parameters.ContainsKey("teleport_time")) _teleportDelay = StringParsers.ParseFloat(Parameters["teleport_time"]);
         }
 
         public override void Start(Context context)
         {
             base.Start(context);
-            _currentTimeout = _timeOut;
-
+            
             _leader = EntityUtilities.GetLeaderOrOwner(context.Self.entityId) as EntityAlive;
-            if (_leader == null) // No leader? You shouldn't be following.
+            if (_leader == null)
             {
                 Stop(context);
                 return;
             }
+
+            // Reset timers
+            _stuckTimer = 0f;
+            _pathRecalculateTimer = 0f;
+            _lastLeaderPos = _leader.position;
 
             SCoreUtils.SetCrouching(context, _leader.IsCrouching);
             EntityUtilities.ClearAttackTargets(context.Self.entityId);
-                
-            // Sets up the original position of the leader.
-            _position = _leader.getHipPosition();
 
-         //   SCoreUtils.SetLookPosition(_context, _leader);
-            SCoreUtils.FindPath(context, _position, true);
+            // Initial Move
+            MoveToLeader(context);
         }
 
-
-        public override void Update(Context _context)
+        public override void Update(Context context)
         {
-            base.Update(_context);
-            SCoreUtils.SetSpeed(_context, true);
-            CheckProximityToLeader(_context);
+            base.Update(context);
 
-            // Are we blocked? Can we see our leader? If not, start counting down. This should slow down aggressive teleports to the leader, while
-            // also helping keep the NPC close to the leader.
-            if (SCoreUtils.IsBlocked(_context))
+            // Safety Check: Leader might have died or disconnected since Start()
+            if (_leader == null || _leader.IsDead())
             {
-                _currentTimeout--;
-                if (_currentTimeout > 0) return;
-
-                SCoreUtils.TeleportToLeader(_context);
-
-                Stop(_context);
+                Stop(context);
                 return;
             }
 
-            // Reset the timeout.
-            _currentTimeout = _timeOut;
-        }
-
-        // Contains logic to determine if the NPC should be move towards its leader, etc.
-        private void CheckProximityToLeader(Context context)
-        {
-            // If we lost our leader, check to see if we have one. If we don't, end the task.
-            if (_leader == null)
-            {
-                _leader = EntityUtilities.GetLeaderOrOwner(context.Self.entityId) as EntityAlive;
-                if ( _leader == null )
-                {
-                    Stop(context);
-                   return;
-                }
-            }
+            SCoreUtils.SetSpeed(context, true);
             SCoreUtils.SetCrouching(context, _leader.IsCrouching);
 
-            var distanceToLeader = Vector3.Distance(context.Self.position, _leader.position);
+            float distToLeader = Vector3.Distance(context.Self.position, _leader.position);
 
-            // If we are close to the leader, stop.
-            if (distanceToLeader > _distance && distanceToLeader < _distance * 2)
+            // 1. TELEPORT CHECKS
+            // Condition A: Too far away
+            if (distToLeader > _maxDistance)
             {
-                context.Self.RotateTo(_leader.position.x, _leader.position.y, _leader.position.z, 8f,8f);
-                Stop(context);
+                SCoreUtils.TeleportToLeader(context, false);
+                Stop(context); // Reset task after teleport to force re-evaluation
                 return;
             }
 
-            // If they are too far away, then teleport.
-            if (distanceToLeader > _maxDistance)
+            // Condition B: Blocked / Stuck logic
+            if (SCoreUtils.IsBlocked(context))
             {
-                SCoreUtils.TeleportToLeader(context, false);
-                Stop(context);
+                _stuckTimer += Time.deltaTime;
+                if (_stuckTimer >= _teleportDelay)
+                {
+                    SCoreUtils.TeleportToLeader(context, false);
+                    _stuckTimer = 0f;
+                }
+                // If we are stuck, we don't want to run the movement logic below
+                return;
             }
-            // If we have a path, check to see if the player has moved.
-            if (!context.Self.navigator.noPathAndNotPlanningOne())
+            else
             {
-                // If the leader hasn't moved much, don't repath.
-                var dist = Vector3.Distance(_leader.position, _position);
-                if (dist < _distance * 2)
-                    return;
+                // Reset stuck timer if we are moving freely
+                _stuckTimer = 0f;
             }
 
-            // If the leader has moved quite a bit, re-position.
-            _position = _leader.position;
-            SCoreUtils.FindPath(context, _position, true);
-
+            // 2. MOVEMENT LOGIC
+            if (distToLeader <= _minDistance)
+            {
+                // We are close enough. Stop moving, but KEEP THE TASK RUNNING.
+                // Stopping the task here causes the AI to "stutter" (Start -> Stop -> Start).
+                if (context.Self.navigator.getPath() != null)
+                {
+                    context.Self.navigator.clearPath();
+                }
+                
+                // Face the leader while waiting
+                context.Self.RotateTo(_leader.position.x, _leader.position.y, _leader.position.z, 8f, 8f);
+            }
+            else
+            {
+                // We are too far, check if we need to update our path
+                UpdatePathing(context);
+            }
         }
 
+        private void MoveToLeader(Context context)
+        {
+            _lastLeaderPos = _leader.position;
+            // Use boolean 'false' for run to prevent constant sprinting if you want them to match speed, 
+            // otherwise 'true' forces sprint. SCoreUtils usually handles speed based on distance.
+            SCoreUtils.FindPath(context, _lastLeaderPos, false); 
+        }
+
+        private void UpdatePathing(Context context)
+        {
+            _pathRecalculateTimer -= Time.deltaTime;
+
+            // Don't recalc if we are on cooldown
+            if (_pathRecalculateTimer > 0f) return;
+
+            // Don't recalc if the leader hasn't moved much since our last path
+            float leaderMovement = Vector3.Distance(_leader.position, _lastLeaderPos);
+            if (leaderMovement < 1f)
+            {
+                // Leader is roughly in the same spot, do we still have a path?
+                if (context.Self.navigator.getPath() != null) return;
+            }
+
+            // Leader moved > 1m OR we have no path. Recalculate.
+            MoveToLeader(context);
+            
+            // Reset cooldown
+            _pathRecalculateTimer = PathRecalculateInterval;
+        }
     }
 }

@@ -1143,13 +1143,10 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
     {
         // Has a leader cvar set, good enough, as the leader may already be disconnected, so we'll fail a GetLeaderOrOwner()
         if (Buffs.HasCustomVar("Leader")) return true;
-
         // If they have a cvar persist, keep them around.
         if (Buffs.HasCustomVar("Persist")) return true;
-
         // If its dynamic spawn, don't let them stay.
         if (GetSpawnerSource() == EnumSpawnerSource.Dynamic) return false;
-
         // If its biome spawn, don't let them stay.
         if (GetSpawnerSource() == EnumSpawnerSource.Biome) return false;
         return true;
@@ -1232,12 +1229,13 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         }
 
         // Force the leader to have the hired entity id
-        leader.Buffs.SetCustomVar($"hired_{entityId}", (float)entityId);
+      //  leader.Buffs.SetCustomVar($"hired_{entityId}", (float)entityId);
 
         var player = leader as EntityPlayer;
         // If the player doesn't have a party, create one, so we can share exp with our leader.
-        if (player && !player.IsInParty())
+        if (player )
         {
+            leader.Buffs.SetCustomVar($"hired_{entityId}", (float)entityId);
             //  player.CreateParty();
         }
 
@@ -1338,6 +1336,7 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         try
         {
             base.OnUpdateLive();
+            if (IsDead()) return;
             // Potential work around for NPC stuck for 3 seconds in crouch after being stunned
             if (bodyDamage.CurrentStun is EnumEntityStunType.Getup or EnumEntityStunType.Prone)
             {
@@ -1767,37 +1766,6 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
     {
         GameManager.Instance.World.ChunkClusters[0].OnChunkVisibleDelegates -= this.chunkClusterVisibleDelegate;
 
-        //if ( !isHirable)
-        //{
-        //    base.MarkToUnload();
-        //    return;
-        //}
-
-        //// Only prevent despawning if owned.
-        //var leader = EntityUtilities.GetLeaderOrOwner(entityId);
-        //// make sure they are alive first.
-        //if (leader != null && IsAlive())
-        //{
-        //    switch (EntityUtilities.GetCurrentOrder(entityId))
-        //    {
-        //        case EntityUtilities.Orders.Patrol:
-        //        case EntityUtilities.Orders.Stay:
-        //            base.MarkToUnload();
-        //            return;
-        //        default:
-        //            break;
-        //    }
-        // Something asked us to despawn. Check if we are in a trader area. If we are, ignore the request.
-        //if (_traderArea == null)
-        //    _traderArea = world.GetTraderAreaAt(new Vector3i(position));
-
-        //if (_traderArea != null)
-        //{
-
-        //    IsDespawned = false;
-        //    return;
-        //}
-        ////  }
 
         base.MarkToUnload();
     }
@@ -1936,31 +1904,7 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
 
         return;
     }
-    // public override Vector3i dropCorpseBlock()
-    // {
-    //     var bagPosition = new Vector3i(this.position + base.transform.up);
-    //     if (lootContainer == null) return base.dropCorpseBlock();
-    //
-    //     if (lootContainer.IsEmpty()) return base.dropCorpseBlock();
-    //
-    //     // Check to see if we have our backpack container.
-    //     var className = "BackpackNPC";
-    //     EntityClass entityClass = EntityClass.GetEntityClass(className.GetHashCode());
-    //     if (entityClass == null)
-    //         className = "Backpack";
-    //
-    //     var entityBackpack = EntityFactory.CreateEntity(className.GetHashCode(), bagPosition) as EntityItem;
-    //     EntityCreationData entityCreationData = new EntityCreationData(entityBackpack);
-    //     entityCreationData.entityName = Localization.Get(this.EntityName);
-    //
-    //     entityCreationData.id = -1;
-    //     entityCreationData.lootContainer = lootContainer;
-    //     GameManager.Instance.RequestToSpawnEntityServer(entityCreationData);
-    //     entityBackpack.OnEntityUnload();
-    //    // this.SetDroppedBackpackPosition(new Vector3i(bagPosition));
-    //     return bagPosition;
-    //
-    // }
+   
 
     public override void PlayStepSound(string stepSound, float volume)
     {

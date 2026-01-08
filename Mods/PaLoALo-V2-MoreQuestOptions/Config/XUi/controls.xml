@@ -15,12 +15,23 @@
 		</response_entry_special>
 	</append>
 	
-	<!-- Remove the bullet sprite in jobs dialog only, and replace it with numbering -->
+	<!-- Remove the bullet sprite in jobs dialog only, and replace it with numbering 
 	<setattribute xpath="controls/response_entry/rect/sprite[@name='Icon']" name="visible">{showBullets}</setattribute>
 	<append xpath="controls/response_entry/rect">
 		<label name="lblQuestNumber" pos="0,-6" depth="6" width="30" height="40" justify="right" text="{questNumber}" visible="{showNumbers}"/>
 	</append>
-	
+	-->
+	<conditional>
+		<if cond="mod_loaded('MoreQuests') == 'true'">
+			<setattribute xpath="controls/response_entry/rect/sprite[@name='Icon']" name="visible">{showBullets}</setattribute>
+		</if>
+	</conditional>
+	<conditional>
+		<if cond="mod_loaded('MoreQuestsNoScrollbar') == 'true'">
+			<setattribute xpath="controls/response_entry/rect/sprite[@name='Icon']" name="visible">{showBullets}</setattribute>
+		</if>
+	</conditional>
+
 	<!-- Adjust quest tracker window with new progress field -->
 	<set xpath="controls/quest_objective_tracker_entry/rect/@width">340</set>
 	<set xpath="controls/quest_objective_tracker_entry/rect/@height">30</set>

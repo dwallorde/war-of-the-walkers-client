@@ -28,8 +28,9 @@ namespace SCore.Features.Challenges.Harmony
             // skip if we are just initializing
             if (string.IsNullOrEmpty(__instance.Owner.ChallengeClass.Name)) return;
             
+          
             // Check to see if we have any requirements for this.
-            var results = ChallengeRequirementManager.IsValid(__instance.Owner.ChallengeClass.Name.ToLower());
+            var results = ChallengeRequirementManager.IsValid(__instance.Owner.ChallengeClass.Name.ToLower(), __instance.Owner.ChallengeClass);
             __result = !results;
 
         }

@@ -33,6 +33,7 @@ namespace Harmony.PlayerFeatures
             EntityPlayer entityPlayer = entity as EntityPlayer;
             if (entityPlayer == null) return;
 
+       
             // Check if the player has any hired NPCs to respawn with it.
             EntityUtilities.Respawn(entityPlayer.entityId, _respawnReason);
         }

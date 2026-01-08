@@ -1,9 +1,0 @@
-QuestLimit: 30
-EnableSorting: true
-EnableFilters: true
-EnableTooltips: true
-EnhancedTracker: true
-EnableNumbering: true
-EnableBottomButtons: true
-VerboseLogging: false
-RemainingTextFormat: '{0} - Remaining: {1}'

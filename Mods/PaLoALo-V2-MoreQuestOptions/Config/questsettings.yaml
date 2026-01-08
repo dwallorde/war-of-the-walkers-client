@@ -1,6 +1,0 @@
-QuestLimit: 30
-EnableSorting: true
-EnhancedTracker: true
-RemainingTextFormat: '{0} - Remaining: {1}'
-EnableClearQuestHotkey: true
-ClearQuest: ShiftBackquote

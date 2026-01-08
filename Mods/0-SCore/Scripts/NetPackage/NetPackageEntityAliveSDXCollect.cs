@@ -1,39 +1,48 @@
-﻿namespace SCore.Scripts.NetPackage
+﻿public class NetPackageEntityAliveSDXCollect : NetPackage
 {
-    public class NetPackageEntityAliveSDXCollect : NetPackageEntityCollect
-    {
-        private int entityId;
-        private int playerId;
-        public override void ProcessPackage(World _world, GameManager _callbacks)
-        {
-            if (_world == null)
-            {
-                return;
-            }
-            CollectEntityServer(entityId, playerId);
+    private int entityId;
+    private int playerId;
 
-        }
-        
-        private void CollectEntityServer(int _entityId, int _playerId)
+    public NetPackageEntityAliveSDXCollect Setup(int _entityId, int _playerId)
+    {
+        this.entityId = _entityId;
+        this.playerId = _playerId;
+        return this;
+    }
+
+    public override void read(PooledBinaryReader _br)
+    {
+        this.entityId = _br.ReadInt32();
+        this.playerId = _br.ReadInt32();
+    }
+
+    public override void write(PooledBinaryWriter _bw)
+    {
+        base.write(_bw);
+        _bw.Write(this.entityId);
+        _bw.Write(this.playerId);
+    }
+
+    public override void ProcessPackage(World _world, GameManager _callbacks)
+    {
+        if (_world == null)
         {
-            if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
-            {
-                SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageEntityAliveSDXCollect>().Setup(_entityId, _playerId), false);
-                return;
-            }
-            var entity = GameManager.Instance.World.GetEntity(_entityId);
-            if (GameManager.Instance.World.IsLocalPlayer(_playerId))
-            {
-                var myEntity = GameManager.Instance.World.GetEntity(_entityId) as EntityAliveSDX;
-                if (myEntity == null) return;
-                //myEntity.Collect(_playerId);
-                EntitySyncUtils.Collect(myEntity, _playerId);
-            }
-            else
-            {
-                SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityAliveSDXCollect>().Setup(_entityId, _playerId), false, _playerId);
-            }
-            GameManager.Instance.World.RemoveEntity(entity.entityId, EnumRemoveEntityReason.Killed);
+            return;
         }
+        if (!base.ValidEntityIdForSender(this.playerId, false))
+        {
+            return;
+        }
+        if (!_world.IsRemote())
+        {
+            EntitySyncUtils.Collect(this.entityId, this.playerId);
+            return;
+        }
+        EntitySyncUtils.CollectClient(this.entityId, this.playerId);
+    }
+
+    public override int GetLength()
+    {
+        return 8;
     }
 }
