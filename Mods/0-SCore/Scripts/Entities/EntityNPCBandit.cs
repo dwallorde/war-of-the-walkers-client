@@ -135,18 +135,18 @@ public class EntityNPCBandit : EntityBandit, IEntityOrderReceiverSDX
 
     public override void OnUpdateLive()
     {
-        // Comprehensive initialization checks to prevent collision system errors
-        // Check basic null references first
-        if (inventory == null || world == null)
-        {
-            return;
-        }
-
-        // Check player stats initialization
-        if (!bPlayerStatsChanged)
-        {
-            return;
-        }
+        // // Comprehensive initialization checks to prevent collision system errors
+        // // Check basic null references first
+        // if (inventory == null || world == null)
+        // {
+        //     return;
+        // }
+        //
+        // // Check player stats initialization
+        // if (!bPlayerStatsChanged)
+        // {
+        //     return;
+        // }
 
         // Check if entity is properly spawned
         if (!IsSpawned())
@@ -178,6 +178,7 @@ public class EntityNPCBandit : EntityBandit, IEntityOrderReceiverSDX
             _isFullyInitialized = true;
         }
 
+        
         // Now safe to call base update which includes collision checks
         try
         {

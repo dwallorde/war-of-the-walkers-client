@@ -34,7 +34,7 @@ namespace Harmony.Animation
         public class AvatarControllerSetCrouching
         {
             private static readonly int IsCrouchingHash = Animator.StringToHash("IsCrouching");
-            public static bool Prefix(global::AvatarController __instance, Animator ___anim, bool _bEnable, Dictionary<int, AnimParamData> ___changedAnimationParameters, global::EntityAlive ___entity)
+            public static bool Prefix(global::AvatarController __instance, Animator ___anim, bool _bEnable, global::AvatarController.ChangedAnimationParameters ___changedAnimationParameters, global::EntityAlive ___entity)
             {
                 if (___anim == null || ___anim.GetBool(IsCrouchingHash) == _bEnable) return true;
                 ___anim.SetBool(IsCrouchingHash, _bEnable);
@@ -44,7 +44,7 @@ namespace Harmony.Animation
                 }
                 if (!___entity.isEntityRemote)
                 {
-                    ___changedAnimationParameters[IsCrouchingHash] = new AnimParamData(IsCrouchingHash, AnimParamData.ValueTypes.Bool, _bEnable);
+                    ___changedAnimationParameters.Add(new AnimParamData(IsCrouchingHash, AnimParamData.ValueTypes.Bool, _bEnable));
                 }
                 return true;
             }

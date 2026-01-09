@@ -32,6 +32,17 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.5.30.1209
+	[ Challenges ]
+		- Removed debug lines
+
+	[ Quality ]
+		- Fixed an issue with ModifyCVar script not correctly calculating the quality tier levels.
+		- Added logging for crafting recipes where they lose their reference when crafting with the workstation closed.
+
+	[ EntityNPCBandit ]
+		- Removed some inappropriate checks, such as playerstat changed.
+
 Version: 2.5.25.1105
 	[ NPCs ]
 		- Fixed an issue where NPCs would duplicate on dedi, and respawn dupes when reloading the game.

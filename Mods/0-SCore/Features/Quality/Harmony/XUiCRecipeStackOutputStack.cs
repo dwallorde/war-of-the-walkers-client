@@ -5,19 +5,19 @@ using UnityEngine;
 namespace SCore.Features.Quality.Harmony
 {
     [HarmonyPatch(typeof(XUiC_RecipeStack))]
-    [HarmonyPatch(nameof(XUiC_RecipeStack.SetRecipe))]
-    public class XUiCRecipeStackSetRecipe
+    [HarmonyPatch(nameof(XUiC_RecipeStack.outputStack))]
+    public class XUiCRecipeStackoutputStack
     {
         private static readonly string AdvFeatureClass = "AdvancedItemFeatures";
         private static readonly string Feature = "CustomQualityLevels";
 
-        public static bool Prefix( XUiC_RecipeStack __instance,  int _outputQuality = -1)
+        public static bool Prefix( XUiC_RecipeStack __instance)
         {
             if (!Configuration.CheckFeatureStatus(AdvFeatureClass, Feature)) return true;
             if (__instance.recipe == null ) return true;
             
-            if (Configuration.CheckFeatureStatus(AdvFeatureClass, "Logging"))
-                Log.Out($"SetRecipe(): Recipe: {__instance.recipe.ToString()} Quality: {__instance.recipe.craftingTier} OutputQuality: {__instance.outputQuality} : Passed in Output: {_outputQuality}");
+
+          //  Log.Out($"Recipe: {__instance.recipe.ToString()} Quality: {__instance.recipe.craftingTier} OutputQuality: {__instance.outputQuality}");
             return true;
         }
     }

@@ -229,6 +229,7 @@
     <Compile Include="Features\PlayerMetrics\KillTracking\Scripts\SCoreKillTracker.cs" />
     <Compile Include="Features\PlayerMetrics\SCoreMetrics.cs" />
     <Compile Include="Features\Quality\Harmony\ItemValueConstructor.cs" />
+    <Compile Include="Features\Quality\Harmony\MinEventModifyCVar.cs" />
     <Compile Include="Features\Quality\Harmony\QualityInfoCleanUp.cs" />
     <Compile Include="Features\Quality\Harmony\QualityInfoGetQualityColor.cs" />
     <Compile Include="Features\Quality\Harmony\QualityInfoGetQualityColorHex.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Features\Quality\Harmony\XUiCCombineGridMergeSlotChangedEvent.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCraftingInfoAddQualityButton_OnPress.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCCraftingInfoSubtractQualityButton_OnPress.cs" />
+    <Compile Include="Features\Quality\Harmony\XUiCRecipeStackOutputStack.cs" />
     <Compile Include="Features\Quality\Harmony\XUiCRecipeStackSetRecipe.cs" />
     <Compile Include="Features\Quality\Harmony\XUiMTraderGetBuyPrice.cs" />
     <Compile Include="Features\Quality\Harmony\XUiMTraderGetSellPrice.cs" />
