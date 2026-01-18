@@ -259,6 +259,8 @@ public class FireManager : MonoBehaviour
 
         try
         {
+            if (!_fireHandler.IsBurning(blockPos)) return;
+
             _fireHandler.RemoveFire(blockPos, entityId);
             _smokeHandler.AddSmoke(blockPos);
            // _events.RaiseFireExtinguished(blockPos, entityId);

@@ -58,7 +58,7 @@ public class NetPackageAddExtinguishPositions : NetPackage
             return;
         }
         foreach (var position in _positions)
-            FireManager.Instance?.ExtinguishFire(position, _entityThatCausedIt);
+            FireManager.Instance?.ExtinguishFire(position, _entityThatCausedIt, false);
     }
 }
 

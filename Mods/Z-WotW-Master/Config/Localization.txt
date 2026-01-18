@@ -5262,6 +5262,7 @@ wotwDewCollectorDesc,blocks,Block,,,"A dew collector will gather murky water.  W
 wotwAdvDewCollector,blocks,Block,,,Deprecated Adv Dew Collector,
 wotwAdvDewCollectorDesc,blocks,Block,,,"Discontinued advanced dew collector, check recipes for conversion recipe to new block",
 wotwAdvDewCollectorNew,blocks,Block,,,Advanced Dew Collector,
+cntDewCollector,blocks,Block,,,Advanced Dew Collector,
 wotwAdvDewCollectorNewDesc,blocks,Block,,,A dew collector that collects water faster and provides clean water.  Requires empty jars in order to get water.\n\n[AB8E3D]Crafted:[-] [02B002]Workbench[-],
 recyclerWorkstation,blocks,Block,,,Recycler Workstation,
 recyclerWorkstationDesc,blocks,Block,,,Scrap all sorts of items here to get the most resource return from them.\n\n[AB8E3D]Crafted:[-] [02B002]Workbench[-],

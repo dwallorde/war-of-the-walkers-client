@@ -55,6 +55,9 @@ namespace Challenges {
 
         // Updates the objective progress and checks for completion
         private void UpdateProgress(int extinguishCount) {
+            if (!ChallengeRequirementManager.IsValid(Owner.ChallengeClass.Name)) return;
+
+
             Current += extinguishCount;
             CheckObjectiveComplete();
         }

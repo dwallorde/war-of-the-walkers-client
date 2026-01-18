@@ -32,6 +32,27 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.5.39.1103
+	[ Quality]
+		- Backed out a bad patch causing cvars and buffs not to apply correctly. 
+
+Version: 2.5.36.1511
+	[ Quality ]
+		- Fixed an issue where Quality levels above 255 were being reset to lower values when crafting in closed workstation.
+		- The game code was casting ItemQuality to a byte (limit 255) during the UI synchronization process, 
+			causing any quality higher than 255 (e.g., 600) to overflow and wrap around (e.g., 600 became 88).
+		- We implemented a "Bit-Packing" strategy where the UI patch hides the high-quality value inside the 
+			unused bits of the StartingEntityId integer (which survives the byte cast), and a second patch in AddCraftComplete 
+			unpacks that value to restore the correct quality just before the item is finalized.
+
+Version: 2.5.35.841
+	[ Challenges ]
+		- Added missing requirement check on BlockDestroyedByFire
+
+	[ Fire Manager ]
+		- Re-fixed(1)(2) fire extinguish being recursive.
+		- Also may have fixed the challenge for extinguish.
+
 Version: 2.5.30.1209
 	[ Challenges ]
 		- Removed debug lines
