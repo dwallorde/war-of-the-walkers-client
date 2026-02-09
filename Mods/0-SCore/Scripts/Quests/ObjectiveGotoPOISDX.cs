@@ -14,6 +14,11 @@ internal class ObjectiveGotoPOISDX : ObjectiveRandomPOIGoto
 
     public override bool useUpdateLoop => true;
 
+    public override void SetupObjective()
+    {
+        keyword = Localization.Get("ObjectiveGotoPOISDX");
+    }
+
     public override BaseObjective Clone()
     {
         var objectiveGotoPOI = new ObjectiveGotoPOISDX();
@@ -21,16 +26,6 @@ internal class ObjectiveGotoPOISDX : ObjectiveRandomPOIGoto
         objectiveGotoPOI.strPOIname = strPOIname;
         return objectiveGotoPOI;
     }
-
-
-    private void SetDistanceOffset(Vector3 POISize)
-    {
-        if (POISize.x > POISize.z)
-            distanceOffset = POISize.x;
-        else
-            distanceOffset = POISize.z;
-    }
-
   
     public override Vector3 GetPosition(EntityNPC ownerNPC = null, EntityPlayer entityPlayer = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
     {

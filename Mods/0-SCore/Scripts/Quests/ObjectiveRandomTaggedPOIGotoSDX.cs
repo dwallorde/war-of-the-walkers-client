@@ -53,6 +53,15 @@ public class ObjectiveRandomTaggedPOIGotoSDX : ObjectiveRandomPOIGoto
     public float MaxSearchDistance { get; internal set; } = -1;
 
     /// <summary>
+    /// Sets up the quest objective.
+    /// </summary>
+    public override void SetupObjective()
+    {
+        base.SetupObjective();
+        keyword = Localization.Get("ObjectiveRandomTaggedPOIGotoSDX");
+    }
+
+    /// <summary>
     /// Parses additional properties from the dynamic properties.
     /// </summary>
     /// <param name="properties"></param>
@@ -155,7 +164,7 @@ public class ObjectiveRandomTaggedPOIGotoSDX : ObjectiveRandomPOIGoto
                     IncludeTags,
                     ExcludeTags,
                     // The values used in vanilla are the square of the distance; adjusted here
-                    MinSearchDistance >= 0 ? MinSearchDistance : 50,
+                    MinSearchDistance >= 0 ? MinSearchDistance : 32,
                     MaxSearchDistance >= 0 ? MaxSearchDistance : 2000,
                     usedPoiLocations,
                     entityIdForQuests,
@@ -195,7 +204,7 @@ public class ObjectiveRandomTaggedPOIGotoSDX : ObjectiveRandomPOIGoto
 
                 OwnerQuest.QuestPrefab = prefabInstance;
 
-                OwnerQuest.DataVariables.Add("POIName", OwnerQuest.QuestPrefab.location.Name);
+                OwnerQuest.DataVariables.Add("POIName", Localization.Get(OwnerQuest.QuestPrefab.location.Name));
 
                 if (usedPoiLocations != null)
                 {
@@ -230,6 +239,11 @@ public class ObjectiveRandomTaggedPOIGotoSDX : ObjectiveRandomPOIGoto
         return Vector3.zero;
     }
 
+    /// <summary>
+    /// Converts a 2D location representing the center of a prefab to a 3D position in the world.
+    /// </summary>
+    /// <param name="prefabCenter"></param>
+    /// <returns></returns>
     public static Vector3 PrefabCenterToPosition(Vector2 prefabCenter)
     {
         // Since the center is a 2D vector, its "y" is actually the z-axis position
@@ -245,9 +259,9 @@ public class ObjectiveRandomTaggedPOIGotoSDX : ObjectiveRandomPOIGoto
     /// <returns></returns>
     public override BaseObjective Clone()
     {
-        var objectiveRandomPOIGoto = new ObjectiveRandomTaggedPOIGotoSDX();
-        CopyValues(objectiveRandomPOIGoto);
-        return objectiveRandomPOIGoto;
+        var objective = new ObjectiveRandomTaggedPOIGotoSDX();
+        CopyValues(objective);
+        return objective;
     }
 
     /// <summary>
@@ -262,20 +276,12 @@ public class ObjectiveRandomTaggedPOIGotoSDX : ObjectiveRandomPOIGoto
         obj.ExcludeTags = ExcludeTags;
         obj.MinSearchDistance = MinSearchDistance;
         obj.MaxSearchDistance = MaxSearchDistance;
-    }
-
-    /// <summary>
-    /// Copied verbatim from ObjectiveRandomPOIGoto, made protected so any future subclasses won't
-    /// have to do the same thing.
-    /// </summary>
-    /// <param name="poiSize"></param>
-    protected void SetDistanceOffset(Vector3 poiSize)
-    {
-        if (poiSize.x > poiSize.z)
-        {
-            distanceOffset = poiSize.x;
-            return;
-        }
-        distanceOffset = poiSize.z;
+        // These values are copied in ObjectiveRandomPOIGoto.Clone, and this class can't call that
+        // base class method because it creates the wrong object type. So, copy the values here.
+        obj.poiTier = poiTier;
+        obj.distance = distance;
+        obj.biomeFilterType = biomeFilterType;
+        obj.biomeFilter = biomeFilter;
+        obj.locationName = locationName;
     }
 }

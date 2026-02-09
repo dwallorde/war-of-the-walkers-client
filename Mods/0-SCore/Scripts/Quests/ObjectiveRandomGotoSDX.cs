@@ -18,7 +18,7 @@ public class ObjectiveRandomGotoSDX : BaseObjective
 	// Token: 0x06003857 RID: 14423 RVA: 0x001839B8 File Offset: 0x00181BB8
 	public override void SetupObjective()
 	{
-		this.keyword = Localization.Get("ObjectiveRallyPointHeadTo");
+		this.keyword = Localization.Get("ObjectiveRandomGotoSDX");
 		this.SetupIcon();
 	}
 

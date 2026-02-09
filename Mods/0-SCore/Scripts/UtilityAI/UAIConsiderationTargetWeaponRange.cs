@@ -32,6 +32,9 @@ namespace UAI
             if (target is Vector3 vector3)
                 result = (context.Self.position - vector3).magnitude;
 
+            // No holding item?
+            if (context.Self.inventory.holdingItem == null)
+                return 0;
             
             var range = context.Self.inventory.holdingItem.Actions[_actionIndex].Range;
             if (range == 0f)

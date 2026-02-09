@@ -6,12 +6,15 @@ using Platform;
 using UAI;
 using UnityEngine;
 
-namespace SCore.Features.RemoteCrafting.Scripts {
+namespace SCore.Features.RemoteCrafting.Scripts
+{
     [UsedImplicitly]
-    public class RemoteCraftingUtils {
+    public class RemoteCraftingUtils
+    {
         private const string AdvFeatureClass = "AdvancedRecipes";
 
-        public static List<TileEntity> GetTileEntities(EntityAlive player) {
+        public static List<TileEntity> GetTileEntities(EntityAlive player)
+        {
             var distance = 30f;
             var strDistance = Configuration.GetPropertyValue(AdvFeatureClass, "Distance");
             if (!string.IsNullOrEmpty(strDistance))
@@ -20,10 +23,13 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return tileEntities;
         }
 
-        public static bool CheckEnemyForCrafting() {
+        public static bool CheckEnemyForCrafting()
+        {
             return Configuration.CheckFeatureStatus("AdvancedRecipes", "BlockOnNearbyEnemies");
         }
-        public static bool CheckEnemyForRepairing() {
+
+        public static bool CheckEnemyForRepairing()
+        {
             return Configuration.CheckFeatureStatus("BlockUpgradeRepair", "BlockOnNearbyEnemies");
         }
 
@@ -31,31 +37,34 @@ namespace SCore.Features.RemoteCrafting.Scripts {
         {
             return Configuration.CheckFeatureStatus("AdvancedRecipes", "LandClaimContainersOnly");
         }
-        
+
         public static bool CheckForLandClaimPlayer()
         {
             return Configuration.CheckFeatureStatus("AdvancedRecipes", "LandClaimPlayerOnly");
         }
-        
-        public static List<TileEntity> GetTileEntities(EntityAlive player, float distance, bool forRepairs) {
-            if ( forRepairs && CheckEnemyForRepairing())
-                if (IsEnemyNearby(player)) return new List<TileEntity>() ;
 
-            if ( !forRepairs && CheckEnemyForCrafting())
-                if (IsEnemyNearby(player)) return new List<TileEntity>() ;
+        public static List<TileEntity> GetTileEntities(EntityAlive player, float distance, bool forRepairs)
+        {
+            if (forRepairs && CheckEnemyForRepairing())
+                if (IsEnemyNearby(player))
+                    return new List<TileEntity>();
+
+            if (!forRepairs && CheckEnemyForCrafting())
+                if (IsEnemyNearby(player))
+                    return new List<TileEntity>();
 
             var landClaimContainersOnly = CheckForLandClaimContainers();
             var world = GameManager.Instance.World;
-            
+
             // If the player is not within a land claim zone, don't search for containers.
             var landClaimPlayerOnly = CheckForLandClaimPlayer();
             if (landClaimPlayerOnly)
             {
                 var vector3I = new Vector3i(player.GetPosition());
                 if (!world.IsMyLandProtectedBlock(vector3I, world.GetGameManager().GetPersistentLocalPlayer()))
-                    return new List<TileEntity>() ;
+                    return new List<TileEntity>();
             }
-            
+
             var disabledsender = Configuration.GetPropertyValue(AdvFeatureClass, "disablesender").Split(',');
             var nottoWorkstation = Configuration.GetPropertyValue(AdvFeatureClass, "nottoWorkstation");
             var bindtoWorkstation = Configuration.GetPropertyValue(AdvFeatureClass, "bindtoWorkstation");
@@ -77,7 +86,7 @@ namespace SCore.Features.RemoteCrafting.Scripts {
                     var distanceToLeader = Vector3.Distance(player.position, path);
                     if (!(distanceToLeader < distance)) continue;
                 }
-              
+
                 var tileEntity = player.world.GetTileEntity(0, new Vector3i(path));
                 if (tileEntity == null) continue;
 
@@ -118,7 +127,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return tileEntities;
         }
 
-        public static bool DisableSender(IEnumerable<string> value, ITileEntity tileEntity) {
+        public static bool DisableSender(IEnumerable<string> value, ITileEntity tileEntity)
+        {
             if (!tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out var lootTileEntity)) return false;
             var invertdisable = bool.Parse(Configuration.GetPropertyValue(AdvFeatureClass, "Invertdisable"));
             if (!invertdisable)
@@ -139,7 +149,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return false;
         }
 
-        private static bool BindToWorkstation(string value, EntityAlive player, TileEntity tileEntity) {
+        private static bool BindToWorkstation(string value, EntityAlive player, TileEntity tileEntity)
+        {
             var result = false;
             if (player is not EntityPlayerLocal playerLocal) return false;
             if (!tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out var lootTileEntity)) return false;
@@ -168,7 +179,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return result;
         }
 
-        private static bool NotToWorkstation(string value, EntityAlive player, TileEntity tileEntity) {
+        private static bool NotToWorkstation(string value, EntityAlive player, TileEntity tileEntity)
+        {
             var result = false;
             if (player is not EntityPlayerLocal playerLocal) return false;
             if (!tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out var lootTileEntity)) return false;
@@ -184,7 +196,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return result;
         }
 
-        public static bool IsLootContainerOpenByAnotherPlayer(TileEntity  tileEntity, EntityAlive player) {
+        public static bool IsLootContainerOpenByAnotherPlayer(TileEntity tileEntity, EntityAlive player)
+        {
             if (!tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out var tileEntityLootable)) return true;
             var openTileEntityID = GameManager.Instance.GetEntityIDForLockedTileEntity(tileEntity);
             if (openTileEntityID == -1) return false;
@@ -193,7 +206,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return player.entityId != openTileEntityID;
         }
 
-        public static List<ItemStack> SearchNearbyContainers(EntityAlive player) {
+        public static List<ItemStack> SearchNearbyContainers(EntityAlive player)
+        {
             var items = new List<ItemStack>();
             var tileEntities = GetTileEntities(player);
             foreach (var tileEntity in tileEntities)
@@ -204,13 +218,15 @@ namespace SCore.Features.RemoteCrafting.Scripts {
                 {
                     continue;
                 }
+
                 items.AddRange(lootTileEntity.items);
             }
 
             return items;
         }
 
-        public static List<ItemStack> SearchNearbyContainers(EntityAlive player, ItemValue itemValue) {
+        public static List<ItemStack> SearchNearbyContainers(EntityAlive player, ItemValue itemValue)
+        {
             var item = new List<ItemStack>();
             var tileEntities = GetTileEntities(player);
             foreach (var tileEntity in tileEntities)
@@ -234,7 +250,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return items;
         }
 
-        public static List<ItemStack> SearchNearbyContainers(EntityAlive player, ItemValue itemValue, float distance) {
+        public static List<ItemStack> SearchNearbyContainers(EntityAlive player, ItemValue itemValue, float distance)
+        {
             var item = new List<ItemStack>();
 
             var items = new List<ItemStack>();
@@ -260,51 +277,68 @@ namespace SCore.Features.RemoteCrafting.Scripts {
             return items;
         }
 
-        public static bool AddToNearbyContainer(EntityAlive player, ItemStack itemStack, float distance) {
+        public static bool AddToNearbyContainer(EntityAlive player, ItemStack itemStack, float distance)
+        {
             var tileEntities = GetTileEntities(player, distance, false);
             foreach (var tileEntity in tileEntities)
             {
                 if (!tileEntity.TryGetSelfOrFeature<ITileEntityLootable>(out var lootTileEntity)) continue;
-                if ( IsLootContainerOpenByAnotherPlayer(tileEntity, player)) continue;
+                if (IsLootContainerOpenByAnotherPlayer(tileEntity, player)) continue;
                 if (CheckTileEntity(itemStack, lootTileEntity)) return true;
             }
 
             return false;
         }
 
-      
-        private static bool CheckTileEntity(ItemStack itemStack, ITileEntityLootable lootTileEntity) {
-            if (lootTileEntity.IsUserAccessing()) return false;
 
-            // Don't try to add to a drop box.
+        private static bool CheckTileEntity(ItemStack itemStack, ITileEntityLootable lootTileEntity)
+        {
+            // 1. Initial Guards
+            if (lootTileEntity == null || lootTileEntity.IsUserAccessing()) return false;
+
+            // Check for Dropbox property
             if (lootTileEntity.blockValue.Block.Properties.Values.ContainsKey("DropBox")) return false;
 
-            // Can we quickly find a incomplete stack?
-            //if (lootTileEntity.TryStackItem(0, itemStack)) return true;
-            var result = lootTileEntity.TryStackItem(0, itemStack);
-            if (result.allMoved) return true;
+            bool changed = false;
+            lootTileEntity.SetUserAccessing(true);
 
-            var matchingItem = false;
-            // Loop through the items and see if we have any matching items.
-            foreach (var item in lootTileEntity.items)
+            try
             {
-                // We match with something.
-                if (item.itemValue.type != itemStack.itemValue.type) continue;
+                if (!lootTileEntity.HasItem(itemStack.itemValue))
+                {
+                    return false; // Skip this box entirely if it doesn't already have lead
+                }
 
-                matchingItem = true;
-                break;
+                var result = lootTileEntity.TryStackItem(0, itemStack);
+                if (result.allMoved)
+                {
+                    changed = true;
+                    return true;
+                }
+
+                if (lootTileEntity.AddItem(itemStack))
+                {
+                    changed = true;
+                    return true;
+                }
+            }
+            finally
+            {
+                // 5. Cleanup: Always release the lock and save changes
+                if (changed)
+                {
+                    lootTileEntity.SetModified(); // CRITICAL: Tells the game to save this box to disk
+                }
+
+                lootTileEntity.SetUserAccessing(false);
             }
 
-            // If we don't match, don't try to add.
-            if (!matchingItem) return false;
-
-            // We added a full stack! No need to keep processing.
-            if (lootTileEntity.AddItem(itemStack)) return true;
             return false;
         }
 
         public static void ConsumeItem(IEnumerable<ItemStack> itemStacks, EntityPlayerLocal localPlayer, int multiplier,
-            IList<ItemStack> _removedItems, Bag bag, Inventory toolbelt) {
+            IList<ItemStack> _removedItems, Bag bag, Inventory toolbelt)
+        {
             var tileEntities = GetTileEntities(localPlayer);
             var enumerable = itemStacks as ItemStack[] ?? itemStacks.ToArray();
             for (var i = 0; i < enumerable.Count(); i++)
@@ -336,8 +370,8 @@ namespace SCore.Features.RemoteCrafting.Scripts {
                     // If someone is using the tool account, skip it.
                     if (IsLootContainerOpenByAnotherPlayer(tileEntity, localPlayer)) continue;
                     // If there's no items in this container, skip.
-                    
-                    
+
+
                     if (!lootTileEntity.HasItem(enumerable[i].itemValue)) continue;
 
                     for (var y = 0; y < lootTileEntity.items.Length; y++)
@@ -387,8 +421,9 @@ namespace SCore.Features.RemoteCrafting.Scripts {
                 }
             }
         }
-    
-        public static bool IsEnemyNearby(EntityAlive self, float distance = 20f) {
+
+        public static bool IsEnemyNearby(EntityAlive self, float distance = 20f)
+        {
             var nearbyEntities = new List<Entity>();
 
             var player = self as EntityPlayer;
@@ -412,6 +447,7 @@ namespace SCore.Features.RemoteCrafting.Scripts {
                 {
                     continue;
                 }
+
                 if (player && player.Party != null)
                 {
                     // Are they in the same party?

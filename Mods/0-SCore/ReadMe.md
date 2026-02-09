@@ -32,6 +32,56 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+Version: 2.5.53.911
+	[ NPCs ]
+		- Fixed an issue where an NPC would get run over while you were driving, and you'd pay the price.
+
+	[ Drop Box ]
+		- Refactored distribution code slightly to add guards against lost item stacks during distribution.
+
+	[ Challenges ]
+		- Added a check in Sleeper Cleared to make sure that another player is within the same POI as the clearer.
+
+Version:  2.5.48.914
+
+	[ NPCs ]
+		- Added a patch by Gussak to fix NPCs getting stuck on corpses.
+			- https://github.com/SphereII/SphereII.Mods/issues/133
+
+	[ Remote Repair ]
+		- Added some fixes to prevent repairing from remote containers when enemies are around.
+
+	[ Quality ]
+		- Fixed an issue where item values of quality in the xml will scale to the quality settings over all.
+		- ie, if you have 1 to 600 quality levels, and your xml list only 6 possible values ( vanilla ), then the tier of the quality item will be used
+		- as an index value, rather than throwing out of bounds.
+		Example:
+			<! quality 56 would use 02.  Quality 500 would use .1, etc -->
+			<triggered_effect trigger="onSelfEquipUpdate" action="ModifyCVar" cvar="$treatedPreacher" operation="set" value=".02,.04,.06,.08,.1,.2">
+			
+	[ UAI ]
+		- Added a safety check for UAI Consideration Target Weapon Range
+
+	[ Quests ]
+		- Integrated some patches by khzmusik.
+		```
+		This implements the feature request from ticket 127, but also fixes other bugs that were introduced by vanilla game updates.
+
+		New feature for [Teleport Quests] Localization of Objective keyword in ObjectiveGotoPOISDX.cs and related Objective patches.  
+
+		#127: Subtypes of ObjectiveRandomPOIGoto use their own localization keys for keywords (and not just "ObjectiveRallyPointHeadTo") - 
+		by default their values match vanilla in Localization.txt
+		
+		Subtypes of ObjectiveRandomPOIGoto no longer need their own implementations of SetDistanceOffset (the base class method was made public in a recent game update)
+		QuestUtils.ValidPrefabForQuest once again checks for quest tags (if it didn't, ObjectiveRandomTaggedPOIGotoSDX would not be compatible with vanilla quests)
+		
+		I don't know why the code was originally commented out, but I took a guess that POIs weren't matching if the XML property was empty, so I additionally added a check for questTag.IsEmpty to make sure empty quest tags aren't considered
+		QuestUtils.GetRandomPOINearTrader code updated to have the same functionality as DynamicPrefabDecorator.GetRandomPOINearTrader (which was updated for 2.5)
+		
+		Adjusted min search distances to match current vanilla value ObjectiveRandomTaggedPOIGotoSDX.CopyValues copies the values which are copied in the base class Clone method (this method can't be called by subclasses)
+		Minor fixes to ObjectiveRandomTaggedPOIGotoSDX (documentation, renamed inaccurately-named variable)
+		```
+
 Version: 2.5.39.1103
 	[ Quality]
 		- Backed out a bad patch causing cvars and buffs not to apply correctly. 

@@ -87,7 +87,7 @@ public class NetPackageRandomTaggedPOIGotoSDX : NetPackage
                         includeTags,
                         excludeTags,
                         // The values used in vanilla are the square of the distance; adjusted here
-                        minSearchDistance >= 0 ? minSearchDistance : 50,
+                        minSearchDistance >= 0 ? minSearchDistance : 32,
                         maxSearchDistance >= 0 ? maxSearchDistance : 2000,
                         usedPoiLocations,
                         entityId,

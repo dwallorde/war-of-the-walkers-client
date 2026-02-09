@@ -205,7 +205,7 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
                 this.NavObject.IsActive = false;
             // Clear the debug information, usually set from UAI
             this.DebugNameInfo = "";
-
+            emodel.enabled = false;
             // Turn off the display component
             SetupDebugNameHUD(false);
         }
@@ -220,6 +220,8 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
                 this.NavObject.IsActive = true;
             isIgnoredByAI = false;
             // SetupDebugNameHUD(true);
+            emodel.enabled = true;
+
         }
     }
 
@@ -1253,6 +1255,7 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
                     {
                         var _position = leader.GetPosition();
                         _position.y += 2;
+                        
                         SetPosition(_position);
                     }
                 }

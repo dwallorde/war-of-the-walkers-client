@@ -9,7 +9,7 @@ public class ObjectiveRandomPOIGotoSDX : ObjectiveGoto
 	public override void SetupObjective()
 	{
 		//Log.Out("ObjectiveRandomPOIGotoSDX-SetupObjective");
-		this.keyword = Localization.Get("ObjectiveRallyPointHeadTo");
+		this.keyword = Localization.Get("ObjectiveRandomPOIGotoSDX");
 	}
 
 	// Token: 0x0600386E RID: 14446 RVA: 0x00184429 File Offset: 0x00182629

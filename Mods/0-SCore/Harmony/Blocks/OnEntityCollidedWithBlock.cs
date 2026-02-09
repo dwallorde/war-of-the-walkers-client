@@ -57,7 +57,9 @@ namespace Features.LockPicking
                 {
                     if (__instance.MovementFactor != 1f)
                     {
-                        entityAlive.SetMotionMultiplier(EffectManager.GetValue(PassiveEffects.MovementFactorMultiplier));
+                      // https://github.com/SphereII/SphereII.Mods/issues/133
+                      // entityAlive.SetMotionMultiplier(EffectManager.GetValue(PassiveEffects.MovementFactorMultiplier, null, __instance.MovementFactor, entityAlive));entityAlive.SetMotionMultiplier(EffectManager.GetValue(PassiveEffects.MovementFactorMultiplier));
+                      entityAlive.SetMotionMultiplier(EffectManager.GetValue(PassiveEffects.MovementFactorMultiplier, null, __instance.MovementFactor, entityAlive));
                     }
                     return false;
                 }

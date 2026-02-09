@@ -36,7 +36,7 @@ namespace Features.RemoteCrafting {
                     // If we successfully added, clear the stack.
                     if (RemoteCraftingUtils.AddToNearbyContainer(primaryPlayer, items[i], distance))
                     {
-                       Debug.Log($"Removing {items[i].itemValue.ItemClass.GetItemName()}");
+                      // Debug.Log($"Removing {items[i].itemValue.ItemClass.GetItemName()}");
                         //itemStack.Clear();
                         items[i] = ItemStack.Empty.Clone();
                         continue;

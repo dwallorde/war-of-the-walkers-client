@@ -129,26 +129,27 @@ public static class QuestUtils
         BiomeFilterTypes biomeFilterType = BiomeFilterTypes.AnyBiome,
         string biomeFilter = "")
     {
-        var world = GameManager.Instance.World;
-
-        var minDistanceTier = minSearchDistance < 0 ? 0 : GetTraderPrefabListTier(minSearchDistance);
-        var maxDistanceTier = maxSearchDistance < 0 ? 2 : GetTraderPrefabListTier(maxSearchDistance);
-
-        for (var distanceTier = minDistanceTier; distanceTier <= maxDistanceTier; distanceTier++)
+        var current = QuestEventManager.Current;
+        var gameRandom = GameManager.Instance.World.GetGameRandom();
+        var distanceIndex = trader.PreferredDistanceIndex;
+        var distanceIndexes = GetDistanceIndexes(minSearchDistance, maxSearchDistance);
+        for (var i = 0; i < 3; i++)
         {
-           var prefabsForTrader = QuestEventManager.Current.GetPrefabsForTrader(
-                trader.traderArea,
-                difficulty,
-                distanceTier,
-                world.GetGameRandom());
+            distanceIndex %= 3;
 
-           if (prefabsForTrader == null) continue;
-           // GetPrefabsForTrader shuffles the prefabs before returning them, so we can just
-            // iterate through the list and still send players to "random" POIs
-            for (var j = 0; j < prefabsForTrader.Count; j++)
+            if (!distanceIndexes.Contains(distanceIndex))
             {
-                var prefabInstance = prefabsForTrader[j];
-                if (ValidPrefabForQuest(
+                distanceIndex++;
+                continue;
+            }
+
+            var prefabsForTrader = current.GetPrefabsForTrader(trader.traderArea, difficulty, distanceIndex, gameRandom);
+            if (prefabsForTrader != null)
+            {
+                for (var j = 0; j < prefabsForTrader.Count; j++)
+                {
+                    PrefabInstance prefabInstance = prefabsForTrader[j];
+                    if (ValidPrefabForQuest(
                         trader,
                         prefabInstance,
                         questTag,
@@ -160,13 +161,83 @@ public static class QuestUtils
                         biomeFilter,
                         minSearchDistance,
                         maxSearchDistance))
-                {
-                    return prefabInstance;
+                    {
+                        return prefabInstance;
+                    }
                 }
             }
+
+            distanceIndex++;
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// <para>
+    /// Takes the minumum and maximum search distances, and returns the vanilla distance indexes
+    /// that are compatible with those search distances. It is meant to avoid searching through
+    /// lists of POIs by distance index, if none of those POIs can be within range.
+    /// </para>
+    /// <para>
+    /// <list type="table">
+    ///     <listheader>
+    ///         <term>index</term>
+    ///         <description>distance range</description>
+    ///     </listheader>
+    ///     <item>
+    ///         <term>0</term>
+    ///         <description>0 - 500</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>1</term>
+    ///         <description>501 - 1500</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>2</term>
+    ///         <description>1501+</description>
+    ///     </item>
+    /// </list>
+    /// Taken from <see cref="QuestEventManager.SetupTraderPrefabList"/>
+    /// </para>
+    /// </summary>
+    /// <param name="minSearchDistance">Minimum search distance, in blocks/meters</param>
+    /// <param name="maxSearchDistance">Maximum search distance, in blocks/meters</param>
+    /// <returns></returns>
+    public static List<int> GetDistanceIndexes(float minSearchDistance, float maxSearchDistance)
+    {
+        var allIndexes = new List<int> { 0, 1, 2 };
+
+        if (minSearchDistance > maxSearchDistance)
+        {
+            // Invalid entries. Just use the vanilla indexes.
+            return allIndexes;
+        }
+
+        if (minSearchDistance < 0  && maxSearchDistance < 0)
+        {
+            // No min or max specified. Use the vanilla indexes.
+            return allIndexes;
+        }
+
+        if (minSearchDistance <= 500f && maxSearchDistance > 1500f)
+        {
+            // This is within the entire range of vanilla indexes.
+            return allIndexes;
+        }
+
+        // Remove the indexes according to the min and max distance.
+        if (minSearchDistance > 500f)
+            allIndexes.Remove(0);
+        if (minSearchDistance > 1500f)
+            allIndexes.Remove(1);
+
+        if (maxSearchDistance >= 0 && maxSearchDistance <= 1500f)
+            allIndexes.Remove(2);
+        if (maxSearchDistance >= 0 && maxSearchDistance <= 500f)
+            allIndexes.Remove(1);
+
+        return allIndexes;
     }
 
     /// <summary>
@@ -290,14 +361,14 @@ public static class QuestUtils
             return false;
         }
 
-        //if (!prefab.prefab.GetQuestTag(questTag))
-        //{
-        //    if (LoggingEnabled)
-        //    {
-        //        Log.Out($"Quest {questTag}: Prefab {prefab.name} does not have quest tag {questTag}");
-        //    }
-        //    return false;
-        //}
+        if (!questTag.IsEmpty && !prefab.prefab.GetQuestTag(questTag))
+        {
+            if (LoggingEnabled)
+            {
+                Log.Out($"Quest {questTag}: Prefab {prefab.name} does not have quest tag {questTag}");
+            }
+            return false;
+        }
 
         Vector2 poiLocation = new Vector2(prefab.boundingBoxPosition.x, prefab.boundingBoxPosition.z);
 
@@ -310,7 +381,7 @@ public static class QuestUtils
             return false;
         }
 
-        QuestEventManager.POILockoutReasonTypes lockoutReason = QuestEventManager.Current.CheckForPOILockouts(entityIdForQuests, poiLocation, out var num);
+        QuestEventManager.POILockoutReasonTypes lockoutReason = QuestEventManager.Current.CheckForPOILockouts(entityIdForQuests, poiLocation, out _);
 
         if (lockoutReason != QuestEventManager.POILockoutReasonTypes.None)
         {

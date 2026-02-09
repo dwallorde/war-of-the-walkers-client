@@ -39,14 +39,11 @@ public class NetPackageSleeperVolumeCleared : NetPackage
 		var entityPlayer = _world.GetEntity(entityID) as EntityPlayerLocal;
 		if (entityPlayer == null)
 		{
-			Debug.Log("Not PlayerLocal");
 			return;
 		}
 		
-		Debug.Log($"Distance check: {position} : {entityPlayer.position} Party Shared");
 		if (Vector3.Distance(position, entityPlayer.position) < GameStats.GetInt(EnumGameStats.PartySharedKillRange))
 		{
-			Debug.Log("Sleeper Cleared.");
 			EventOnSleeperVolumeClearedUpdate.SleeperVolumeCleared(position);
 		}
 	}

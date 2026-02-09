@@ -138,29 +138,38 @@ namespace Features.RemoteCrafting {
                 BlockValue blockValue) {
                 if (__result) return;
                 
-                var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
-
-                if (Configuration.CheckFeatureStatus(AdvFeatureClass, "BlockOnNearbyEnemies"))
-                {
-                    var distanceE = 30f;
-                    var strDistanceE = Configuration.GetPropertyValue(AdvFeatureClass, "DistanceEnemy");
-                    if (!string.IsNullOrEmpty(strDistanceE))
-                        distanceE = StringParsers.ParseFloat(strDistanceE);
-                    if (RemoteCraftingUtils.IsEnemyNearby(data.holdingEntity, distanceE))
-                    {
-                        GameManager.ShowTooltip(primaryPlayer, Localization.Get("xuiCraftFromContainersSCore"));
-                        return; // make sure you only skip if really necessary
-                    }
-                }
-
+                
                 if (!Configuration.CheckFeatureStatus(AdvFeatureClass, Feature))
                 {
                     return;
                 }
+                var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
 
                 var block = blockValue.Block;
                 var upgradeItemName = __instance.GetUpgradeItemName(block);
-                int quantity;
+        
+                if (!int.TryParse(block.Properties.Values[Block.PropUpgradeBlockClassItemCount], out int quantity)) return;
+                var itemValue = ItemClass.GetItem(upgradeItemName);
+
+                // CHECK FOR ENEMIES
+                if (Configuration.CheckFeatureStatus(AdvFeatureClass, "BlockOnNearbyEnemies")) {
+                    var distanceE = 30f;
+                    var strDistanceE = Configuration.GetPropertyValue(AdvFeatureClass, "DistanceEnemy");
+                    if (!string.IsNullOrEmpty(strDistanceE)) distanceE = StringParsers.ParseFloat(strDistanceE);
+
+                    if (RemoteCraftingUtils.IsEnemyNearby(data.holdingEntity, distanceE)) {
+                        // If enemies are nearby, we ONLY allow the result to be true if it's in the bag/inventory
+                        var hasInPerson = data.holdingEntity.inventory.GetItemCount(itemValue) >= quantity ||
+                                           data.holdingEntity.bag.GetItemCount(itemValue) >= quantity;
+                
+                        if (!hasInPerson) {
+                            GameManager.ShowTooltip(primaryPlayer, Localization.Get("xuiCraftFromContainersSCore"));
+                            __result = false;
+                            return;
+                        }
+                    }
+                }
+              
                 if (!int.TryParse(block.Properties.Values[Block.PropUpgradeBlockClassItemCount], out quantity))
                 {
                     return;
@@ -275,25 +284,35 @@ namespace Features.RemoteCrafting {
         public class CanRemoveRequiredItem {
             private static bool Prefix(ref bool __result, ItemActionRepair __instance, ItemInventoryData _data,
                 ItemStack _itemStack) {
-                __result = false;
-
-                var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
-
-                if (Configuration.CheckFeatureStatus(AdvFeatureClass, "BlockOnNearbyEnemies"))
-                {
-
-                    if (RemoteCraftingUtils.IsEnemyNearby(_data.holdingEntity, 30f))
-                    {
-                        // Show a tool tip, but allow the base feature to run, so we can still repair using our backpack items.
-                        GameManager.ShowTooltip(primaryPlayer, Localization.Get("xuiCraftFromContainersSCore"));
-                        return true; // make sure you only skip if really necessary
-                    }
-                }
-
+                
+                
                 if (!Configuration.CheckFeatureStatus(AdvFeatureClass, Feature))
                 {
                     return true;
                 }
+                
+                __result = false;
+
+                var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+
+                // CHECK FOR ENEMIES
+                if (Configuration.CheckFeatureStatus(AdvFeatureClass, "BlockOnNearbyEnemies")) {
+                    if (RemoteCraftingUtils.IsEnemyNearby(_data.holdingEntity, 30f)) {
+                        // Check if player has it in personal inventory
+                        bool hasInPerson = _data.holdingEntity.inventory.GetItemCount(_itemStack.itemValue) >= _itemStack.count ||
+                                           _data.holdingEntity.bag.GetItemCount(_itemStack.itemValue) >= _itemStack.count;
+
+                        if (hasInPerson) {
+                            return true; // Return true to let vanilla handle the local-only repair
+                        }
+
+                        // Block the repair and show tooltip
+                        GameManager.ShowTooltip(primaryPlayer, Localization.Get("xuiCraftFromContainersSCore"));
+                        __result = false; 
+                        return false; // Skip vanilla so it doesn't trigger your remote GetItemCount patch
+                    }
+                }
+
 
                 if (_data.holdingEntity.inventory.GetItemCount(_itemStack.itemValue) >= _itemStack.count ||
                     _data.holdingEntity.bag.GetItemCount(_itemStack.itemValue) >= _itemStack.count)

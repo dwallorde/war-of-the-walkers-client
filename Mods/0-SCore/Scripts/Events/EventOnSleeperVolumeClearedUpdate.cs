@@ -23,12 +23,12 @@ public static class EventOnSleeperVolumeClearedUpdate {
                 var position = __instance.PrefabInstance.boundingBoxPosition;
                 if (player is EntityPlayerLocal localPlayer)
                 {
-                    Debug.Log($"Local Player: Position: {position}");
+                    if ( localPlayer.prefab.id != __instance.prefabInstance.id) return;
+                    
                     SleeperVolumeCleared(position);
                     return;
                 }
                 
-                Debug.Log($"Remote Player: Position: {position}");
                 SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageSleeperVolumeCleared>().Setup(position,playerId ));
               
             }
