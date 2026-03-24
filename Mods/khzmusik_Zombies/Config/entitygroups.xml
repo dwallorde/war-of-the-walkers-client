@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configs>
     <!-- zombieBurntKhz spawns with burnt zombies -->
-    <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .07')]/text()" delim="\n" op="add">zombieBurntKhz, .07</csv>
+    <!-- <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .07')]/text()" delim="\n" op="add">zombieBurntKhz, .07</csv> -->
     <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .2')]/text()" delim="\n" op="add">zombieBurntKhz, .2</csv>
-    <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .4')]/text()" delim="\n" op="add">zombieBurntKhz, .4</csv>
+    <!-- <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .4')]/text()" delim="\n" op="add">zombieBurntKhz, .4</csv> -->
     <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .5')]/text()" delim="\n" op="add">zombieBurntKhz, .5</csv>
     <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .7')]/text()" delim="\n" op="add">zombieBurntKhz, .7</csv>
     <csv xpath="//entitygroup[contains(text(), 'zombieBurnt, .8')]/text()" delim="\n" op="add">zombieBurntKhz, .8</csv>
@@ -329,9 +329,9 @@
     <csv xpath="//entitygroup[contains(text(), 'zombieTomClarkRadiated&#xA;')]/text()" delim="\n" op="add">zombieMaleRadiatedKhz</csv>
 
     <!-- zombiePolicewomanKhz spawns with zombieFatCop -->
-    <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .05')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .05</csv>
+    <!-- <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .05')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .05</csv> -->
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .08')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .08</csv>
-    <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .1')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .1</csv>
+    <!-- <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .1')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .1</csv> -->
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .2')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .2</csv>
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .3')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .3</csv>
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCop, .4')]/text()" delim="\n" op="add">zombiePolicewomanKhz, .4</csv>
@@ -354,7 +354,7 @@
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCopFeral, .8')]/text()" delim="\n" op="add">zombiePolicewomanFeralKhz, .8</csv>
     <!-- <csv xpath="//entitygroup[contains(text(), 'zombieFatCopFeral, .9')]/text()" delim="\n" op="add">zombiePolicewomanFeralKhz, .9</csv> -->
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCopFeral&#xA;')]/text()" delim="\n" op="add">zombiePolicewomanFeralKhz</csv>
-    <csv xpath="//entitygroup[contains(text(), 'zombieFatCopFeral, 2')]/text()" delim="\n" op="add">zombiePolicewomanFeralKhz</csv>
+    <!-- <csv xpath="//entitygroup[contains(text(), 'zombieFatCopFeral, 2')]/text()" delim="\n" op="add">zombiePolicewomanFeralKhz</csv> -->
 
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCopRadiated, .05')]/text()" delim="\n" op="add">zombiePolicewomanRadiatedKhz, .05</csv>
     <csv xpath="//entitygroup[contains(text(), 'zombieFatCopRadiated, .1')]/text()" delim="\n" op="add">zombiePolicewomanRadiatedKhz, .1</csv>
@@ -503,10 +503,10 @@
         zombieFemaleSoldierFeralKhz, .45
         zombieMaleSoldierFeralKhz, .45
     </csv> -->
-    <csv xpath="//entitygroup[contains(text(), 'zombieSoldierFeral, 2')]/text()" delim="\n" op="add">
-        zombieFemaleSoldierFeralKhz
-        zombieMaleSoldierFeralKhz
-    </csv>
+    <!-- <csv xpath="//entitygroup[contains(text(), 'zombieSoldierFeral, 2')]/text()" delim="\n" op="add"> -->
+        <!-- zombieFemaleSoldierFeralKhz -->
+        <!-- zombieMaleSoldierFeralKhz -->
+    <!-- </csv> -->
     <csv xpath="//entitygroup[contains(text(), 'zombieSoldierFeral&#xA;')]/text()" delim="\n" op="add">
         zombieFemaleSoldierFeralKhz, .5
         zombieMaleSoldierFeralKhz, .5

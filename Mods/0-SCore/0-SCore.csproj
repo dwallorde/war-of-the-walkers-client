@@ -255,6 +255,7 @@
     <Compile Include="Features\RemoteCrafting\Harmony\DropBoxToContainers.cs" />
     <Compile Include="Features\RemoteCrafting\Harmony\IngredientsFromContainers.cs" />
     <Compile Include="Features\RemoteCrafting\Harmony\ItemActionRepairPatches.cs" />
+    <Compile Include="Features\RemoteCrafting\Harmony\TileEntitySecureLootContainerSignedPatch.cs" />
     <Compile Include="Features\RemoteCrafting\Scripts\BlockDropBoxContainer.cs" />
     <Compile Include="Features\RemoteCrafting\Scripts\RemoteCraftingManager.cs" />
     <Compile Include="Features\RemoteCrafting\Scripts\RemoteCraftingUtils.cs" />
@@ -311,6 +312,7 @@
     <Compile Include="Harmony\EntityAlive\EntityTraderRektMute.cs" />
     <Compile Include="Harmony\EntityAlive\ReplicateSpeed.cs" />
     <Compile Include="Harmony\EntityDrone\EntityDronePatches.cs" />
+    <Compile Include="Harmony\EntityGroups\EntityGroupsGetRandomFromGroup.cs" />
     <Compile Include="Harmony\EntityMoveHelper\DigStart.cs" />
     <Compile Include="Harmony\EntityMoveHelper\StartJump.cs" />
     <Compile Include="Harmony\EntityMoveHelper\Stop.cs" />

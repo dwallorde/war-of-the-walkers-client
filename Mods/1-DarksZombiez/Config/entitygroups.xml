@@ -88,15 +88,15 @@
 		zombieArmy1Feral, 0.0125	
 	</csv>
 	
-	<csv xpath="/entitygroups/entitygroup[@name='ZombiesHoard']/text()" delim="\n" op="add" >
-		zombieParasite, 0.0125
-		zombieParasiteFeral, 0.0125
-		zombieFatParasite, 0.0125
-		zombieFatParasiteFeral, 0.0125
-		zombieExperimentZ, 0.0125
-		zombieExperimentZFeral, 0.0125
-		zombieArmy1, 0.0125
-		zombieArmy1Feral, 0.0125		
-	</csv>
+	<!-- <csv xpath="/entitygroups/entitygroup[@name='ZombiesHoard']/text()" delim="\n" op="add" > -->
+		<!-- zombieParasite, 0.0125 -->
+		<!-- zombieParasiteFeral, 0.0125 -->
+		<!-- zombieFatParasite, 0.0125 -->
+		<!-- zombieFatParasiteFeral, 0.0125 -->
+		<!-- zombieExperimentZ, 0.0125 -->
+		<!-- zombieExperimentZFeral, 0.0125 -->
+		<!-- zombieArmy1, 0.0125 -->
+		<!-- zombieArmy1Feral, 0.0125		 -->
+	<!-- </csv> -->
 	
 </configs>

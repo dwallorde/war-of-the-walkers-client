@@ -10,12 +10,12 @@
 			<property name="AvatarController" value="AvatarZombieController"/>
                         <property name="LookAtAngle" value="0"/> 
 			<property name="Mesh" value="#@modfolder:Resources/DarksZombiez.unity3d?ParasiteZombieDark"/> 
-			<property name="SoundRandom" value="Enemies/Spider_Zombie/spiderroam"/>
-	                <property name="SoundAlert" value="Enemies/Spider_Zombie/spideralert"/>
-	                <property name="SoundAttack" value="Enemies/Spider_Zombie/spiderattack"/>
-	                <property name="SoundDeath" value="Enemies/Spider_Zombie/spiderdeath"/>
-	                <property name="SoundHurt" value="Enemies/Spider_Zombie/spiderpain"/>
-	                <property name="SoundSense" value="Enemies/Spider_Zombie/spidersense"/>
+			<property name="SoundRandom" value="spiderroam"/>
+	                <property name="SoundAlert" value="spideralert"/>
+	                <property name="SoundAttack" value="spiderattack"/>
+	                <property name="SoundDeath" value="spiderdeath"/>
+	                <property name="SoundHurt" value="spiderpain"/>
+	                <property name="SoundSense" value="spidersense"/>
 			<property name="RootMotion" value="true"/>
 			<property name="HasRagdoll" value="true"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -64,13 +64,13 @@
 			<property name="AvatarController" value="AvatarZombieController"/>
                         <property name="LookAtAngle" value="0"/> 
 			<property name="Mesh" value="#@modfolder:Resources/DarksZombiez.unity3d?FatParasiteZombieDark"/> 
-			<property name="SoundRandom" value="Enemies/Acid_Puking_Hulk/hulkroam"/>
-	                <property name="SoundAlert" value="Enemies/Acid_Puking_Hulk/hulkalert"/>
-	                <property name="SoundAttack" value="Enemies/Acid_Puking_Hulk/hulkattack"/>
-	                <property name="SoundHurt" value="Enemies/Acid_Puking_Hulk/hulkpain"/>
-	                <property name="SoundDeath" value="Enemies/Acid_Puking_Hulk/hulkdeath"/>
-	                <property name="SoundSense" value="Enemies/Acid_Puking_Hulk/hulksense"/>
-	                <property name="SoundFootstepModifier" value="Animals/Bear/bear_footstep"/>
+			<property name="SoundRandom" value="hulkroam"/>
+	                <property name="SoundAlert" value="hulkalert"/>
+	                <property name="SoundAttack" value="hulkattack"/>
+	                <property name="SoundHurt" value="hulkpain"/>
+	                <property name="SoundDeath" value="hulkdeath"/>
+	                <property name="SoundSense" value="hulksense"/>
+	                <property name="SoundStepType" value="heavystep"/>
 			<property name="RootMotion" value="true"/>
 			<property name="HasRagdoll" value="true"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>
@@ -125,7 +125,7 @@
 	                <property name="SoundHurt" value="zombielumberjack_pain"/>
 	                <property name="SoundDeath" value="zombielumberjack_death"/>
 	                <property name="SoundSense" value="zombielumberjack_sense"/>
-	                <property name="SoundFootstepModifier" value="zombielumberjack_footstep"/>
+	                <property name="SoundStepType" value="largestep"/>
 			<property name="RootMotion" value="true"/>
 			<property name="HasRagdoll" value="true"/>
 			<property name="PhysicsBody" value="mixamoConvertedStandardZombie"/>

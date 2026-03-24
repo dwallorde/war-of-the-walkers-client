@@ -11,6 +11,8 @@ public class FireConfig
     // Core settings
     public bool Enabled { get; private set; }
     public bool FireSpread { get; private set; }
+    public bool FirePersists { get; private set; }
+
     public float CheckInterval { get; private set; }
     public float FireDamage { get; private set; }
     public float ChanceToExtinguish { get; private set; }
@@ -60,7 +62,8 @@ public class FireConfig
             FireDamage = ParseFloatSetting("FireDamage", 1f);
             ChanceToExtinguish = ParseFloatSetting("ChanceToExtinguish", 0.05f);
             Logging = ParseBoolSetting("Logging", false);
-            
+
+            FirePersists = ParseBoolSetting("FirePersists", false);
             // Smoke settings
             SmokeTime = ParseFloatSetting("SmokeTime", 60f);
             SmokeParticle = ParseStringSetting("SmokeParticle", "smokeParticle");

@@ -429,7 +429,7 @@
 
             <!-- Turns on support for the PlantGrowingSDX, SCore features for more advanced crop -->
             <property class="CropManagement">
-                <property name="Logging" value="false"/>
+                <property name="Logging" value="true"/>
 
                 <!-- forces sprinklers and water sources to be connected to pipes to work -->
                 <property name="RequirePipesForSprinklers" value="false"/>

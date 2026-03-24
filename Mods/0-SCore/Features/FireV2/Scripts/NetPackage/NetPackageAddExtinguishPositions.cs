@@ -48,7 +48,8 @@ public class NetPackageAddExtinguishPositions : NetPackage
 
     public override int GetLength()
     {
-        return 20;
+        // 2 (count) + (12 per Vector3i) + 4 (entityId)
+        return 6 + (_positions.Count * 12);
     }
 
     public override void ProcessPackage(World world, GameManager callbacks)

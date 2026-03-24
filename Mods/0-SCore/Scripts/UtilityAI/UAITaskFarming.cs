@@ -330,10 +330,17 @@ namespace UAI
                     {
                         var num = Utils.FastMax(0, item.minCount);
                         var itemStack = new ItemStack(ItemClass.GetItem(item.name, false), num);
-                        if (lootContainer.AddItem(itemStack)) // Try adding directly
+                        // Attempt to add to NPC inventory
+                        if (!lootContainer.AddItem(itemStack)) 
+                        {
+                            // If it fails, drop it on the ground so the player doesn't lose the harvest
+                            _context.Self.world.GetGameManager().ItemDropServer(itemStack, _context.Self.position, Vector3.zero, _context.Self.entityId, 60f, false);
+                        }
+                        else
                         {
                             addedItems = true;
                         }
+                        
                     }
 
                     if (addedItems)

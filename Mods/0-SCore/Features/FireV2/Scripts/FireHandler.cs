@@ -454,18 +454,48 @@ public class FireHandler : IFireHandler
 
     public void Read(BinaryReader br)
     {
+        // Clear existing maps to prevent overlaps on manual reload
+        _fireMap.Clear();
+        _extinguishedPositions.Clear();
+
+        // 1. Process Burning Fires
         var positions = br.ReadString();
-        foreach (var position in positions.Split(';'))
+        foreach (var positionStr in positions.Split(';'))
         {
-            if (string.IsNullOrEmpty(position)) continue;
-            var vector = StringParsers.ParseVector3i(position);
+            if (string.IsNullOrEmpty(positionStr)) continue;
+            var position = StringParsers.ParseVector3i(positionStr);
+
+            var block = GameManager.Instance.World.GetBlock(position);
+            // Don't restore fire if the block is gone (air) or within a trader area
+            if (block.isair || GameManager.Instance.World.IsWithinTraderArea(position)) continue;
+
+            var fireBlockData = new FireBlockData
+            {
+                BlockValue = block,
+                FireDamage = GetBlockFireDamage(block),
+                ChanceToExtinguish = GetBlockChanceToExtinguish(block),
+                DowngradeBlock = GetDowngradedBlock(block),
+                FireParticle = _config.GetRandomFireParticle(position),
+                SmokeParticle = _config.GetRandomSmokeParticle(position)
+            };
+
+            _fireMap[position] = fireBlockData;
+
+            // Trigger the visual particles and lights on the Server
+            StartFireEffects(position, fireBlockData.FireParticle);
         }
 
-        var extingished = br.ReadString();
-        foreach (var position in extingished.Split(';'))
+        // 2. Process Extinguished Positions (for smoke persistence)
+        var extinguished = br.ReadString();
+        var worldTime = GameManager.Instance.World.GetWorldTime();
+        foreach (var extingushedStr in extinguished.Split(';'))
         {
-            if (string.IsNullOrEmpty(position)) continue;
-            var vector = StringParsers.ParseVector3i(position);
+            if (string.IsNullOrEmpty(extingushedStr)) continue;
+            var position = StringParsers.ParseVector3i(extingushedStr);
+        
+            // Restore smoke for the configured duration
+            _extinguishedPositions[position] = worldTime + _config.SmokeTime;
+            _events.RaiseSmokeStarted(position);
         }
     }
 
@@ -513,25 +543,40 @@ public class FireHandler : IFireHandler
     public void LoadState()
     {
         var path = $"{GameIO.GetSaveGameDir()}/{SaveFile}";
-        if (!Directory.Exists(GameIO.GetSaveGameDir()) || !File.Exists(path)) return;
+        if (!Directory.Exists(GameIO.GetSaveGameDir()) || !File.Exists(path))
+        {
+            Log.Out($"Fire Manager: No Saved Files: {path}");
+            return;
+        }
 
         try
         {
-            using var fileStream = File.OpenRead(path);
-            using var pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false);
-            pooledBinaryReader.SetBaseStream(fileStream);
-            Read(pooledBinaryReader);
-        }
-        catch (Exception)
-        {
-            path = $"{GameIO.GetSaveGameDir()}/{SaveFile}.bak";
-            if (File.Exists(path))
+            Log.Out($"Fire Manager: Restoring Fires from {path}");
+
+            using (var fileStream = File.OpenRead(path))
             {
-                using var fileStream2 = File.OpenRead(path);
-                using var pooledBinaryReader2 = MemoryPools.poolBinaryReader.AllocSync(false);
-                pooledBinaryReader2.SetBaseStream(fileStream2);
-                Read(pooledBinaryReader2);
+                using (var pooledBinaryReader = MemoryPools.poolBinaryReader.AllocSync(false))
+                {
+                    pooledBinaryReader.SetBaseStream(fileStream);
+                    Read(pooledBinaryReader);
+                }
             }
+            Log.Out($"Fire Manager: Restored {_fireMap.Count} Fires.");
+
+            // --- FIX: Sync with Clients ---
+            // Only the server should broadcast the loaded state to clients
+            if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer && _fireMap.Count > 0)
+            {
+                Log.Out($"FireManager: Syncing {_fireMap.Count} loaded fires to clients.");
+                // We use the keys of the _fireMap as our batch of positions
+                var loadedPositions = new List<Vector3i>(_fireMap.Keys);
+                _fireNetworkManager.SyncAddFireBatch(loadedPositions);
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"FireManager: Failed to load fire state: {ex.Message}");
+            // Optional: Attempt to load from .bak as seen in your original code
         }
 
         Log.Out($"Fire Manager {path} Loaded: {_fireMap.Count}");

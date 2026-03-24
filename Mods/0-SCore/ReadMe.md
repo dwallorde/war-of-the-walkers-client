@@ -32,6 +32,37 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 
 [ Change Log ]
+
+Version: 2.6.8.837  [ Experimental ]
+	[ Farming ]
+		- Fixed water depletion not working: BlockLiquidv2 blocks are now drained via DoExchangeAction; A21+ voxel water is drained via chunk.GetWater/SetWater with chunk-local coordinates.
+		- Fixed pipe blocks being incorrectly identified as direct water sources (IsDirectWaterSource now excludes BlockWaterPipeSDX before checking world.IsWater).
+		- Fixed CropManager.IsNearWater ignoring the caller's waterRange parameter (was creating a temporary PlantData on an air block, falling back to default range of 5).
+		- Fixed NPC farming: seed loss and race condition on replant (now uses a single atomic SetBlocksRPC with [air, seed] entries).
+		- Fixed NPC farming: seed is now returned to harvest items or NPC inventory if CanPlaceBlockAt fails.
+		- Fixed NPC harvested items being silently lost when NPC inventory is full; items are now dropped on the ground instead.
+
+	[ Sprinklers ]
+		- Fixed sprinklers auto-activating when placed without a connected water source (CheckWaterConnection now always verifies actual water).
+		- Fixed RequirePipesForSprinklers config not being enforced: CanPlaceBlockAt now requires an adjacent pipe block when the setting is enabled.
+		- Simplified pipe block invalidation logic to use RefreshAllSprinklers.
+
+	[ XUi ]
+		- Moved the broadcast button position to prevent overlap.
+
+Version: 2.6.4.713  [ Experimental ]
+	[ Fire Manager ]
+		- Fixed an issue where fire wasn't restarted on relog when enabled.
+
+	[ Challenges ]
+		- Removed an unneccesary safety check that was causing problems with null reference
+
+	[ Farming ]
+		- Refactored the Manage method for planting crops, and added a catch if inventory is full
+
+	[ NPCs ]
+		- Fixed an issue where NPCs could be duplicated when the player dies.
+
 Version: 2.5.53.911
 	[ NPCs ]
 		- Fixed an issue where an NPC would get run over while you were driving, and you'd pay the price.

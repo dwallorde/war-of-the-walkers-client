@@ -977,8 +977,6 @@ public static class EntityUtilities
         var leader = GameManager.Instance.World.GetEntity(leaderID) as EntityPlayer;
         if (leader == null) return;
 
-        
-
         var removeList = new List<string>();
         foreach (var cvar in leader.Buffs.CVars)
         {
@@ -1003,7 +1001,13 @@ public static class EntityUtilities
                     {
                         continue;
                     }
-                    
+
+                    if (entity.addedToChunk)
+                    {
+                        Chunk chunk = (Chunk)GameManager.Instance.World.GetChunkSync(entity.chunkPosAddedEntityTo.x,
+                            entity.chunkPosAddedEntityTo.z);
+                        chunk?.RemoveEntityFromChunk(entity);
+                    }
 
                     entity.TeleportToPlayer(leader, true);
                 }
