@@ -323,6 +323,9 @@
 
                 <!-- Turns on advanced troubleshooting for challenges -->
                 <property name="Challenges" value="false"/>
+                
+                <!-- Farming -->
+                <property name="UAITaskFarming" value="false" />
 
             </property>
 

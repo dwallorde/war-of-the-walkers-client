@@ -103,22 +103,33 @@ public class WaterPipeManager
         var waterBlockValue = GameManager.Instance.World.GetBlock(waterSourcePos);
         string waterBlockName = waterBlockValue.Block?.GetBlockName() ?? "Unknown Source";
     
-        // Check for A21+ "Modern" water (rivers/lakes/voxels)
+        // A21+ voxel water — GetWaterPercent returns 0.0 (empty) to 1.0 (full).
         float waterPercent = GameManager.Instance.World.GetWaterPercent(waterSourcePos);
         string waterTypeInfo;
 
+        int sourceMaxHp = waterBlockValue.Block.MaxDamage;
+        int sourceHp    = sourceMaxHp > 0 ? Mathf.Max(0, sourceMaxHp - waterBlockValue.damage) : -1;
+        string hpSuffix = sourceHp >= 0 ? $"  Health: {sourceHp}/{sourceMaxHp}" : string.Empty;
+
         if (waterPercent > 0.01f)
         {
-            waterTypeInfo = $"Modern Water Source ({waterPercent * 100:F0}%)";
+            waterTypeInfo = $"Voxel Water Source ({waterPercent * 100:F0}%){hpSuffix}";
         }
         else if (waterBlockValue.Block is BlockLiquidv2)
         {
-            int durability = waterBlockValue.Block.MaxDamage - waterBlockValue.damage;
-            waterTypeInfo = $"Legacy Water Block '{waterBlockName}' (Durability: {durability}/{waterBlockValue.Block.MaxDamage})";
+            // Legacy placed water block — damage field tracks depletion.
+            if (sourceMaxHp <= 0)
+                waterTypeInfo = $"Legacy Water Block '{waterBlockName}' (Unlimited)";
+            else
+            {
+                int remaining = sourceHp;
+                waterTypeInfo = $"Legacy Water Block '{waterBlockName}' (Water: {remaining}/{sourceMaxHp})";
+            }
         }
         else
         {
-            waterTypeInfo = $"Custom/Unlimited Source: '{waterBlockName}'";
+            string hpInfo = sourceHp >= 0 ? $" (Health: {sourceHp}/{sourceMaxHp})" : " (Unlimited)";
+            waterTypeInfo = $"Source: '{waterBlockName}'{hpInfo}";
         }
 
         // 4. Return the unified "Truth"
@@ -139,10 +150,15 @@ public class WaterPipeManager
         }
 
         // 2. Check if there is direct water touching this block first.
+        // Include horizontal diagonals so corner farm plots (diagonally adjacent to water)
+        // are correctly detected as watered — matching what the player planting system sees.
         Vector3i[] neighbors = {
             position + Vector3i.up, position + Vector3i.down,
             position + Vector3i.left, position + Vector3i.right,
-            position + Vector3i.forward, position + Vector3i.back
+            position + Vector3i.forward, position + Vector3i.back,
+            // horizontal diagonals
+            position + new Vector3i( 1, 0,  1), position + new Vector3i( 1, 0, -1),
+            position + new Vector3i(-1, 0,  1), position + new Vector3i(-1, 0, -1)
         };
 
         foreach (var neighbor in neighbors)

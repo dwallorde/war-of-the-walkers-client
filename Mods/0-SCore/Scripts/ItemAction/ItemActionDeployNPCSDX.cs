@@ -74,16 +74,15 @@ public class ItemActionDeployNPCSDX : ItemActionSpawnVehicle
             // SERVER (or Single Player): Perform the spawn
             Vector3 rotation = new Vector3(0f, entityPlayerLocal.rotation.y + 90f, 0f);
             Entity entity = EntityFactory.CreateEntity(entityClassID, spawnVehicleData.Position + Vector3.up * 0.25f, rotation);
-            
-            EntityAliveSDX entityAlive = entity as EntityAliveSDX;
 
-            if (entityAlive != null)
+            var entityAlive = entity as EntityAlive;
+            var iEntity     = entityAlive as IEntityAliveSDX;
+
+            if (entityAlive != null && iEntity != null)
             {
                 // Prevent fresh inventory generation if restoring
                 if (!isFreshSpawn)
-                {
                     entityAlive.Buffs.SetCustomVar("InitialInventory", 1);
-                }
 
                 // Hydrate Data (Pre-Spawn)
                 EntitySyncUtils.SetNPCItemValue(entityAlive, holdingItemItemValue);
@@ -101,18 +100,12 @@ public class ItemActionDeployNPCSDX : ItemActionSpawnVehicle
                     if (holdingItemItemValue.ItemClass.Properties.GetBool("AutoHire"))
                         EntityUtilities.Hire(entityAlive.entityId, entityPlayerLocal);
                 }
-                
-                // Finalize Spawn
 
                 entityAlive.SetSpawnerSource(EnumSpawnerSource.StaticSpawner);
                 GameManager.Instance.World.SpawnEntityInWorld(entityAlive);
                 EntityUtilities.SetLeaderAndOwner(entityAlive.entityId, entityPlayerLocal.entityId);
 
-                entityAlive.SendSyncData();
-
-               // EntitySyncUtils.SetNPCItemValue(entityAlive, holdingItemItemValue);
-
-
+                iEntity.SendSyncData();
             }
         }
 

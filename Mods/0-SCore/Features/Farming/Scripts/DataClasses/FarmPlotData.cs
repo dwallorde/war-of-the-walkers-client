@@ -120,64 +120,68 @@ public class FarmPlotData
 /// <returns>List of harvested items, or null/empty list if no harvest occurred.</returns>
 public List<Block.SItemDropProb> Manage(EntityAlive entityAlive)
 {
-    Visited = true; // Mark as visited for this cycle
+    Visited = true;
     bool shouldReplant = false;
     var plantPos = _blockPos + Vector3i.up;
-    var plantData = CropManager.Instance.GetPlant(plantPos);
     var currentBlockValue = GameManager.Instance.World.GetBlock(plantPos);
     var harvestItems = new List<Block.SItemDropProb>();
-    string seedFromPlant = string.Empty; // Seed item name derived from the harvested plant
+    string seedFromPlant = string.Empty;
 
     // --- Handle existing plant/block ---
-    if (IsDeadPlant()) // Check if it's a dead/wilted plant block
+    // Check harvest drops FIRST — a block with harvest drops should always be harvested,
+    // regardless of whether it extends BlockPlant. Some mods use custom block types (e.g.
+    // BlockPickUpAndReplace) for the final crop stage, which are not BlockPlant subclasses
+    // and would incorrectly be treated as dead plants if we checked IsDeadPlant() first.
+    if (!IsEmpty() && currentBlockValue.Block != null)
     {
-        AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} clearing dead plant at {plantPos}");
-        currentBlockValue = BlockValue.Air; // Update local variable; air RPC is handled in the replant block below
-        shouldReplant = true;
-    }
-    else if (!IsEmpty() && currentBlockValue.Block != null) // If there's a non-air block (might be a plant)
-    {
-        // Check if it's harvestable (fully grown)
-        // A plant is harvestable if it doesn't have a 'PlantGrowing.Next' property, implying it's the final stage.
-        bool isHarvestable = !currentBlockValue.Block.Properties.Contains("PlantGrowing.Next");
+        bool hasHarvestDrops = currentBlockValue.Block.HasItemsToDropForEvent(EnumDropEvent.Harvest);
 
-        if (isHarvestable)
+        if (hasHarvestDrops)
         {
-             AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} harvesting at {plantPos}");
-             // Try to get harvest drops
-            currentBlockValue.Block.itemsToDrop.TryGetValue(EnumDropEvent.Harvest, out harvestItems);
-            harvestItems ??= new List<Block.SItemDropProb>(); // Ensure list is not null
+            // Work with local copies of the drop lists so we never mutate the block's shared
+            // internal itemsToDrop data (the lists returned by TryGetValue are the actual list
+            // objects stored on the block singleton, not copies).
+            currentBlockValue.Block.itemsToDrop.TryGetValue(EnumDropEvent.Harvest, out var rawHarvest);
+            if (rawHarvest != null) harvestItems.AddRange(rawHarvest);
 
-            // Also add destroy drops, as harvesting removes the block
+            // Also add destroy drops — these typically contain the seed.
             currentBlockValue.Block.itemsToDrop.TryGetValue(EnumDropEvent.Destroy, out var destroyItems);
             if (destroyItems != null) harvestItems.AddRange(destroyItems);
 
-            // Process harvested items: find seed, adjust counts based on NPC cvars
+            // Process harvested items: strip invalid entries, find seed, adjust counts based on NPC cvars
             for (int i = harvestItems.Count - 1; i >= 0; i--)
             {
                 var item = harvestItems[i];
-                // Identify the seed item associated with this plant
-                if (item.name.StartsWith("planted") && seedFromPlant == string.Empty) // Take the first seed found
+
+                // Remove empty-name or zero-count entries — malformed drop table entries.
+                if (string.IsNullOrEmpty(item.name) || item.maxCount <= 0)
+                {
+                    harvestItems.RemoveAt(i);
+                    continue;
+                }
+
+                if (item.name.StartsWith("planted") && seedFromPlant == string.Empty)
                 {
                     seedFromPlant = item.name;
-                    harvestItems.RemoveAt(i); // Remove seed from harvest list
+                    harvestItems.RemoveAt(i);
                 }
-                else if (entityAlive.Buffs.HasCustomVar(item.name)) // Adjust counts based on NPC skill/cvar
+                else if (entityAlive.Buffs.HasCustomVar(item.name))
                 {
                     item.minCount = (int)entityAlive.Buffs.GetCustomVar(item.name);
                     item.maxCount = (int)entityAlive.Buffs.GetCustomVar(item.name);
-                    harvestItems[i] = item; // Update struct in list
+                    harvestItems[i] = item;
                 }
             }
 
-            currentBlockValue = BlockValue.Air; // Air + optional seed RPC is handled atomically in the replant block below
+            currentBlockValue = BlockValue.Air;
             shouldReplant = true;
         }
-        else if (plantData != null)
+        else if (IsDeadPlant())
         {
-             // Plant exists but isn't fully grown, update its last check time?
-             AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} tending non-harvestable plant at {plantPos}");
+            currentBlockValue = BlockValue.Air;
+            shouldReplant = true;
         }
+        // else: growing plant — leave it alone
     }
     else // Plot is empty
     {
@@ -187,14 +191,11 @@ public List<Block.SItemDropProb> Manage(EntityAlive entityAlive)
     // --- Handle Replanting ---
     if (shouldReplant)
     {
-         AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} checking replant for {plantPos}");
-        // Check for water before attempting to replant
         if (!HasWater())
         {
-             AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} cannot replant at {plantPos} - no water.");
-            // Still clear dead/harvested blocks so the NPC doesn't keep visiting the same plot
+            // No water — clear any harvested/dead block but don't replant.
             if (!IsEmpty())
-                GameManager.Instance.World.SetBlocksRPC(new List<BlockChangeInfo> { new BlockChangeInfo(plantPos, BlockValue.Air, false) });
+                GameManager.Instance.World.SetBlockRPC(plantPos, BlockValue.Air);
             return harvestItems;
         }
 
@@ -208,73 +209,38 @@ public List<Block.SItemDropProb> Manage(EntityAlive entityAlive)
                 if (!stack.IsEmpty())
                 {
                     var itemClass = ItemClass.GetForId(stack.itemValue.type);
-                    // Assuming seeds are named like "planted<CropName>1"
                     if (itemClass.Name.StartsWith("planted") && itemClass.Name.EndsWith("1"))
                     {
                         seedToPlant = itemClass.Name;
-                        stack.count--; // Decrement item count in inventory
-                        if (stack.count <= 0) stack.Clear(); // Clear stack if empty
-                        entityAlive.lootContainer.SetModified(); // Mark inventory changed
-                        break; // Found a seed
+                        stack.count--;
+                        if (stack.count <= 0) stack.Clear();
+                        entityAlive.lootContainer.SetModified();
+                        break;
                     }
                 }
             }
         }
 
-        // Determine what to place at plantPos: seed if available, otherwise air (to clear dead/harvested block)
         BlockValue blockToPlace = BlockValue.Air;
         if (!string.IsNullOrEmpty(seedToPlant))
         {
             var seedBlock = Block.GetBlockByName(seedToPlant);
             if (seedBlock != null)
             {
-                var blockValueToPlace = seedBlock.ToBlockValue();
-                if (seedBlock.CanPlaceBlockAt(GameManager.Instance.World, 0, plantPos, blockValueToPlace))
-                {
-                    blockToPlace = blockValueToPlace;
-                }
-                else
-                {
-                    AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} Cannot place {seedToPlant} at {plantPos} (CanPlaceBlockAt failed).");
-                    // Return the seed so it is not silently lost
-                    if (!string.IsNullOrEmpty(seedFromPlant))
-                    {
-                        // Seed came from the harvested plant drop — add it back to harvest items
-                        harvestItems.Add(new Block.SItemDropProb { name = seedFromPlant, minCount = 1, maxCount = 1, prob = 1f });
-                    }
-                    else
-                    {
-                        // Seed was taken from NPC inventory — put it back
-                        foreach (var stack in entityAlive.lootContainer.items)
-                        {
-                            if (!stack.IsEmpty()) continue;
-                            stack.itemValue = ItemClass.GetItem(seedToPlant, false);
-                            stack.count = 1;
-                            entityAlive.lootContainer.SetModified();
-                            break;
-                        }
-                    }
-                }
+                // Skip CanPlaceBlockAt — the harvested block is still present in the world at this
+                // point, so the check would always fail. The RPC below replaces it directly.
+                blockToPlace = seedBlock.ToBlockValue();
             }
-            else
-            {
-                AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} Could not find block for seed name {seedToPlant}.");
-            }
-        }
-        else
-        {
-            AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} has no seed to replant at {plantPos}.");
         }
 
-        // Send a single atomic RPC: clear the old block, then place the new one (air or seed).
-        // Using two entries in one SetBlocksRPC avoids the race condition of a separate air call
-        // followed by a separate seed call, where the seed could arrive before the air is processed.
         if (!IsEmpty() || !blockToPlace.isair)
         {
-            AdvLogging.DisplayLog("FarmPlotData", $"NPC {entityAlive.entityId} setting {plantPos} to {blockToPlace.Block?.GetBlockName() ?? "air"}");
+            // Single-entry RPC: replace the old block directly with the seed (or air if no seed).
+            // A two-entry approach (air then seed at the same position) causes the seed to fall
+            // through the world because the intermediate air triggers a physics/support check
+            // before the seed placement can stabilise.
             GameManager.Instance.World.SetBlocksRPC(new List<BlockChangeInfo>
             {
-                new BlockChangeInfo(plantPos, BlockValue.Air, false),
                 new BlockChangeInfo(plantPos, blockToPlace, false)
             });
         }

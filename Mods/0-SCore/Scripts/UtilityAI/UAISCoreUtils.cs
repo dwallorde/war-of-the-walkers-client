@@ -252,8 +252,8 @@ namespace UAI
                 return;
             }
 
-            // If we are on a mission, don't execute this teleport; let the one on entityaliveSDX handle it.
-            var entityAlive = _context.Self as EntityAliveSDX;
+            // If we are on a mission, don't execute this teleport; let the entity handle it.
+            var entityAlive = _context.Self as IEntityAliveSDX;
             if (entityAlive != null)
             {
                 if (!entityAlive.IsOnMission())

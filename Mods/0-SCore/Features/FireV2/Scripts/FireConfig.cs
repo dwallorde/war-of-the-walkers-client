@@ -148,7 +148,7 @@ public class FireConfig
     private int ParseIntSetting(string key, int defaultValue)
     {
         var value = Configuration.GetPropertyValue(AdvFeatureClass, key);
-        return string.IsNullOrEmpty(value) ? defaultValue : int.Parse(value);
+        return string.IsNullOrEmpty(value) ? defaultValue : StringParsers.ParseSInt32(value);
     }
 
     private string ParseStringSetting(string key, string defaultValue)

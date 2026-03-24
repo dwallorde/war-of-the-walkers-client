@@ -25,7 +25,7 @@ using UnityEngine.Serialization;
 using Debug = UnityEngine.Debug;
 
 // ReSharper disable once CheckNamespace
-public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
+public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX, IEntityAliveSDX
 {
     public List<string> lstQuests = new List<string>();
     public bool isAlwaysAwake;
@@ -71,6 +71,8 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
     public bool isTeleporting = false;
 
     public bool isHirable = true;
+    public bool IsHirable => isHirable;   // IEntityAliveSDX
+    public bool IsSleeping { get; set; }
     public bool isQuestGiver = true;
 
     // Read the configuration to see if the hired NPCs should join the player's group.

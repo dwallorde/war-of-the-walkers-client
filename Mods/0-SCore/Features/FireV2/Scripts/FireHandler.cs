@@ -28,11 +28,16 @@ public class FireHandler : IFireHandler
     private bool _isProcessing = false;
     private float _lastProcessTime;
     private const float PROCESS_INTERVAL = 0.1f; // 100ms between processing batches
-    private FireNetworkManager _fireNetworkManager = new FireNetworkManager();
-    public FireHandler(FireEvents events, FireConfig config)
+    private IFireNetworkManager _fireNetworkManager;
+
+    // Cached tags to avoid allocating FastTags on every IsFlammable call.
+    private static readonly FastTags<TagGroup.Global> InflammableTag = FastTags<TagGroup.Global>.Parse("inflammable");
+    private static readonly FastTags<TagGroup.Global> FlammableTag   = FastTags<TagGroup.Global>.Parse("flammable");
+    public FireHandler(FireEvents events, FireConfig config, IFireNetworkManager networkManager)
     {
         _events = events;
         _config = config;
+        _fireNetworkManager = networkManager;
         _fireParticleOptimizer = new FireParticleOptimizer();
     }
 
@@ -115,10 +120,10 @@ public class FireHandler : IFireHandler
 
     private bool IsFlammable(BlockValue blockValue)
     {
-        if (blockValue.Block.HasAnyFastTags(FastTags<TagGroup.Global>.Parse("inflammable"))) return false;
+        if (blockValue.Block.HasAnyFastTags(InflammableTag)) return false;
         if (blockValue.ischild || blockValue.isair || blockValue.isWater) return false;
 
-        if (blockValue.Block.HasAnyFastTags(FastTags<TagGroup.Global>.Parse("flammable"))) return true;
+        if (blockValue.Block.HasAnyFastTags(FlammableTag)) return true;
         var blockMaterial = blockValue.Block.blockMaterial;
 
         var matID = _config.MaterialID;
@@ -184,7 +189,9 @@ public class FireHandler : IFireHandler
 
         if (!_isProcessing)
         {
-            _processingQueue = new Queue<Vector3i>(_fireMap.Keys);
+            _processingQueue.Clear();
+            foreach (var key in _fireMap.Keys)
+                _processingQueue.Enqueue(key);
             _isProcessing = true;
             _pendingChanges.Clear();
             _removeFires.Clear();
@@ -306,7 +313,7 @@ public class FireHandler : IFireHandler
     {
         var damage = (int)_config.FireDamage;
 
-        if (block.Block.Properties.Contains(""))
+        if (block.Block.Properties.Contains("FireDamage"))
             damage = block.Block.Properties.GetInt("FireDamage");
 
         if (block.Block.blockMaterial.Properties.Contains("FireDamage"))
@@ -439,17 +446,8 @@ public class FireHandler : IFireHandler
     
     private void Write(BinaryWriter bw)
     {
-        var writeOut = "";
-        foreach (var temp in _fireMap)
-            writeOut += $"{temp.Key};";
-        writeOut = writeOut.TrimEnd(';');
-        bw.Write(writeOut);
-
-        var writeOut2 = "";
-        foreach (var temp in _extinguishedPositions.Keys)
-            writeOut2 += $"{temp};";
-        writeOut2 = writeOut2.TrimEnd(';');
-        bw.Write(writeOut2);
+        bw.Write(string.Join(";", _fireMap.Keys));
+        bw.Write(string.Join(";", _extinguishedPositions.Keys));
     }
 
     public void Read(BinaryReader br)

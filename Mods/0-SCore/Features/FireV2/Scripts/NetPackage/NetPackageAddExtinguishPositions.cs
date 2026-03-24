@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using JetBrains.Annotations;
 
 /// <summary>
@@ -49,7 +45,7 @@ public class NetPackageAddExtinguishPositions : NetPackage
     public override int GetLength()
     {
         // 2 (count) + (12 per Vector3i) + 4 (entityId)
-        return 6 + (_positions.Count * 12);
+        return 6 + (_positions?.Count ?? 0) * 12;
     }
 
     public override void ProcessPackage(World world, GameManager callbacks)

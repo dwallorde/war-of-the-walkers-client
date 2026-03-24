@@ -60,27 +60,22 @@ public class NetPackageDeployNPCSDX : NetPackage
         {
             // 1. Create the Entity (In Memory)
             Entity entity = EntityFactory.CreateEntity(this.entityClassId, this.pos, this.rot);
-            EntityAliveSDX entityAlive = entity as EntityAliveSDX;
+            var entityAlive = entity as EntityAlive;
+            var iEntity     = entityAlive as IEntityAliveSDX;
 
-            if (entityAlive != null)
+            if (entityAlive != null && iEntity != null)
             {
                 // 2. Persistence Setup
-                // Set to StaticSpawner so the game saves it to region files and doesn't despawn it like a biome zombie
                 entityAlive.SetSpawnerSource(EnumSpawnerSource.StaticSpawner);
 
-                // 3. Hydrate Data
-                // Use the Utility to unpack the ItemValue Metadata (Strings) into the Entity.
-                // This restores Health, Buffs, CVars, Inventory, and Name.
+                // 3. Hydrate Data — unpack ItemValue metadata into the entity (health, buffs, cvars, inventory, name).
                 EntitySyncUtils.SetNPCItemValue(entityAlive, this.itemValue);
 
-             
-                // 5. Spawn
+                // 4. Spawn
                 _world.SpawnEntityInWorld(entityAlive);
 
-                // 6. Force Sync
-                // CRITICAL: Broadcast the SDX-specific data (Name, Title, Weapon) to all clients immediately.
-                // Vanilla spawn packets do NOT carry this data, so without this, the NPC looks generic until restart.
-                entityAlive.SendSyncData();
+                // 5. Force Sync — vanilla spawn packets don't carry SDX-specific data (name, title, weapon).
+                iEntity.SendSyncData();
             }
         }
     }

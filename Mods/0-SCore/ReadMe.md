@@ -33,6 +33,187 @@ This release of 0-SCore introduces significant enhancements across several core 
 
 [ Change Log ]
 
+Version: 2.6.10.1108  [ Experimental ]
+	[ NPCv4 / IEntityAliveSDX - V4 Entity Support ]
+		NPCv4 (EntityAliveSDXV4) is a ground-up rewrite of the NPC entity that extends EntityTrader
+		instead of EntityAlive, using a component-based architecture (NPCLeaderComponent,
+		NPCPatrolComponent, NPCCombatComponent, NPCEffectsComponent) to replace the monolithic
+		EntityAliveSDX class. The goal is cleaner separation of concerns, better compatibility with
+		vanilla trader systems, and a more maintainable foundation for future NPC features.
+		The IEntityAliveSDX interface bridges V3 and V4, allowing shared code (UAI tasks, dialog
+		scripts, utility methods) to work with either entity type without hard casts.
+
+		- Updated EntityUtilities.ExecuteCMD to support EntityAliveSDXV4 via IEntityAliveSDX and
+		  IEntityOrderReceiverSDX interfaces. V3-exclusive fields (bodyDamage) remain gated behind
+		  a conditional EntityAliveSDX cast; all other operations now work for both V3 and V4.
+		- Updated EntityUtilities.TeleportNow to use IEntityAliveSDX type guard instead of a hard
+		  EntityAliveSDX cast, allowing V4 entities to be teleported.
+		- Updated EntityUtilities.AddQuestToRadius to detect both EntityAliveSDX (V3) and
+		  EntityAliveSDXV4 (V4) when adding quests to nearby NPCs.
+		- Updated DialogActionAnimatorSet to cast via IEntityAliveSDX instead of EntityAliveSDX,
+		  allowing V4 entities to receive animator commands from dialogs.
+		- Updated DialogActionDisplayInfo to cast via IEntityAliveSDX, allowing V4 entities to
+		  display info dialogs.
+		- Updated DialogActionRemoveBuffNPCSDX to cast via IEntityAliveSDX, allowing V4 entities
+		  to have buffs removed through dialogs.
+		- Updated DialogActionSwapWeapon to cast via IEntityAliveSDX, using the interface's
+		  UpdateWeapon() method so V4 entities can swap weapons through dialogs.
+		- Updated DialogRequirementHasQuestSDX to cast via IEntityAliveSDX; NPCInfo accessed via
+		  EntityTrader cast, supporting V4 quest requirements.
+		- Updated DialogRequirementNPCHasItemSDX to cast via IEntityAliveSDX with null-safe loot
+		  container checks, supporting V4 inventory requirements.
+		- Updated DialogActionPickUpNPC to cast via EntityAlive + IEntityAliveSDX, enabling V4
+		  entity pickup. EntitySyncUtils.GetNPCItemValue, SetNPCItemValue, Collect, and
+		  CollectClient now accept EntityAlive and use IEntityAliveSDX for name, title, and
+		  weapon access; V3-specific fields (belongsPlayerId, _currentWeapon) use conditional
+		  casts. IEntityAliveSDX gains FirstName and Title members. EntityAliveSDXV4.Title.set
+		  was fixed (previously threw NotImplementedException). All deploy/place net packages
+		  and ItemActionDeployNPCSDX updated to cast via EntityAlive rather than EntityAliveSDX.
+
+	[ UAI Troubleshooting / Diagnostics ]
+		- Added per-entity AIPackage diagnostics to EntityAliveSDXV4.PostInit via new
+		  LogMissingAIPackages() method. On spawn, logs which packages were found vs. missing
+		  from UAIBase.AIPackages, making load-order conflicts immediately visible in the log.
+		- Added empty-AIPackages-list warning in UAIBase.chooseAction Prefix: if an entity has
+		  no AI packages, a single warning is logged explaining what to check.
+		- Added per-package missing-package warning in UAIBase.chooseAction Prefix using a
+		  HashSet deduplication guard, preventing log spam while still surfacing undefined
+		  package names on first encounter.
+
+	[ UAI Performance / Bug Fixes ]
+		- Replaced triple dictionary lookup (ContainsKey + two indexed accesses) in
+		  UAIBase.chooseAction with a single TryGetValue call, reducing redundant hash lookups
+		  per AI evaluation cycle.
+		- Removed dead-code sort in AddWaypointTargetsToConsider: the sort was applied to the
+		  WaypointTargets list immediately after Clear(), so it operated on an empty list every
+		  time and had no effect.
+		- Fixed incorrect log-line order in AddWaypointTargetsToConsider: the count was logged
+		  before waypoints were gathered, reporting 0 every time.
+
+	[ UAI Farming ]
+		- Fixed two farmer NPCs targeting the same crop simultaneously. Added a shared static
+		  HashSet<Vector3i> claim registry to UAITaskFarming and UAITaskFarmingV4. A plot is
+		  claimed in Start() immediately after selection and released in Stop(), covering both
+		  normal task completion and interruption. FindTargetFarmPlot() skips any plot already
+		  in the registry, so each farmer always works a unique plot.
+		- Fixed harvested items not being added to the NPC's inventory. Three silent failure
+		  modes were patched in HandleHarvestingAndCleanup for both UAITaskFarming and
+		  UAITaskFarmingV4:
+		    * FastMax(0, minCount) could produce a 0-count ItemStack that AddItem silently rejects;
+		      clamped to FastMax(1, minCount).
+		    * item.prob was never checked; items now roll against their drop probability.
+		    * ItemClass.GetItem result was not validated; unknown item names now log a warning
+		      and are skipped instead of producing an invalid ItemValue.None stack.
+		- Fixed NPC farmer not harvesting fully-grown crops whose block type does not extend
+		  BlockPlant (e.g. BlockPickUpAndReplace-based final stages such as plantedCoffee3HarvestPlayer).
+		  FarmPlotData.Manage() previously checked IsDeadPlant() before checking harvest drops,
+		  so any non-BlockPlant block was cleared as a "dead plant" with no items returned.
+		  The branch order is now: HasItemsToDropForEvent(Harvest) first (harvest), then
+		  IsDeadPlant() (clear), then growing-plant skip, then empty-plot replant.
+		- Fixed NPC farmer not replanting immediately after harvesting. Two causes:
+		    * CanPlaceBlockAt was checked against the live world while the harvested block was
+		      still present, always returning false. The check is removed; placement validity is
+		      guaranteed by the block name resolving correctly.
+		    * SetBlocksRPC was called with two entries at the same position (air then seed).
+		      The intermediate air state triggered a physics/support check that caused the seed
+		      to fall through the world before it could stabilise. Replaced with a single-entry
+		      RPC that writes the seed directly over the harvested block.
+		- Fixed malformed drop table entries (empty item name, zero maxCount) from block
+		  itemsToDrop reaching the NPC inventory loop and producing unknown-item warnings.
+		  FarmPlotData.Manage() now strips these entries during harvest-item processing.
+		- Fixed FarmPlotData.Manage() mutating the block singleton's shared itemsToDrop lists.
+		  TryGetValue returns a direct reference to the block class's internal List; RemoveAt
+		  and AddRange on that reference permanently altered shared drop data for all future
+		  harvests. Drops are now copied into a pre-allocated local list via AddRange.
+		- Added Log.Out diagnostics throughout FarmPlotData.Manage() (block name, hasHarvestDrops,
+		  raw drop list, seed extraction result, replant path taken) to aid future field diagnosis.
+		- Fixed NPC farmer not watering corner (diagonally adjacent) farm plots.
+		  WaterPipeManager.GetWaterForPosition() only checked the 6 orthogonal neighbors for
+		  direct water adjacency, so plots diagonally adjacent to a water source returned no
+		  water and were skipped by the NPC despite being plantable by players. Added the 4
+		  horizontal diagonal neighbors to the scan so corner plots are correctly detected.
+
+	[ Fire Manager ]
+		- Fixed fire particle left-behind after a burning block is destroyed by a player or
+		  explosion. ChunkSetBlock Harmony Postfix previously skipped all non-POI-reset block
+		  changes due to an inverted guard (if (!_fromReset) return). The fix restructures the
+		  check: POI resets always clear fire unconditionally; for other block changes, the patch
+		  now checks IsBurning() and immediately calls ClearFire() if the new block is air. This
+		  prevents the particle from lingering until the next UpdateFires cycle (up to
+		  CheckInterval seconds). IsBurning() is an O(1) dictionary lookup, so the overhead on
+		  every block change is negligible.
+
+	[ Utility / Code Quality ]
+		- Removed duplicate ItemStack.Empty guard in EntityUtilities.CheckItemStack(ItemStack, Type):
+		  the same Equals(stack, ItemStack.Empty) check was being evaluated twice with only a null
+		  check in between.
+
+Version: 2.6.8.1428  [ Experimental ]
+	[ Fire Manager ]
+		- Fixed fire state (active fires and smoke) not properly restoring on load. The Read() method now
+		  correctly rebuilds fire data, restarts particle/light effects, and re-raises smoke events.
+		- Fixed smoke timers using real time (Time.time) instead of world time, causing smoke to
+		  expire immediately on relog.
+		- Fixed loaded fires not being synced to clients after a server load.
+		- Fixed FireDamage property not being read from blocks due to an empty string check bug.
+		- Added FirePersists config option (default: false). When true, active fires and extinguished
+		  positions are saved and restored across server restarts.
+			<property name="FirePersists" value="true" />
+
+	[ Fire Manager - Performance ]
+		- Cached flammable/inflammable FastTags as static fields in FireHandler; previously parsed
+		  on every IsFlammable() call during fire spread.
+		- Replaced O(n²) string concatenation in FireHandler.Write() with string.Join; large fires
+		  caused severe save slowdowns.
+		- Replaced the new Queue allocation in FireHandler.UpdateFires() with a clear-and-refill
+		  on the existing queue to avoid per-cycle heap allocation.
+		- Replaced LINQ allocations in SmokeHandler.CheckSmokePositions() and Clear() with manual
+		  loops using a reusable buffer field.
+		- Fixed dead loop in SmokeHandler.LoadState() that iterated the smoke timer dictionary
+		  immediately after clearing it.
+		- Replaced LINQ allocations in LightManager.RemoveInvalidLights() with a manual loop
+		  using a reusable buffer field.
+		- Replaced per-call new HashSet allocation in LightManager.UpdateFadingLights() with a
+		  reusable List buffer field.
+		- Replaced O(n log n) OrderBy(Random.value) + O(n²) FirstOrDefault reverse-lookup in
+		  LightManager.ManageLightLimit() with a single O(n) pass over the position dictionary.
+		- Cached FireSound.ToLower() as a field in FireManager; previously allocated a new string
+		  per player per call in CheckForPlayer().
+		- Promoted the Stopwatch in FireManager.UpdateSystemsRoutine() from a per-cycle local
+		  variable to a reusable instance field.
+		- Added null guard on NetPackageAddExtinguishPositions.GetLength() to match the other
+		  batch fire packet classes.
+
+	[ Portals ]
+		- Fixed infinite packet loop: NetPackagePortalAddPosition and NetPackagePortalRemovePosition
+		  now call AddEntry/RemoveEntry directly instead of AddPosition/RemovePosition, which was
+		  routing back to the server and creating a loop.
+		- Fixed missing base.write() calls in NetPackagePortalRemovePosition and NetPackagePortalMapSync,
+		  which caused malformed packets.
+		- Fixed PortalManager.Init() registering handlers only when IsServer was true. Since Init is
+		  called during block registration (before ConnectionManager is ready), handlers were never
+		  registered and portals did not load on startup.
+		- Fixed portals not being registered on load: BlockPortal2.Init() now touches PortalManager.Instance
+		  early to ensure the GameStartDone handler is registered before the event fires.
+		- Fixed OnBlockRemoved and OnBlockLoaded calling the portal manager for child blocks,
+		  causing duplicate or incorrect entries.
+		- Fixed OnBlockAdded setting the sign text after calling AddPosition, so the portal was
+		  registered with an empty name. Text is now set first.
+		- Fixed GetActivationText calling AddPosition on every hover/focus event (side-effect removed).
+		- Fixed teleport resolving the destination inside a Task.Delay continuation on a background
+		  thread. Destination is now resolved on the main thread before the delay begins.
+		- Fixed players falling through terrain on arrival: a ChunkObserver is added at the
+		  destination before the delay and removed after teleport, forcing the chunk to load.
+		- Fixed player spawn position for multi-block portals: player now arrives at the center
+		  of the portal footprint rather than the corner parent position.
+		- Fixed ToggleAnimator with a null-safe chunk fetch to prevent errors when the chunk
+		  is not yet loaded.
+		- Fixed TileEntityPoweredPortal not registering the portal when a player types its name:
+		  AddPosition is now called in SetText so player-configured portals are tracked correctly.
+		- Added AddEntry/RemoveEntry methods to PortalManager for direct local-map updates,
+		  and added DestinationMap for pre-resolved source->destination links so GetDestination
+		  works without the destination chunk being loaded.
+
 Version: 2.6.8.837  [ Experimental ]
 	[ Farming ]
 		- Fixed water depletion not working: BlockLiquidv2 blocks are now drained via DoExchangeAction; A21+ voxel water is drained via chunk.GetWater/SetWater with chunk-local coordinates.
@@ -46,9 +227,16 @@ Version: 2.6.8.837  [ Experimental ]
 		- Fixed sprinklers auto-activating when placed without a connected water source (CheckWaterConnection now always verifies actual water).
 		- Fixed RequirePipesForSprinklers config not being enforced: CanPlaceBlockAt now requires an adjacent pipe block when the setting is enabled.
 		- Simplified pipe block invalidation logic to use RefreshAllSprinklers.
+	** NOTE **:
+		- Due to the way water changes in 2.x and the crop manager, it's recommended if you are consuming water from a water source, that
+			you want to increase the amount of water it takes to 50 or so, instead of 1 or 2.
 
 	[ XUi ]
 		- Moved the broadcast button position to prevent overlap.
+
+	[ Drop Box ]
+		- Fixed an issue where using a drop box without a text field would throw an exception.
+
 
 Version: 2.6.4.713  [ Experimental ]
 	[ Fire Manager ]

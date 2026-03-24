@@ -1,0 +1,810 @@
+<configs>
+
+	<append xpath="/paints">
+
+		<opaque id="PP_carpet_01" name="PP_carpet_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Carpet_09_A1,Carpet_09_A2,Carpet_09_A3,Carpet_09_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_N1,Carpet_05_N2,Carpet_05_N3,Carpet_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="cloth" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_carpet_02" name="PP_carpet_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Carpet_10_A1,Carpet_10_A2,Carpet_10_A3,Carpet_10_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_N1,Carpet_05_N2,Carpet_05_N3,Carpet_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="cloth" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_carpet_03" name="PP_carpet_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Carpet_06_A1,Carpet_06_A2,Carpet_06_A3,Carpet_06_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_N1,Carpet_05_N2,Carpet_05_N3,Carpet_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="cloth" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_carpet_04" name="PP_carpet_04"  x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_A1,Carpet_05_A2,Carpet_05_A3,Carpet_05_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_N1,Carpet_05_N2,Carpet_05_N3,Carpet_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="cloth" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_carpet_05" name="PP_carpet_05" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Carpet_08_A1,Carpet_08_A2,Carpet_08_A3,Carpet_08_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_N1,Carpet_05_N2,Carpet_05_N3,Carpet_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="cloth" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_carpet_06" name="PP_carpet_06"  x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Carpet_07_A1,Carpet_07_A2,Carpet_07_A3,Carpet_07_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Carpet_05_N1,Carpet_05_N2,Carpet_05_N3,Carpet_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="cloth" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_plaster_01" name="PP_plaster_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_04_A1,Plaster_04_A2,Plaster_04_A3,Plaster_04_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_04_N1,Plaster_04_N2,Plaster_04_N3,Plaster_04_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_plaster_02" name="PP_plaster_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_03_A1,Plaster_03_A2,Plaster_03_A3,Plaster_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_03_N1,Plaster_03_N2,Plaster_03_N3,Plaster_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_01" name="PP_paintedPlaster_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_A1,Plaster_05_A2,Plaster_05_A3,Plaster_05_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_02" name="PP_paintedPlaster_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_06_A1,Plaster_06_A2,Plaster_06_A3,Plaster_06_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_03" name="PP_paintedPlaster_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_07_A1,Plaster_07_A2,Plaster_07_A3,Plaster_07_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_04" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_08_A1,Plaster_08_A2,Plaster_08_A3,Plaster_08_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_05" name="PP_paintedPlaster_05" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_09_A1,Plaster_09_A2,Plaster_09_A3,Plaster_09_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_06" name="PP_paintedPlaster_06" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_10_A1,Plaster_10_A2,Plaster_10_A3,Plaster_10_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_07" name="PP_paintedPlaster_07" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_11_A1,Plaster_11_A2,Plaster_11_A3,Plaster_11_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_paintedPlaster_08" name="PP_paintedPlaster_08" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Plaster_12_A1,Plaster_12_A2,Plaster_12_A3,Plaster_12_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Plaster_05_N1,Plaster_05_N2,Plaster_05_N3,Plaster_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S"/>
+			<property name="Group" value="txGroupWallCovering"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_01" name="PP_tiles_01">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_01_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_01_S"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_02" name="PP_tiles_02">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_02_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_02_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_02_S"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_03" name="PP_tiles_03">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_03_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_03_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_03_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_04" name="PP_tiles_04" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_11_A1,Tiles_11_A2,Tiles_11_A3,Tiles_11_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_11_N1,Tiles_11_N2,Tiles_11_N3,Tiles_11_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_05" name="PP_tiles_05" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_12_A1,Tiles_12_A2,Tiles_12_A3,Tiles_12_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_12_N1,Tiles_12_N2,Tiles_12_N3,Tiles_12_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_12_S1,Tiles_12_S1,Tiles_12_S1,Tiles_12_S1"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_06" name="PP_tiles_06">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_06_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_06_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_06_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_07" name="PP_tiles_07" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_13_A1,Tiles_13_A2,Tiles_13_A3,Tiles_13_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_13_N,Tiles_13_N,Tiles_13_N,Tiles_13_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_13_S,Tiles_13_S,Tiles_13_S,Tiles_13_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_08" name="PP_tiles_08" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_08_A1,Tiles_08_A2,Tiles_08_A3,Tiles_08_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_08_N1,Tiles_08_N2,Tiles_08_N3,Tiles_08_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_08_S1,Tiles_08_S2,Tiles_08_S3,Tiles_08_S4"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_09" name="PP_tiles_09" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_14_A1,Tiles_14_A2,Tiles_14_A3,Tiles_14_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_N,Tiles_20_N,Tiles_20_N,Tiles_20_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_S,Tiles_20_S,Tiles_20_S,Tiles_20_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_10" name="PP_tiles_10">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_10_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_10_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_10_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_01" name="PP_wallpaper_01">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_02" name="PP_wallpaper_02">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A2"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_03" name="PP_wallpaper_03">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A3"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_04" name="PP_wallpaper_04">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_05" name="PP_wallpaper_05">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A5"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_06" name="PP_wallpaper_06">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A6"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_07" name="PP_wallpaper_07">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A7"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_08" name="PP_wallpaper_08">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A8"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_09" name="PP_wallpaper_09">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_A9"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_01_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodFloor_01" name="PP_WoodFloor_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_01_A1,WoodFloor_01_A2,WoodFloor_01_A3,WoodFloor_01_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_01_N1,WoodFloor_01_N2,WoodFloor_01_N3,WoodFloor_01_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodFloor_02" name="PP_WoodFloor_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_02_A1,WoodFloor_02_A2,WoodFloor_02_A3,WoodFloor_02_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_02_N1,WoodFloor_02_N2,WoodFloor_02_N3,WoodFloor_02_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodFloor_03" name="PP_WoodFloor_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_03_A1,WoodFloor_03_A2,WoodFloor_03_A3,WoodFloor_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_03_N1,WoodFloor_03_N1,WoodFloor_03_N1,WoodFloor_03_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodFloor_04" name="PP_WoodFloor_04" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_04_A1,WoodFloor_04_A2,WoodFloor_04_A3,WoodFloor_04_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_04_N1,WoodFloor_04_N2,WoodFloor_04_N3,WoodFloor_04_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodFloor_05" name="PP_WoodFloor_05" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_05_A1,WoodFloor_05_A2,WoodFloor_05_A1,WoodFloor_05_A2"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_05_N1,WoodFloor_05_N2,WoodFloor_05_N1,WoodFloor_05_N2"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodFloor_06" name="PP_WoodFloor_06" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_06_A1,WoodFloor_06_A2,WoodFloor_06_A3,WoodFloor_06_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodFloor_06_N1,WoodFloor_06_N2,WoodFloor_06_N3,WoodFloor_06_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_stone_01" name="PP_stone_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Marble_03_A1,Marble_03_A2,Marble_03_A3,Marble_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Marble_03_N,Marble_03_N,Marble_03_N,Marble_03_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_smooth_S,Default_smooth_S,Default_smooth_S,Default_smooth_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_11" name="PP_tiles_11" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_A1,Tiles_15_A2,Tiles_15_A3,Tiles_15_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_N1,Tiles_15_N2,Tiles_15_N3,Tiles_15_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_S,Tiles_15_S,Tiles_15_S,Tiles_15_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_12" name="PP_tiles_12" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_16_A1,Tiles_16_A2,Tiles_16_A3,Tiles_16_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_N1,Tiles_15_N2,Tiles_15_N3,Tiles_15_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_S,Tiles_15_S,Tiles_15_S,Tiles_15_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_13" name="PP_tiles_13" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_17_A1,Tiles_17_A2,Tiles_17_A3,Tiles_17_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_N1,Tiles_15_N2,Tiles_15_N3,Tiles_15_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_S,Tiles_15_S,Tiles_15_S,Tiles_15_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_14" name="PP_tiles_14" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_18_A1,Tiles_18_A2,Tiles_18_A3,Tiles_18_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_N1,Tiles_15_N2,Tiles_15_N3,Tiles_15_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_15_S,Tiles_15_S,Tiles_15_S,Tiles_15_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_FineWood_01" name="PP_FineWood_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?FineWood_01_A1,FineWood_01_A2,FineWood_01_A3,FineWood_01_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_01_N1,FineWood_01_N2,FineWood_01_N3,FineWood_01_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_FineWood_02" name="PP_FineWood_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?FineWood_02_A1,FineWood_02_A2,FineWood_02_A3,FineWood_02_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_02_N1,FineWood_02_N2,FineWood_02_N3,FineWood_02_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_FineWood_03" name="PP_FineWood_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?FineWood_03_A1,FineWood_03_A2,FineWood_03_A3,FineWood_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_03_N1,FineWood_03_N2,FineWood_03_N3,FineWood_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_FineWood_04" name="PP_FineWood_04" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?FineWood_04_A1,FineWood_04_A2,FineWood_04_A3,FineWood_04_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_04_N1,FineWood_04_N2,FineWood_04_N3,FineWood_04_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S,Default_med_S,Default_med_S,Default_med_S"/>
+			<property name="Group" value="txGroupWood"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_01" name="PP_WoodWall_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_01_A1,WoodWall_01_A2,WoodWall_01_A3,WoodWall_01_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_01_N1,WoodWall_01_N2,WoodWall_01_N3,WoodWall_01_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_02" name="PP_WoodWall_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_02_A1,WoodWall_02_A2,WoodWall_02_A3,WoodWall_02_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_02_N1,WoodWall_02_N2,WoodWall_02_N3,WoodWall_02_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_03" name="PP_WoodWall_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_03_A1,WoodWall_03_A2,WoodWall_03_A3,WoodWall_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_03_N1,WoodWall_03_N2,WoodWall_03_N3,WoodWall_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_04" name="PP_WoodWall_04" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_04_A1,WoodWall_04_A2,WoodWall_04_A3,WoodWall_04_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_03_N1,WoodWall_03_N2,WoodWall_03_N3,WoodWall_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_05" name="PP_WoodWall_05" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_05_A1,WoodWall_05_A2,WoodWall_05_A3,WoodWall_05_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_03_N1,WoodWall_03_N2,WoodWall_03_N3,WoodWall_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_06" name="PP_WoodWall_06" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_06_A1,WoodWall_06_A2,WoodWall_06_A3,WoodWall_06_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_03_N1,WoodWall_03_N2,WoodWall_03_N3,WoodWall_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_WoodWall_07" name="PP_WoodWall_07" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_07_A1,WoodWall_07_A2,WoodWall_07_A3,WoodWall_07_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?WoodWall_03_N1,WoodWall_03_N2,WoodWall_03_N3,WoodWall_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>	
+
+		<opaque id="PP_StoneFloor_01" name="PP_StoneFloor_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?StoneFloor_01_A1,StoneFloor_01_A2,StoneFloor_01_A3,StoneFloor_01_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?StoneFloor_01_N1,StoneFloor_01_N2,StoneFloor_01_N3,StoneFloor_01_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_StoneFloor_02" name="PP_StoneFloor_02" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?StoneFloor_02_A1,StoneFloor_02_A2,StoneFloor_02_A3,StoneFloor_02_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?StoneFloor_02_N1,StoneFloor_02_N2,StoneFloor_02_N3,StoneFloor_02_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_StoneFloor_03" name="PP_StoneFloor_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?StoneFloor_03_A1,StoneFloor_03_A2,StoneFloor_03_A3,StoneFloor_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?StoneFloor_03_N1,StoneFloor_03_N2,StoneFloor_03_N3,StoneFloor_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_StoneWall_01" name="PP_StoneWall_01" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?StoneWall_05_A1,StoneWall_05_A2,StoneWall_05_A3,StoneWall_05_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?StoneWall_05_N1,StoneWall_05_N2,StoneWall_05_N3,StoneWall_05_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_StoneWall_03" name="PP_StoneWall_03" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?StoneWall_03_A1,StoneWall_03_A2,StoneWall_03_A3,StoneWall_03_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?StoneWall_03_N1,StoneWall_03_N2,StoneWall_03_N3,StoneWall_03_N4"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_rough_S,Default_rough_S,Default_rough_S,Default_rough_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_15" name="PP_tiles_15" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_19_A1,Tiles_19_A2,Tiles_19_A3,Tiles_19_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_13_N,Tiles_13_N,Tiles_13_N,Tiles_13_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_13_S,Tiles_13_S,Tiles_13_S,Tiles_13_S" />
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_16" name="PP_tiles_16" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_A1,Tiles_20_A2,Tiles_20_A3,Tiles_20_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_N,Tiles_20_N,Tiles_20_N,Tiles_20_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_S,Tiles_20_S,Tiles_20_S,Tiles_20_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_tiles_17" name="PP_tiles_17" x="0" y="0" w="2" h="2" blockw="2" blockh="2">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Tiles_21_A1,Tiles_21_A2,Tiles_21_A3,Tiles_21_A4"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_N,Tiles_20_N,Tiles_20_N,Tiles_20_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Tiles_20_S,Tiles_20_S,Tiles_20_S,Tiles_20_S"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_10" name="PP_wallpaper_10">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_11" name="PP_wallpaper_11">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_03_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_03_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_12" name="PP_wallpaper_12">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_04_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_04_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_13" name="PP_wallpaper_13">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_05_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_05_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_14" name="PP_wallpaper_14">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_06_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_06_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_wallpaper_17" name="PP_wallpaper_17">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_09_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_09_N"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Wallpaper_02_S" />
+			<property name="GlobalUV" value="True"/>
+			<property name="Group" value="txGroupMasonry"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="stone" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_Wainscotting" name="PP_Wainscotting">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wainscoting_01_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_01_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_Wainscotting_02" name="PP_Wainscotting_02">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wainscoting_02_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_03_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_Wainscotting_03" name="PP_Wainscotting_03">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wainscoting_03_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_01_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_Wainscotting_03b" name="PP_Wainscotting_03b">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wainscoting_03b_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_01_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>
+
+		<opaque id="PP_Wainscotting_04" name="PP_Wainscotting_04">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wainscoting_04_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_04_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>			
+
+		<opaque id="PP_Wainscotting_05" name="PP_Wainscotting_05">
+			<property name="Diffuse" value="#@modfolder:Resources/Atlas.unity3d?Wainscoting_01b_A"/>
+			<property name="Normal" value="#@modfolder:Resources/Atlas.unity3d?FineWood_01_N1"/>
+			<property name="Specular" value="#@modfolder:Resources/Atlas.unity3d?Default_med_S" />
+			<property name="Group" value="txGroupWood"/>
+			<property name="GlobalUV" value="True"/>
+			<property name="Color" value="0.4823529,0.3490196,0.2901961"/>
+			<property name="Material" value="wood" />
+			<property name="PaintCost" value="1" />
+		</opaque>	
+
+    </append>
+	
+</configs>

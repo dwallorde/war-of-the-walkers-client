@@ -31,8 +31,14 @@ namespace UAI
 
         private int _searchRange = DefaultSearchRange; // Search radius for farm plots.
 
+        // --- Shared claim registry ---
+        // Tracks which farm plot positions are currently claimed by a farmer NPC.
+        // Static so all task instances share the same set; safe because UAI runs on Unity's main thread.
+        private static readonly HashSet<Vector3i> _claimedPlots = new HashSet<Vector3i>();
+
         // --- Task State Variables ---
         private Vector3 _targetFarmPlotPosition; // The position of the farm plot block being targeted.
+        private Vector3i _claimedPosition;        // The position currently held in _claimedPlots by this instance.
         private FarmPlotData _targetFarmPlotData; // Data associated with the target farm plot.
         private bool _hasWorkBuffApplied = false; // Flag indicating if the work buff was applied in this cycle.
         private float _currentTimeout; // Countdown timer for the task timeout.
@@ -49,7 +55,8 @@ namespace UAI
         public override void initializeParameters()
         {
             base.initializeParameters();
-            if (Parameters.TryGetValue("cooldownBuff", out _cooldownBuff)){ }
+            if (Parameters.TryGetValue("cooldownBuff", out var cooldownBuff) && !string.IsNullOrEmpty(cooldownBuff))
+                _cooldownBuff = cooldownBuff;
          
             if (Parameters.TryGetValue("buff", out _workBuff)) { }
 
@@ -100,6 +107,10 @@ namespace UAI
                 Stop(_context); // Stop the task as there's nothing to do.
                 return;
             }
+
+            // Claim the plot immediately so other farmers skip it while this NPC is en route.
+            _claimedPosition = _targetFarmPlotData.GetBlockPos();
+            _claimedPlots.Add(_claimedPosition);
 
             // Found a plot, set target position and pathfind.
             _targetFarmPlotPosition = _targetFarmPlotData.GetBlockPos();
@@ -208,9 +219,12 @@ namespace UAI
         /// </summary>
         public override void Stop(Context _context)
         {
-            // If the work buff is still active when stopping (e.g., interrupted), wait for it?
-            // Original code had this, but it might prevent task switching. Decide based on game design.
-            // if (!string.IsNullOrEmpty(_workBuff) && _context.Self.Buffs.HasBuff(_workBuff)) return;
+            // Release the plot claim so other farmers can target it on their next cycle.
+            if (_claimedPosition != Vector3i.zero)
+            {
+                _claimedPlots.Remove(_claimedPosition);
+                _claimedPosition = Vector3i.zero;
+            }
 
             // Always try to remove particles associated with this task's target location.
             BlockUtilitiesSDX.removeParticles(new Vector3i(_targetFarmPlotPosition));
@@ -263,6 +277,14 @@ namespace UAI
         /// Implements a prioritized search strategy.
         /// </summary>
         /// <returns>FarmPlotData of the chosen plot, or null if none found.</returns>
+        /// <summary>
+        /// Returns true if the candidate plot is already claimed by another farmer NPC.
+        /// </summary>
+        private static bool IsClaimed(FarmPlotData plot)
+        {
+            return plot != null && _claimedPlots.Contains(plot.GetBlockPos());
+        }
+
         private FarmPlotData FindTargetFarmPlot(Vector3i position, bool hasSeed)
         {
             FarmPlotData foundPlot = null;
@@ -270,37 +292,43 @@ namespace UAI
             // Priority 1: If holding seeds, look for nearby empty plots first.
             if (hasSeed)
             {
-                // Assuming GetFarmPlotsNearby checks a small radius for plots needing seeds.
                 foundPlot = FarmPlotManager.Instance.GetFarmPlotsNearby(position, true);
+                if (IsClaimed(foundPlot)) foundPlot = null;
+
                 if (foundPlot == null)
                 {
-                    // If nothing immediately nearby, check slightly further for empty plots.
-                    var farmDatas =
-                        FarmPlotManager.Instance
-                            .GetCloseFarmPlots(position); // Assumes this gets empty/plantable plots nearby
-                    if (farmDatas.Count > 0)
-                        foundPlot = farmDatas[0]; // Pick the first one found
+                    var farmDatas = FarmPlotManager.Instance.GetCloseFarmPlots(position);
+                    foreach (var candidate in farmDatas)
+                    {
+                        if (!IsClaimed(candidate)) { foundPlot = candidate; break; }
+                    }
                 }
             }
 
             // Priority 2: Look for plots needing maintenance (e.g., harvestable) nearby.
             if (foundPlot == null)
             {
-                // Try finding the closest plot needing any kind of maintenance (harvest/replant) within the search range.
-                foundPlot = FarmPlotManager.Instance
-                    .GetClosesUnmaintainedWithPlants(position); // Check plots with plants first?
-                if (foundPlot == null)
-                    foundPlot = FarmPlotManager.Instance.GetClosesUnmaintained(position,
-                        _searchRange); // Then any unmaintained plot
-                if ( foundPlot == null)
-                    foundPlot = FarmPlotManager.Instance.GetFarmPlotsNearbyWithPlants(position);
+                foundPlot = FarmPlotManager.Instance.GetClosesUnmaintainedWithPlants(position);
+                if (IsClaimed(foundPlot)) foundPlot = null;
+            }
+
+            if (foundPlot == null)
+            {
+                foundPlot = FarmPlotManager.Instance.GetClosesUnmaintained(position, _searchRange);
+                if (IsClaimed(foundPlot)) foundPlot = null;
+            }
+
+            if (foundPlot == null)
+            {
+                foundPlot = FarmPlotManager.Instance.GetFarmPlotsNearbyWithPlants(position);
+                if (IsClaimed(foundPlot)) foundPlot = null;
             }
 
             // Priority 3: Look for wilted plots (if applicable).
             if (foundPlot == null)
             {
-                // Assuming this specifically finds plots that need tending due to wilting.
                 foundPlot = FarmPlotManager.Instance.GetClosesFarmPlotsWilted(position);
+                if (IsClaimed(foundPlot)) foundPlot = null;
             }
 
             return foundPlot;
@@ -313,56 +341,83 @@ namespace UAI
         /// </summary>
         private void HandleHarvestingAndCleanup(Context _context)
         {
-            BlockUtilitiesSDX.removeParticles(new Vector3i(_targetFarmPlotPosition)); // Clean up work particles
+            BlockUtilitiesSDX.removeParticles(new Vector3i(_targetFarmPlotPosition));
 
-            if (_targetFarmPlotData != null)
+            if (_targetFarmPlotData == null)
             {
-                // Let the FarmPlotData handle its own state management (harvest, plant, etc.)
-                var harvestedItemStacks =
-                    _targetFarmPlotData
-                        .Manage(_context.Self); // Assuming Manage now returns List<ItemStack> directly for simplicity
+                Debug.LogWarning($"UAITaskFarming: _targetFarmPlotData was null during HandleHarvesting for entity {_context.Self.entityId}.");
+                _hasWorkBuffApplied = false;
+                return;
+            }
 
-                var lootContainer = _context.Self.lootContainer;
-                if (harvestedItemStacks != null && lootContainer != null)
+            var harvestedItemStacks = _targetFarmPlotData.Manage(_context.Self);
+
+            AdvLogging.DisplayLog("AdvancedTroubleshootingFeatures", "UAITaskFarming",
+                $"Entity {_context.Self.entityId} harvested {harvestedItemStacks?.Count ?? 0} item type(s) from {_targetFarmPlotPosition}.");
+
+            var lootContainer = _context.Self.lootContainer;
+            if (lootContainer == null)
+                Debug.LogWarning($"UAITaskFarming: lootContainer is null on entity {_context.Self.entityId}. Harvest items will be dropped.");
+
+            if (harvestedItemStacks != null && harvestedItemStacks.Count > 0)
+            {
+                var random = GameManager.Instance.World.GetGameRandom();
+                bool addedItems = false;
+
+                foreach (var item in harvestedItemStacks)
                 {
-                    bool addedItems = false;
-                    foreach (var item in harvestedItemStacks)
+                    // Skip items that fail the probability roll.
+                    if (item.prob < 1f && random.RandomFloat > item.prob)
                     {
-                        var num = Utils.FastMax(0, item.minCount);
-                        var itemStack = new ItemStack(ItemClass.GetItem(item.name, false), num);
-                        // Attempt to add to NPC inventory
-                        if (!lootContainer.AddItem(itemStack)) 
-                        {
-                            // If it fails, drop it on the ground so the player doesn't lose the harvest
-                            _context.Self.world.GetGameManager().ItemDropServer(itemStack, _context.Self.position, Vector3.zero, _context.Self.entityId, 60f, false);
-                        }
-                        else
-                        {
-                            addedItems = true;
-                        }
-                        
+                        AdvLogging.DisplayLog("AdvancedTroubleshootingFeatures", "UAITaskFarming",
+                            $"  Skipping '{item.name}' — prob roll failed (prob={item.prob:F2}).");
+                        continue;
                     }
 
-                    if (addedItems)
-                    {
-                        _context.Self.PlayOneShot("item_plant_pickup",
-                            false); // Play sound effect once if items were added.
+                    // Use a random count in [min, max]. Clamp min to 1 so a zero minCount
+                    // never produces an empty ItemStack that AddItem silently rejects.
+                    var count = random.RandomRange(
+                        Utils.FastMax(1, item.minCount),
+                        Utils.FastMax(1, item.maxCount) + 1);
 
-                        // Consolidate and sort the inventory after adding items.
-                        lootContainer.items = StackSortUtil.CombineAndSortStacks(lootContainer.items, 0);
-                        lootContainer.SetModified();
+                    var itemValue = ItemClass.GetItem(item.name, false);
+                    if (itemValue == null || itemValue.Equals(ItemValue.None))
+                    {
+                        Debug.LogWarning($"UAITaskFarming: Unknown item '{item.name}' in harvest drops for entity {_context.Self.entityId}. Skipping.");
+                        continue;
+                    }
+
+                    var itemStack = new ItemStack(itemValue, count);
+
+                    AdvLogging.DisplayLog("AdvancedTroubleshootingFeatures", "UAITaskFarming",
+                        $"  Attempting to add {count}x '{item.name}' to entity {_context.Self.entityId} inventory.");
+
+                    if (lootContainer != null && lootContainer.AddItem(itemStack))
+                    {
+                        AdvLogging.DisplayLog("AdvancedTroubleshootingFeatures", "UAITaskFarming",
+                            $"  Added {count}x '{item.name}' to inventory.");
+                        addedItems = true;
+                    }
+                    else
+                    {
+                        AdvLogging.DisplayLog("AdvancedTroubleshootingFeatures", "UAITaskFarming",
+                            $"  Inventory full or null — dropping {count}x '{item.name}' on ground.");
+                        _context.Self.world.GetGameManager().ItemDropServer(
+                            itemStack, _context.Self.position, Vector3.zero,
+                            _context.Self.entityId, 60f, false);
                     }
                 }
-            }
-            else
-            {
-                Debug.LogWarning(
-                    $"UAITaskFarming: _targetFarmPlotData was null during HandleHarvesting for entity {_context.Self.entityId}.");
+
+                if (addedItems)
+                {
+                    _context.Self.PlayOneShot("item_plant_pickup", false);
+                    lootContainer.items = StackSortUtil.CombineAndSortStacks(lootContainer.items, 0);
+                    lootContainer.SetModified();
+                }
             }
 
-            // Reset state variables related to the current plot interaction
             _targetFarmPlotData = null;
-            _hasWorkBuffApplied = false; // Ready for the next potential run
+            _hasWorkBuffApplied = false;
         }
     }
 }
