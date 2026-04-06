@@ -53,7 +53,7 @@
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" target_tags="player" range=".75" buff="buffVehicleArmorHighBlockDamageEffect"/>
 			</effect_group>
 		</buff>
-		<buff name="buffVehicleArmorHighEffect" hidden="true">
+		<buff name="buffVehicleArmorHighBlockDamageEffect" hidden="true">
 			<duration value="3"/>
 			<stack_type value="replace"/>
 			<effect_group tiered="false">
